@@ -1,3 +1,19 @@
-@tailwind base;
+/* @tailwind base;
 @tailwind components;
-@tailwind utilities;
+@tailwind utilities; */
+
+
+.font-primary {
+    font-family: "Libre Baskerville", serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+.button-primary-bg{
+    background: #2C2C2C;
+}
+.center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
