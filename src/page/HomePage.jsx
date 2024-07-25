@@ -13,28 +13,28 @@ const data = [
         img: 'https://img.freepik.com/free-vector/purple-man-with-blue-hair_24877-82003.jpg',
         title: 'Empowering'
     },
-    {
-        img: 'https://img.freepik.com/free-vector/purple-man-with-blue-hair_24877-82003.jpg',
-        title: 'Insightful'
-    },
-    {
-        img: 'https://img.freepik.com/free-vector/purple-man-with-blue-hair_24877-82003.jpg',
-        title: 'Efficient'
-    },
+    // {
+    //     img: 'https://img.freepik.com/free-vector/purple-man-with-blue-hair_24877-82003.jpg',
+    //     title: 'Insightful'
+    // },
+    // {
+    //     img: 'https://img.freepik.com/free-vector/purple-man-with-blue-hair_24877-82003.jpg',
+    //     title: 'Efficient'
+    // },
     // {
     //     img: 'https://img.freepik.com/free-vector/purple-man-with-blue-hair_24877-82003.jpg',
     //     title: 'Simplify'
     // }
 ]
 
-const profiles = data.map((item,index) =>
+const profiles = data.map((item, index) =>
     <ProfileCard key={index} img={item.img} title={item.title} />
 )
 const HomePage = () => {
     return (
         <>
-            <section className="">
-                <main className="">
+            <section className="w-full">
+                <main className="py-32">
                     <div><h1 className="font-primary">Seamless Accounting with <br />
                         AI-Enhanced Human Expertise</h1>
                         <p className="pt-2">Effortless and Accurate Bookkeeping for Your Business</p></div>
@@ -53,11 +53,19 @@ const HomePage = () => {
                         </button>
                     </div>
                 </main>
-                <div className="flex gap-5 justify-start items-center overflow-scroll">
-                    {
-                       profiles
-                    }
+                <div className="">
+                    <div className="my-2.5 flex gap-5 justify-start items-center">
+                        {
+                            profiles
+                        }
+                    </div>
+                    <div className="my-2.5 flex gap-5 justify-start items-center">
+                        {
+                            profiles
+                        }
+                    </div>
                 </div>
+
 
             </section>
         </>
