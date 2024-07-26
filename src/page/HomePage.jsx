@@ -2,6 +2,14 @@ import ProfileCard from "../components/Homepage/ProfileCard";
 import ladyWithLaptop from "../assets/images/home/female-with-laptop.png"
 import Keyboard from "../assets/images/home/keyboard.png"
 import Finger from "../assets/images/home/finger.png"
+import { useLayoutEffect, useRef } from 'react';
+import gsap from 'gsap';
+import { useGSAP } from '@gsap/react';
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+
+gsap.registerPlugin(useGSAP);
+
 
 const data = [
     {
@@ -34,9 +42,39 @@ const profiles = data.map((item, index) =>
     <ProfileCard key={index} img={item.img} title={item.title} />
 )
 const HomePage = () => {
+
+    const container = useRef(null);
+
+    useLayoutEffect(() => {
+        let ctx = gsap.context(() => {
+
+            let t1 = gsap.timeline({
+                scrollTrigger: {
+                    trigger: container,
+                    start: "center center",
+                    scrub: true,
+                    pin: true,
+                    anticipatePin: 1
+                }
+            });
+            t1.to(".profile-master", {
+                x: 300,
+                duration: 2,
+
+            })
+
+        }, container);
+        return () => ctx.revert()
+    }, [])
+    useGSAP(() => {
+        // gsap code here...
+        // gsap.to('.profile-master', { x: 360 });
+    }
+    );
+
     return (
         <>
-            <section className="w-full">
+            <section className="w-full" ref={container}>
                 <main className="py-32">
                     <div><h1 className="font-primary">Seamless Accounting with <br />
                         AI-Enhanced Human Expertise</h1>
@@ -57,18 +95,18 @@ const HomePage = () => {
                     </div>
                 </main>
                 <div className="">
-                    <div className="w-[140rem] my-2.5 flex gap-5 justify-start items-center">
+                    <div className="profile-master w-[140rem] my-2.5 flex gap-5 justify-start items-center">
                         {
                             profiles
                         }
                     </div>
-                    <div className="w-[140rem] my-2.5 flex gap-5 justify-start items-center">
+                    <div className="profile-master w-[140rem] my-2.5 flex gap-5 justify-start items-center">
                         {
                             profiles
                         }
                     </div>
                 </div>
-                <div className="mx-auto my-10 relative">
+                <div id="test" className="test mx-auto my-10 relative">
                     <div className="w-4/5 mx-auto">
                         <div className="center">
                             <img className="w-full h-auto" src={ladyWithLaptop} />
