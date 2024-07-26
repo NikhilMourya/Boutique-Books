@@ -9,11 +9,20 @@
     font-style: normal;
 }
 
-.button-primary-bg{
+.button-primary-bg {
     background: #2C2C2C;
 }
-.center{
+
+.center {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+
+/* Ellipse 7 */
+.homepage-circle {
+    background: rgba(135, 206, 235, 0.4);
+    filter: blur(50px);
+
 }
