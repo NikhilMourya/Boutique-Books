@@ -48,19 +48,23 @@ const HomePage = () => {
     const horizontalRefLeft = useRef(null);
     const horizontalRefRight = useRef(null);
 
+    const ladyRef = useRef(null);
+    const ladyRefOverlay = useRef(null)
+
     useLayoutEffect(() => {
         const scrollContainer = scrollContainerRef.current;
         const horizontalElementLeft = horizontalRefLeft.current;
         const horizontalElementRight = horizontalRefRight.current;
+        const LadyRefElement = ladyRef.current;
+        const ladyRefOverlayElement = ladyRefOverlay.current
+
 
         gsap.to(horizontalElementLeft, {
             xPercent: -20,
             ease: "none",
             scrollTrigger: {
-                trigger: ".container",
-                // pin: true,
+                trigger: scrollContainer,
                 scrub: 1,
-                // end: () => "+=" + document.querySelector(".container").offsetWidth
             }
         });
 
@@ -69,46 +73,37 @@ const HomePage = () => {
             ease: "none",
             scrollTrigger: {
                 trigger: ".container",
-                // pin: true,
                 scrub: 1,
+            }
+        });
+
+        gsap.fromTo(LadyRefElement, { width: "70%" }, {
+            width: "100%",
+            duration: 2,
+            ease: "none",
+            scrollTrigger: {
+                trigger: ".test",
+                start: 'top center',        // Animation starts when top of element hits center of viewport
+                end: 'top',          // Animation ends when bottom of element hits top of viewport
+                scrub: true,
+            }
+        });
+
+        gsap.fromTo(ladyRefOverlayElement, { opacity: "0" }, {
+            opacity: "0.7",
+            duration: 2,
+            ease: "none",
+            scrollTrigger: {
+                trigger: ".test",
+                start: 'top center',        // Animation starts when top of element hits center of viewport
+                end: 'top',          // Animation ends when bottom of element hits top of viewport
+                scrub: true,
+                // pin: true,
+                // scrub: 1,
                 // end: () => "+=" + document.querySelector(".container").offsetWidth
             }
         });
 
-
-
-
-
-        // gsap.fromTo(horizontalElement, { rotation: 0 }, {
-        //     x: -200,
-        //     duration: 5,
-        //     scrollTrigger: {
-        //         trigger: horizontalElement
-        //     }
-        // })
-
-
-
-        // let ctx = gsap.context(() => {
-
-        //     let t1 = gsap.timeline({
-        //         scrollTrigger: {
-        //             trigger: horizontalElement,
-        //             start: "center center",
-        //             scrub: true,
-        //             pin: true,
-        //             anticipatePin: 1
-        //         }
-        //     });
-        //     t1.to(".profile-master", {
-        //         x: 300,
-        //         duration: 2,
-
-        //     })
-
-        // }, horizontalElement);
-
-        // return () => ctx.revert()
     }, [])
 
 
@@ -134,24 +129,24 @@ const HomePage = () => {
                         </button>
                     </div>
                 </main>
-                <div className="container">
-                    <div ref={horizontalRefLeft} className="profile-master w-[140rem] my-2.5 flex gap-5 justify-start items-center">
+                <div className="container" ref={scrollContainerRef}>
+                    <div ref={horizontalRefLeft} className="w-[140rem] my-2.5 flex gap-5 justify-center items-center">
                         {
                             profiles
                         }
                     </div>
-                    <div ref={horizontalRefRight} className="profile-master w-[140rem] my-2.5 flex gap-5 justify-start items-center">
+                    <div ref={horizontalRefRight} className="w-[140rem] my-2.5 flex gap-5 justify-center items-center">
                         {
                             profiles
                         }
                     </div>
                 </div>
-                <div id="test" className="test mx-auto my-10 relative">
-                    <div className="w-4/5 mx-auto">
-                        <div className="center">
+                <div className="test mx-auto my-10 relative" ref={ladyRef}>
+                    <div className="mx-auto relative" >
+                        <div className="center relative z-0">
                             <img className="w-full h-auto" src={ladyWithLaptop} />
                         </div>
-                        <div className="bg-gray-600 px-48 p-32">
+                        <div className="bg-gray-600 px-48 p-32 absolute z-10 h-full w-full top-0" ref={ladyRefOverlay}>
                             <div className="mx-auto text-white">
                                 <h1 className="my-10">Effortless Accounting <br />
                                     with Human and AI Precision</h1>
