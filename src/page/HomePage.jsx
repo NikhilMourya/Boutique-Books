@@ -4,11 +4,11 @@ import Keyboard from "../assets/images/home/keyboard.png"
 import Finger from "../assets/images/home/finger.png"
 import { useLayoutEffect, useRef } from 'react';
 import gsap from 'gsap';
-import { useGSAP } from '@gsap/react';
+// import { useGSAP } from '@gsap/react';
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 
-gsap.registerPlugin(useGSAP);
+gsap.registerPlugin(ScrollTrigger);
 
 
 const data = [
@@ -43,38 +43,78 @@ const profiles = data.map((item, index) =>
 )
 const HomePage = () => {
 
-    const container = useRef(null);
+    // const container = useRef(null);
+    const scrollContainerRef = useRef(null);
+    const horizontalRefLeft = useRef(null);
+    const horizontalRefRight = useRef(null);
 
     useLayoutEffect(() => {
-        let ctx = gsap.context(() => {
+        const scrollContainer = scrollContainerRef.current;
+        const horizontalElementLeft = horizontalRefLeft.current;
+        const horizontalElementRight = horizontalRefRight.current;
 
-            let t1 = gsap.timeline({
-                scrollTrigger: {
-                    trigger: container,
-                    start: "center center",
-                    scrub: true,
-                    pin: true,
-                    anticipatePin: 1
-                }
-            });
-            t1.to(".profile-master", {
-                x: 300,
-                duration: 2,
+        gsap.to(horizontalElementLeft, {
+            xPercent: -20,
+            ease: "none",
+            scrollTrigger: {
+                trigger: ".container",
+                // pin: true,
+                scrub: 1,
+                // end: () => "+=" + document.querySelector(".container").offsetWidth
+            }
+        });
 
-            })
+        gsap.to(horizontalElementRight, {
+            xPercent: 20,
+            ease: "none",
+            scrollTrigger: {
+                trigger: ".container",
+                // pin: true,
+                scrub: 1,
+                // end: () => "+=" + document.querySelector(".container").offsetWidth
+            }
+        });
 
-        }, container);
-        return () => ctx.revert()
+
+
+
+
+        // gsap.fromTo(horizontalElement, { rotation: 0 }, {
+        //     x: -200,
+        //     duration: 5,
+        //     scrollTrigger: {
+        //         trigger: horizontalElement
+        //     }
+        // })
+
+
+
+        // let ctx = gsap.context(() => {
+
+        //     let t1 = gsap.timeline({
+        //         scrollTrigger: {
+        //             trigger: horizontalElement,
+        //             start: "center center",
+        //             scrub: true,
+        //             pin: true,
+        //             anticipatePin: 1
+        //         }
+        //     });
+        //     t1.to(".profile-master", {
+        //         x: 300,
+        //         duration: 2,
+
+        //     })
+
+        // }, horizontalElement);
+
+        // return () => ctx.revert()
     }, [])
-    useGSAP(() => {
-        // gsap code here...
-        // gsap.to('.profile-master', { x: 360 });
-    }
-    );
+
 
     return (
         <>
-            <section className="w-full" ref={container}>
+            <section className="w-full">
                 <main className="py-32">
                     <div><h1 className="font-primary">Seamless Accounting with <br />
                         AI-Enhanced Human Expertise</h1>
@@ -94,13 +134,13 @@ const HomePage = () => {
                         </button>
                     </div>
                 </main>
-                <div className="">
-                    <div className="profile-master w-[140rem] my-2.5 flex gap-5 justify-start items-center">
+                <div className="container">
+                    <div ref={horizontalRefLeft} className="profile-master w-[140rem] my-2.5 flex gap-5 justify-start items-center">
                         {
                             profiles
                         }
                     </div>
-                    <div className="profile-master w-[140rem] my-2.5 flex gap-5 justify-start items-center">
+                    <div ref={horizontalRefRight} className="profile-master w-[140rem] my-2.5 flex gap-5 justify-start items-center">
                         {
                             profiles
                         }
