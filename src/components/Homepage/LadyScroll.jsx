@@ -31,7 +31,7 @@ const LadyScroll = () => {
 
         t1.fromTo(LadyRefElement, { width: "70%" }, {
             width: "100%",
-            duration: 2.5,
+            duration: 2000,
             ease: "none",
         });
 
@@ -42,9 +42,8 @@ const LadyScroll = () => {
 
         t1.to(LadyRefElement, {
             position: "fixed",
-            top: '0',
-            delay:1,
-            duration:2,
+            delay:2,
+            duration:3,
         });
 
         // t1.fromTo(LadyRefElement, { width: "100%" }, {
@@ -93,7 +92,6 @@ const LadyScroll = () => {
                             <div class="black-overlay" ref={ladyRefOverlay}></div>
                         </div>
                     </div>
-
                 </div>
                 
 
