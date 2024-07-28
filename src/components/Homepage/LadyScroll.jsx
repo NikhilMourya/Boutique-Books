@@ -21,16 +21,15 @@ const LadyScroll = () => {
         let t1 = gsap.timeline({
             scrollTrigger: {
                 trigger: ".test",
-                start: 'top 30%',
+                start: 'top 40%',
                 scrub: true,
                 markers: true,
-                end: 'top',
-                pin:true
+                end: 'top 0%',
             },
         })
 
 
-        t1.fromTo(LadyRefElement, { width: "80%" }, {
+        t1.to(LadyRefElement, {
             width: "100%",
             duration: 2000,
             ease: "none",
@@ -70,12 +69,12 @@ const LadyScroll = () => {
     return (
         <>
             <section className='relative test'>
-                <div className=" mx-auto my-10" ref={ladyRef}>
+                <div className=" mx-auto my-10 w-[80%]" ref={ladyRef}>
                     <div className="mx-auto relative" >
                         <div className="center relative z-0">
                             <img className="w-full h-full" src={ladyWithLaptop} />
                             <div className="black-overlay" ref={ladyRefOverlay}>
-                                <div className="px-48 p-32 h-full w-full" ref={ladyRefOverlayContent}>
+                            <div className="px-48 p-32 h-screen w-full" ref={ladyRefOverlayContent}>
                                     <div className="mx-auto text-white">
                                         <h1 className="my-10">Effortless Accounting <br />
                                             with Human and AI Precision</h1>
