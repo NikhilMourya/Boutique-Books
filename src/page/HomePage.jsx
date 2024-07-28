@@ -89,6 +89,8 @@ const HomePage = () => {
             }
         });
 
+        
+
         gsap.fromTo(ladyRefOverlayElement, { opacity: "0" }, {
             opacity: "0.7",
             duration: 2,
