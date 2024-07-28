@@ -1,3 +1,28 @@
-@tailwind base;
+/* @tailwind base;
 @tailwind components;
-@tailwind utilities;
+@tailwind utilities; */
+
+
+.font-primary {
+    font-family: "Libre Baskerville", serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+.button-primary-bg {
+    background: #2C2C2C;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* Ellipse 7 */
+.homepage-circle {
+    background: rgba(135, 206, 235, 0.4);
+    filter: blur(50px);
+
+}
