@@ -75,15 +75,15 @@ const HomePage = () => {
             }
         });
 
-        let t1 = gsap.timeline({
-            scrollTrigger: {
-                trigger: ".test",
-                start: 'top center',
-                end: 'top',
-                scrub: true,
-                markers: true,
-            },
-        })
+        // let t1 = gsap.timeline({
+        //     scrollTrigger: {
+        //         trigger: ".test",
+        //         start: 'top center',
+        //         end: 'top',
+        //         scrub: true,
+        //         markers: true,
+        //     },
+        // })
 
 
         // gsap.fromTo(LadyRefElement, { width: "70%" }, {
