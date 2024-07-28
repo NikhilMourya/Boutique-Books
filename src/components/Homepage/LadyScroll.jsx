@@ -23,16 +23,15 @@ const LadyScroll = () => {
                 trigger: ".test",
                 start: 'top 40%',
                 scrub: true,
-                markers: true,
                 end: 'top 0%',
-            },
+                // pin:true,
+            }
         })
 
 
-        t1.to(LadyRefElement, {
+        t1.fromTo(LadyRefElement, { width: "80%" }, {
             width: "100%",
             duration: 2000,
-            ease: "none",
         });
 
         t1.fromTo(ladyRefOverlayElement, { opacity: 0 }, {
@@ -40,11 +39,47 @@ const LadyScroll = () => {
             duration: 2000,
         })
 
-        t1.to('#underline-divider',{
-            width:'50%',
-            duration:2000,
+
+        t1.to('#underline-divider', {
+            width: '50%',
+            duration: 2000,
         })
 
+        // gsap.to('#underline-divider',{
+        //     width: '80%',
+        //     duration: 2000,
+        //     ease:'bounce',
+        //     scrollTrigger:{
+        //         trigger:'#underline-divider',
+        //         start:'top 40%',
+        //         pin:true,
+        //         scrub: true,
+        //         end:'top 20%',
+        //         markers:true
+                
+        //     }
+        // })
+
+        // let t2 = gsap.timeline({
+        //     scrollTrigger: {
+        //         trigger: ".test",
+        //         start: 'top 0%',
+        //         scrub: true,
+        //         markers: true,
+        //         end: 'top 30%',
+        //     }
+        // })
+
+        // t2.to(LadyRefElement,{
+        //     position:'fixed',
+        //     top:"0px",
+        //     marginTop:"0px"
+        // })
+
+        // t2.to('#underline-divider', {
+        //     width: '50%',
+        //     duration: 2000,
+        // })
         // t1.fromTo(ladyRefOverlayContentElement, { opacity: 0 }, {
         //     opacity: 1,
         //     delay: 1,
@@ -74,7 +109,7 @@ const LadyScroll = () => {
                         <div className="center relative z-0">
                             <img className="w-full h-full" src={ladyWithLaptop} />
                             <div className="black-overlay" ref={ladyRefOverlay}>
-                            <div className="px-48 p-32 h-screen w-full" ref={ladyRefOverlayContent}>
+                                <div className="px-48 p-32 h-screen w-full" ref={ladyRefOverlayContent}>
                                     <div className="mx-auto text-white">
                                         <h1 className="my-10">Effortless Accounting <br />
                                             with Human and AI Precision</h1>
