@@ -11,10 +11,12 @@ gsap.registerPlugin(ScrollTrigger);
 const LadyScroll = () => {
     const ladyRef = useRef(null);
     const ladyRefOverlay = useRef(null)
+    const ladyRefOverlayContent = useRef(null)
 
     useLayoutEffect(() => {
         const LadyRefElement = ladyRef.current;
         const ladyRefOverlayElement = ladyRefOverlay.current
+        const ladyRefOverlayContentElement = ladyRefOverlayContent.current;
 
         let t1 = gsap.timeline({
             scrollTrigger: {
@@ -27,22 +29,33 @@ const LadyScroll = () => {
         })
 
 
-        t1.fromTo(LadyRefElement, {width: "70%" },{
+        t1.fromTo(LadyRefElement, { width: "70%" }, {
             width: "100%",
-            duration: 2,
+            duration: 2.5,
             ease: "none",
         });
 
+        t1.fromTo(ladyRefOverlayElement,{opacity:0},{
+            opacity:1,
+            duration:1,
+        })
+
+        t1.to(LadyRefElement, {
+            position: "fixed",
+            top: '0',
+            delay:1,
+            duration:2,
+        });
+
         // t1.fromTo(LadyRefElement, { width: "100%" }, {
-        //     position: 'fixed',
-        //     top: 0,
         //     width: "100%",
-        //     duration: '1',
-        //     scrollTrigger: {
-        //         trigger: LadyRefElement,
-        //         start: 'top center',
-        //     }
+        //     position: "fixed",
         // });
+
+        t1.fromTo(ladyRefOverlayContentElement, { opacity: 0 }, {
+            opacity: 1,
+            duration: 1,
+        });
 
 
         // gsap.fromTo(LadyRefElement, { width: "70%" }, {
@@ -57,7 +70,7 @@ const LadyScroll = () => {
         //     }
         // });
 
-        // gsap.fromTo(ladyRefOverlayElement, { opacity: "0" }, {
+        // gsap.fromTo(ladyRefOverlayContentElement, { opacity: "0" }, {
         //     opacity: "0.7",
         //     duration: 2,
         //     ease: "none",
@@ -73,14 +86,18 @@ const LadyScroll = () => {
     return (
         <>
             <section className='relative'>
-                <div className="test mx-auto my-10 w-full" ref={ladyRef}>
+                <div className="test mx-auto my-10" ref={ladyRef}>
                     <div className="mx-auto relative" >
                         <div className="center relative z-0">
                             <img className="w-full h-auto" src={ladyWithLaptop} />
+                            <div class="black-overlay" ref={ladyRefOverlay}></div>
                         </div>
                     </div>
+
                 </div>
-                <div className="px-48 p-32  h-full w-full top-0" ref={ladyRefOverlay}>
+                
+
+                <div className="px-48 p-32  h-full w-full top-0" ref={ladyRefOverlayContent}>
                     <div className="mx-auto text-white">
                         <h1 className="my-10">Effortless Accounting <br />
                             with Human and AI Precision</h1>
