@@ -56,7 +56,6 @@ const HomePage = () => {
         const horizontalElementLeft = horizontalRefLeft.current;
         const horizontalElementRight = horizontalRefRight.current;
 
-
         gsap.to(horizontalElementLeft, {
             xPercent: -20,
             ease: "none",
@@ -75,40 +74,39 @@ const HomePage = () => {
             }
         });
 
-        // let t1 = gsap.timeline({
-        //     scrollTrigger: {
-        //         trigger: ".test",
-        //         start: 'top center',
-        //         end: 'top',
-        //         scrub: true,
-        //         markers: true,
-        //     },
+
+        let keyboardTimline = gsap.timeline({
+            scrollTrigger: {
+                trigger: '.keyboard-container',
+                start: 'top -10%',
+                end: 'top -20%',
+                scrub: 1,
+                markers: true,
+                // pin:true,
+            }
+        })
+        keyboardTimline.fromTo('#keyboard-img', { y: -60 }, {
+            duration: 2000,
+            width: '60%',
+            y: 20,
+        })
+        keyboardTimline.fromTo('#keyboard-hand', 
+            { duration: 2, rotate: -90, opacity: 0, x: -500 },
+            {
+            duration: 4000,
+            rotate: 10,
+            opacity: 1,
+            x: -200,}
+        )
+        // keyboardTimline.to('#keyboard-hand', {
+        //     delay:100,
+        //     duration: 2000,
+        //     rotate: -90,
+        //     opacity: 0,
+        //     x: -500,
         // })
 
 
-        // gsap.fromTo(LadyRefElement, { width: "70%" }, {
-        //     width: "100%",
-        //     duration: 2,
-        //     ease: "none",
-        //     scrollTrigger: {
-        //         trigger: ".test",
-        //         start: 'top center',
-        //         end: 'top',
-        //         scrub: true,
-        //     }
-        // });
-
-        // gsap.fromTo(ladyRefOverlayElement, { opacity: "0" }, {
-        //     opacity: "0.7",
-        //     duration: 2,
-        //     ease: "none",
-        //     scrollTrigger: {
-        //         trigger: ".test",
-        //         start: 'top center',
-        //         end: 'top',
-        //         scrub: true,
-        //     }
-        // });
 
     }, [])
 
@@ -148,11 +146,12 @@ const HomePage = () => {
                     </div>
                 </div>
                 <LadyScroll />
-                <div className="relative my-20 py-52">
-                    <div className="relative center z-10">
+                <div className="relative my-14 py-14 keyboard-container">
+                    <div className="relative z-10">
                         <div className="relative">
-                            <h1 className="font-primary text-4xl">Streamlined Accounting <br />with the Press of a Key.</h1>
-                            <img src={Keyboard} className="" />
+                            <h1 className="font-primary text-4xl">Streamlined Accounting</h1>
+                            <h1 className="font-primary text-4xl mt-4">with the Press of a Key.</h1>
+                            <img className="w-6/12 mx-auto" src={Keyboard} id="keyboard-img" />
                             <button className="mt-10 px-7 p-2 button-primary-bg text-white rounded-full">
                                 <div className="flex gap-3 flex-row">
                                     <div className="inline-flex gap-3">
@@ -164,7 +163,7 @@ const HomePage = () => {
 
                                 </div>
                             </button>
-                            <img src={Finger} className="absolute right-0 bottom-0" />
+                            <img id="keyboard-hand" src={Finger} className="absolute right-24 -bottom-36" />
                         </div>
                     </div>
                     <div className="absolute top-52 flex justify-between w-full z-0">
@@ -181,6 +180,7 @@ const HomePage = () => {
                     </div>
 
                 </div>
+                <div className="h-screen w-full border-2 border-red-200"></div>
             </section >
         </>
     )
