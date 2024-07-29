@@ -24,6 +24,7 @@ const LadyScroll = () => {
                 start: 'top 40%',
                 scrub: true,
                 end: 'top 0%',
+                markers:true,
                 // pin:true,
             }
         })
@@ -31,28 +32,29 @@ const LadyScroll = () => {
 
         t1.fromTo(LadyRefElement, { width: "80%" }, {
             width: "100%",
-            duration: 2000,
+            top:0,
+            // duration: 2000,
         });
 
         t1.fromTo(ladyRefOverlayElement, { opacity: 0 }, {
             opacity: 1,
-            duration: 2000,
+            // duration: 2000,
         })
 
 
-        t1.to('#underline-divider', {
-            width: '50%',
-            duration: 2000,
-        })
+        // t1.fromTo('#underline-divider',{width:'20%'}, {
+        //     width: '50%',
+        //     duration: 2000,
+            
+        // })
 
         // gsap.to('#underline-divider',{
         //     width: '80%',
         //     duration: 2000,
-        //     ease:'bounce',
         //     scrollTrigger:{
         //         trigger:'#underline-divider',
         //         start:'top 40%',
-        //         pin:true,
+        //         // pin:true,
         //         scrub: true,
         //         end:'top 20%',
         //         markers:true
@@ -111,7 +113,7 @@ const LadyScroll = () => {
                             <div className="black-overlay" ref={ladyRefOverlay}>
                                 <div className="px-48 p-32 h-screen w-full" ref={ladyRefOverlayContent}>
                                     <div className="mx-auto text-white">
-                                        <h1 className="my-10">Effortless Accounting <br />
+                                        <h1 className="my-10 text-6xl">Effortless Accounting <br />
                                             with Human and AI Precision</h1>
                                         <div className="center mx-auto">
                                             <div id='underline-divider' className="w-1/5 h-1 rounded-full bg-white"></div>

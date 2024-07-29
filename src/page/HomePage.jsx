@@ -70,7 +70,7 @@ const HomePage = () => {
             xPercent: 20,
             ease: "none",
             scrollTrigger: {
-                trigger: ".container",
+                trigger: scrollContainer,
                 scrub: 1,
             }
         });
@@ -117,7 +117,7 @@ const HomePage = () => {
         <>
             <section className="w-full relative">
                 <main className="py-32">
-                    <div><h1 className="font-primary">Seamless Accounting with <br />
+                    <div><h1 className="font-primary text-4xl">Seamless Accounting with <br />
                         AI-Enhanced Human Expertise</h1>
                         <p className="pt-2">Effortless and Accurate Bookkeeping for Your Business</p></div>
                     <div className="my-4 p-3 flex gap-5 justify-center items-center">
@@ -136,12 +136,12 @@ const HomePage = () => {
                     </div>
                 </main>
                 <div className="container" ref={scrollContainerRef}>
-                    <div ref={horizontalRefLeft} className="w-[140rem] my-2.5 flex gap-5 justify-center items-center">
+                    <div ref={horizontalRefLeft} className="w-[140rem] my-2.5 flex gap-5 justify-start items-center">
                         {
                             profiles
                         }
                     </div>
-                    <div ref={horizontalRefRight} className="w-[140rem] my-2.5 flex gap-5 justify-center items-center">
+                    <div ref={horizontalRefRight} className="w-[140rem] my-2.5 flex gap-5 justify-start items-center">
                         {
                             profiles
                         }
