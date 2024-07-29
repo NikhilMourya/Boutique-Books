@@ -71,6 +71,7 @@ const HomePage = () => {
             scrollTrigger: {
                 trigger: scrollContainer,
                 scrub: 1,
+
             }
         });
 
@@ -78,35 +79,31 @@ const HomePage = () => {
         let keyboardTimline = gsap.timeline({
             scrollTrigger: {
                 trigger: '.keyboard-container',
-                start: 'top -10%',
+                start: 'top -5%',
                 end: 'top -20%',
-                scrub: 1,
+                scrub: 4,
                 markers: true,
                 // pin:true,
             }
         })
         keyboardTimline.fromTo('#keyboard-img', { y: -60 }, {
-            duration: 2000,
             width: '60%',
             y: 20,
         })
-        keyboardTimline.fromTo('#keyboard-hand', 
-            { duration: 2, rotate: -90, opacity: 0, x: -500 },
+        keyboardTimline.fromTo('#keyboard-hand',
+            {   y: 20,display:'none' },
             {
-            duration: 4000,
-            rotate: 10,
-            opacity: 1,
-            x: -200,}
+                display:'block',
+                y:-40
+            }
         )
-        // keyboardTimline.to('#keyboard-hand', {
-        //     delay:100,
-        //     duration: 2000,
-        //     rotate: -90,
-        //     opacity: 0,
-        //     x: -500,
-        // })
+        keyboardTimline.to('#keyboard-hand',
+            {   y: 200,display:'none',opacity:0 },
+        )
 
-
+        keyboardTimline.to('#keyboard-img',{
+            width: '50%',
+        })
 
     }, [])
 
@@ -163,7 +160,7 @@ const HomePage = () => {
 
                                 </div>
                             </button>
-                            <img id="keyboard-hand" src={Finger} className="absolute right-24 -bottom-36" />
+                            <img id="keyboard-hand" src={Finger} className="absolute right-56 -bottom-36" />
                         </div>
                     </div>
                     <div className="absolute top-52 flex justify-between w-full z-0">
@@ -180,7 +177,7 @@ const HomePage = () => {
                     </div>
 
                 </div>
-                <div className="h-screen w-full border-2 border-red-200"></div>
+                {/* <div className="h-screen w-full border-2 border-red-200"></div> */}
             </section >
         </>
     )
