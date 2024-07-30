@@ -1,13 +1,13 @@
-import MainWrapper from '../components/layouts/MainWrapper';
+import ContainerWrapper from '../components/layouts/ContainerWrapper';
 
 export default function PricingPage() {
   return (
-    <MainWrapper>
+    <ContainerWrapper>
       <div className="">
         <h2 className="text-5xl text-center">
           Transparent Pricing for Hassle-Free Accounting Solutions
         </h2>
       </div>
-    </MainWrapper>
+    </ContainerWrapper>
   );
 }
