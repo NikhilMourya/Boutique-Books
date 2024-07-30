@@ -17,9 +17,11 @@ export default function Footer() {
   const year = new Date().getFullYear();
   return (
     <footer className="bg-primary grid gap-y-6 pb-8">
-      <div className="grid grid-cols-1 justify-center sm:grid-cols-2 md:grid-col-3 lg:grid-cols-4 md:justify-evenly py-16">
-        <img src={Logo} width={150} className="block mx-auto md:-mt-5" />
-        <section className="flex flex-col justify-start text-left gap-y-2">
+      <div className="grid grid-cols-1 justify-center sm:w-9/12 mx-auto sm:grid-cols-2 md:grid-col-3 lg:grid-cols-4 md:justify-evenly gap-y-6 py-16">
+        <div className="flex md:-mt-5">
+          <img src={Logo} width={150} />
+        </div>
+        <section className="flex flex-col justify-start text-center md:text-left gap-y-2">
           <h2 className="text-lg font-bold">Navigation</h2>
           <ul className="flex flex-col justify-start text-leftgap-y-2">
             {navigation.map((item, index) => (
@@ -32,9 +34,9 @@ export default function Footer() {
             ))}
           </ul>
         </section>
-        <section className="flex flex-col justify-start text-left gap-y-2">
+        <section className="flex flex-col justify-start text-center md:text-left gap-y-2">
           <h2 className="text-xl font-bold">Quick Links</h2>
-          <ul className="flex flex-col justify-start text-left gap-y-2">
+          <ul className="flex flex-col justify-start gap-y-2">
             {quickLinks.map((item, index) => (
               <li
                 key={index}
@@ -45,9 +47,9 @@ export default function Footer() {
             ))}
           </ul>
         </section>
-        <section className="flex flex-col justify-start text-left gap-y-2">
+        <section className="flex flex-col justify-start text-center md:text-left gap-y-2">
           <h2 className="text-lg font-bold">Get In Touch</h2>
-          <div className="flex flex-col justify-start text-left gap-y-2">
+          <div className="flex flex-col justify-start gap-y-2">
             <p>
               <a
                 href="mailto:hello@boutiquebooks.com"
