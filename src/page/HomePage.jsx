@@ -60,7 +60,6 @@ const HomePage = () => {
             scrollTrigger: {
                 trigger: scrollContainer,
                 scrub: 1,
-                markers: true,
                 start: 'top 60%',
                 end: 'top 20%'
             }
@@ -89,7 +88,6 @@ const HomePage = () => {
                 start: 'top -5%',
                 end: 'top -20%',
                 scrub: 4,
-                markers: true,
                 // pin:true,
             }
         })
@@ -119,7 +117,7 @@ const HomePage = () => {
         <>
             <section className="w-full relative">
                 <main className="py-32">
-                    <div><h1 className="font-primary text-4xl">Seamless Accounting with <br />
+                    <div><h1 className="font-primary lg:text-4xl md:text-3xl">Seamless Accounting with <br />
                         AI-Enhanced Human Expertise</h1>
                         <p className="pt-2">Effortless and Accurate Bookkeeping for Your Business</p></div>
                     <div className="my-4 p-3 flex gap-5 justify-center items-center">
@@ -143,7 +141,7 @@ const HomePage = () => {
                             profiles
                         }
                     </div>
-                    <div ref={horizontalRefRight} className="w-[140rem] my-2.5 flex gap-5 justify-start items-center">
+                    <div ref={horizontalRefRight} className="w-[140rem] my-2.5 flex gap-5 justify-start items-center -ml-96">
                         {
                             profiles
                         }
