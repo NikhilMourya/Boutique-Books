@@ -56,24 +56,31 @@ const HomePage = () => {
         const horizontalElementLeft = horizontalRefLeft.current;
         const horizontalElementRight = horizontalRefRight.current;
 
-        gsap.to(horizontalElementLeft, {
+        let t1 = gsap.timeline({
+            scrollTrigger: {
+                trigger: scrollContainer,
+                scrub: 1,
+                markers: true,
+                start: 'top 60%',
+                end: 'top 20%'
+            }
+        })
+
+        t1.to(scrollContainer, {
+            scale: 1,
+            opacity: 1,
+            duration: 1.2,
+        });
+
+        t1.to(horizontalElementLeft, {
             xPercent: -20,
             ease: "none",
-            scrollTrigger: {
-                trigger: scrollContainer,
-                scrub: 1,
-            }
-        });
+        },1);
 
-        gsap.to(horizontalElementRight, {
+        t1.to(horizontalElementRight, {
             xPercent: 20,
             ease: "none",
-            scrollTrigger: {
-                trigger: scrollContainer,
-                scrub: 1,
-
-            }
-        });
+        },1);
 
 
         let keyboardTimline = gsap.timeline({
@@ -91,17 +98,17 @@ const HomePage = () => {
             y: 20,
         })
         keyboardTimline.fromTo('#keyboard-hand',
-            {   y: 20,display:'none' },
+            { y: 20, display: 'none' },
             {
-                display:'block',
-                y:-40
+                display: 'block',
+                y: -40
             }
         )
         keyboardTimline.to('#keyboard-hand',
-            {   y: 200,display:'none',opacity:0 },
+            { y: 200, display: 'none', opacity: 0 },
         )
 
-        keyboardTimline.to('#keyboard-img',{
+        keyboardTimline.to('#keyboard-img', {
             width: '50%',
         })
 
@@ -130,7 +137,7 @@ const HomePage = () => {
                         </button>
                     </div>
                 </main>
-                <div className="container" ref={scrollContainerRef}>
+                <div className="-translate-y-28 opacity-0 scale-125" ref={scrollContainerRef}>
                     <div ref={horizontalRefLeft} className="w-[140rem] my-2.5 flex gap-5 justify-start items-center">
                         {
                             profiles
