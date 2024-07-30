@@ -28,13 +28,13 @@ export default function PricingPage() {
 
       <section className="px-16 sm:min-h-[400px] grid grid-cols-1 gap-16 md:grid-cols-2 lg:grid-cols-3 justify-evenly">
         {pricingCarts.map(
-          ({ title, desc, montlyRate, yearlyRate, customPricing }) => (
+          ({ title, desc, montlyRate, yearlyRate, customPricing }, idx) => (
             <div
               className="card grid items-center text-left gap-y-0 shadow-lg shadow-primary rounded-3xl"
               key={title}
             >
               <h3 className="font-semibold text-2xl">{title}</h3>
-              <p className="self-start">{desc}</p>
+              <p className={idx == 2 && 'self-start'}>{desc}</p>
 
               {montlyRate && (
                 <p>
