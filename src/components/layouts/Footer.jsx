@@ -43,7 +43,6 @@ export default function Footer() {
         trigger:'#footer-img-container',
         start:'top 50%',
         end:'top 45%',
-        markers:true,
       }
     })
 

@@ -10,7 +10,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 const LadyScroll = () => {
     const ladyRef = useRef(null);
-    const ladyRefOverlay = useRef(null)
+    const ladyRefOverlay = useRef(null);
     const ladyRefOverlayContent = useRef(null)
 
     useLayoutEffect(() => {
@@ -45,66 +45,6 @@ const LadyScroll = () => {
             width: '50%',
             duration: 2000,
         })
-
-        // t1.from(LadyRefElement,{
-        //     width: '80%',
-        //     duration: 2000,
-        // })
-
-        // gsap.to('#underline-divider',{
-        //     width: '80%',
-        //     duration: 2000,
-        //     scrollTrigger:{
-        //         trigger:'#underline-divider',
-        //         start:'top 40%',
-        //         // pin:true,
-        //         scrub: true,
-        //         end:'top 20%',
-        //         markers:true
-                
-        //     }
-        // })
-
-        // let t2 = gsap.timeline({
-        //     scrollTrigger: {
-        //         trigger: ".test",
-        //         start: 'top 0%',
-        //         scrub: true,
-        //         markers: true,
-        //         end: 'top 30%',
-        //     }
-        // })
-
-        // t2.to(LadyRefElement,{
-        //     position:'fixed',
-        //     top:"0px",
-        //     marginTop:"0px"
-        // })
-
-        // t2.to('#underline-divider', {
-        //     width: '50%',
-        //     duration: 2000,
-        // })
-        // t1.fromTo(ladyRefOverlayContentElement, { opacity: 0 }, {
-        //     opacity: 1,
-        //     delay: 1,
-        //     duration: 2000,
-        // });
-
-        // gsap.fromTo(ladyRefOverlayContentElement, { opacity: "0" }, {
-        //     opacity: "0.7",
-        //     duration: 2,
-        //     ease: "none",
-        //     scrollTrigger: {
-        //         trigger: ".test",
-        //         start: 'top center',
-        //         end: 'top',
-        //         scrub: true,
-        //     }
-        // });
-
-
-
     }, [])
     return (
         <>
@@ -116,7 +56,7 @@ const LadyScroll = () => {
                             <div className="black-overlay" ref={ladyRefOverlay}>
                                 <div className="px-48 p-32 h-screen w-full" ref={ladyRefOverlayContent}>
                                     <div className="mx-auto text-white">
-                                        <h1 className="my-10 text-6xl">Effortless Accounting <br />
+                                        <h1 className="my-10 text-5xl font-primary">Effortless Accounting <br />
                                             with Human and AI Precision</h1>
                                         <div className="center mx-auto">
                                             <div id='underline-divider' className="w-1/5 h-1 rounded-full bg-white"></div>
