@@ -1,3 +1,26 @@
+import ModelImg from '../assets/images/home/female-with-laptop.png';
+import P1 from '../assets/images/pricing/P1-Icon.png';
+import P2 from '../assets/images/pricing/P2-Icon.png';
+import P3 from '../assets/images/pricing/P3-Icon.png';
+import PlaceholderLogo from '../assets/images/pricing/placeholderLogo.png';
+
+const whyChooseUs = [
+  {
+    title: 'Expert Human Support',
+    desc: 'Our team of seasoned accountants provides you with personalized support, ensuring that your unique financial needs are met. By combining the best of human expertise with the efficiency of AI, we offer a comprehensive and responsive service tailored to your business.',
+    imgURL: P1,
+  },
+  {
+    title: 'AI-Enhanced Accuracy',
+    desc: 'Our cutting-edge AI technology delivers unparalleled precision in your accounting processes. By minimizing errors and automating routine tasks, we save you valuable time and significantly reduce the stress associated with financial management.',
+    imgURL: P2,
+  },
+  {
+    title: 'Transparent Pricing',
+    desc: 'We believe in clear and upfront pricing with no hidden fees. Our transparent pricing model allows you to understand exactly what you are paying for, enabling you to plan your finances with confidence and avoid unexpected costs.',
+    imgURL: P3,
+  },
+];
 const pricingCarts = [
   {
     title: 'Essential Plan',
@@ -17,6 +40,7 @@ const pricingCarts = [
     customPricing: 'Custom Pricing',
   },
 ];
+
 export default function PricingPage() {
   return (
     <main className="flex flex-col gap-y-16 py-16">
@@ -30,7 +54,7 @@ export default function PricingPage() {
         {pricingCarts.map(
           ({ title, desc, montlyRate, yearlyRate, customPricing }, idx) => (
             <div
-              className="card grid items-center text-left gap-y-0 shadow-lg shadow-primary rounded-3xl"
+              className="card grid items-center text-left gap-y-0 shadow-md border border-primary/40 shadow-primary rounded-3xl"
               key={title}
             >
               <h3 className="font-semibold text-2xl">{title}</h3>
@@ -61,6 +85,49 @@ export default function PricingPage() {
             </div>
           )
         )}
+      </section>
+
+      <section class="flex flex-col justify-center items-center relative min-h-[801px] my-20">
+        <img src={ModelImg} className="w-full absolute" />
+
+        <div
+          className="w-[80%] grid rounded-2xl p-20  text-white mx-auto md:h-[648px] bg-black/60 drop-shadow-sm"
+          style={{
+            boxShadow: '0px 0px 11px 5px #060606cf',
+          }}
+        >
+          <h2 className="text-5xl text-center">Why Choose Us?</h2>
+          <section className="flex gap-20">
+            {whyChooseUs.map(({ title, desc, imgURL }) => (
+              <div
+                key={imgURL}
+                className="text-left flex flex-col gap-y-5 justify-center"
+              >
+                <img
+                  src={imgURL}
+                  className="w-[80px] block mx-auto"
+                  alt={title}
+                />
+                <h3 className="text-2xl">{title}</h3>
+                <p className="leading-tight">{desc}</p>
+              </div>
+            ))}
+          </section>
+        </div>
+      </section>
+
+      <section className="container mx-auto md:px-20 flex flex-col gap-y-20 py-20">
+        <h2 className="text-5xl text-center">As seen in</h2>
+
+        <div className="flex flex-wrap justify-center gap-20">
+          <img src={PlaceholderLogo} className="block mx-auto" />
+          <img src={PlaceholderLogo} className="block mx-auto" />
+          <img src={PlaceholderLogo} className="block mx-auto" />
+          <img src={PlaceholderLogo} className="block mx-auto" />
+          <img src={PlaceholderLogo} className="block mx-auto" />
+          <img src={PlaceholderLogo} className="block mx-auto" />
+          <img src={PlaceholderLogo} className="block mx-auto" />
+        </div>
       </section>
     </main>
   );
