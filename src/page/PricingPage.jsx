@@ -88,7 +88,7 @@ export default function PricingPage() {
       </section>
 
       <section class="flex flex-col justify-center items-center relative min-h-[801px] my-20">
-        <img src={ModelImg} className="w-full absolute" />
+        <img src={ModelImg} className="w-full absolute brightness-50" />
 
         <div
           className="w-[80%] grid rounded-2xl p-20  text-white mx-auto md:h-[648px] bg-black/60 drop-shadow-sm"
