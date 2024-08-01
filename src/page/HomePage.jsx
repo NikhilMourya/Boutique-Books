@@ -126,7 +126,9 @@ const HomePage = () => {
                     end: 'top -20%',
                     markers: true,
                     pin: true,
-                    // pinSpacing:false,
+                    pinSpacing:false,
+                    // anticipatePin: 1,
+                    // fastScrollEnd:false,
                 }
             })
 
@@ -235,7 +237,7 @@ const HomePage = () => {
                                 <div className="black-overlay" id="lady-laptop-overlay">
                                     <div className="p-10 w-3/5 mx-auto" >
                                         <div className="mx-auto text-white">
-                                            <div className="mt-32">
+                                            <div className="mt-16">
                                                 <h1 className="my-7 text-4xl font-primary">What our firm offers </h1>
                                                 <p className="my-7 text-lg opacity-0" id="lady-laptop-subtitle">We offer comprehensive AI-driven accounting services for effortless financial management.</p>
                                             </div>
@@ -271,7 +273,7 @@ const HomePage = () => {
                         </div>
                     </div>
                 </section>
-                <section className="py-20 p-10 mx-28">
+                <section className="py-20 p-10 mx-28 my-32">
                     <div className="grid grid-cols-3 gap-5">
                         <FeedbackCard />
                         <FeedbackCard />

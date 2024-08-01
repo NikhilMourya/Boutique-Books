@@ -5,20 +5,20 @@ const FeedbackCard = ({ feedback, fbTitle, fbSubTitle }) => {
                 <div>
                     <div className="flex justify-start my-2">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M8.58275e-07 24L1.90735e-06 -1.04907e-06L23.8125 -8.19588e-09L8.58275e-07 24Z" fill="url(#paint0_linear_112_444)" fill-opacity="0.4" />
+                            <path d="M8.58275e-07 24L1.90735e-06 -1.04907e-06L23.8125 -8.19588e-09L8.58275e-07 24Z" fill="url(#paint0_linear_112_444)" fillOpacity="0.4" />
                             <defs>
                                 <linearGradient id="paint0_linear_112_444" x1="12" y1="-5.24537e-07" x2="12" y2="24" gradientUnits="userSpaceOnUse">
-                                    <stop stop-color="#87CEEB" />
-                                    <stop offset="1" stop-color="#CAF0FF" />
+                                    <stop stopColor="#87CEEB" />
+                                    <stop offset="1" stopColor="#CAF0FF" />
                                 </linearGradient>
                             </defs>
                         </svg>
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M8.58275e-07 24L1.90735e-06 -1.04907e-06L23.8125 -8.19588e-09L8.58275e-07 24Z" fill="url(#paint0_linear_112_444)" fill-opacity="0.4" />
+                            <path d="M8.58275e-07 24L1.90735e-06 -1.04907e-06L23.8125 -8.19588e-09L8.58275e-07 24Z" fill="url(#paint0_linear_112_444)" fillOpacity="0.4" />
                             <defs>
                                 <linearGradient id="paint0_linear_112_444" x1="12" y1="-5.24537e-07" x2="12" y2="24" gradientUnits="userSpaceOnUse">
-                                    <stop stop-color="#87CEEB" />
-                                    <stop offset="1" stop-color="#CAF0FF" />
+                                    <stop stopColor="#87CEEB" />
+                                    <stop offset="1" stopColor="#CAF0FF" />
                                 </linearGradient>
                             </defs>
                         </svg>
