@@ -8,6 +8,7 @@ import gsap from 'gsap';
 // import { useGSAP } from '@gsap/react';
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import LadyScroll from "../components/Homepage/LadyScroll";
+import FeedbackCard from "../components/shared/FeedbackCard";
 
 
 gsap.registerPlugin(ScrollTrigger);
@@ -53,99 +54,113 @@ const HomePage = () => {
 
 
     useLayoutEffect(() => {
-        const scrollContainer = scrollContainerRef.current;
-        const horizontalElementLeft = horizontalRefLeft.current;
-        const horizontalElementRight = horizontalRefRight.current;
 
-        let t1 = gsap.timeline({
-            scrollTrigger: {
-                trigger: scrollContainer,
-                scrub: 1,
-                start: 'top 60%',
-                end: 'top 20%'
-            }
-        })
+        let ctx = gsap.context(() => {
+            // all your GSAP animation code here
+            const scrollContainer = scrollContainerRef.current;
+            const horizontalElementLeft = horizontalRefLeft.current;
+            const horizontalElementRight = horizontalRefRight.current;
 
-        t1.to(scrollContainer, {
-            scale: 1,
-            opacity: 1,
-            duration: 1.2,
+            let t1 = gsap.timeline({
+                scrollTrigger: {
+                    trigger: scrollContainer,
+                    scrub: 1,
+                    start: 'top 60%',
+                    end: 'top 20%'
+                }
+            })
+
+            t1.to(scrollContainer, {
+                scale: 1,
+                opacity: 1,
+                duration: 1.2,
+            });
+
+            t1.to(horizontalElementLeft, {
+                xPercent: -20,
+                ease: "none",
+            }, 1);
+
+            t1.to(horizontalElementRight, {
+                xPercent: 20,
+                ease: "none",
+            }, 1);
+
+
+            let keyboardTimline = gsap.timeline({
+                scrollTrigger: {
+                    trigger: '.keyboard-container',
+                    start: 'top -5%',
+                    end: 'top -20%',
+                    scrub: 4,
+                    // pin:true,
+                }
+            })
+            keyboardTimline.fromTo('#keyboard-img', { y: -60 }, {
+                width: '60%',
+                y: 20,
+            })
+            keyboardTimline.fromTo('#keyboard-bubble', { display: 'none', opacity: 0 }, { display: 'flex', opacity: 1 })
+            keyboardTimline.fromTo('#keyboard-hand',
+                { y: 20, display: 'none' },
+                {
+                    display: 'block',
+                    y: -40
+                }
+            )
+            keyboardTimline.to('#keyboard-hand',
+                { y: 200, display: 'none', opacity: 0 },
+            )
+
+            keyboardTimline.to('#keyboard-img', {
+                width: '50%',
+            })
+
+
+
+            let ladyLaptopTimline = gsap.timeline({
+                scrollTrigger: {
+                    trigger: "#lady-laptop-container",
+                    start: 'top 0%',
+                    scrub: 3,
+                    end: 'top -20%',
+                    markers: true,
+                    pin: true,
+                    // pinSpacing:false,
+                }
+            })
+
+
+            ladyLaptopTimline.to("#lady-laptop", {
+                width: "100%",
+                duration: 1.2,
+            });
+
+            ladyLaptopTimline.fromTo("#lady-laptop-overlay", { opacity: 0 }, {
+                opacity: 1,
+                duration: 1,
+            })
+
+            ladyLaptopTimline.to('#lady-laptop-subtitle', {
+                opacity: 1,
+                duration: 1,
+            })
+
+            ladyLaptopTimline.to("#ladyLaptopGraph", {
+                scale: 1,
+                opacity: 1,
+                duration: 1.2,
+            });
         });
 
-        t1.to(horizontalElementLeft, {
-            xPercent: -20,
-            ease: "none",
-        }, 1);
-
-        t1.to(horizontalElementRight, {
-            xPercent: 20,
-            ease: "none",
-        }, 1);
-
-
-        let keyboardTimline = gsap.timeline({
-            scrollTrigger: {
-                trigger: '.keyboard-container',
-                start: 'top -5%',
-                end: 'top -20%',
-                scrub: 4,
-                // pin:true,
-            }
-        })
-        keyboardTimline.fromTo('#keyboard-img', { y: -60 }, {
-            width: '60%',
-            y: 20,
-        })
-        keyboardTimline.fromTo('#keyboard-hand',
-            { y: 20, display: 'none' },
-            {
-                display: 'block',
-                y: -40
-            }
-        )
-        keyboardTimline.to('#keyboard-hand',
-            { y: 200, display: 'none', opacity: 0 },
-        )
-
-        keyboardTimline.to('#keyboard-img', {
-            width: '50%',
-        })
-
-
-
-        // let ladyLaptopTimline = gsap.timeline({
-        //     scrollTrigger: {
-        //         trigger: "#ladyLaptopTimline",
-        //         start: 'top 10%',
-        //         scrub: true,
-        //         end: 'top -10%',
-        //         markers: true,
-        //     }
-        // })
-
-
-        // ladyLaptopTimline.to("#lady-laptop", {
-        //     width: "100%",
-        //     duration: 2000,
-        // });
-
-        // ladyLaptopTimline.fromTo("#lady-laptop-overlay", { opacity: 0 }, {
-        //     opacity: 1,
-        //     duration: 2000,
-        // })
-
-
-        // ladyLaptopTimline.fromTo('#underline-divider1', { width: '20%' }, {
-        //     width: '50%',
-        //     duration: 2000,
-        // })
+        return () => ctx.revert(); // <- cleanup!
 
     }, [])
 
 
     return (
         <>
-            <section className="w-full relative">
+            <section className="w-full relative bg-white">
                 <main className="py-32">
                     <div><h1 className="font-primary lg:text-4xl md:text-3xl">Seamless Accounting with <br />
                         AI-Enhanced Human Expertise</h1>
@@ -198,7 +213,7 @@ const HomePage = () => {
                             <img id="keyboard-hand" src={Finger} className="absolute right-56 -bottom-36" />
                         </div>
                     </div>
-                    <div className="absolute top-52 flex justify-between w-full z-0">
+                    <div className="absolute top-52 flex justify-between w-full z-0" id="keyboard-bubble">
                         <div className="relative">
                             <div className="h-72 w-72 homepage-circle">
 
@@ -212,8 +227,8 @@ const HomePage = () => {
                     </div>
 
                 </div>
-                <section className='relative overflow-hidden' id="ladyLaptopTimline">
-                    <div className=" mx-auto" id="lady-laptop">
+                <section className='relative overflow-hidden'id="lady-laptop-container">
+                    <div className=" mx-auto w-[80%]" id="lady-laptop">
                         <div className="mx-auto relative" >
                             <div className="center relative z-0">
                                 <img className="w-full h-full" src={ladyWithLaptop} />
@@ -222,9 +237,9 @@ const HomePage = () => {
                                         <div className="mx-auto text-white">
                                             <div className="mt-32">
                                                 <h1 className="my-7 text-4xl font-primary">What our firm offers </h1>
-                                                <p className="my-7 text-lg ">We offer comprehensive AI-driven accounting services for effortless financial management.</p>
+                                                <p className="my-7 text-lg opacity-0" id="lady-laptop-subtitle">We offer comprehensive AI-driven accounting services for effortless financial management.</p>
                                             </div>
-                                            <div className="relative w-full p-5 center my-10">
+                                            <div className="relative w-full p-5 center my-10 opacity-0 scale-125" id="ladyLaptopGraph">
                                                 <div className="absolute bg-black opacity-60 w-full h-full blur-sm p-5 z-0">
                                                 </div>
                                                 <div className="relative z-10 p-5">
@@ -256,8 +271,12 @@ const HomePage = () => {
                         </div>
                     </div>
                 </section>
-                <section className="">
-
+                <section className="py-20 p-10 mx-28">
+                    <div className="grid grid-cols-3 gap-5">
+                        <FeedbackCard />
+                        <FeedbackCard />
+                        <FeedbackCard />
+                    </div>
                 </section>
                 {/* <div className="h-screen w-full border-2 border-red-200"></div> */}
             </section >

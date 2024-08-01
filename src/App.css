@@ -3,6 +3,7 @@
 @tailwind utilities;
 
 body {
+  overflow-x: hidden;
   height: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
@@ -41,5 +42,5 @@ div:focus {
   padding: 2rem; */
   width: 100%;
   text-align: center;
-  overflow: hidden;
+  
 }
