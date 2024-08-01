@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import FooterLogo from '../../assets/images/layouts/footer-logo.png';
 import Logo from '../../assets/images/layouts/logo.png';
 import BOUTIQUE0 from '../../assets/images/footer/BOUTIQUE-0.png';
@@ -71,7 +72,7 @@ export default function Footer() {
                 key={index}
                 className="cursor-pointer hover:opacity-90 transition-all"
               >
-                <a href={item.href}>{item.text}</a>
+                <Link to={item.href}>{item.text}</Link>
               </li>
             ))}
           </ul>
@@ -84,7 +85,7 @@ export default function Footer() {
                 key={index}
                 className="cursor-pointer hover:opacity-90 transition-all"
               >
-                <a href={item.href}>{item.text}</a>
+                <Link to={item.href}>{item.text}</Link>
               </li>
             ))}
           </ul>
