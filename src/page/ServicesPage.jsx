@@ -56,9 +56,9 @@ const ServicesPage = () => {
 
     const [slideIndex, setSlideIndex] = useState(0);
     const [updateCount, setUpdateCount] = useState(0);
-    const [activeHeading,SetActiveHeading] = useState(data[0].heading);
-    const [activeContent,SetActiveContent] = useState(data[0].content);
-    let sliderRef = useRef(null);
+    const [activeHeading, SetActiveHeading] = useState(data[0].heading);
+    const [activeContent, SetActiveContent] = useState(data[0].content);
+    let sliderRefBG = useRef(null);
     let sliderRefMain = useRef(null);
 
 
@@ -73,19 +73,17 @@ const ServicesPage = () => {
         SetActiveContent(data[current].content);
         SetActiveHeading(data[current].heading)
         // console.log()
-        sliderRef.slickGoTo(slideIndex);
+        sliderRefBG.slickGoTo(current);
     };
 
     var SliderSettings = {
-        dots: true,
+        dots: false,
         // fade:true,
         infinite: true,
         speed: 500,
         slidesToShow: 1,
         slidesToScroll: 1,
         arrows: true,
-        // slidesToShow: 2,
-        // slidesToScroll: 2,
         beforeChange: handleBeforeChange,
         afterChange: handleAfterChange,
     };
@@ -99,7 +97,6 @@ const ServicesPage = () => {
         slidesToScroll: 1,
         afterChange: () => setUpdateCount(updateCount + 1),
         beforeChange: (current, next) => setSlideIndex(next)
-
     };
 
     return (
@@ -111,7 +108,7 @@ const ServicesPage = () => {
                             <div className="center relative z-0">
                                 <div className="w-full h-full">
                                     <Slider {...SliderSettingsBg} ref={slider => {
-                                        sliderRef = slider;
+                                        sliderRefBG = slider;
                                     }}>
                                         {data.map((item, index) => (
                                             <div key={index}>
@@ -135,8 +132,8 @@ const ServicesPage = () => {
                                                 <div className="col-span-4 px-5">
                                                     <div className="mt-32">
                                                         <Slider {...SliderSettings} ref={slider => {
-                                        sliderRefMain = slider;
-                                    }}>
+                                                            sliderRefMain = slider;
+                                                        }}>
                                                             {data.map((item, index) => (
                                                                 <div key={index}>
                                                                     <img src={item.image} className="object-cover w-full h-auto" />
