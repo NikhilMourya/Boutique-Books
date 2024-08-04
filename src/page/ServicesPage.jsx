@@ -56,7 +56,11 @@ const ServicesPage = () => {
 
     const [slideIndex, setSlideIndex] = useState(0);
     const [updateCount, setUpdateCount] = useState(0);
+    const [activeHeading,SetActiveHeading] = useState(data[0].heading);
+    const [activeContent,SetActiveContent] = useState(data[0].content);
     let sliderRef = useRef(null);
+    let sliderRefMain = useRef(null);
+
 
     const handleBeforeChange = (current, next) => {
         console.log("Before Change - Current Slide:", current);
@@ -66,6 +70,9 @@ const ServicesPage = () => {
     const handleAfterChange = (current) => {
         // setSlideIndex(current);
         console.log("Current Slide:", current);
+        SetActiveContent(data[current].content);
+        SetActiveHeading(data[current].heading)
+        // console.log()
         sliderRef.slickGoTo(slideIndex);
     };
 
@@ -120,23 +127,16 @@ const ServicesPage = () => {
                                             <h1 className="mb-10 text-2xl opacity-80 font-primary text-left">Our Services</h1>
                                             <div className="grid grid-cols-10 gap-5">
                                                 <div className="col-span-6">
-                                                    <h1 className="mb-10 text-6xl font-medium font-primary text-left">Bookkeeping</h1>
+                                                    <h1 className="mb-10 text-6xl font-medium font-primary text-left">{activeHeading}</h1>
                                                     <p className="text-left">
-                                                        At Boutique Books, we pair our customers with a dedicated, highly
-                                                        skilled bookkeeper and we provide comprehensive bookkeeping services
-                                                        tailored to meet the unique needs of our clients. From meticulous data
-                                                        entry to detailed financial reporting, our team handles all aspects of
-                                                        bookkeeping with precision and expertise. Whether it's tracking income
-                                                        and expenses, reconciling accounts, or managing accounts payable
-                                                        and receivable, we ensure that your financial records are accurate
-                                                        and up-to-date. Please note that while we provide a wide range of
-                                                        bookkeeping services, we do not offer payroll processing as part of
-                                                        our standard offerings.
+                                                        {activeContent}
                                                     </p>
                                                 </div>
                                                 <div className="col-span-4 px-5">
                                                     <div className="mt-32">
-                                                        <Slider {...SliderSettings}>
+                                                        <Slider {...SliderSettings} ref={slider => {
+                                        sliderRefMain = slider;
+                                    }}>
                                                             {data.map((item, index) => (
                                                                 <div key={index}>
                                                                     <img src={item.image} className="object-cover w-full h-auto" />
