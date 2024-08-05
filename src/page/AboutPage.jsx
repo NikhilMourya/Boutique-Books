@@ -68,7 +68,7 @@ export default function AboutPage() {
         </H1>
       </section>
 
-      <div className="bg-primary w-full overflow-x-auto flex gap-5">
+      <div className="lg:ml-20 lg:rounded-tl-[50px] bg-primary w-full overflow-x-auto flex gap-5">
         {paras.map((para, index) => (
           <div className="flex-shrink-0 w-[70%] max-h-full p-5" key={index}>
             <p className="text-white">{para}</p>
