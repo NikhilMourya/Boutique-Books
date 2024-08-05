@@ -54,7 +54,7 @@ export default function PricingPage() {
         {pricingCarts.map(
           ({ title, desc, montlyRate, yearlyRate, customPricing }, idx) => (
             <div
-              className="card grid gap-y-5 items-center text-left md:gap-y-0 shadow-md border border-primary/40 shadow-primary rounded-3xl"
+              className="card p-5 grid gap-y-5 items-center text-left md:gap-y-0 shadow-md border border-primary/40 shadow-primary rounded-3xl"
               key={title}
             >
               <h3 className="font-semibold text-2xl">{title}</h3>
