@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useLayoutEffect } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -10,9 +10,12 @@ import BookKeepingBG from "../assets/images/services/BookKeeping-bg.png";
 import BusinessAdvisoryBG from "../assets/images/services/BusinessAdvisory-bg.png"
 import FinancialOperationBG from "../assets/images/services/FinancialOperation-bg.png"
 import TaxBG from "../assets/images/services/Tax-bg.png"
+import gsap from 'gsap';
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 
 
+gsap.registerPlugin(ScrollTrigger);
 
 
 
@@ -77,20 +80,20 @@ const ServicesPage = () => {
     };
 
     var SliderSettings = {
-        dots: false,
+        dots: true,
         // fade:true,
         infinite: true,
         speed: 500,
-        slidesToShow: 1,
+        slidesToShow: 2,
         slidesToScroll: 1,
-        arrows: true,
+        arrows: false,
         beforeChange: handleBeforeChange,
         afterChange: handleAfterChange,
     };
 
     var SliderSettingsBg = {
         dots: false,
-        // fade:true,
+        fade: true,
         infinite: true,
         speed: 500,
         slidesToShow: 1,
@@ -98,6 +101,21 @@ const ServicesPage = () => {
         afterChange: () => setUpdateCount(updateCount + 1),
         beforeChange: (current, next) => setSlideIndex(next)
     };
+
+    useLayoutEffect(() => {
+
+        let ctx = gsap.context(() => {
+            gsap.from('.service-heading',{
+                opacity:0,
+                y:20,
+                duration:0.5
+            })
+        });
+
+        return () => ctx.revert(); // <- cleanup!
+
+    }, [])
+
 
     return (
         <>
@@ -119,18 +137,18 @@ const ServicesPage = () => {
                                 </div>
                                 {/* <img className="w-full h-full" src={activeBg(0)} /> */}
                                 <div className="black-overlay" >
-                                    <div className="p-20 h-screen w-full">
+                                    <div className="p-20 pr-0 h-screen w-full">
                                         <div className="mx-auto text-white">
                                             <h1 className="mb-10 text-2xl opacity-80 font-primary text-left">Our Services</h1>
                                             <div className="grid grid-cols-10 gap-5">
                                                 <div className="col-span-6">
-                                                    <h1 className="mb-10 text-6xl font-medium font-primary text-left">{activeHeading}</h1>
+                                                    <h1 className="mb-10 text-6xl font-medium font-primary text-left service-heading">{activeHeading}</h1>
                                                     <p className="text-left">
                                                         {activeContent}
                                                     </p>
                                                 </div>
                                                 <div className="col-span-4 px-5">
-                                                    <div className="mt-32">
+                                                    <div className="mt-40">
                                                         <Slider {...SliderSettings} ref={slider => {
                                                             sliderRefMain = slider;
                                                         }}>

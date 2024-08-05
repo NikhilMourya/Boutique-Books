@@ -93,3 +93,6 @@
 ::-webkit-scrollbar {
    display: none;
 }
+.slick-slide {
+    padding: 0 10px; 
+  }
