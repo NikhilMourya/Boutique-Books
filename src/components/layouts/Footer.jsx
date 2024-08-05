@@ -108,7 +108,7 @@ export default function Footer() {
       </div>
       <div
         id="footer-img-container"
-        className="px-10 flex justify-center w-full"
+        className="hidden px-10 lg:flex justify-center w-full"
       >
         <div className="flex justify-start gap-1 flex-row w-10/12">
           <img
