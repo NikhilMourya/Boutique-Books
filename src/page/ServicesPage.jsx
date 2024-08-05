@@ -74,7 +74,8 @@ const ServicesPage = () => {
         // setSlideIndex(current);
         console.log("Current Slide:", current);
         SetActiveContent(data[current].content);
-        SetActiveHeading(data[current].heading)
+        SetActiveHeading(data[current].heading);
+        animate();
         // console.log()
         sliderRefBG.slickGoTo(current);
     };
@@ -102,14 +103,22 @@ const ServicesPage = () => {
         beforeChange: (current, next) => setSlideIndex(next)
     };
 
+    const animate = () => {
+        gsap.from('.service-heading', {
+            // opacity: 0,
+            y: 20,
+            duration: 0.5
+        })
+    }
+
     useLayoutEffect(() => {
 
         let ctx = gsap.context(() => {
-            gsap.from('.service-heading',{
-                opacity:0,
-                y:20,
-                duration:0.5
-            })
+            // gsap.from('.service-heading',{
+            //     opacity:0,
+            //     y:20,
+            //     duration:0.5
+            // })
         });
 
         return () => ctx.revert(); // <- cleanup!
