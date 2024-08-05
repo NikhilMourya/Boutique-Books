@@ -76,21 +76,21 @@ export default function Header() {
         position: 'static',
         top: 'auto',
         boxShadow: 'none',
-      }),
-        gsap.to('header', {
-          borderRadius: '50px',
-          duration: 0.5,
-          position: 'fixed',
-          top: '10',
-          boxShadow:
-            '0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1)',
-          scrollTrigger: {
-            trigger: 'header',
-            start: 'top top',
-            end: 'bottom top',
-            scrub: true,
-          },
-        });
+      });
+      gsap.to('header', {
+        borderRadius: '50px',
+        duration: 0.5,
+        position: 'fixed',
+        top: '10',
+        boxShadow:
+          '0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1)',
+        scrollTrigger: {
+          trigger: 'header',
+          start: 'top top',
+          end: 'bottom top',
+          scrub: true,
+        },
+      });
     });
 
     return () => ctx.revert(); // <- cleanup!
