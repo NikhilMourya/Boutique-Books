@@ -67,18 +67,19 @@ export default function AboutPage() {
           <span>Origin</span> <span className="-ml-9">Story</span>
         </H1>
       </section>
-      {/* <section className="bg-primary w-full h-96 overflow-x-auto">
-        {paras.map((para) => (
-          <p className="w-[800px]" key={para}>
-            {para}
-          </p>
+
+      <div className="bg-primary w-full overflow-x-auto flex gap-5">
+        {paras.map((para, index) => (
+          <div className="flex-shrink-0 w-[70%] max-h-full p-5" key={index}>
+            <p className="text-white">{para}</p>
+          </div>
         ))}
-      </section> */}
+      </div>
 
       <section className="bg-primary flex flex-col gap-y-10 md:gap-y-16 py-16 px-5 md:px-24 text-white">
         <H1>Our Core Values</H1>
 
-        <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
           {coreValues.map(({ title, imgUrl }) => (
             <div
               key={imgUrl}
@@ -89,7 +90,7 @@ export default function AboutPage() {
               <span className="text-black text-lg text-left mt-2">{title}</span>
             </div>
           ))}
-        </section>
+        </div>
       </section>
 
       <section className="container mx-auto px-16">
