@@ -3,6 +3,7 @@ import P1 from '../assets/images/pricing/P1-Icon.png';
 import P2 from '../assets/images/pricing/P2-Icon.png';
 import P3 from '../assets/images/pricing/P3-Icon.png';
 import PlaceholderLogo from '../assets/images/pricing/placeholderLogo.png';
+import H1 from '../components/H1';
 
 const whyChooseUs = [
   {
@@ -43,18 +44,22 @@ const pricingCarts = [
 
 export default function PricingPage() {
   return (
-    <main className="flex flex-col gap-y-16 py-16">
-      <section className="container px-5 flex flex-col items-center">
-        <h2 className="text-3xl md:text-5xl text-center leading-relaxed">
-          Transparent Pricing for <br /> Hassle-Free Accounting Solutions
-        </h2>
+    <main className="flex flex-col gap-y-16 md:gap-y-24 py-16 md:py-24">
+      <section className="container mx-auto px-5 flex flex-col items-center">
+        <h1
+          className="text-3xl md:text-5xl text-center"
+          style={{ lineHeight: 1.5 }}
+        >
+          Transparent Pricing for <br className="hidden md:block" /> Hassle-Free
+          Accounting Solutions
+        </h1>
       </section>
 
       <section className="px-5 md:px-16 sm:min-h-[400px] grid grid-cols-1 gap-y-16 gap-x-5 md:grid-cols-2 lg:grid-cols-3 justify-center">
         {pricingCarts.map(
           ({ title, desc, montlyRate, yearlyRate, customPricing }, idx) => (
             <div
-              className="card p-5 grid gap-y-5 items-center text-left md:gap-y-0 shadow-md border border-primary/40 shadow-primary rounded-3xl"
+              className="card p-10 grid gap-y-5 items-center text-left md:gap-y-0 shadow-md border border-primary/40 shadow-primary rounded-3xl"
               key={title}
             >
               <h3 className="font-semibold text-2xl">{title}</h3>
@@ -87,20 +92,20 @@ export default function PricingPage() {
         )}
       </section>
 
-      <section class="flex flex-col justify-center items-center relative md:min-h-[801px] my-20">
+      <section class="flex flex-col justify-center items-center relative md:min-h-[800px]">
         <img
           src={ModelImg}
           className="w-full h-full object-cover absolute brightness-50"
         />
 
         <div
-          className="w-[80%] grid rounded-2xl p-20  text-white mx-auto md:h-[648px] bg-black/60 drop-shadow-sm"
+          className="w-[80%] grid rounded-2xl gap-y-10 p-14 md:p-20 my-10  text-white mx-auto md:h-[648px] bg-black/60 drop-shadow-sm"
           style={{
             boxShadow: '0px 0px 11px 5px #060606cf',
           }}
         >
           <h2 className="text-2xl md:text-5xl text-center">Why Choose Us?</h2>
-          <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-20">
+          <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-14 md:gap-20">
             {whyChooseUs.map(({ title, desc, imgURL }) => (
               <div
                 key={imgURL}
@@ -119,8 +124,8 @@ export default function PricingPage() {
         </div>
       </section>
 
-      <section className="container mx-auto md:px-20 flex flex-col gap-y-20 py-20">
-        <h2 className="text-5xl text-center">As seen in</h2>
+      <section className="container mx-auto md:px-20 flex flex-col gap-y-20">
+        <H1>As seen in</H1>
 
         <div className="flex flex-wrap justify-center gap-20">
           <img src={PlaceholderLogo} className="block mx-auto" />
