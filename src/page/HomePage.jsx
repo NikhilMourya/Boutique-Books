@@ -65,7 +65,7 @@ const HomePage = () => {
                 scrollTrigger: {
                     trigger: scrollContainer,
                     scrub: 1,
-                    start: 'top 60%',
+                    start: 'top 70%',
                     end: 'top 20%'
                 }
             })
@@ -163,7 +163,7 @@ const HomePage = () => {
     return (
         <>
             <section className="w-full relative bg-white">
-                <main className="py-32">
+                <main className="py-32 my-20">
                     <div><h1 className="font-primary lg:text-4xl md:text-3xl">Seamless Accounting with <br />
                         AI-Enhanced Human Expertise</h1>
                         <p className="pt-2">Effortless and Accurate Bookkeeping for Your Business</p></div>
