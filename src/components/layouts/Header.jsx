@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import MainLogo from './../../assets/images/layouts/main-logo.png';
 const navItems = [
   { text: 'Home', href: '/' },
+  { text: 'About Us', href: '/about-us' },
   { text: 'Services', href: '/services' },
   { text: 'Our Methods', href: '/methods' },
   { text: 'Pricing', href: '/pricing' },

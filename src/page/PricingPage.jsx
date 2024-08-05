@@ -44,17 +44,17 @@ const pricingCarts = [
 export default function PricingPage() {
   return (
     <main className="flex flex-col gap-y-16 py-16">
-      <section className="flex flex-col items-center">
-        <h2 className="text-5xl text-center">
-          Transparent Pricing for Hassle-Free Accounting Solutions
+      <section className="container px-5 flex flex-col items-center">
+        <h2 className="text-3xl md:text-5xl text-center leading-relaxed">
+          Transparent Pricing for <br /> Hassle-Free Accounting Solutions
         </h2>
       </section>
 
-      <section className="px-16 sm:min-h-[400px] grid grid-cols-1 gap-16 md:grid-cols-2 lg:grid-cols-3 justify-evenly">
+      <section className="px-5 md:px-16 sm:min-h-[400px] grid grid-cols-1 gap-y-16 gap-x-5 md:grid-cols-2 lg:grid-cols-3 justify-center">
         {pricingCarts.map(
           ({ title, desc, montlyRate, yearlyRate, customPricing }, idx) => (
             <div
-              className="card grid items-center text-left gap-y-0 shadow-md border border-primary/40 shadow-primary rounded-3xl"
+              className="card grid gap-y-5 items-center text-left md:gap-y-0 shadow-md border border-primary/40 shadow-primary rounded-3xl"
               key={title}
             >
               <h3 className="font-semibold text-2xl">{title}</h3>
@@ -87,8 +87,11 @@ export default function PricingPage() {
         )}
       </section>
 
-      <section class="flex flex-col justify-center items-center relative min-h-[801px] my-20">
-        <img src={ModelImg} className="w-full absolute brightness-50" />
+      <section class="flex flex-col justify-center items-center relative md:min-h-[801px] my-20">
+        <img
+          src={ModelImg}
+          className="w-full h-full object-cover absolute brightness-50"
+        />
 
         <div
           className="w-[80%] grid rounded-2xl p-20  text-white mx-auto md:h-[648px] bg-black/60 drop-shadow-sm"
@@ -96,8 +99,8 @@ export default function PricingPage() {
             boxShadow: '0px 0px 11px 5px #060606cf',
           }}
         >
-          <h2 className="text-5xl text-center">Why Choose Us?</h2>
-          <section className="flex gap-20">
+          <h2 className="text-2xl md:text-5xl text-center">Why Choose Us?</h2>
+          <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-20">
             {whyChooseUs.map(({ title, desc, imgURL }) => (
               <div
                 key={imgURL}
@@ -105,11 +108,11 @@ export default function PricingPage() {
               >
                 <img
                   src={imgURL}
-                  className="w-[80px] block mx-auto"
+                  className="w-[50px] md:w-[80px] block mx-auto"
                   alt={title}
                 />
-                <h3 className="text-2xl">{title}</h3>
-                <p className="leading-tight">{desc}</p>
+                <h3 className="texl-xl md:text-2xl">{title}</h3>
+                <p className="leading-tight text-base">{desc}</p>
               </div>
             ))}
           </section>
