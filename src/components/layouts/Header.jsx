@@ -1,5 +1,7 @@
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import MainLogo from './../../assets/images/layouts/main-logo.png';
+
 const navItems = [
   { text: 'Home', href: '/' },
   { text: 'About Us', href: '/about-us' },
@@ -9,12 +11,14 @@ const navItems = [
 ];
 
 export default function Header() {
+  const [isOpen, setIsOpen] = useState(false);
   return (
-    <header className="container flex items-center justify-between mx-auto px-16 py-2">
+    <header className="container flex items-center justify-between mx-auto px-14 py-2">
       <Link to={'/'}>
         <img src={MainLogo} className="h-20" />
       </Link>
-      <nav className="">
+      {/* Desktop nav */}
+      <nav className="hidden lg:block">
         <ul className="flex gap-x-10 items-center list-none">
           {navItems.map((item, index) => (
             <li
@@ -28,6 +32,11 @@ export default function Header() {
             Contact Us
           </li>
         </ul>
+      </nav>
+
+      {/* Moblie nav */}
+      <nav className="lg:hidden" onClick={() => setIsOpen(!isOpen)}>
+        {isOpen ? 'open' : 'close'}
       </nav>
     </header>
   );

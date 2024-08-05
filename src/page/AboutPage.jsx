@@ -61,10 +61,10 @@ export default function AboutPage() {
   const [teamImg, setTeamImg] = useState(team[0].imgURL);
   return (
     <main className="flex flex-col gap-y-24 py-24">
-      <section className="container mx-auto flex gap-x-24 px-16 items-center">
+      <section className="container mx-auto flex flex-col-reverse lg:flex-row gap-y-10 md:gap-x-24 lg:px-16 items-center">
         <img src={AboutImg} alt="" />
-        <H1 className="text-8xl flex flex-col gap-y-5">
-          <span>Origin</span> <span className="-ml-9">Story</span>
+        <H1 className="lg:text-8xl flex lg:flex-col space-x-3 lg:-space-x-5 gap-y-5">
+          <span>Origin</span> <span>Story</span>
         </H1>
       </section>
 
@@ -83,7 +83,7 @@ export default function AboutPage() {
           {coreValues.map(({ title, imgUrl }) => (
             <div
               key={imgUrl}
-              className="flex flex-col space-y-2 p-5 rounded-2xl bg-white"
+              className="flex w-11/12 lg:w-full mx-auto flex-col space-y-2 p-5 rounded-2xl bg-white"
               style={{ boxShadow: '0px 3px 3px 0px rgba(0, 0, 0, 0.15)' }}
             >
               <img src={imgUrl} className="w-full rounded-lg" />
@@ -93,22 +93,24 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="container mx-auto px-16">
+      <section className="container mx-auto lg:px-16">
         <H1>Meet the team</H1>
 
-        <div className="flex gap-x-20 gap-y-10 items-center justify-between pt-10">
+        <div className="flex flex-col-reverse lg:flex-row gap-x-20 gap-y-10 items-center justify-between pt-10">
           <div className="w-full flex flex-col border-t border-b">
             {team.map(({ id, name, role, imgURL }) => (
               <div
-                className="cursor-pointer group hover:bg-primary px-5 transition-all ease-linear duration-300 grid min-h-16 grid-cols-[15%,60%,25%] text-left items-center justify-between border-t border-b"
+                className="grid grid-cols-[10%,55%,45%] lg:grid-cols-[15%,60%,25%] cursor-pointer group hover:bg-primary px-5 transition-all ease-linear duration-300 min-h-16 text-left items-center justify-between border-t border-b"
                 key={id}
                 onClick={() => setTeamImg(imgURL)}
               >
-                <h4 className="text-3xl group-hover:text-white text-[#8D8D8D]">
+                <h4 className="text-lg lg:text-3xl group-hover:text-white text-[#8D8D8D]">
                   {id.toString().padStart(2, '0')}
                 </h4>
-                <h4 className="text-2xl group-hover:text-white">{name}</h4>
-                <h5 className="text-xl group-hover:text-white text-[#8D8D8D]">
+                <h4 className="text-lg lg:text-2xl group-hover:text-white">
+                  {name}
+                </h4>
+                <h5 className="text-lg lg:text-xl group-hover:text-white text-[#8D8D8D]">
                   {role}
                 </h5>
               </div>

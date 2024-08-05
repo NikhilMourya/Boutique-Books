@@ -1,10 +1,10 @@
-import ProfileCard from "../components/Homepage/ProfileCard";
-import ladyWithLaptop from "../assets/images/home/female-with-laptop.png"
-import Graph from "../assets/images/home/Graph.png"
-import Keyboard from "../assets/images/home/keyboard.png"
-import Finger from "../assets/images/home/finger.png"
-import { useLayoutEffect, useRef } from 'react';
 import gsap from 'gsap';
+import { useLayoutEffect, useRef } from 'react';
+import ladyWithLaptop from "../assets/images/home/female-with-laptop.png";
+import Finger from "../assets/images/home/finger.png";
+import Graph from "../assets/images/home/Graph.png";
+import Keyboard from "../assets/images/home/keyboard.png";
+import ProfileCard from "../components/Homepage/ProfileCard";
 // import { useGSAP } from '@gsap/react';
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import LadyScroll from "../components/Homepage/LadyScroll";
@@ -273,8 +273,8 @@ const HomePage = () => {
                         </div>
                     </div>
                 </section>
-                <section className="py-20 p-10 mx-28 my-32">
-                    <div className="grid grid-cols-3 gap-5">
+                <section className="py-20 p-10 md:mx-28 md:my-32">
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
                         <FeedbackCard />
                         <FeedbackCard />
                         <FeedbackCard />

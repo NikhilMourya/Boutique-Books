@@ -23,6 +23,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 const navigation = [
   { text: 'Home', href: '/' },
+  { text: 'About Us', href: '/about-us' },
   { text: 'Services', href: '/services' },
   { text: 'Our Methods', href: '/methods' },
   { text: 'Pricing', href: '/pricing' },
