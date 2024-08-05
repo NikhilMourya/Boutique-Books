@@ -5,9 +5,13 @@ import InnovationImg from '../assets/images/about/Innovation.png';
 import PersomalDevelopementImg from '../assets/images/about/Persomal-Developement.png';
 import RelationshipsImg from '../assets/images/about/Relationships.png';
 import Team1 from '../assets/images/about/team-1.png';
+import Team2 from '../assets/images/about/team-2.png';
+import Team3 from '../assets/images/about/team-3.png';
+import Team4 from '../assets/images/about/team-4.png';
 import TeamWorkImg from '../assets/images/about/Team-Work.png';
 import WomenEmpowermentImg from '../assets/images/about/Women-Empowerment.png';
 import H1 from '../components/H1';
+
 const paragraphs = [
   'Boutique Books was born from a passion for delivering unparalleled service and a deep-seated desire to revolutionize the bookkeeping industry.  With over 25 years of experience serving customers in the bookkeeping realm, I found myself at a crossroads.  The traditional hourly billing model was not only cumbersome and time-consuming but also counterproductive for both myself and my customers.',
   'The incessant tracking of hours and tedious billing processes detracted from the quality of service I aimed to provide. It hindered my ability to fully engage with customers and offer the comprehensive support they truly needed.  It became abundantly clear that a paradigm shift was necessary—a shift towards a model that prioritized efficiency, value, and client satisfaction above all else.',
@@ -31,35 +35,35 @@ const team = [
     id: 1,
     name: 'Tajni Diller',
     role: 'Founder & CEO',
-    imgURL: '',
+    imgURL: Team1,
   },
   {
     id: 2,
     name: 'Raquel Pryor',
     role: 'Team Lead',
-    imgURL: '',
+    imgURL: Team2,
   },
   {
     id: 3,
     name: 'Savannah Clarke',
     role: 'Staff Bookkeeper',
-    imgURL: '',
+    imgURL: Team3,
   },
   {
     id: 4,
     name: 'Sharon Teraji-Cole',
     role: 'Staff Bookkeeper',
-    imgURL: '',
+    imgURL: Team4,
   },
 ];
 export default function AboutPage() {
   const [paras, setParas] = useState(paragraphs);
-  const [teams, setTeams] = useState(team);
+  const [teamImg, setTeamImg] = useState(team[0].imgURL);
   return (
     <main className="flex flex-col gap-y-16 py-16">
-      <section className="container mx-auto flex gap-x-16 px-16 items-center">
+      <section className="container mx-auto flex gap-x-24 px-16 items-center">
         <img src={AboutImg} alt="" />
-        <H1 className="text-8xl flex flex-col">
+        <H1 className="text-8xl flex flex-col gap-y-5">
           <span>Origin</span> <span className="-ml-9">Story</span>
         </H1>
       </section>
@@ -93,21 +97,24 @@ export default function AboutPage() {
 
         <div className="flex gap-x-20 gap-y-10 items-center justify-between pt-10">
           <div className="w-full flex flex-col border-t border-b">
-            {teams.map(({ id, name, role, imgURL }) => (
+            {team.map(({ id, name, role, imgURL }) => (
               <div
-                className="grid min-h-16 grid-cols-[15%,60%,25%] text-left items-center justify-between border-t border-b"
+                className="cursor-pointer group hover:bg-primary px-5 transition-all ease-linear duration-300 grid min-h-16 grid-cols-[15%,60%,25%] text-left items-center justify-between border-t border-b"
                 key={id}
+                onClick={() => setTeamImg(imgURL)}
               >
-                <h4 className="text-3xl text-[#8D8D8D]">
+                <h4 className="text-3xl group-hover:text-white text-[#8D8D8D]">
                   {id.toString().padStart(2, '0')}
                 </h4>
-                <h4 className="text-2xl">{name}</h4>
-                <h5 className="text-xl text-[#8D8D8D]">{role}</h5>
+                <h4 className="text-2xl group-hover:text-white">{name}</h4>
+                <h5 className="text-xl group-hover:text-white text-[#8D8D8D]">
+                  {role}
+                </h5>
               </div>
             ))}
           </div>
           <div className="flex place-items-center">
-            <img src={Team1} className="w-[360px]" />
+            <img src={teamImg} />
           </div>
         </div>
       </section>
