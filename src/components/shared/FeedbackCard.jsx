@@ -1,7 +1,7 @@
 const FeedbackCard = ({ feedback, fbTitle, fbSubTitle }) => {
   return (
     <>
-      <div className="w-full feedback-card-shadow rounded-lg p-3 lg:p-6 lg:py-10  bg-white  text-left">
+      <div className="w-full feedback-card-shadow rounded-lg p-3 lg:p-6 lg:py-10 bg-white text-left">
         <div>
           <div className="flex justify-start my-2">
             <svg
@@ -57,7 +57,7 @@ const FeedbackCard = ({ feedback, fbTitle, fbSubTitle }) => {
               </defs>
             </svg>
           </div>
-          <p className="text-black my-5 lg:text-xl md:text-lg">
+          <p className="text-black my-5 lg:text-xl md:text-lg text-sm">
             "Boutique Books transformed our accounting. Their AI precision and
             human expertise keep our books accurate and up-to-date. We've saved
             so much time."
