@@ -105,7 +105,7 @@ const HomePage = () => {
                     display: 'block',
                     y: -40
                 }
-            )
+            ) 
             keyboardTimline.to('#keyboard-hand',
                 { y: 200, display: 'none', opacity: 0 },
             )
