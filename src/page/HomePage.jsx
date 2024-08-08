@@ -122,7 +122,7 @@ const HomePage = () => {
                     start: 'top 0%',
                     scrub: 3,
                     end: 'top -20%',
-                    markers: true,
+                    // markers: true,
                     pin: true,
                     pinSpacing:false,
                 }
