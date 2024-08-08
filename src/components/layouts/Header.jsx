@@ -97,12 +97,12 @@ export default function Header() {
   }, []);
 
   useEffect(() => {
-    document.body.classList.toggle('overflow-hidden');
+    // document.body.classList.toggle('overflow-hidden');
   }, [isOpen]);
 
   return (
     <div className="fixed center top-0 z-20 w-full">
-      <header className="bg-white w-10/12 flex items-center justify-between px-14 py-2 ">
+      <header className="bg-white w-10/12 flex items-center justify-between lg:px-14 md:px-10 py-2 relative">
         <Link to={'/'}>
           <img src={MainLogo} className="h-20 relative z-20" />
         </Link>
@@ -114,10 +114,10 @@ export default function Header() {
                 key={index}
                 className="cursor-pointer hover:opacity-90 transition-all"
               >
-                <Link to={item.href}>{item.text}</Link>
+                <Link to={item.href} className='whitespace-nowrap'>{item.text}</Link>
               </li>
             ))}
-            <li className="cursor-pointer hover:bg-primary/90 transition-all bg-primary py-2 px-5 rounded-full">
+            <li className="whitespace-nowrap cursor-pointer hover:bg-primary/90 transition-all bg-primary py-2 px-5 rounded-full">
               Contact Us
             </li>
           </ul>
