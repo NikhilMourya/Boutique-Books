@@ -14,10 +14,7 @@ import gsap from 'gsap';
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 
-
 gsap.registerPlugin(ScrollTrigger);
-
-
 
 const Bgimages = [BookKeepingBG, BusinessAdvisoryBG, FinancialOperationBG, TaxBG]
 const images = [BookKeeping, BusinessAdvisory, FinancialOperation, Tax]
@@ -129,7 +126,7 @@ const ServicesPage = () => {
     return (
         <>
             <section className="bg-white">
-                <section className="relative">
+                <section className="relative mt-36">
                     <div className=" mx-auto w-full">
                         <div className="mx-auto relative" >
                             <div className="center relative z-0">
@@ -145,7 +142,7 @@ const ServicesPage = () => {
                                     </Slider>
                                 </div>
                                 {/* <img className="w-full h-full" src={activeBg(0)} /> */}
-                                <div className="black-overlay" >
+                                <div className="black-overlay rounded-t-2xl" >
                                     <div className="p-20 pr-0 h-screen w-full">
                                         <div className="mx-auto text-white">
                                             <h1 className="mb-10 text-2xl opacity-80 font-primary text-left">Our Services</h1>
