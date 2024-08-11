@@ -100,10 +100,10 @@ export default function Header() {
     if (isOpen) {
       document.body.classList.add('max-sm:overflow-hidden');
     } else {
-      document.body.classList.remove('overflow-hidden');
+      document.body.classList.remove('max-sm:overflow-hidden');
     }
     return () => {
-      document.body.classList.remove('overflow-hidden');
+      document.body.classList.remove('max-sm:overflow-hidden');
     };
   }, [isOpen]);
 
