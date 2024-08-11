@@ -5,6 +5,7 @@ import M3 from '../assets/images/methods/3.png';
 import M4 from '../assets/images/methods/4.png';
 import M5 from '../assets/images/methods/5.png';
 import M6 from '../assets/images/methods/6.png';
+import MenWithLaptop from '../assets/images/methods/men-with-laptop.jpg';
 import H1 from '../components/H1';
 
 const methods = [
@@ -53,8 +54,13 @@ export default function OurMethods() {
         </p>
       </section>
 
-      <div className="relative">
-        <section className="timelineContainer py-20">
+      <div className="relative overlay">
+        <img
+          src={MenWithLaptop}
+          alt=""
+          className="absolute w-full min-h-full object-cover -z-10"
+        />
+        <section className="py-20">
           {methods.map(({ title, desc, img }, idx) => (
             <div
               key={title}
