@@ -64,7 +64,7 @@ export default function OurMethods() {
           {methods.map(({ title, desc, img }, idx) => (
             <div
               key={title}
-              className="container p-10 w-3/4 mx-auto grid md:grid-cols-2 gap-y-5 justify-center text-white gap-x-20 items-center"
+              className="container p-10 w-3/4 mx-auto grid md:grid-cols-2 gap-y-5 justify-center text-white md:gap-x-32 items-center"
             >
               <section
                 className={`rounded-lg grid text-black bg-white gap-3 place-items-center overflow-hidden ${

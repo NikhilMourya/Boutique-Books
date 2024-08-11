@@ -98,7 +98,7 @@ export default function Header() {
 
   useEffect(() => {
     if (isOpen) {
-      document.body.classList.add('overflow-hidden');
+      document.body.classList.add('max-sm:overflow-hidden');
     } else {
       document.body.classList.remove('overflow-hidden');
     }
