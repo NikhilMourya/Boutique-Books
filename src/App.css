@@ -44,3 +44,7 @@ div:focus {
   text-align: center;
   
 }
+
+.timelineContainer::before{
+  background: url('./assets//images/methods/1.png');
+}

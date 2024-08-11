@@ -60,7 +60,7 @@ export default function AboutPage() {
   const [paras, setParas] = useState(paragraphs);
   const [teamImg, setTeamImg] = useState(team[0].imgURL);
   return (
-    <main className="flex flex-col gap-y-24 py-24">
+    <main className="flex flex-col gap-y-24 py-24 pt-36">
       <section className="container mx-auto flex flex-col-reverse lg:flex-row gap-y-10 md:gap-x-24 lg:px-16 items-center">
         <img src={AboutImg} alt="" />
         <H1 className="lg:text-8xl flex lg:flex-col space-x-3 lg:-space-x-5 gap-y-5">
