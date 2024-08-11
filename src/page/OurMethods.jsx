@@ -53,28 +53,30 @@ export default function OurMethods() {
         </p>
       </section>
 
-      <section className="timelineContainer py-20 bg-black/80">
-        {methods.map(({ title, desc, img }, idx) => (
-          <div
-            key={title}
-            className="container p-10 w-3/4 mx-auto grid md:grid-cols-2 gap-y-5 justify-center text-white gap-x-20 items-center"
-          >
-            <section
-              className={`rounded-lg grid text-black bg-white gap-3 place-items-center overflow-hidden ${
-                idx % 2 == 0 && 'md:order-1'
-              }`}
+      <div className="relative">
+        <section className="timelineContainer py-20">
+          {methods.map(({ title, desc, img }, idx) => (
+            <div
+              key={title}
+              className="container p-10 w-3/4 mx-auto grid md:grid-cols-2 gap-y-5 justify-center text-white gap-x-20 items-center"
             >
-              <img
-                src={img}
-                alt={title}
-                className=" object-cover rounded-lg rounded-b-none"
-              />
-              <p className="w-full pb-3 font-bold">{title}</p>
-            </section>
-            <p className="text-justify">{desc}</p>
-          </div>
-        ))}
-      </section>
+              <section
+                className={`rounded-lg grid text-black bg-white gap-3 place-items-center overflow-hidden ${
+                  idx % 2 == 0 && 'md:order-1'
+                }`}
+              >
+                <img
+                  src={img}
+                  alt={title}
+                  className=" object-cover rounded-lg rounded-b-none"
+                />
+                <p className="w-full pb-3 font-bold">{title}</p>
+              </section>
+              <p className="text-justify">{desc}</p>
+            </div>
+          ))}
+        </section>
+      </div>
     </main>
   );
 }

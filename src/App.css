@@ -46,5 +46,18 @@ div:focus {
 }
 
 .timelineContainer::before{
-  background: url('./assets//images/methods/1.png');
+  background: url('./assets//images/methods/men-with-laptop.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: "";
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  filter: brightness(0.3);
+  opacity: 0.8;
 }
+
