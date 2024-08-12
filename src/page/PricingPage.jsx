@@ -59,37 +59,37 @@ export default function PricingPage() {
           start: 'top 20%',
           end: 'top 0%',
           // pin: true,
-          markers: true
+          // markers: true
         }
       })
       t1.to('#lady-section', {
         width: '100%',
         duration: 1,
       })
-      // t1.from('#bg-overlay',{
-      //   opacity:0,
-      //   width:'120vw',
-      //   height:'120vh',
-      //   duration:1,
-      // })
-      // t1.from('.feature-icon0', {
-      //   x: '-200px',
-      //   y: '-200px',
-      //   opacity: 0,
-      //   duration:1,
-      // }, 0);
-      // t1.from('.feature-icon1', {
-      //   x: '200px',
-      //   y: '-200px',
-      //   opacity: 0,
-      //   duration:1,
-      // }, 0)
-      // t1.from('.feature-icon2', {
-      //   x: '200px',
-      //   y: '-200px',
-      //   opacity: 0,
-      //   duration:1,
-      // }, 0)
+      t1.from('#bg-overlay',{
+        opacity:0,
+        width:'120vw',
+        height:'120vh',
+        duration:1,
+      })
+      t1.from('.feature-icon0', {
+        x: '-200px',
+        y: '-200px',
+        opacity: 0,
+        duration:1,
+      }, 0);
+      t1.from('.feature-icon1', {
+        x: '200px',
+        y: '-200px',
+        opacity: 0,
+        duration:1,
+      }, 0)
+      t1.from('.feature-icon2', {
+        x: '200px',
+        y: '-200px',
+        opacity: 0,
+        duration:1,
+      }, 0)
       t1.from('.feature-title0', {
         x: '-200px',
         y: '-500px',

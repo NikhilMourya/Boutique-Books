@@ -20,11 +20,11 @@ const LadyScroll = () => {
 
         let t1 = gsap.timeline({
             scrollTrigger: {
-                trigger: ".test",
+                trigger: "#lady-wrapper",
                 start: 'top 40%',
                 scrub: true,
                 end: 'top 0%',
-                // markers:true,
+                markers:true,
                 // pin:true,
             }
         })
@@ -48,7 +48,7 @@ const LadyScroll = () => {
     }, [])
     return (
         <>
-            <section className='relative test'>
+            <section className='relative bg-dark-section' id='lady-wrapper'>
                 <div className=" mx-auto my-10 w-[80%]" ref={ladyRef}>
                     <div className="mx-auto relative" >
                         <div className="center relative z-0">

@@ -9,8 +9,34 @@ import OurMethods from './page/OurMethods';
 import PricingPage from './page/PricingPage';
 import ServicesPage from './page/ServicesPage';
 
+import gsap from 'gsap';
+import { useLayoutEffect, useRef } from 'react';
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+
+gsap.registerPlugin(ScrollTrigger);
+
 export default function App() {
   useScrollToTop();
+  useLayoutEffect(() => {
+
+
+    gsap.to('header',{
+      backgroundColor:'black',
+      duration:1.5,
+      color:'white',
+      ease:'back.out',
+      scrollTrigger: {
+        trigger: ".bg-dark-section",
+        start: 'top 20%',
+        scrub: 2,
+        end: 'top -50%',
+        markers: true,
+      }
+    })
+
+  }, [])
+
   return (
     <>
       <Header />

@@ -77,13 +77,15 @@ const HomePage = () => {
             });
 
             t1.to(horizontalElementLeft, {
-                xPercent: -20,
+                transform:'translateX(-40%)',
                 ease: "none",
+                repeat:-1
             }, 1);
 
             t1.to(horizontalElementRight, {
-                xPercent: 20,
+                transform:'translateX(40%)',
                 ease: "none",
+                repeat:-1
             }, 1);
 
 
@@ -124,7 +126,7 @@ const HomePage = () => {
                     start: 'top 0%',
                     scrub: 3,
                     end: 'top -20%',
-                    markers: true,
+                    // markers: true,
                     pin: true,
                     pinSpacing:false,
                     // anticipatePin: 1,
