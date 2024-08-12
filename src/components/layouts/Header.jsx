@@ -12,7 +12,7 @@ const navItems = [
   { text: 'Home', href: '/' },
   { text: 'About Us', href: '/about-us' },
   { text: 'Services', href: '/services' },
-  { text: 'Our Methods', href: '/methods' },
+  { text: 'Our Methods', href: '/our-methods' },
   { text: 'Pricing', href: '/pricing' },
 ];
 
@@ -97,7 +97,14 @@ export default function Header() {
   }, []);
 
   useEffect(() => {
-    document.body.classList.toggle('overflow-hidden');
+    if (isOpen) {
+      document.body.classList.add('max-sm:overflow-hidden');
+    } else {
+      document.body.classList.remove('max-sm:overflow-hidden');
+    }
+    return () => {
+      document.body.classList.remove('max-sm:overflow-hidden');
+    };
   }, [isOpen]);
 
   return (
@@ -132,7 +139,7 @@ export default function Header() {
 
           <ul
             className={`absolute top-0 pt-28 z-10 right-0 flex justify-start gap-y-8 transition-all ease-linear duration-200 w-full h-screen text-left bg-white flex-col gap-x-10 items-center list-none ${
-              isOpen ? 'translate-x-0' : 'translate-x-[100%]'
+              isOpen ? 'translate-x-0' : 'translate-x-[100vw]'
             }`}
           >
             {navItems.map((item, index) => (

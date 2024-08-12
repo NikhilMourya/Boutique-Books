@@ -44,3 +44,17 @@ div:focus {
   text-align: center;
   
 }
+
+
+
+.overlay::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgb(0, 0, 0); 
+  z-index: -10;
+  opacity: 0.8;
+}
