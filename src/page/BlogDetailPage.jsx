@@ -5,10 +5,10 @@ import { blogs } from '../assets/data/blogs';
 export default function BlogDetailsPage() {
   const { blogSlug } = useParams();
   const blog = blogs.filter((obj) => obj.title.includes(blogSlug))[0];
-  console.log(blogSlug);
-  // if (!blog) {
-  //   return <Navigate to={'/404'} replace />;
-  // }
+
+  if (!blog) {
+    return <Navigate to={'/404'} replace />;
+  }
 
   return (
     <main className="flex flex-col gap-y-24 py-24 pt-36">
