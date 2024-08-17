@@ -68,7 +68,7 @@ export const blogs = [
     image: blog6,
   },
   {
-    title: 'Starting a New Business or Side Gig? Your tax considerations . . .',
+    title: 'Starting a New Business or Side Gig',
     author: 'Tajni Diller',
     date: 'May 16',
     reading_time: '4 min read',

@@ -4,7 +4,7 @@ import { blogs } from '../assets/data/blogs';
 
 export default function BlogDetailsPage() {
   const { blogSlug } = useParams();
-  const blog = blogs.filter((obj) => obj.title.includes(blogSlug))[0];
+  const blog = blogs.filter((obj) => obj.title === blogSlug)[0];
 
   if (!blog) {
     return <Navigate to={'/404'} replace />;
