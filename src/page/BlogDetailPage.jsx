@@ -1,12 +1,14 @@
 import React from 'react';
-import { useNavigate, useParams } from 'react-router-dom';
+import { Navigate, useParams } from 'react-router-dom';
 import { blogs } from '../assets/data/blogs';
 
 export default function BlogDetailsPage() {
   const { blogSlug } = useParams();
-  const navigate = useNavigate();
   const blog = blogs.filter((obj) => obj.title === blogSlug)[0];
-  console.log(blogSlug);
+
+  if (!blog) {
+    return <Navigate to={'/404'} replace />;
+  }
 
   return (
     <main className="flex flex-col gap-y-24 py-24 pt-36">
