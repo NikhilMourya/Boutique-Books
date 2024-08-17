@@ -13,12 +13,12 @@ export default function BlogPage() {
           return (
             <Link
               to={`/blogs/${blog.title}`}
-              className="flex flex-col text-left mb-16 rounded-md overflow-hidden shadow-md border border-primary/40 shadow-primary min-h-[400px]"
+              className="flex flex-col text-left mb-16 rounded-md overflow-hidden shadow-md border border-primary/40 shadow-primary md:min-h-[560px]"
             >
               <img
                 src={blog.image}
                 alt={blog.title}
-                className="min-h-60 object-cover"
+                className="min-h-60 object-cover flex-1"
               />
               <div className="px-5 py-5 flex flex-col gap-y-5">
                 <h2 className="text-2xl line-clamp-2">{blog.title}</h2>
