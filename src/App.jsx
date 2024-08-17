@@ -18,24 +18,23 @@ gsap.registerPlugin(ScrollTrigger);
 
 export default function App() {
   useScrollToTop();
-  useLayoutEffect(() => {
+  // useLayoutEffect(() => {
 
 
-    gsap.to('header',{
-      backgroundColor:'black',
-      duration:1.5,
-      color:'white',
-      ease:'back.out',
-      scrollTrigger: {
-        trigger: ".bg-dark-section",
-        start: 'top 20%',
-        scrub: 2,
-        end: 'top -50%',
-        markers: true,
-      }
-    })
+  //   gsap.to('header',{
+  //     backgroundColor:'black',
+  //     duration:1.5,
+  //     color:'white',
+  //     ease:'back.out',
+  //     scrollTrigger: {
+  //       trigger: ".bg-dark-section",
+  //       start: 'top 20%',
+  //       scrub: 1,
+  //       end: 'top -50%',
+  //     }
+  //   })
 
-  }, [])
+  // }, [])
 
   return (
     <>

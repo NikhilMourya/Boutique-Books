@@ -11,6 +11,13 @@ import Team4 from '../assets/images/about/team-4.png';
 import TeamWorkImg from '../assets/images/about/Team-Work.png';
 import WomenEmpowermentImg from '../assets/images/about/Women-Empowerment.png';
 import H1 from '../components/H1';
+import gsap from 'gsap';
+import { useEffect, useRef } from 'react';
+import { useGSAP } from '@gsap/react';
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(useGSAP, ScrollTrigger);
+
 
 const paragraphs = [
   'Boutique Books was born from a passion for delivering unparalleled service and a deep-seated desire to revolutionize the bookkeeping industry.  With over 25 years of experience serving customers in the bookkeeping realm, I found myself at a crossroads.  The traditional hourly billing model was not only cumbersome and time-consuming but also counterproductive for both myself and my customers.',
@@ -59,23 +66,61 @@ const team = [
 export default function AboutPage() {
   const [paras, setParas] = useState(paragraphs);
   const [teamImg, setTeamImg] = useState(team[0].imgURL);
+
+  useEffect(() => {
+    let paras = document.querySelector('.horizontal-para');
+    let parasWidth = paras.offsetWidth;
+    // let amountToScroll = parasWidth - window.innerWidth;
+    // console.log(paras,parasWidth);
+
+    function getScrollAmount() {
+      let parasWidth = paras.scrollWidth;
+      return -(parasWidth - window.innerWidth);
+    }
+
+    let ctx = gsap.context(() => {
+
+      let t1 = gsap.timeline({
+        scrollTrigger: {
+          trigger: '.horizontal-para-wrapper',
+          markers: true,
+          start: 'top 60%',
+          end: () => `+=${getScrollAmount() * -1}`,
+          pin: true,
+          // pinSpacing:true,
+          scrub: 2,
+          invalidateOnRefresh: true
+        }
+      })
+      t1.to(paras, {
+        x: getScrollAmount,
+        duration: 1,
+        ease:'none'
+      },0)
+
+    });
+
+    return () => ctx.revert(); // <- cleanup!
+
+  }, [])
+
   return (
-    <main className="flex flex-col gap-y-24 py-24 pt-36">
-      <section className="container mx-auto flex flex-col-reverse lg:flex-row gap-y-10 md:gap-x-24 lg:px-16 items-center">
-        <img src={AboutImg} alt="" />
-        <H1 className="lg:text-8xl flex lg:flex-col space-x-3 lg:-space-x-5 gap-y-5">
+    <main className="py-24 pt-36">
+      <section id='top-sec' className="my-5 container mx-auto flex flex-col-reverse lg:flex-row gap-y-10 md:gap-x-24 lg:px-16 items-center">
+        <img src={AboutImg} className='h-60 w-auto' alt="" />
+        <H1 className="lg:text-7xl flex lg:flex-col space-x-3 lg:-space-x-5 gap-y-5">
           <span>Origin</span> <span>Story</span>
         </H1>
       </section>
-
-      <div className="lg:ml-20 lg:rounded-tl-[50px] bg-primary w-full overflow-x-auto flex gap-5">
-        {paras.map((para, index) => (
-          <div className="flex-shrink-0 w-[70%] max-h-full p-5" key={index}>
-            <p className="text-white">{para}</p>
-          </div>
-        ))}
+      <div className='horizontal-para-wrapper bg-primary'>
+        <div className="lg:ml-20 lg:rounded-tl-[50px] bg-primary  flex gap-5 horizontal-para" >
+          {paras.map((para, index) => (
+            <div className="flex-shrink-0 w-[50%] p-5" key={index}>
+              <p className="text-white text-left text-lg">{para}</p>
+            </div>
+          ))}
+        </div>
       </div>
-
       <section className="bg-primary flex flex-col gap-y-10 md:gap-y-16 py-16 px-5 md:px-24 text-white">
         <H1>Our Core Values</H1>
 

@@ -5,13 +5,13 @@ import Finger from "../assets/images/home/finger.png";
 import Graph from "../assets/images/home/Graph.png";
 import Keyboard from "../assets/images/home/keyboard.png";
 import ProfileCard from "../components/Homepage/ProfileCard";
-// import { useGSAP } from '@gsap/react';
+import { useGSAP } from '@gsap/react';
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import LadyScroll from "../components/Homepage/LadyScroll";
 import FeedbackCard from "../components/shared/FeedbackCard";
 
 
-gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(useGSAP, ScrollTrigger);
 
 
 const data = [
@@ -77,84 +77,84 @@ const HomePage = () => {
             });
 
             t1.to(horizontalElementLeft, {
-                transform:'translateX(-40%)',
+                transform: 'translateX(-40%)',
                 ease: "none",
-                repeat:-1
+                duration: 3,
             }, 1);
 
             t1.to(horizontalElementRight, {
-                transform:'translateX(40%)',
+                transform: 'translateX(40%)',
                 ease: "none",
-                repeat:-1
+                duration: 3,
             }, 1);
 
 
-            let keyboardTimline = gsap.timeline({
-                scrollTrigger: {
-                    trigger: '.keyboard-container',
-                    start: 'top -5%',
-                    end: 'top -20%',
-                    scrub: 4,
-                    // pin:true,
-                }
-            })
-            keyboardTimline.fromTo('#keyboard-img', { y: -60 }, {
-                width: '60%',
-                y: 20,
-            })
-            keyboardTimline.fromTo('#keyboard-bubble', { display: 'none', opacity: 0 }, { display: 'flex', opacity: 1 })
-            keyboardTimline.fromTo('#keyboard-hand',
-                { y: 20, display: 'none' },
-                {
-                    display: 'block',
-                    y: -40
-                }
-            )
-            keyboardTimline.to('#keyboard-hand',
-                { y: 200, display: 'none', opacity: 0 },
-            )
+            // let keyboardTimline = gsap.timeline({
+            //     scrollTrigger: {
+            //         trigger: '.keyboard-container',
+            //         start: 'top -5%',
+            //         end: 'top -20%',
+            //         scrub: 4,
+            //         // pin:true,
+            //     }
+            // })
+            // keyboardTimline.fromTo('#keyboard-img', { y: -60 }, {
+            //     width: '60%',
+            //     y: 20,
+            // })
+            // keyboardTimline.fromTo('#keyboard-bubble', { display: 'none', opacity: 0 }, { display: 'flex', opacity: 1 })
+            // keyboardTimline.fromTo('#keyboard-hand',
+            //     { y: 20, display: 'none' },
+            //     {
+            //         display: 'block',
+            //         y: -40
+            //     }
+            // )
+            // keyboardTimline.to('#keyboard-hand',
+            //     { y: 200, display: 'none', opacity: 0 },
+            // )
 
-            keyboardTimline.to('#keyboard-img', {
-                width: '50%',
-            })
+            // keyboardTimline.to('#keyboard-img', {
+            //     width: '50%',
+            // })
 
 
 
             let ladyLaptopTimline = gsap.timeline({
                 scrollTrigger: {
                     trigger: "#lady-laptop-container",
-                    start: 'top 0%',
-                    scrub: 3,
-                    end: 'top -20%',
-                    // markers: true,
-                    pin: true,
-                    pinSpacing:false,
+                    start: 'top 50%',
+                    scrub: 2,
+                    end: 'top 20%',
+                    markers: true,
+                    // pin: true,
+                    // pinSpacing:false,
                     // anticipatePin: 1,
                     // fastScrollEnd:false,
                 }
             })
 
 
-            ladyLaptopTimline.to("#lady-laptop", {
+            ladyLaptopTimline.to("lady-laptop-container", {
                 width: "100%",
                 duration: 1.2,
             });
 
-            ladyLaptopTimline.fromTo("#lady-laptop-overlay", { opacity: 0 }, {
-                opacity: 1,
-                duration: 1,
-            })
+            // ladyLaptopTimline.fromTo("#lady-laptop-overlay", { opacity: 0 }, {
+            //     opacity: 1,
+            //     duration: 1,
+            // })
 
-            ladyLaptopTimline.to('#lady-laptop-subtitle', {
-                opacity: 1,
-                duration: 1,
-            })
+            // ladyLaptopTimline.to('#lady-laptop-subtitle', {
+            //     opacity: 1,
+            //     duration: 1,
+            // })
 
-            ladyLaptopTimline.to("#ladyLaptopGraph", {
-                scale: 1,
-                opacity: 1,
-                duration: 1.2,
-            });
+            // ladyLaptopTimline.to("#ladyLaptopGraph", {
+            //     scale: 1,
+            //     opacity: 1,
+            //     duration: 1.2,
+            // });
         });
 
         return () => ctx.revert(); // <- cleanup!
@@ -231,10 +231,13 @@ const HomePage = () => {
                     </div>
 
                 </div>
-                <section className='relative overflow-hidden'id="lady-laptop-container">
+                <div className='border border-red-300 h-screen' id="lady-laptop-container">
+
+                </div>
+                {/* <section className='border border-red-300' id="lady-laptop-container">
                     <div className=" mx-auto w-[80%]" id="lady-laptop">
-                        <div className="mx-auto relative" >
-                            <div className="center relative z-0">
+                        <div className="mx-auto" >
+                            <div className="center relative">
                                 <img className="w-full h-full" src={ladyWithLaptop} />
                                 <div className="black-overlay" id="lady-laptop-overlay">
                                     <div className="p-10 w-3/5 mx-auto" >
@@ -276,13 +279,12 @@ const HomePage = () => {
                     </div>
                 </section>
                 <section className="py-20 p-10 md:mx-28 md:my-32">
-                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
                         <FeedbackCard />
                         <FeedbackCard />
                         <FeedbackCard />
                     </div>
-                </section>
-                {/* <div className="h-screen w-full border-2 border-red-200"></div> */}
+                </section> */}
             </section >
         </>
     )

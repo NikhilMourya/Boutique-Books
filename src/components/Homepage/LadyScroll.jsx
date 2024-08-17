@@ -24,7 +24,7 @@ const LadyScroll = () => {
                 start: 'top 40%',
                 scrub: true,
                 end: 'top 0%',
-                markers:true,
+                // markers:true,
                 // pin:true,
             }
         })
