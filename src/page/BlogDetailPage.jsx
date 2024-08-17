@@ -1,5 +1,5 @@
 import React from 'react';
-import { useParams } from 'react-router-dom';
+import { Navigate, useParams } from 'react-router-dom';
 import { blogs } from '../assets/data/blogs';
 
 export default function BlogDetailsPage() {
