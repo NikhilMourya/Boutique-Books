@@ -15,14 +15,18 @@ export default function BlogPage() {
               to={`/blogs/${blog.title}`}
               className="flex flex-col text-left mb-16 rounded-md overflow-hidden shadow-md border border-primary/40 shadow-primary min-h-[400px]"
             >
-              <img src={blog.image} alt={blog.title} className="" />
+              <img
+                src={blog.image}
+                alt={blog.title}
+                className="min-h-60 object-cover"
+              />
               <div className="px-5 py-5 flex flex-col gap-y-5">
                 <h2 className="text-2xl line-clamp-2">{blog.title}</h2>
                 <p className="line-clamp-3">{blog.introduction}</p>
 
                 <div className="grid place-items-end">
                   <Link
-                    className="px-5 py-1 border-2 bg-primary hover:bg-primary/90 transition-all border-primary rounded-full"
+                    className="px-5 py-1 border-2 bg-primary hover:bg-primary/90 transition-all border-primary rounded-full text-sm"
                     to={`/blogs/${blog.title}`}
                   >
                     Read More...

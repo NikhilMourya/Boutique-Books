@@ -11,6 +11,7 @@ import ServicesPage from './page/ServicesPage';
 
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import BlogDetailsPage from './page/BlogDetailPage';
 import BlogPage from './page/BlogPage';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -43,7 +44,8 @@ export default function App() {
         <Route path="/pricing" element={<PricingPage />} />
         <Route path="/services" element={<ServicesPage />} />
         <Route path="/our-methods" element={<OurMethods />} />
-        <Route path="/blog" element={<BlogPage />} />
+        <Route path="/blogs" element={<BlogPage />} />
+        <Route path="/blogs/:blog" element={<BlogDetailsPage />} />
       </Routes>
       <Footer />
     </>
