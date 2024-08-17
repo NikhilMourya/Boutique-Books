@@ -111,20 +111,20 @@ export default function Header() {
     <div className="fixed center top-0 z-20 w-full">
       <header className="bg-white w-10/12 flex items-center justify-between px-14 py-2 ">
         <Link to={'/'}>
-          <img src={MainLogo} className="h-20 relative z-20" />
+          <img src={MainLogo} className="h-16 relative z-20" />
         </Link>
         {/* Desktop nav */}
         <nav className="hidden lg:block">
-          <ul className="flex gap-x-10 items-center list-none">
+          <ul className="flex md:gap-x-5 lg:gap-x-10 items-center list-none">
             {navItems.map((item, index) => (
               <li
                 key={index}
                 className="cursor-pointer hover:opacity-90 transition-all"
               >
-                <Link to={item.href}>{item.text}</Link>
+                <Link to={item.href} className='whitespace-nowrap'>{item.text}</Link>
               </li>
             ))}
-            <li className="cursor-pointer hover:bg-primary/90 transition-all bg-primary py-2 px-5 rounded-full">
+            <li className="cursor-pointer whitespace-nowrap hover:bg-primary/90 transition-all bg-primary py-2 px-5 rounded-full">
               Contact Us
             </li>
           </ul>

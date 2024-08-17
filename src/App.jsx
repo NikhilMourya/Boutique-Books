@@ -12,6 +12,7 @@ import ServicesPage from './page/ServicesPage';
 import gsap from 'gsap';
 import { useLayoutEffect, useRef } from 'react';
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import CustomCursor from './components/Cursor';
 
 
 gsap.registerPlugin(ScrollTrigger);
@@ -38,6 +39,8 @@ export default function App() {
 
   return (
     <>
+
+      <CustomCursor />
       <Header />
       <Routes>
         <Route path="/" element={<HomePage />} />

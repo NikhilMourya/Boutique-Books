@@ -82,7 +82,7 @@ const ServicesPage = () => {
         // fade:true,
         infinite: true,
         speed: 500,
-        slidesToShow: 2,
+        slidesToShow: 1,
         slidesToScroll: 1,
         arrows: false,
         beforeChange: handleBeforeChange,
@@ -147,14 +147,14 @@ const ServicesPage = () => {
                                         <div className="mx-auto text-white">
                                             <h1 className="mb-10 text-2xl opacity-80 font-primary text-left">Our Services</h1>
                                             <div className="grid grid-cols-10 gap-5">
-                                                <div className="col-span-6">
+                                                <div className="md:col-span-7">
                                                     <h1 className="mb-10 text-6xl font-medium font-primary text-left service-heading">{activeHeading}</h1>
-                                                    <p className="text-left">
+                                                    <p className="text-left text-xl">
                                                         {activeContent}
                                                     </p>
                                                 </div>
-                                                <div className="col-span-4 px-5">
-                                                    <div className="mt-40">
+                                                <div className="md:col-span-3 px-5">
+                                                    <div className="mt-20">
                                                         <Slider {...SliderSettings} ref={slider => {
                                                             sliderRefMain = slider;
                                                         }}>

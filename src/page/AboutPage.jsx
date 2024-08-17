@@ -83,7 +83,7 @@ export default function AboutPage() {
       let t1 = gsap.timeline({
         scrollTrigger: {
           trigger: '.horizontal-para-wrapper',
-          markers: true,
+          // markers: true,
           start: 'top 60%',
           end: () => `+=${getScrollAmount() * -1}`,
           pin: true,
@@ -95,8 +95,29 @@ export default function AboutPage() {
       t1.to(paras, {
         x: getScrollAmount,
         duration: 1,
-        ease:'none'
-      },0)
+        ease: 'none'
+      })
+
+      let t2 = gsap.timeline({
+        scrollTrigger: {
+          trigger: '.about-value',
+          markers: true,
+          start: 'top 30%',
+          end: 'top 0%',
+          scrub: 3,
+        }
+      })
+
+      t2.from('.title-container', {
+        opacity: 0,
+        translateY:'70%'
+      })
+      t2.from('.title-container1', {
+        translateY:"70%",
+        opacity: 0,
+        delay:2,
+      })
+
 
     });
 
@@ -105,11 +126,11 @@ export default function AboutPage() {
   }, [])
 
   return (
-    <main className="py-24 pt-36">
+    <main className="py-24 pt-36 bg-white">
       <section id='top-sec' className="my-5 container mx-auto flex flex-col-reverse lg:flex-row gap-y-10 md:gap-x-24 lg:px-16 items-center">
         <img src={AboutImg} className='h-60 w-auto' alt="" />
-        <H1 className="lg:text-7xl flex lg:flex-col space-x-3 lg:-space-x-5 gap-y-5">
-          <span>Origin</span> <span>Story</span>
+        <H1 className="font-primary lg:text-7xl flex lg:flex-col space-x-3 lg:-space-x-5 gap-y-5">
+          <span className='font-primary'>Origin</span> <span className='font-primary'>Story</span>
         </H1>
       </section>
       <div className='horizontal-para-wrapper bg-primary'>
@@ -121,38 +142,51 @@ export default function AboutPage() {
           ))}
         </div>
       </div>
-      <section className="bg-primary flex flex-col gap-y-10 md:gap-y-16 py-16 px-5 md:px-24 text-white">
-        <H1>Our Core Values</H1>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-          {coreValues.map(({ title, imgUrl }) => (
-            <div
-              key={imgUrl}
-              className="flex w-11/12 lg:w-full mx-auto flex-col space-y-2 p-5 rounded-2xl bg-white"
-              style={{ boxShadow: '0px 3px 3px 0px rgba(0, 0, 0, 0.15)' }}
-            >
-              <img src={imgUrl} className="w-full rounded-lg" />
-              <span className="text-black text-lg text-left mt-2">{title}</span>
+      <section className="bg-primary py-40 px-5 md:px-24 text-white about-value" >
+        <div >
+          <div className='title-container'>
+            <H1 className={'my-14 font-primary'} >Our Core Values</H1>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+              {coreValues.slice(0, 3).map(({ title, imgUrl }) => (
+                <div
+                  key={imgUrl}
+                  className="flex w-8/12 lg:w-full mx-auto flex-col space-y-2 p-5 rounded-2xl bg-white"
+                  style={{ boxShadow: '0px 3px 3px 0px rgba(0, 0, 0, 0.15)' }}
+                >
+                  <img src={imgUrl} className="w-full rounded-lg" />
+                  <span className="text-black text-lg text-left mt-2">{title}</span>
+                </div>
+              ))}
             </div>
-          ))}
+          </div>
+          <div className="mt-5 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 title-container1">
+            {coreValues.slice(3, coreValues.length).map(({ title, imgUrl }) => (
+              <div
+                key={imgUrl}
+                className="flex w-11/12 lg:w-full mx-auto flex-col space-y-2 p-5 rounded-2xl bg-white"
+                style={{ boxShadow: '0px 3px 3px 0px rgba(0, 0, 0, 0.15)' }}
+              >
+                <img src={imgUrl} className="w-full rounded-lg" />
+                <span className="text-black text-lg text-left mt-2">{title}</span>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
-
-      <section className="container mx-auto lg:px-16">
-        <H1>Meet the team</H1>
-
+      <section className="container mx-auto lg:px-16 my-10">
+        <H1 className={'font-primary'}>Meet the team</H1>
         <div className="flex flex-col-reverse lg:flex-row gap-x-20 gap-y-10 items-center justify-between pt-10">
           <div className="w-full flex flex-col border-t border-b">
             {team.map(({ id, name, role, imgURL }) => (
               <div
                 className="grid grid-cols-[10%,55%,45%] lg:grid-cols-[15%,60%,25%] cursor-pointer group hover:bg-primary px-5 transition-all ease-linear duration-300 min-h-16 text-left items-center justify-between border-t border-b"
                 key={id}
-                onClick={() => setTeamImg(imgURL)}
+                onMouseEnter={() => setTeamImg(imgURL)}
               >
                 <h4 className="text-lg lg:text-3xl group-hover:text-white text-[#8D8D8D]">
                   {id.toString().padStart(2, '0')}
                 </h4>
-                <h4 className="text-lg lg:text-2xl group-hover:text-white">
+                <h4 className="font-primary text-lg lg:text-2xl group-hover:text-white">
                   {name}
                 </h4>
                 <h5 className="text-lg lg:text-xl group-hover:text-white text-[#8D8D8D]">

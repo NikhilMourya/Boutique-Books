@@ -89,34 +89,34 @@ const HomePage = () => {
             }, 1);
 
 
-            // let keyboardTimline = gsap.timeline({
-            //     scrollTrigger: {
-            //         trigger: '.keyboard-container',
-            //         start: 'top -5%',
-            //         end: 'top -20%',
-            //         scrub: 4,
-            //         // pin:true,
-            //     }
-            // })
-            // keyboardTimline.fromTo('#keyboard-img', { y: -60 }, {
-            //     width: '60%',
-            //     y: 20,
-            // })
-            // keyboardTimline.fromTo('#keyboard-bubble', { display: 'none', opacity: 0 }, { display: 'flex', opacity: 1 })
-            // keyboardTimline.fromTo('#keyboard-hand',
-            //     { y: 20, display: 'none' },
-            //     {
-            //         display: 'block',
-            //         y: -40
-            //     }
-            // )
-            // keyboardTimline.to('#keyboard-hand',
-            //     { y: 200, display: 'none', opacity: 0 },
-            // )
+            let keyboardTimline = gsap.timeline({
+                scrollTrigger: {
+                    trigger: '.keyboard-container',
+                    start: 'top -5%',
+                    end: 'top -20%',
+                    scrub: 4,
+                    // pin:true,
+                }
+            })
+            keyboardTimline.fromTo('#keyboard-img', { y: -60 }, {
+                width: '60%',
+                y: 20,
+            })
+            keyboardTimline.fromTo('#keyboard-bubble', { display: 'none', opacity: 0 }, { display: 'flex', opacity: 1 })
+            keyboardTimline.fromTo('#keyboard-hand',
+                { y: 20, display: 'none' },
+                {
+                    display: 'block',
+                    y: -40
+                }
+            )
+            keyboardTimline.to('#keyboard-hand',
+                { y: 200, display: 'none', opacity: 0 },
+            )
 
-            // keyboardTimline.to('#keyboard-img', {
-            //     width: '50%',
-            // })
+            keyboardTimline.to('#keyboard-img', {
+                width: '50%',
+            })
 
 
 
@@ -140,21 +140,21 @@ const HomePage = () => {
                 duration: 1.2,
             });
 
-            // ladyLaptopTimline.fromTo("#lady-laptop-overlay", { opacity: 0 }, {
-            //     opacity: 1,
-            //     duration: 1,
-            // })
+            ladyLaptopTimline.fromTo("#lady-laptop-overlay", { opacity: 0 }, {
+                opacity: 1,
+                duration: 1,
+            })
 
-            // ladyLaptopTimline.to('#lady-laptop-subtitle', {
-            //     opacity: 1,
-            //     duration: 1,
-            // })
+            ladyLaptopTimline.to('#lady-laptop-subtitle', {
+                opacity: 1,
+                duration: 1,
+            })
 
-            // ladyLaptopTimline.to("#ladyLaptopGraph", {
-            //     scale: 1,
-            //     opacity: 1,
-            //     duration: 1.2,
-            // });
+            ladyLaptopTimline.to("#ladyLaptopGraph", {
+                scale: 1,
+                opacity: 1,
+                duration: 1.2,
+            });
         });
 
         return () => ctx.revert(); // <- cleanup!
@@ -234,7 +234,7 @@ const HomePage = () => {
                 <div className='border border-red-300 h-screen' id="lady-laptop-container">
 
                 </div>
-                {/* <section className='border border-red-300' id="lady-laptop-container">
+                <section className='border border-red-300' id="lady-laptop-container">
                     <div className=" mx-auto w-[80%]" id="lady-laptop">
                         <div className="mx-auto" >
                             <div className="center relative">
@@ -284,7 +284,7 @@ const HomePage = () => {
                         <FeedbackCard />
                         <FeedbackCard />
                     </div>
-                </section> */}
+                </section>
             </section >
         </>
     )
