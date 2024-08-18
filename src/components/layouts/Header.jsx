@@ -110,7 +110,7 @@ export default function Header() {
 
   return (
     <div className="fixed center top-0 z-20 w-full">
-      <header className="bg-white w-10/12 flex items-center justify-between px-4 md:px-14 py-2 ">
+      <header className="relative bg-white w-10/12 flex items-center justify-between px-4 md:px-14 py-2 ">
         <Link to={'/'}>
           <img src={MainLogo} className="h-16 relative z-20" />
         </Link>
@@ -122,7 +122,7 @@ export default function Header() {
                 key={index}
                 className="cursor-pointer hover:opacity-90 transition-all"
               >
-                <Link to={item.href} className='whitespace-nowrap'>{item.text}</Link>
+                <Link to={item.href} className='whitespace-nowrap font-article'>{item.text}</Link>
               </li>
             ))}
             <li className="cursor-pointer whitespace-nowrap hover:bg-primary/90 transition-all bg-primary py-2 px-5 rounded-full">
@@ -133,7 +133,7 @@ export default function Header() {
 
         {/* Moblie nav */}
         <nav className="lg:hidden" onClick={() => setIsOpen(!isOpen)}>
-          <span className="absolute z-20 top-8">
+          <span className="">
             {' '}
             {!isOpen ? loginSVG : logoutSVG}
           </span>
@@ -146,7 +146,7 @@ export default function Header() {
             {navItems.map((item, index) => (
               <li
                 key={index}
-                className="cursor-pointer w-[65%] hover:opacity-90 transition-all"
+                className="cursor-pointer w-[65%] hover:opacity-90 transition-all font-article"
                 onClick={closeNav}
               >
                 <Link to={item.href}>{item.text}</Link>

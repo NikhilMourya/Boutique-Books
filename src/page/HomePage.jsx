@@ -126,7 +126,7 @@ const HomePage = () => {
                     start: 'top 50%',
                     scrub: 2,
                     end: 'top 20%',
-                    markers: true,
+                    // markers: true,
                     // pin: true,
                     // pinSpacing:false,
                     // anticipatePin: 1,
