@@ -16,8 +16,8 @@ export default function BlogDetailsPage() {
         <div className="flex flex-col text-left mb-16 rounded-md overflow-hidden">
           <img src={blog.image} alt={blog.title} className="" />
           <div className="px-5 py-5 flex flex-col gap-y-5">
-            <h2 className="text-2xl line-clamp-2">{blog.title}</h2>
-            <p className="line-clamp-3">{blog.introduction}</p>
+            <h2 className="text-4xl line-clamp-2 font-primary">{blog.title}</h2>
+            <p className="line-clamp-3 font-article text-lg">{blog.introduction}</p>
           </div>
         </div>
       </section>

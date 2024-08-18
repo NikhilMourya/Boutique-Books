@@ -44,9 +44,9 @@ export default function OurMethods() {
   return (
     <main className="flex flex-col gap-y-24 py-24 pt-36">
       <section className="container mx-auto flex flex-col gap-y-10 md:gap-x-24 lg:px-16 items-center">
-        <H1>How We Make It Happen?</H1>
+        <H1 className={'font-primary'}>How We Make It Happen?</H1>
 
-        <p>
+        <p className='font-article text-lg'>
           At Boutique Books, we blend the precision of AI with the expertise of
           real human accountants to deliver top-notch accounting services. Our
           proven methods ensure accuracy, efficiency, and a personalized touch,
@@ -76,9 +76,9 @@ export default function OurMethods() {
                   alt={title}
                   className=" object-cover rounded-lg rounded-b-none"
                 />
-                <p className="w-full pb-3 font-bold">{title}</p>
+                <p className="w-full pb-3 font-bold font-primary">{title}</p>
               </section>
-              <p className="text-justify">{desc}</p>
+              <p className="text-justify font-article">{desc}</p>
             </div>
           ))}
         </section>
