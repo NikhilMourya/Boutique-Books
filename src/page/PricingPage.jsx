@@ -1,12 +1,12 @@
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { useLayoutEffect } from 'react';
 import ModelImg from '../assets/images/home/female-with-laptop.png';
-import { useState, useRef, useLayoutEffect } from "react";
 import P1 from '../assets/images/pricing/P1-Icon.png';
 import P2 from '../assets/images/pricing/P2-Icon.png';
 import P3 from '../assets/images/pricing/P3-Icon.png';
 import PlaceholderLogo from '../assets/images/pricing/placeholderLogo.png';
 import H1 from '../components/H1';
-import gsap from 'gsap';
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -48,11 +48,8 @@ const pricingCarts = [
 ];
 
 export default function PricingPage() {
-
   useLayoutEffect(() => {
-
     let ctx = gsap.context(() => {
-
       let t1 = gsap.timeline({
         scrollTrigger: {
           trigger: '#lady-section',
@@ -60,54 +57,78 @@ export default function PricingPage() {
           end: 'top 0%',
           // pin: true,
           // markers: true
-        }
-      })
+        },
+      });
       t1.to('#lady-section', {
         width: '100%',
         duration: 1,
-      })
-      t1.from('#bg-overlay',{
-        opacity:0,
-        width:'120vw',
-        height:'120vh',
-        duration:1,
-      })
-      t1.from('.feature-icon0', {
-        x: '-200px',
-        y: '-200px',
+      });
+      t1.from('#bg-overlay', {
         opacity: 0,
-        duration:1,
-      }, 0);
-      t1.from('.feature-icon1', {
-        x: '200px',
-        y: '-200px',
-        opacity: 0,
-        duration:1,
-      }, 0)
-      t1.from('.feature-icon2', {
-        x: '200px',
-        y: '-200px',
-        opacity: 0,
-        duration:1,
-      }, 0)
-      t1.from('.feature-title0', {
-        x: '-200px',
-        y: '-500px',
-        opacity: 0,
-        duration:1,
-      }, 0)
-      t1.from('.feature-title1', {
-        x: '200px',
-        y: '300px',
-        opacity: 0,
-        duration:1,
-      }, 0)
-      t1.from('.feature-title2', {
-        x: '-200px',
-        y: '-300px',
-        opacity: 0,
-        duration:1,
-      }, 0)
+        width: '120vw',
+        height: '120vh',
+        duration: 1,
+      });
+      t1.from(
+        '.feature-icon0',
+        {
+          x: '-200px',
+          y: '-200px',
+          opacity: 0,
+          duration: 1,
+        },
+        0
+      );
+      t1.from(
+        '.feature-icon1',
+        {
+          x: '200px',
+          y: '-200px',
+          opacity: 0,
+          duration: 1,
+        },
+        0
+      );
+      t1.from(
+        '.feature-icon2',
+        {
+          x: '200px',
+          y: '-200px',
+          opacity: 0,
+          duration: 1,
+        },
+        0
+      );
+      t1.from(
+        '.feature-title0',
+        {
+          x: '-200px',
+          y: '-500px',
+          opacity: 0,
+          duration: 1,
+        },
+        0
+      );
+      t1.from(
+        '.feature-title1',
+        {
+          x: '200px',
+          y: '300px',
+          opacity: 0,
+          duration: 1,
+        },
+        0
+      );
+      t1.from(
+        '.feature-title2',
+        {
+          x: '-200px',
+          y: '-300px',
+          opacity: 0,
+          duration: 1,
+        },
+        0
+      );
 
       // t1.from('.feature-desc0', {
       //   x: '-300px',
@@ -127,12 +148,10 @@ export default function PricingPage() {
       //   opacity: 0,
       //   duration:1,
       // }, 0)
-
     });
 
     return () => ctx.revert(); // <- cleanup!
-
-  }, [])
+  }, []);
   return (
     <main className="flex flex-col gap-y-16 md:gap-y-24 py-16 md:py-24 bg-white">
       <section className="container my-10 mx-auto px-5 flex flex-col items-center">
@@ -149,7 +168,7 @@ export default function PricingPage() {
         {pricingCarts.map(
           ({ title, desc, montlyRate, yearlyRate, customPricing }, idx) => (
             <div
-              className="card p-10 grid gap-y-5 items-center text-left md:gap-y-0 shadow-md border border-primary/40 shadow-primary rounded-3xl"
+              className="card p-10 grid gap-y-5 items-center text-left md:gap-y-0 shadow-md border border-primary/40 shadow-primary rounded-3xl min-h-[400px]"
               key={title}
             >
               <h3 className="font-semibold text-2xl">{title}</h3>
@@ -182,33 +201,48 @@ export default function PricingPage() {
         )}
       </section>
 
-      <section class="flex flex-col justify-center items-center relative md:min-h-[800px] mx-auto w-10/12" id='lady-section'>
+      <section
+        class="flex flex-col justify-center items-center relative md:min-h-[800px] mx-auto w-10/12"
+        id="lady-section"
+      >
         <img
           src={ModelImg}
           className="w-full h-full object-cover absolute brightness-50"
         />
 
         <div
-          id='bg-overlay'
+          id="bg-overlay"
           className="w-[80%] grid rounded-2xl gap-y-5 p-14 md:p-20 my-10  text-white mx-auto md:h-[648px] bg-black/60 drop-shadow-sm"
           style={{
             boxShadow: '0px 0px 11px 5px #060606cf',
           }}
         >
-          <h2 className="text-2xl md:text-4xl text-center font-primary">Why Choose Us?</h2>
+          <h2 className="text-2xl md:text-4xl text-center font-primary">
+            Why Choose Us?
+          </h2>
           <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-14 md:gap-20">
             {whyChooseUs.map(({ title, desc, imgURL }, index) => (
               <div
                 key={imgURL}
-                className="text-left flex flex-col gap-y-5 justify-center "
+                className="text-left flex flex-col gap-y-5 justify-center"
               >
                 <img
                   src={imgURL}
                   className={`w-[50px] block mx-auto ${'feature-icon' + index}`}
                   alt={title}
                 />
-                <h3 className={`texl-xl md:text-2xl ${'feature-title' + index}`}>{title}</h3>
-                <p className={`leading-tight text-base ${'feature-desc'+index}`}>{desc}</p>
+                <h3
+                  className={`texl-xl md:text-2xl ${'feature-title' + index}`}
+                >
+                  {title}
+                </h3>
+                <p
+                  className={`leading-tight text-base ${
+                    'feature-desc' + index
+                  }`}
+                >
+                  {desc}
+                </p>
               </div>
             ))}
           </section>

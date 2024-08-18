@@ -13,6 +13,7 @@ const navItems = [
   { text: 'About Us', href: '/about-us' },
   { text: 'Services', href: '/services' },
   { text: 'Our Methods', href: '/our-methods' },
+  { text: 'Blogs', href: '/blogs' },
   { text: 'Pricing', href: '/pricing' },
 ];
 
@@ -109,13 +110,13 @@ export default function Header() {
 
   return (
     <div className="fixed center top-0 z-20 w-full">
-      <header className="bg-white w-10/12 flex items-center justify-between px-14 py-2 ">
+      <header className="bg-white w-10/12 flex items-center justify-between px-4 md:px-14 py-2 ">
         <Link to={'/'}>
           <img src={MainLogo} className="h-16 relative z-20" />
         </Link>
         {/* Desktop nav */}
         <nav className="hidden lg:block">
-          <ul className="flex md:gap-x-5 lg:gap-x-10 items-center list-none">
+          <ul className="flex gap-x-7 items-center list-none">
             {navItems.map((item, index) => (
               <li
                 key={index}

@@ -13,14 +13,15 @@ import gsap from 'gsap';
 import { useLayoutEffect, useRef } from 'react';
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import CustomCursor from './components/Cursor';
-
+import BlogDetailsPage from './page/BlogDetailPage';
+import BlogPage from './page/BlogPage';
+import NotFoundPage from './page/NotFoundPage';
 
 gsap.registerPlugin(ScrollTrigger);
 
 export default function App() {
   useScrollToTop();
   // useLayoutEffect(() => {
-
 
   //   gsap.to('header',{
   //     backgroundColor:'black',
@@ -48,6 +49,9 @@ export default function App() {
         <Route path="/pricing" element={<PricingPage />} />
         <Route path="/services" element={<ServicesPage />} />
         <Route path="/our-methods" element={<OurMethods />} />
+        <Route path="/blogs" element={<BlogPage />} />
+        <Route path="/blogs/:blogSlug" element={<BlogDetailsPage />} />
+        <Route path="/404" element={<NotFoundPage />} />
       </Routes>
       <Footer />
     </>
