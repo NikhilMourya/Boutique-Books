@@ -87,21 +87,24 @@ export default function AboutPage() {
           start: 'top 60%',
           end: () => `+=${getScrollAmount() * -1}`,
           pin: true,
-          // pinSpacing:true,
-          scrub: 2,
+          pinSpacing:true,
+          scrub: 1,
           invalidateOnRefresh: true
         }
       })
+
       t1.to(paras, {
         x: getScrollAmount,
-        duration: 1,
         ease: 'none'
       })
+
+      // t1.to('#top-sec', {
+      //   position: 'relative',
+      // })
 
       let t2 = gsap.timeline({
         scrollTrigger: {
           trigger: '.about-value',
-          markers: true,
           start: 'top 30%',
           end: 'top 0%',
           scrub: 3,
@@ -110,12 +113,12 @@ export default function AboutPage() {
 
       t2.from('.title-container', {
         opacity: 0,
-        translateY:'70%'
+        translateY: '70%'
       })
       t2.from('.title-container1', {
-        translateY:"70%",
+        translateY: "70%",
         opacity: 0,
-        delay:2,
+        delay: 2,
       })
 
 
@@ -126,23 +129,27 @@ export default function AboutPage() {
   }, [])
 
   return (
-    <main className="py-24 pt-36 bg-white">
-      <section id='top-sec' className="my-5 container mx-auto flex flex-col-reverse lg:flex-row gap-y-10 md:gap-x-24 lg:px-16 items-center">
+    <main className="pt-28 bg-white">
+      <section id='top-sec' className="z-10 fixed top-10 w-full my-5 container mx-auto flex flex-col-reverse lg:flex-row gap-y-10 md:gap-x-24 lg:px-16 items-center">
         <img src={AboutImg} className='h-60 w-auto' alt="" />
         <H1 className="font-primary lg:text-7xl flex lg:flex-col space-x-3 lg:-space-x-5 gap-y-5">
           <span className='font-primary'>Origin</span> <span className='font-primary'>Story</span>
         </H1>
       </section>
-      <div className='horizontal-para-wrapper bg-primary'>
-        <div className="lg:ml-20 lg:rounded-tl-[50px] bg-primary  flex gap-5 horizontal-para" >
-          {paras.map((para, index) => (
-            <div className="flex-shrink-0 w-[50%] p-5" key={index}>
-              <p className="text-white text-left text-lg">{para}</p>
-            </div>
-          ))}
+
+      <div className='relative z-20' >
+        <div className='horizontal-para-wrapper bg-primary'>
+          <div className="lg:ml-20 lg:rounded-tl-[50px] bg-primary  flex gap-5 horizontal-para" >
+            {paras.map((para, index) => (
+              <div className="flex-shrink-0 w-[50%] p-5" key={index}>
+                <p className="text-white text-left text-lg">{para}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
-      <section className="bg-primary py-40 px-5 md:px-24 text-white about-value" >
+
+      <section className="z-20 relative bg-primary py-40 px-5 md:px-24 text-white about-value" >
         <div >
           <div className='title-container'>
             <H1 className={'my-14 font-primary'} >Our Core Values</H1>
@@ -173,7 +180,7 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
-      <section className="container mx-auto lg:px-16 my-10">
+      <section className="z-20 relative container mx-auto lg:px-16 py-16 bg-white">
         <H1 className={'font-primary'}>Meet the team</H1>
         <div className="flex flex-col-reverse lg:flex-row gap-x-20 gap-y-10 items-center justify-between pt-10">
           <div className="w-full flex flex-col border-t border-b">
