@@ -129,9 +129,9 @@ export default function AboutPage() {
   }, [])
 
   return (
-    <main className="pt-28 bg-white">
-      <section id='top-sec' className="z-10 fixed top-10 w-full my-5 container mx-auto flex flex-col-reverse lg:flex-row gap-y-10 md:gap-x-24 lg:px-16 items-center">
-        <img src={AboutImg} className='h-60 w-auto' alt="" />
+    <main className="md:pt-28 pt-20 bg-white">
+      <section id='top-sec' className="z-10 fixed lg:top-10 w-full my-5 container mx-auto flex flex-col-reverse lg:flex-row gap-y-10 md:gap-x-24 lg:px-16 items-center">
+        <img src={AboutImg} className='h-40 md:h-52 lg:h-60 w-auto' alt="" />
         <H1 className="font-primary lg:text-7xl flex lg:flex-col space-x-3 lg:-space-x-5 gap-y-5">
           <span className='font-primary'>Origin</span> <span className='font-primary'>Story</span>
         </H1>
@@ -139,7 +139,7 @@ export default function AboutPage() {
 
       <div className='relative z-20' >
         <div className='horizontal-para-wrapper bg-primary'>
-          <div className="lg:ml-20 lg:rounded-tl-[50px] bg-primary  flex gap-5 horizontal-para" >
+          <div className=" lg:ml-20 lg:rounded-tl-[50px] bg-primary  flex gap-5 horizontal-para" >
             {paras.map((para, index) => (
               <div className="flex-shrink-0 w-[50%] p-5" key={index}>
                 <p className="text-white text-left text-lg">{para}</p>
@@ -157,7 +157,7 @@ export default function AboutPage() {
               {coreValues.slice(0, 3).map(({ title, imgUrl }) => (
                 <div
                   key={imgUrl}
-                  className="flex w-8/12 lg:w-full mx-auto flex-col space-y-2 p-5 rounded-2xl bg-white"
+                  className="flex w-11/12 lg:w-full mx-auto flex-col space-y-2 p-5 rounded-2xl bg-white"
                   style={{ boxShadow: '0px 3px 3px 0px rgba(0, 0, 0, 0.15)' }}
                 >
                   <img src={imgUrl} className="w-full rounded-lg" />
@@ -180,7 +180,7 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
-      <section className="z-20 relative container mx-auto lg:px-16 py-16 bg-white">
+      <section className="z-20 relative md:container w-full md:mx-auto lg:px-16 py-16 bg-white">
         <H1 className={'font-primary'}>Meet the team</H1>
         <div className="flex flex-col-reverse lg:flex-row gap-x-20 gap-y-10 items-center justify-between pt-10">
           <div className="w-full flex flex-col border-t border-b">

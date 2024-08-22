@@ -24,8 +24,6 @@ const LadyScroll = () => {
                 start: 'top 40%',
                 scrub: true,
                 end: 'top 0%',
-                // markers:true,
-                // pin:true,
             }
         })
 
@@ -48,15 +46,15 @@ const LadyScroll = () => {
     }, [])
     return (
         <>
-            <section className='relative bg-dark-section' id='lady-wrapper'>
+            <section className='relative bg-dark-section h-screen' id='lady-wrapper'>
                 <div className=" mx-auto my-10 w-[80%]" ref={ladyRef}>
                     <div className="mx-auto relative" >
                         <div className="center relative z-0">
-                            <img className="w-full h-full" src={ladyWithLaptop} />
+                            <img className="w-full md:h-full h-screen object-cover" src={ladyWithLaptop} />
                             <div className="black-overlay" ref={ladyRefOverlay}>
-                                <div className="px-48 p-32 h-screen w-full" ref={ladyRefOverlayContent}>
+                                <div className="lg:px-48 md:px-36 lg:p-32 md:p-28 h-screen w-full" ref={ladyRefOverlayContent}>
                                     <div className="mx-auto text-white">
-                                        <h1 className="my-10 text-5xl font-primary">Effortless Accounting <br />
+                                        <h1 className="my-10 lg:text-5xl md:text-4xl sm:text-3xl 2xl font-primary">Effortless Accounting <br />
                                             with Human and AI Precision</h1>
                                         <div className="center mx-auto">
                                             <div id='underline-divider' className="w-1/5 h-1 rounded-full bg-white"></div>

@@ -200,9 +200,9 @@ const HomePage = () => {
                 <div className="relative my-14 py-14 keyboard-container">
                     <div className="relative z-10">
                         <div className="relative">
-                            <h1 className="font-primary text-4xl">Streamlined Accounting</h1>
-                            <h1 className="font-primary text-4xl mt-4">with the Press of a Key.</h1>
-                            <img className="w-6/12 mx-auto" src={Keyboard} id="keyboard-img" />
+                            <h1 className="font-primary text-2xl sm:text-3xl lg:text-4xl">Streamlined Accounting</h1>
+                            <h1 className="font-primary text-2xl sm:text-3xl lg:text-4xl mt-4">with the Press of a Key.</h1>
+                            <img className="w-11/12 md:w-6/12 mx-auto" src={Keyboard} id="keyboard-img" />
                             <button className="mt-10 px-7 p-2 button-primary-bg text-white rounded-full">
                                 <div className="flex gap-3 flex-row">
                                     <div className="inline-flex gap-3">
@@ -214,7 +214,7 @@ const HomePage = () => {
 
                                 </div>
                             </button>
-                            <img id="keyboard-hand" src={Finger} className="absolute right-56 -bottom-36" />
+                            <img id="keyboard-hand" src={Finger} className="absolute h-32 w-auto md:h-52 right-7 -bottom-28 lg:right-56 lg:-bottom-36" />
                         </div>
                     </div>
                     <div className="absolute top-52 flex justify-between w-full z-0" id="keyboard-bubble">
@@ -234,29 +234,29 @@ const HomePage = () => {
                 <div className='border border-red-300 h-screen' id="lady-laptop-container">
 
                 </div>
-                <section className='border border-red-300' id="lady-laptop-container">
+                <section className='border' id="lady-laptop-container">
                     <div className=" mx-auto w-[80%]" id="lady-laptop">
                         <div className="mx-auto" >
                             <div className="center relative">
-                                <img className="w-full h-full" src={ladyWithLaptop} />
+                                <img className="w-full h-screen object-cover md:h-full" src={ladyWithLaptop} />
                                 <div className="black-overlay" id="lady-laptop-overlay">
-                                    <div className="p-10 w-3/5 mx-auto" >
+                                    <div className="p-5 md:p-10 w-full md:w-4/5 lg:w-3/5 mx-auto" >
                                         <div className="mx-auto text-white">
                                             <div className="mt-16">
-                                                <h1 className="my-7 text-4xl font-primary">What our firm offers </h1>
-                                                <p className="my-7 text-lg opacity-0" id="lady-laptop-subtitle">We offer comprehensive AI-driven accounting services for effortless financial management.</p>
+                                                <h1 className="my-3 md:my-7 text-2xl md:text-4xl font-primary">What our firm offers </h1>
+                                                <p className="my-3 md:my-7 text-lg opacity-0" id="lady-laptop-subtitle">We offer comprehensive AI-driven accounting services for effortless financial management.</p>
                                             </div>
-                                            <div className="relative w-full p-5 center my-10 opacity-0 scale-125" id="ladyLaptopGraph">
-                                                <div className="absolute bg-black opacity-60 w-full h-full blur-sm p-5 z-0">
+                                            <div className="relative w-full lg:p-5 p-3 center my-5 lg:my-10  opacity-0 scale-125" id="ladyLaptopGraph">
+                                                <div className="absolute bg-black opacity-60 w-full h-full blur-sm md:p-5 p-2 z-0">
                                                 </div>
                                                 <div className="relative z-10 p-5">
                                                     <img src={Graph} className="rounded-lg w-full" />
-                                                    <div className="m-2 my-4 flex justify-between gap-5 items-center">
+                                                    <div className="m-2 md:my-4 my-2 flex justify-between gap-5 items-center">
                                                         <div className="text-left">
-                                                            <h3 className="text-3xl ">Sales <span>$158,500</span></h3>
+                                                            <h3 className="text-2xl md:text-3xl ">Sales <span>$158,500</span></h3>
                                                             <h3 className="text-lg text-gray-400">Expenses <span>$95,200</span></h3>
                                                         </div>
-                                                        <button className="px-7 p-2 bg-gray-700 text-white rounded-full">
+                                                        <button className="md:px-7 p-2 bg-gray-700 text-white rounded-full">
                                                             <div className="flex gap-3 flex-row ">
                                                                 <div className="inline-flex gap-3">
                                                                     <span className="text-md end">Learn More</span>
