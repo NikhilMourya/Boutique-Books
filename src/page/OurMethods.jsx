@@ -1,4 +1,5 @@
 import React from 'react';
+import { useLayoutEffect } from "react";
 import M1 from '../assets/images/methods/1.png';
 import M2 from '../assets/images/methods/2.png';
 import M3 from '../assets/images/methods/3.png';
@@ -7,6 +8,10 @@ import M5 from '../assets/images/methods/5.png';
 import M6 from '../assets/images/methods/6.png';
 import MenWithLaptop from '../assets/images/methods/men-with-laptop.jpg';
 import H1 from '../components/H1';
+
+import gsap from 'gsap';
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
 
 const methods = [
   {
@@ -41,6 +46,17 @@ const methods = [
   },
 ];
 export default function OurMethods() {
+
+
+  useLayoutEffect(() => {
+
+    let ctx = gsap.context(() => {
+
+    });
+
+    return () => ctx.revert(); // <- cleanup!
+
+  }, [])
   return (
     <main className="flex flex-col gap-y-24 py-24 pt-36">
       <section className="container mx-auto flex flex-col gap-y-10 md:gap-x-24 lg:px-16 items-center">
@@ -55,30 +71,64 @@ export default function OurMethods() {
       </section>
 
       <div className="relative overlay">
+
         <img
           src={MenWithLaptop}
           alt=""
           className="absolute w-full min-h-full object-cover -z-10"
         />
+
         <section className="py-20">
+
+          {/* Extra timeline bar on top */}
+          <div
+            className="container h-56 w-3/4 mx-auto flex gap-10  justify-center"
+          >
+            <div className='overflow-hidden w-7/12 p-5'>
+              <section
+                className="rounded-lg text-black"
+              >
+
+              </section>
+            </div>
+            <div class="relative mx-4">
+              <div class="w-1 h-full bg-blue-400"></div>
+            </div>
+
+            <div className='w-7/12 p-5 center' >
+            </div>
+          </div>
+          {/* Extra timeline bar on top */}
+
           {methods.map(({ title, desc, img }, idx) => (
             <div
               key={title}
-              className="container p-10 w-3/4 mx-auto grid md:grid-cols-2 gap-y-5 justify-center text-white md:gap-x-32 items-center"
+              className="container w-3/4 mx-auto flex gap-10 flex-row  justify-center text-white"
             >
-              <section
-                className={`rounded-lg grid text-black bg-white gap-3 place-items-center overflow-hidden ${
-                  idx % 2 == 0 && 'md:order-1'
-                }`}
-              >
-                <img
-                  src={img}
-                  alt={title}
-                  className=" object-cover rounded-lg rounded-b-none"
-                />
-                <p className="w-full pb-3 font-bold font-primary">{title}</p>
-              </section>
-              <p className="text-justify font-article">{desc}</p>
+              <div className='w-7/12 p-5 relative'>
+                {/* <div className='absolute -right-14 bg-blue-400 h-1 w-12 top-52'></div> */}
+                <section
+                  className="rounded-lg text-black bg-white "
+                >
+                  <img
+                    src={img}
+                    alt={title}
+                    className=" object-cover rounded-lg rounded-b-none"
+                  />
+
+                  <p className="w-full pb-3 font-bold font-primary">{title}</p>
+                </section>
+
+              </div>
+              <div class="relative mx-4">
+                {/* <div class="w-px bg-white h-full"></div> */}
+                <div class="w-1 h-full bg-blue-400"></div>
+              </div>
+
+              <div className='w-7/12 p-5 center relative' >
+                <div className='absolute -left-14 bg-blue-400 h-1 w-12'></div>
+                <p className="text-justify font-article ">{desc}</p>
+              </div>
             </div>
           ))}
         </section>
