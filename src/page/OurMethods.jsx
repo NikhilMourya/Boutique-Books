@@ -52,6 +52,21 @@ export default function OurMethods() {
 
     let ctx = gsap.context(() => {
 
+      // let t1 = gsap.timeline({
+      //   scrollTrigger:{
+      //     trigger:'#timeline-container',
+      //     start:'top 40%',
+      //     end:'top 0%',
+      //     markers:true,
+      //     scrub:2,
+      //   }
+      // })
+
+      // t1.to('#timeline-container',{
+      //   width:'100%',
+      //   duration:1,
+      // })
+
     });
 
     return () => ctx.revert(); // <- cleanup!
@@ -59,7 +74,7 @@ export default function OurMethods() {
   }, [])
   return (
     <main className="flex flex-col gap-y-24 py-24 pt-36">
-      <section className="container mx-auto flex flex-col gap-y-10 md:gap-x-24 lg:px-16 items-center">
+      <section className="w-9/12 mx-auto flex flex-col gap-y-10 md:gap-x-24 lg:px-16 items-center">
         <H1 className={'font-primary'}>How We Make It Happen?</H1>
 
         <p className='font-article text-lg'>
@@ -70,15 +85,15 @@ export default function OurMethods() {
         </p>
       </section>
 
-      <div className="relative overlay">
-
+      {/* <div className="relative overlay w-10/12 mx-auto h-screen"> */}
+      <div className="relative w-10/12 mx-auto" id='timeline-container'>
         <img
           src={MenWithLaptop}
           alt=""
-          className="absolute w-full min-h-full object-cover -z-10"
+          className="absolute w-full h-screen object-cover -z-10 rounded-t-2xl"
         />
-
         <section className="py-20">
+
 
           {/* Extra timeline bar on top */}
           <div
