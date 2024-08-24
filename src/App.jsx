@@ -1,4 +1,4 @@
-import { Route, Routes } from 'react-router-dom';
+import { Route, Routes, useLocation } from 'react-router-dom';
 import './App.css';
 import Footer from './components/layouts/Footer';
 import Header from './components/layouts/Header';
@@ -10,7 +10,7 @@ import PricingPage from './page/PricingPage';
 import ServicesPage from './page/ServicesPage';
 
 import gsap from 'gsap';
-import { useLayoutEffect, useRef } from 'react';
+import { useEffect, useLayoutEffect, useRef } from 'react';
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import CustomCursor from './components/Cursor';
 import BlogDetailsPage from './page/BlogDetailPage';
@@ -21,23 +21,37 @@ import ContactUs from './page/ContactUs'
 gsap.registerPlugin(ScrollTrigger);
 
 export default function App() {
+  const location = useLocation();
   useScrollToTop();
-  // useLayoutEffect(() => {
+  useLayoutEffect(() => {
 
-  //   gsap.to('header',{
-  //     backgroundColor:'black',
-  //     duration:1.5,
-  //     color:'white',
-  //     ease:'back.out',
-  //     scrollTrigger: {
-  //       trigger: ".bg-dark-section",
-  //       start: 'top 20%',
-  //       scrub: 1,
-  //       end: 'top -50%',
-  //     }
-  //   })
+    // gsap.to('header',{
+    //   backgroundColor:'black',
+    //   duration:1.5,
+    //   color:'white',
+    //   ease:'back.out',
+    //   scrollTrigger: {
+    //     trigger: ".bg-dark-section",
+    //     start: 'top 20%',
+    //     scrub: 1,
+    //     end: 'top -50%',
+    //   }
+    // })
 
-  // }, [])
+
+  }, [])
+
+  useEffect(() => {
+
+    let ctx = gsap.context(() => {
+      gsap.from('header', {
+        // translateY:'-100px',
+        // duration:1.6,
+      })
+      return () => ctx.revert();
+    })// <- cleanup!
+
+  }, [location]);
 
   return (
     <>

@@ -52,18 +52,22 @@ export default function OurMethods() {
 
     let ctx = gsap.context(() => {
 
-      // let t1 = gsap.timeline({
-      //   scrollTrigger:{
-      //     trigger:'#timeline-container',
-      //     start:'top 40%',
-      //     end:'top 0%',
-      //     markers:true,
-      //     scrub:2,
-      //   }
-      // })
+      let t1 = gsap.timeline({
+        scrollTrigger:{
+          trigger:'#timeline-container',
+          start:'top 40%',
+          end:'top 0%',
+          markers:true,
+          scrub:2,
+        }
+      })
 
+      t1.to('#timeline-container',{
+        width:'100%',
+        duration:1,
+      })
       // t1.to('#timeline-container',{
-      //   width:'100%',
+      //   position:'sticky',
       //   duration:1,
       // })
 
@@ -86,7 +90,7 @@ export default function OurMethods() {
       </section>
 
       {/* <div className="relative overlay w-10/12 mx-auto h-screen"> */}
-      <div className="relative w-10/12 mx-auto" id='timeline-container'>
+      <div className="relative w-10/12 mx-auto overlay" id='timeline-container'>
         <img
           src={MenWithLaptop}
           alt=""
