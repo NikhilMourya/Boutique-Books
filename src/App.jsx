@@ -16,6 +16,7 @@ import CustomCursor from './components/Cursor';
 import BlogDetailsPage from './page/BlogDetailPage';
 import BlogPage from './page/BlogPage';
 import NotFoundPage from './page/NotFoundPage';
+import ContactUs from './page/ContactUs'
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -52,6 +53,7 @@ export default function App() {
         <Route path="/blogs" element={<BlogPage />} />
         <Route path="/blogs/:blogSlug" element={<BlogDetailsPage />} />
         <Route path="/404" element={<NotFoundPage />} />
+        <Route path="/contact" element={<ContactUs />} />
       </Routes>
       <Footer />
     </>

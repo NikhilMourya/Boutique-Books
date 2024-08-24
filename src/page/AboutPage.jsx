@@ -31,7 +31,7 @@ const paragraphs = [
 const coreValues = [
   { title: 'Collaboration', imgUrl: CollaborationImg },
   { title: 'Innovation', imgUrl: InnovationImg },
-  { title: 'Persomal Developement', imgUrl: PersomalDevelopementImg },
+  { title: 'Personal Developement', imgUrl: PersomalDevelopementImg },
   { title: 'Women Empowerment', imgUrl: WomenEmpowermentImg },
   { title: 'Team Work', imgUrl: TeamWorkImg },
   { title: 'Relationships', imgUrl: RelationshipsImg },
@@ -41,25 +41,37 @@ const team = [
   {
     id: 1,
     name: 'Tajni Diller',
-    role: 'Founder & CEO',
+    role: 'Founder and Senior Business Advisor',
     imgURL: Team1,
   },
   {
     id: 2,
     name: 'Raquel Pryor',
-    role: 'Team Lead',
+    role: 'Tax & Bookkeeping Specialist ',
     imgURL: Team2,
   },
   {
     id: 3,
     name: 'Savannah Clarke',
-    role: 'Staff Bookkeeper',
+    role: 'Tax & Bookkeeping Specialist',
     imgURL: Team3,
   },
   {
     id: 4,
-    name: 'Sharon Teraji-Cole',
-    role: 'Staff Bookkeeper',
+    name: 'Sharon Teraji',
+    role: 'Tax & Bookkeeping Specialist',
+    imgURL: Team4,
+  },
+  {
+    id: 5,
+    name: 'Marc Diller',
+    role: 'Tax Specialist',
+    imgURL: Team4,
+  },
+  {
+    id: 6,
+    name: 'Breana Gonzalez',
+    role: 'Customer Success Coordinator',
     imgURL: Team4,
   },
 ];
@@ -70,11 +82,9 @@ export default function AboutPage() {
   useEffect(() => {
     let paras = document.querySelector('.horizontal-para');
     let parasWidth = paras.offsetWidth;
-    // let amountToScroll = parasWidth - window.innerWidth;
-    // console.log(paras,parasWidth);
 
     function getScrollAmount() {
-      let parasWidth = paras.scrollWidth;
+      let parasWidth = paras.scrollWidth + 100;
       return -(parasWidth - window.innerWidth);
     }
 
@@ -89,7 +99,8 @@ export default function AboutPage() {
           pin: true,
           pinSpacing:true,
           scrub: 1,
-          invalidateOnRefresh: true
+          invalidateOnRefresh: true,
+          markers:true
         }
       })
 
@@ -138,8 +149,8 @@ export default function AboutPage() {
       </section>
 
       <div className='relative z-20' >
-        <div className='horizontal-para-wrapper bg-primary'>
-          <div className=" lg:ml-20 lg:rounded-tl-[50px] bg-primary  flex gap-5 horizontal-para" >
+        <div className='horizontal-para-wrapper bg-primary relative'>
+          <div className="lg:ml-20 lg:rounded-tl-[50px] bg-primary  flex gap-5 horizontal-para" >
             {paras.map((para, index) => (
               <div className="flex-shrink-0 w-[50%] p-5" key={index}>
                 <p className="text-white text-left text-lg">{para}</p>
@@ -149,7 +160,7 @@ export default function AboutPage() {
         </div>
       </div>
 
-      <section className="z-20 relative bg-primary py-40 px-5 md:px-24 text-white about-value" >
+      <section className="z-20 relative bg-primary py-14 px-5 md:px-24 text-white about-value" >
         <div >
           <div className='title-container'>
             <H1 className={'my-14 font-primary'} >Our Core Values</H1>
@@ -186,7 +197,7 @@ export default function AboutPage() {
           <div className="w-full flex flex-col border-t border-b">
             {team.map(({ id, name, role, imgURL }) => (
               <div
-                className="grid grid-cols-[10%,55%,45%] lg:grid-cols-[15%,60%,25%] cursor-pointer group hover:bg-primary px-5 transition-all ease-linear duration-300 min-h-16 text-left items-center justify-between border-t border-b"
+                className="grid grid-cols-[10%,55%,45%] lg:grid-cols-[15%,45%,40%] cursor-pointer group hover:bg-primary px-5 transition-all ease-linear duration-300 min-h-16 text-left items-center justify-between border-t border-b"
                 key={id}
                 onMouseEnter={() => setTeamImg(imgURL)}
               >

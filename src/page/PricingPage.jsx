@@ -130,24 +130,24 @@ export default function PricingPage() {
         0
       );
 
-      // t1.from('.feature-desc0', {
-      //   x: '-300px',
-      //   y: '-300px',
-      //   opacity: 0,
-      //   duration:1,
-      // }, 0)
-      // t1.from('.feature-desc1', {
-      //   x: '300px',
-      //   y: '300px',
-      //   opacity: 0,
-      //   duration:1,
-      // }, 0)
-      // t1.from('.feature-desc2', {
-      //   x: '-300px',
-      //   y: '-300px',
-      //   opacity: 0,
-      //   duration:1,
-      // }, 0)
+      t1.from('.feature-desc0', {
+        x: '-300px',
+        y: '-300px',
+        opacity: 0,
+        duration:1,
+      }, 0)
+      t1.from('.feature-desc1', {
+        x: '300px',
+        y: '300px',
+        opacity: 0,
+        duration:1,
+      }, 0)
+      t1.from('.feature-desc2', {
+        x: '-300px',
+        y: '-300px',
+        opacity: 0,
+        duration:1,
+      }, 0)
     });
 
     return () => ctx.revert(); // <- cleanup!

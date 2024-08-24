@@ -59,7 +59,7 @@ const LadyScroll = () => {
                                         <div className="center mx-auto">
                                             <div id='underline-divider' className="w-1/5 h-1 rounded-full bg-white"></div>
                                         </div>
-                                        <p className="my-10 ">Welcome to Boutique Books! We offer AI-driven accounting services that simplify bookkeeping and provide real-time insights. Enjoy effortless compliance and peace of mind with our expert solutions.</p>
+                                        <p className="my-10 md:text-xl">Welcome to Boutique Books! We offer AI-driven accounting services that simplify bookkeeping and provide real-time insights. Enjoy effortless compliance and peace of mind with our expert solutions.</p>
                                         <button className="px-7 p-2 bg-white text-black rounded-full">
                                             <div className="flex gap-3 flex-row ">
                                                 <div className="inline-flex gap-3">

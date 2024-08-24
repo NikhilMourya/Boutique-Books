@@ -23,19 +23,19 @@ const data = [
         bgImage: BookKeepingBG,
         image: BookKeeping,
         heading: "Bookkeeping",
-        content: "At Boutique Books, we pair our customers with a dedicated, highly skilled bookkeeper and we provide comprehensive bookkeeping services tailored to meet the unique needs of our clients. From meticulous data entry to detailed financial reporting, our team handles all aspects of bookkeeping with precision and expertise. Whether it's tracking income and expenses, reconciling accounts, or managing accounts payable and receivable, we ensure that your financial records are accurate and up-to-date. Please note that while we provide a wide range of bookkeeping services, we do not offer payroll processing as part of our standard offerings."
+        content: "Our bookkeeping services are designed to keep your financial records accurate and up-to-date, giving you a clear picture of your business's health. We manage everything from daily transaction tracking to monthly reconciliations, ensuring your books are always in order. For those who prefer real-time insights, we offer the tools and access needed to monitor your finances at your convenience. Whether you want to stay closely involved or focus on other aspects of your business, Boutique Books adapts to your needs, providing a reliable and flexible financial foundation"
     },
     {
         bgImage: TaxBG,
         image: Tax,
-        heading: "Tax",
-        content: "At Boutique Books, our tax compliance services are designed to streamline the tax process for our customers who susbscribe to this tier of service. As part of this comprehensive offering, the annual tax return preparation for the business we provide bookkeeping services for is taken care of, ensuring accuracy and timeliness. Additionally, we track quarterly estimated tax payments to help customers stay compliant throughout the year. Our commitment to staying updated on relevant tax laws ensures that our customers are informed and prepared for any changes that may affect their financial obligations."
+        heading: "Business Tax Return Preparation and Filing",
+        content: "Navigating tax season doesn't have to be stressful. Our business tax return preparation and filing services ensure that you stay compliant with the latest regulations while optimizing your tax strategy. We work closely with you throughout the year, so when it’s time to file, everything is in place for a smooth, hassle-free process. To help with budgeting, you can add these services to your subscription or choose a one-time fee at tax time. Our expert team is dedicated to minimizing your tax burden and maximizing your peace of mind."
     },
     {
         bgImage: BusinessAdvisoryBG,
         image: BusinessAdvisory,
-        heading: "Business Advisory",
-        content: "At Boutique Books, our advisory services elevate the support we provide to our customers, offering access to executive-level fractional C-suite executives through our premium subscription tier. This tier goes beyond just traditional bookkeeping and tax preparation, encompassing strategic business development activities such as KPI development, strategic business plan development, and other growth and scaling offerings. Our goal is to empower our customers with the strategic guidance and expertise needed to drive their businesses forward and achieve sustainable growth."
+        heading: "Business Advisory Services",
+        content: "Our business advisory services go beyond the numbers to provide you with strategic insights that drive growth and efficiency. We specialize in cash flow management and small business growth, offering tailored advice to help you navigate the unique challenges of scaling your business. These services are available through a separate subscription, giving you the flexibility to access expert guidance on an ongoing basis. Whether you need assistance with financial planning, optimizing cash flow, or making informed decisions for expansion, we're here to guide you every step of the way. With Boutique Books as your trusted advisor, you'll gain the clarity and confidence needed to propel your business forward."
     },
     {
         bgImage: FinancialOperationBG,
@@ -80,9 +80,9 @@ const ServicesPage = () => {
     var SliderSettings = {
         dots: true,
         // fade:true,
-        infinite: true,
+        infinite: false,
         speed: 500,
-        slidesToShow: 1,
+        slidesToShow: 1.5,
         slidesToScroll: 1,
         arrows: false,
         beforeChange: handleBeforeChange,
@@ -127,43 +127,45 @@ const ServicesPage = () => {
         <>
             <section className="bg-white">
                 <section className="relative mt-36">
-                    <div className=" mx-auto w-full">
-                        <div className="mx-auto relative" >
+                    <div className=" mx-auto w-full rounded-t-2xl">
+                        <div className="mx-auto relative rounded-t-2xl" >
                             <div className="center relative z-0">
-                                <div className="w-full h-full">
+                                <div className="w-full h-[110vh] lg:h-full rounded-t-2xl">
                                     <Slider {...SliderSettingsBg} ref={slider => {
                                         sliderRefBG = slider;
                                     }}>
                                         {data.map((item, index) => (
-                                            <div key={index}>
-                                                <img src={item.bgImage} className="object-cover w-full h-auto" />
+                                            <div key={index} >
+                                                <img src={item.bgImage} className="object-cover w-full h-screen lg:h-auto" />
                                             </div>
                                         ))}
                                     </Slider>
                                 </div>
-                                {/* <img className="w-full h-full" src={activeBg(0)} /> */}
                                 <div className="black-overlay rounded-t-2xl" >
-                                    <div className="p-20 pr-0 h-screen w-full">
+                                    <div className="p-5 md:p-20 pr-0 sm:h-screen w-full">
                                         <div className="mx-auto text-white">
                                             <h1 className="mb-10 text-2xl opacity-80 font-primary text-left">Our Services</h1>
-                                            <div className="grid grid-cols-10 gap-5">
-                                                <div className="md:col-span-7">
-                                                    <h1 className="mb-10 text-6xl font-medium font-primary text-left service-heading">{activeHeading}</h1>
-                                                    <p className="text-left text-xl">
+                                            <div className="flex flex-col md:flex-row gap-10">
+                                                <div className="flex-grow">
+                                                    <h1 className="mb-5 md:mb-10 md:text-4xl lg:text-5xl font-medium font-primary text-left service-heading">{activeHeading}</h1>
+                                                    <p className="text-left md:text-lg lg:text-xl">
                                                         {activeContent}
                                                     </p>
                                                 </div>
-                                                <div className="md:col-span-3 px-5">
-                                                    <div className="mt-20">
-                                                        <Slider {...SliderSettings} ref={slider => {
-                                                            sliderRefMain = slider;
-                                                        }}>
-                                                            {data.map((item, index) => (
-                                                                <div key={index}>
-                                                                    <img src={item.image} className="object-cover w-full h-auto" />
-                                                                </div>
-                                                            ))}
-                                                        </Slider>
+                                                <div className="w-52 md:w-72 lg:w-96">
+                                                    <div className="md:mt-20">
+                                                        <div>
+                                                            <Slider {...SliderSettings} ref={slider => {
+                                                                sliderRefMain = slider;
+                                                            }}>
+                                                                {data.map((item, index) => (
+                                                                    <div key={index} className="p-3">
+                                                                        <img src={item.image} className="object-cover w-full h-auto" />
+                                                                    </div>
+                                                                ))}
+                                                            </Slider>
+                                                        </div>
+
                                                     </div>
 
                                                 </div>
@@ -177,7 +179,7 @@ const ServicesPage = () => {
                     </div>
 
                 </section>
-                <section className="relative w-full h-[70vh] p-10 px-16 overflow-hidden border-black border">
+                <section className="relative w-full h-[70vh] p-10 px-16 overflow-hidden">
                     <div className="absolute top-0 flex justify-between w-full">
                         <div className="relative ">
                             <div className="h-72 w-72 homepage-circle">
