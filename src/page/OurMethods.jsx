@@ -58,9 +58,6 @@ export default function OurMethods() {
       let timelineHeight = wrapper.scrollHeight + 100;
       return -(timelineHeight - window.innerHeight);
     }
-    console.log(getScrollAmount(), 'height');
-
-
     let ctx = gsap.context(() => {
       let t2 = gsap.timeline({
         scrollTrigger: {
@@ -69,7 +66,6 @@ export default function OurMethods() {
           end: () => `+=${getScrollAmount() * -0.3}`,
           scrub: 1,
           pin: true,
-          markers:true
         }
       })
 
@@ -89,8 +85,6 @@ export default function OurMethods() {
       t2.to(wrapper, {
         y: getScrollAmount,
       })
-
-
     });
     return () => ctx.revert(); // <- cleanup!
 
@@ -143,10 +137,10 @@ export default function OurMethods() {
               </div>
               {/* Extra timeline bar on top */}
 
-              {methods.map(({ title, desc, img }, idx) => (
+              {methods.map(({ title, desc, img }, index) => (
                 <div
                   key={title}
-                  className="container w-3/4 mx-auto flex gap-10 flex-row  justify-center text-white"
+                  className={`container w-3/4 mx-auto flex gap-10  justify-center text-white ${ index%2==0 ? 'flex-row' : 'flex-row-reverse'}`}
                 >
                   <div className='w-7/12 p-5 relative'>
                     {/* <div className='absolute -right-14 bg-blue-400 h-1 w-12 top-52'></div> */}
@@ -169,7 +163,7 @@ export default function OurMethods() {
                   </div>
 
                   <div className='w-7/12 p-5 center relative' >
-                    <div className='absolute -left-14 bg-blue-400 h-1 w-12'></div>
+                    <div className={`absolute  bg-blue-400 h-1 w-12 ${index%2==0 ? '-left-14' : '-right-14'}`}></div>
                     <p className="text-justify font-article ">{desc}</p>
                   </div>
                 </div>
