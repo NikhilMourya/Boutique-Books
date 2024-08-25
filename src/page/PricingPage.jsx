@@ -48,13 +48,31 @@ const pricingCarts = [
 ];
 
 export default function PricingPage() {
-  const [priceRange, setPriceRange] = useState(0);
+  const pricingTable = [
+    { min: 0, max: 30000, standard: 395, plus: 449 },
+    { min: 30001, max: 60000, standard: 495, plus: 595 },
+    { min: 60001, max: 100000, standard: 700, plus: 975 },
+    { min: 100001, max: 150000, standard: 875, plus: 1150 },
+    { min: 150001, max: 200000, standard: 1050, plus: 1325 },
+  ];
   const price = (amt) => {
     return new Intl.NumberFormat('en-US', {
       currency: 'USD',
       style: 'currency',
+      minimumFractionDigits: 0,
     }).format(amt);
   };
+  const getBookkeepingCost = (monthlyExpenses, isBookkeepingPlus = false) => {
+    const pricing = pricingTable.find(
+      ({ min, max }) => monthlyExpenses >= min && monthlyExpenses <= max
+    );
+
+    if (!pricing) return 'Invalid range';
+    console.log('pricing ', pricing);
+    return isBookkeepingPlus ? pricing.plus : pricing.standard;
+  };
+  const [priceRange, setPriceRange] = useState(0);
+
   useLayoutEffect(() => {
     let ctx = gsap.context(() => {
       let t1 = gsap.timeline({
@@ -190,7 +208,7 @@ export default function PricingPage() {
           <input
             value={priceRange}
             min="0"
-            max="2000000"
+            max="200000"
             type="range"
             step={1000}
             className="tw-range"
@@ -201,7 +219,10 @@ export default function PricingPage() {
             expenses
           </p>
           <p>
-            <span class="text-4xl font-bold">$499</span>/mo billed annually
+            <span class="text-4xl font-bold">
+              {price(getBookkeepingCost(priceRange))}
+            </span>
+            /mo billed annually
           </p>
           <button class="bg-primary w-full self-end text-2xl py-2 rounded-lg">
             Contact Us
