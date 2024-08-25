@@ -1,6 +1,6 @@
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { useLayoutEffect } from 'react';
+import { useLayoutEffect, useState } from 'react';
 import ModelImg from '../assets/images/home/female-with-laptop.png';
 import P1 from '../assets/images/pricing/P1-Icon.png';
 import P2 from '../assets/images/pricing/P2-Icon.png';
@@ -48,6 +48,13 @@ const pricingCarts = [
 ];
 
 export default function PricingPage() {
+  const [priceRange, setPriceRange] = useState(0);
+  const price = (amt) => {
+    return new Intl.NumberFormat('en-US', {
+      currency: 'USD',
+      style: 'currency',
+    }).format(amt);
+  };
   useLayoutEffect(() => {
     let ctx = gsap.context(() => {
       let t1 = gsap.timeline({
@@ -130,24 +137,36 @@ export default function PricingPage() {
         0
       );
 
-      t1.from('.feature-desc0', {
-        x: '-300px',
-        y: '-300px',
-        opacity: 0,
-        duration:1,
-      }, 0)
-      t1.from('.feature-desc1', {
-        x: '300px',
-        y: '300px',
-        opacity: 0,
-        duration:1,
-      }, 0)
-      t1.from('.feature-desc2', {
-        x: '-300px',
-        y: '-300px',
-        opacity: 0,
-        duration:1,
-      }, 0)
+      t1.from(
+        '.feature-desc0',
+        {
+          x: '-300px',
+          y: '-300px',
+          opacity: 0,
+          duration: 1,
+        },
+        0
+      );
+      t1.from(
+        '.feature-desc1',
+        {
+          x: '300px',
+          y: '300px',
+          opacity: 0,
+          duration: 1,
+        },
+        0
+      );
+      t1.from(
+        '.feature-desc2',
+        {
+          x: '-300px',
+          y: '-300px',
+          opacity: 0,
+          duration: 1,
+        },
+        0
+      );
     });
 
     return () => ctx.revert(); // <- cleanup!
@@ -164,41 +183,55 @@ export default function PricingPage() {
         </h1>
       </section>
 
-      <section className="px-5 md:px-16 sm:min-h-[400px] grid grid-cols-1 gap-y-16 gap-x-5 md:grid-cols-2 lg:grid-cols-3 justify-center">
-        {pricingCarts.map(
-          ({ title, desc, montlyRate, yearlyRate, customPricing }, idx) => (
-            <div
-              className="card p-10 grid gap-y-5 items-center text-left md:gap-y-0 shadow-md border border-primary/40 shadow-primary rounded-3xl min-h-[400px]"
-              key={title}
-            >
-              <h3 className="font-semibold text-2xl">{title}</h3>
-              <p className={idx == 2 && 'self-start'}>{desc}</p>
-
-              {montlyRate && (
-                <p>
-                  <span className="font-bold">{montlyRate}</span> in monthly
-                  expenses
-                </p>
-              )}
-
-              {yearlyRate && (
-                <p>
-                  <span className="text-4xl font-bold">{yearlyRate}</span>/mo
-                  billed annually
-                </p>
-              )}
-
-              {customPricing && (
-                <p className="self-end">
-                  <span className="text-2xl font-bold">{customPricing}</span>
-                </p>
-              )}
-              <button className="bg-primary w-full self-end text-2xl py-2 rounded-lg">
-                Contact Us
-              </button>
-            </div>
-          )
-        )}
+      <section class="px-5 md:px-16 sm:min-h-[400px] grid grid-cols-1 gap-y-16 gap-x-5 md:grid-cols-2 lg:grid-cols-3 justify-center">
+        <div class="card p-10 grid gap-y-5 items-center text-left md:gap-y-0 shadow-md border border-primary/40 shadow-primary rounded-3xl min-h-[400px]">
+          <h3 class="font-semibold text-2xl">Essential Plan</h3>
+          <p>For startups in the pre-revenue stage, just starting out.</p>
+          <input
+            value={priceRange}
+            min="0"
+            max="2000000"
+            type="range"
+            step={1000}
+            className="tw-range"
+            onChange={(e) => setPriceRange(e.target.value)}
+          />
+          <p>
+            <span class="font-bold">{price(priceRange)}</span> in monthly
+            expenses
+          </p>
+          <p>
+            <span class="text-4xl font-bold">$499</span>/mo billed annually
+          </p>
+          <button class="bg-primary w-full self-end text-2xl py-2 rounded-lg">
+            Contact Us
+          </button>
+        </div>
+        <div class="card p-10 grid gap-y-5 items-center text-left md:gap-y-0 shadow-md border border-primary/40 shadow-primary rounded-3xl min-h-[400px]">
+          <h3 class="font-semibold text-2xl">Premium Plan</h3>
+          <p>For companies with refined needs, reflecting their high value.</p>
+          <p>
+            <span class="font-bold">$39,600</span> in monthly expenses
+          </p>
+          <p>
+            <span class="text-4xl font-bold">$499</span>/mo billed annually
+          </p>
+          <button class="bg-primary w-full self-end text-2xl py-2 rounded-lg">
+            Contact Us
+          </button>
+        </div>
+        <div class="card p-10 grid gap-y-5 items-center text-left md:gap-y-0 shadow-md border border-primary/40 shadow-primary rounded-3xl min-h-[400px]">
+          <h3 class="font-semibold text-2xl">Elite Plan</h3>
+          <p class="self-start">
+            Craft a plan precisely suited to your business needs.
+          </p>
+          <p class="self-end">
+            <span class="text-2xl font-bold">Custom Pricing</span>
+          </p>
+          <button class="bg-primary w-full self-end text-2xl py-2 rounded-lg">
+            Contact Us
+          </button>
+        </div>
       </section>
 
       <section
