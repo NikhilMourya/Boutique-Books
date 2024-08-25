@@ -35,6 +35,9 @@ const pricingTable = [
   { min: 100001, max: 150000, standard: 875, plus: 1150 },
   { min: 150001, max: 200000, standard: 1050, plus: 1325 },
 ];
+const MIN = pricingTable[0].min;
+const MAX = pricingTable.slice(-1)[0].max;
+const STEP = 500;
 
 const price = (amt) => {
   return new Intl.NumberFormat('en-US', {
@@ -191,10 +194,10 @@ export default function PricingPage() {
           <div className="relative flex items-center">
             <input
               value={priceRange}
-              min="0"
-              max="200000"
+              min={MIN}
+              max={MAX}
               type="range"
-              step={1000}
+              step={STEP}
               className="tw-range"
               onChange={(e) => setPriceRange(e.target.value)}
             />
@@ -227,10 +230,10 @@ export default function PricingPage() {
           <div className="relative flex items-center">
             <input
               value={priceRange}
-              min="0"
-              max="200000"
+              min={MIN}
+              max={MAX}
               type="range"
-              step={1000}
+              step={STEP}
               className="tw-range"
               onChange={(e) => setPriceRange(e.target.value)}
             />
