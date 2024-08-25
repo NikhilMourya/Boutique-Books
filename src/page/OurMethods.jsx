@@ -55,7 +55,7 @@ export default function OurMethods() {
     let wrppperheight = wrapper.offsetHeight;
 
     function getScrollAmount() {
-      let timelineHeight = wrapper.scrollHeight;
+      let timelineHeight = wrapper.scrollHeight + 100;
       return -(timelineHeight - window.innerHeight);
     }
     console.log(getScrollAmount(), 'height');
@@ -82,13 +82,23 @@ export default function OurMethods() {
           trigger: '#timeline-container',
           start: 'top 0%',
           end: () => `+=${getScrollAmount() * -0.1}`,
-          scrub: 2,
-          pin: true
+          scrub: 4,
+          pin: true,
         }
       })
 
-      t2.from("#timeline-container", {
-        width: "80%",
+      // t2.from("#timeline-container", {
+      //   width: "80%",
+      // })
+      t2.to('#title-wrapper',{
+        opacity:0,
+        duration:0.3
+      })
+
+      t2.fromTo('#timeline-wrappper',{
+        opacity:0,
+      },{
+        opacity:1,
       })
 
       t2.to(wrapper, {
@@ -101,99 +111,106 @@ export default function OurMethods() {
 
   }, [])
   return (
-    <main className="flex flex-col gap-y-24 py-24 pt-36">
-      <section className="w-9/12 mx-auto flex flex-col gap-y-10 md:gap-x-24 lg:px-16 items-center">
-        <H1 className={'font-primary'}>How We Make It Happen?</H1>
+    <main className="flex flex-col gap-y-24 pt-36" id='our-methods-wrapper'>
 
-        <p className='font-article text-lg'>
-          At Boutique Books, we blend the precision of AI with the expertise of
-          real human accountants to deliver top-notch accounting services. Our
-          proven methods ensure accuracy, efficiency, and a personalized touch,
-          making your financial management effortless and reliable.
-        </p>
+
+      <section className="fixed z-20" id='title-wrapper'>
+        <div className='w-9/12 mx-auto flex flex-col gap-y-10 md:gap-x-24 lg:px-16 items-center justify-center'>
+          <H1 className={'font-primary'}>How We Make It Happen?</H1>
+
+          <p className='font-article text-lg'>
+            At Boutique Books, we blend the precision of AI with the expertise of
+            real human accountants to deliver top-notch accounting services. Our
+            proven methods ensure accuracy, efficiency, and a personalized touch,
+            making your financial management effortless and reliable.
+          </p>
+        </div>
       </section>
 
-      <section className='center'>
+      <section className='relative mt-72'>
         {/* <div className="relative overlay w-10/12 mx-auto h-screen"> */}
         <div className="relative w-full mx-auto" id='timeline-container'>
-          <img
-            src={MenWithLaptop}
-            alt=""
-            id='fixed-img'
-            className="absolute w-full h-screen object-cover -z-10 rounded-t-2xl border-red-300"
-          />
-          <section className="py-20 h-screen" id='timeline-wrappper'>
-            {/* Extra timeline bar on top */}
-            <div
-              className="container h-56 w-3/4 mx-auto flex gap-10  justify-center"
-            >
-              <div className='overflow-hidden w-7/12 p-5'>
-                <section
-                  className="rounded-lg text-black"
-                >
-
-                </section>
-              </div>
-              <div class="relative mx-4">
-                <div class="w-1 h-full bg-blue-400"></div>
-              </div>
-
-              <div className='w-7/12 p-5 center' >
-              </div>
-            </div>
-            {/* Extra timeline bar on top */}
-
-            {methods.map(({ title, desc, img }, idx) => (
+          <div className=''>
+            <img
+              src={MenWithLaptop}
+              alt=""
+              id='fixed-img'
+              className="absolute w-full h-screen object-cover -z-10 rounded-t-2xl border-red-300"
+            />
+            <section className="py-20 h-screen" id='timeline-wrappper'>
+              {/* Extra timeline bar on top */}
               <div
-                key={title}
-                className="container w-3/4 mx-auto flex gap-10 flex-row  justify-center text-white"
+                className="container h-56 w-3/4 mx-auto flex gap-10  justify-center"
               >
-                <div className='w-7/12 p-5 relative'>
-                  {/* <div className='absolute -right-14 bg-blue-400 h-1 w-12 top-52'></div> */}
+                <div className='overflow-hidden w-7/12 p-5'>
                   <section
-                    className="rounded-lg text-black bg-white "
+                    className="rounded-lg text-black"
                   >
-                    <img
-                      src={img}
-                      alt={title}
-                      className=" object-cover rounded-lg rounded-b-none"
-                    />
 
-                    <p className="w-full pb-3 font-bold font-primary">{title}</p>
                   </section>
-
                 </div>
                 <div class="relative mx-4">
-                  {/* <div class="w-px bg-white h-full"></div> */}
                   <div class="w-1 h-full bg-blue-400"></div>
                 </div>
 
-                <div className='w-7/12 p-5 center relative' >
-                  <div className='absolute -left-14 bg-blue-400 h-1 w-12'></div>
-                  <p className="text-justify font-article ">{desc}</p>
+                <div className='w-7/12 p-5 center' >
                 </div>
               </div>
-            ))}
-            {/* Extra timeline bar on bottom */}
-            <div
-              className="container h-56 w-3/4 mx-auto flex gap-10  justify-center"
-            >
-              <div className='overflow-hidden w-7/12 p-5'>
-                <section
-                  className="rounded-lg text-black"
+              {/* Extra timeline bar on top */}
+
+              {methods.map(({ title, desc, img }, idx) => (
+                <div
+                  key={title}
+                  className="container w-3/4 mx-auto flex gap-10 flex-row  justify-center text-white"
                 >
+                  <div className='w-7/12 p-5 relative'>
+                    {/* <div className='absolute -right-14 bg-blue-400 h-1 w-12 top-52'></div> */}
+                    <section
+                      className="rounded-lg text-black bg-white "
+                    >
+                      <img
+                        src={img}
+                        alt={title}
+                        className=" object-cover rounded-lg rounded-b-none"
+                      />
 
-                </section>
-              </div>
-              <div class="relative mx-4">
-                <div class="w-1 h-full bg-blue-400"></div>
-              </div>
+                      <p className="w-full pb-3 font-bold font-primary">{title}</p>
+                    </section>
 
-              <div className='w-7/12 p-5 center' >
+                  </div>
+                  <div class="relative mx-4">
+                    {/* <div class="w-px bg-white h-full"></div> */}
+                    <div class="w-1 h-full bg-blue-400"></div>
+                  </div>
+
+                  <div className='w-7/12 p-5 center relative' >
+                    <div className='absolute -left-14 bg-blue-400 h-1 w-12'></div>
+                    <p className="text-justify font-article ">{desc}</p>
+                  </div>
+                </div>
+              ))}
+              {/* Extra timeline bar on bottom */}
+              <div
+                className="container h-56 w-3/4 mx-auto flex gap-10  justify-center"
+              >
+                <div className='overflow-hidden w-7/12 p-5'>
+                  <section
+                    className="rounded-lg text-black"
+                  >
+
+                  </section>
+                </div>
+                <div class="relative mx-4">
+                  <div class="w-1 h-full bg-blue-400"></div>
+                </div>
+
+                <div className='w-7/12 p-5 center' >
+                </div>
               </div>
-            </div>
-            {/* Extra timeline bar on bottom */}
-          </section>
+              {/* Extra timeline bar on bottom */}
+            </section>
+          </div>
+
         </div>
       </section>
 
