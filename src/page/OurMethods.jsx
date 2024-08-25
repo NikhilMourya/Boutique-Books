@@ -48,31 +48,55 @@ const methods = [
 export default function OurMethods() {
 
 
+
   useLayoutEffect(() => {
+
+    let wrapper = document.querySelector("#timeline-wrappper");
+    let wrppperheight = wrapper.offsetHeight;
+
+    function getScrollAmount() {
+      let timelineHeight = wrapper.scrollHeight;
+      return -(timelineHeight - window.innerHeight);
+    }
+    console.log(getScrollAmount(), 'height');
+
 
     let ctx = gsap.context(() => {
 
-      let t1 = gsap.timeline({
-        scrollTrigger:{
-          trigger:'#timeline-container',
-          start:'top 40%',
-          end:'top 0%',
-          markers:true,
-          scrub:2,
+      // let t1 = gsap.timeline({
+      //   scrollTrigger: {
+      //     trigger: '#timeline-container',
+      //     start: 'top 40%',
+      //     end: 'top 0',
+      //     scrub: 2,
+      //   }
+      // })
+
+      // t1.from("#timeline-container", {
+      //   width: "80%",
+      // },0)
+
+
+      let t2 = gsap.timeline({
+        scrollTrigger: {
+          trigger: '#timeline-container',
+          start: 'top 0%',
+          end: () => `+=${getScrollAmount() * -0.1}`,
+          scrub: 2,
+          pin: true
         }
       })
 
-      t1.to('#timeline-container',{
-        width:'100%',
-        duration:1,
+      t2.from("#timeline-container", {
+        width: "80%",
       })
-      // t1.to('#timeline-container',{
-      //   position:'sticky',
-      //   duration:1,
-      // })
+
+      t2.to(wrapper, {
+        y: getScrollAmount,
+      })
+
 
     });
-
     return () => ctx.revert(); // <- cleanup!
 
   }, [])
@@ -89,69 +113,90 @@ export default function OurMethods() {
         </p>
       </section>
 
-      {/* <div className="relative overlay w-10/12 mx-auto h-screen"> */}
-      <div className="relative w-10/12 mx-auto overlay" id='timeline-container'>
-        <img
-          src={MenWithLaptop}
-          alt=""
-          className="absolute w-full h-screen object-cover -z-10 rounded-t-2xl"
-        />
-        <section className="py-20">
-
-
-          {/* Extra timeline bar on top */}
-          <div
-            className="container h-56 w-3/4 mx-auto flex gap-10  justify-center"
-          >
-            <div className='overflow-hidden w-7/12 p-5'>
-              <section
-                className="rounded-lg text-black"
-              >
-
-              </section>
-            </div>
-            <div class="relative mx-4">
-              <div class="w-1 h-full bg-blue-400"></div>
-            </div>
-
-            <div className='w-7/12 p-5 center' >
-            </div>
-          </div>
-          {/* Extra timeline bar on top */}
-
-          {methods.map(({ title, desc, img }, idx) => (
+      <section className='center'>
+        {/* <div className="relative overlay w-10/12 mx-auto h-screen"> */}
+        <div className="relative w-full mx-auto" id='timeline-container'>
+          <img
+            src={MenWithLaptop}
+            alt=""
+            id='fixed-img'
+            className="absolute w-full h-screen object-cover -z-10 rounded-t-2xl border-red-300"
+          />
+          <section className="py-20 h-screen" id='timeline-wrappper'>
+            {/* Extra timeline bar on top */}
             <div
-              key={title}
-              className="container w-3/4 mx-auto flex gap-10 flex-row  justify-center text-white"
+              className="container h-56 w-3/4 mx-auto flex gap-10  justify-center"
             >
-              <div className='w-7/12 p-5 relative'>
-                {/* <div className='absolute -right-14 bg-blue-400 h-1 w-12 top-52'></div> */}
+              <div className='overflow-hidden w-7/12 p-5'>
                 <section
-                  className="rounded-lg text-black bg-white "
+                  className="rounded-lg text-black"
                 >
-                  <img
-                    src={img}
-                    alt={title}
-                    className=" object-cover rounded-lg rounded-b-none"
-                  />
 
-                  <p className="w-full pb-3 font-bold font-primary">{title}</p>
                 </section>
-
               </div>
               <div class="relative mx-4">
-                {/* <div class="w-px bg-white h-full"></div> */}
                 <div class="w-1 h-full bg-blue-400"></div>
               </div>
 
-              <div className='w-7/12 p-5 center relative' >
-                <div className='absolute -left-14 bg-blue-400 h-1 w-12'></div>
-                <p className="text-justify font-article ">{desc}</p>
+              <div className='w-7/12 p-5 center' >
               </div>
             </div>
-          ))}
-        </section>
-      </div>
+            {/* Extra timeline bar on top */}
+
+            {methods.map(({ title, desc, img }, idx) => (
+              <div
+                key={title}
+                className="container w-3/4 mx-auto flex gap-10 flex-row  justify-center text-white"
+              >
+                <div className='w-7/12 p-5 relative'>
+                  {/* <div className='absolute -right-14 bg-blue-400 h-1 w-12 top-52'></div> */}
+                  <section
+                    className="rounded-lg text-black bg-white "
+                  >
+                    <img
+                      src={img}
+                      alt={title}
+                      className=" object-cover rounded-lg rounded-b-none"
+                    />
+
+                    <p className="w-full pb-3 font-bold font-primary">{title}</p>
+                  </section>
+
+                </div>
+                <div class="relative mx-4">
+                  {/* <div class="w-px bg-white h-full"></div> */}
+                  <div class="w-1 h-full bg-blue-400"></div>
+                </div>
+
+                <div className='w-7/12 p-5 center relative' >
+                  <div className='absolute -left-14 bg-blue-400 h-1 w-12'></div>
+                  <p className="text-justify font-article ">{desc}</p>
+                </div>
+              </div>
+            ))}
+            {/* Extra timeline bar on bottom */}
+            <div
+              className="container h-56 w-3/4 mx-auto flex gap-10  justify-center"
+            >
+              <div className='overflow-hidden w-7/12 p-5'>
+                <section
+                  className="rounded-lg text-black"
+                >
+
+                </section>
+              </div>
+              <div class="relative mx-4">
+                <div class="w-1 h-full bg-blue-400"></div>
+              </div>
+
+              <div className='w-7/12 p-5 center' >
+              </div>
+            </div>
+            {/* Extra timeline bar on bottom */}
+          </section>
+        </div>
+      </section>
+
     </main>
   );
 }
