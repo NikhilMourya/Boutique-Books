@@ -62,44 +62,29 @@ export default function OurMethods() {
 
 
     let ctx = gsap.context(() => {
-
-      // let t1 = gsap.timeline({
-      //   scrollTrigger: {
-      //     trigger: '#timeline-container',
-      //     start: 'top 40%',
-      //     end: 'top 0',
-      //     scrub: 2,
-      //   }
-      // })
-
-      // t1.from("#timeline-container", {
-      //   width: "80%",
-      // },0)
-
-
       let t2 = gsap.timeline({
         scrollTrigger: {
           trigger: '#timeline-container',
           start: 'top 0%',
-          end: () => `+=${getScrollAmount() * -0.1}`,
-          scrub: 4,
+          end: () => `+=${getScrollAmount() * -0.3}`,
+          scrub: 1,
           pin: true,
+          markers:true
         }
       })
 
-      // t2.from("#timeline-container", {
-      //   width: "80%",
-      // })
       t2.to('#title-wrapper',{
         opacity:0,
-        duration:0.3
-      })
+        duration:0.1,
+      },0)
 
       t2.fromTo('#timeline-wrappper',{
         opacity:0,
+        duration:0.2
       },{
         opacity:1,
-      })
+        duration:0.2
+      },0)
 
       t2.to(wrapper, {
         y: getScrollAmount,
@@ -111,14 +96,14 @@ export default function OurMethods() {
 
   }, [])
   return (
-    <main className="flex flex-col gap-y-24 pt-36" id='our-methods-wrapper'>
+    <main className="flex flex-col gap-y-24 pt-28 md:pt-36" id='our-methods-wrapper'>
 
 
       <section className="fixed z-20" id='title-wrapper'>
         <div className='w-9/12 mx-auto flex flex-col gap-y-10 md:gap-x-24 lg:px-16 items-center justify-center'>
-          <H1 className={'font-primary'}>How We Make It Happen?</H1>
+          <H1 className={'font-primary text-2xl'}>How We Make It Happen?</H1>
 
-          <p className='font-article text-lg'>
+          <p className='font-article text-sm md:text-lg'>
             At Boutique Books, we blend the precision of AI with the expertise of
             real human accountants to deliver top-notch accounting services. Our
             proven methods ensure accuracy, efficiency, and a personalized touch,
