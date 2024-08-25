@@ -188,15 +188,25 @@ export default function PricingPage() {
         <div class="card p-10 grid gap-y-5 items-center text-left md:gap-y-0 shadow-md border border-primary/40 shadow-primary rounded-3xl min-h-[400px]">
           <h3 class="font-semibold text-2xl">Essential Plan</h3>
           <p>For startups in the pre-revenue stage, just starting out.</p>
-          <input
-            value={priceRange}
-            min="0"
-            max="200000"
-            type="range"
-            step={1000}
-            className="tw-range"
-            onChange={(e) => setPriceRange(e.target.value)}
-          />
+          <div className="relative flex items-center">
+            <input
+              value={priceRange}
+              min="0"
+              max="200000"
+              type="range"
+              step={1000}
+              className="tw-range"
+              onChange={(e) => setPriceRange(e.target.value)}
+            />
+            {/* Tick Marks */}
+            <section className="absolute inset-0 flex justify-between px-1 pointer-events-none">
+              <div className="price-range-tick _1"></div>
+              <div className="price-range-tick _2"></div>
+              <div className="price-range-tick _3"></div>
+              <div className="price-range-tick _4"></div>
+              <div className="price-range-tick _5"></div>
+            </section>
+          </div>
           <p>
             <span class="font-bold">{price(priceRange)}</span> in monthly
             expenses
@@ -214,15 +224,25 @@ export default function PricingPage() {
         <div class="card p-10 grid gap-y-5 items-center text-left md:gap-y-0 shadow-md border border-primary/40 shadow-primary rounded-3xl min-h-[400px]">
           <h3 class="font-semibold text-2xl">Premium Plan</h3>
           <p>For companies with refined needs, reflecting their high value.</p>
-          <input
-            value={priceRange}
-            min="0"
-            max="200000"
-            type="range"
-            step={1000}
-            className="tw-range"
-            onChange={(e) => setPriceRange(e.target.value)}
-          />
+          <div className="relative flex items-center">
+            <input
+              value={priceRange}
+              min="0"
+              max="200000"
+              type="range"
+              step={1000}
+              className="tw-range"
+              onChange={(e) => setPriceRange(e.target.value)}
+            />
+            {/* Tick Marks */}
+            <section className="absolute inset-0 flex justify-between px-1 pointer-events-none">
+              <div className="price-range-tick _1"></div>
+              <div className="price-range-tick _2"></div>
+              <div className="price-range-tick _3"></div>
+              <div className="price-range-tick _4"></div>
+              <div className="price-range-tick _5"></div>
+            </section>
+          </div>
           <p>
             <span class="font-bold">{price(priceRange)}</span> in monthly
             expenses

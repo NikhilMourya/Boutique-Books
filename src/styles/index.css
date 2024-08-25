@@ -135,10 +135,13 @@
   width: 100%;
   outline: none;
 }
+
 .tw-range::-webkit-slider-thumb {
   -webkit-appearance: none;
   width: 30px;
   height: 30px;
+  position: relative;
+  z-index: 10;
   border-radius: 999px;
   background-color: hsl(0, 0%, 0%);
   background-image: url('../assets/images/pricing/Scroll-circle.png');
@@ -150,4 +153,36 @@
 .tw-range::-webkit-slider-thumb:active {
   background-color: hsl(0, 0%, 0%);
   transition-duration: 200ms;
+}
+
+.price-range-tick {
+  background-color: #fff;
+  border: 2px solid #e0e0e0;
+  border-radius: 50%;
+  width: 11px;
+  height: 11px;
+  margin-left: 5px;
+  position: absolute;
+  bottom: 50%;
+  transform: translateY(50%);
+}
+
+.price-range-tick._1 {
+  left: 18.5%;
+}
+
+.price-range-tick._2 {
+  left: 37%;
+}
+
+.price-range-tick._3 {
+  left: 55.5%;
+}
+
+.price-range-tick._4 {
+  left: 74%;
+}
+
+.price-range-tick._5 {
+  right: 0%;
 }
