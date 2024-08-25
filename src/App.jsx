@@ -56,7 +56,7 @@ export default function App() {
   return (
     <>
 
-      <CustomCursor />
+      {/* <CustomCursor /> */}
       <Header />
       <Routes>
         <Route path="/" element={<HomePage />} />
