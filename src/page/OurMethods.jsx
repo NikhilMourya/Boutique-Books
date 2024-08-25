@@ -1,5 +1,5 @@
 import React from 'react';
-import { useLayoutEffect } from "react";
+import { useLayoutEffect, useState, useEffect } from "react";
 import M1 from '../assets/images/methods/1.png';
 import M2 from '../assets/images/methods/2.png';
 import M3 from '../assets/images/methods/3.png';
@@ -47,10 +47,24 @@ const methods = [
 ];
 export default function OurMethods() {
 
+  const [width, setWidth] = useState(window.innerWidth);
+  const isMobile = width <= 768
+
+  function handleWindowSizeChange() {
+    setWidth(window.innerWidth);
+  }
+  useEffect(() => {
+    window.addEventListener('resize', handleWindowSizeChange);
+    return () => {
+      window.removeEventListener('resize', handleWindowSizeChange);
+    }
+  }, []);
+
+  ;
 
 
   useLayoutEffect(() => {
-
+    console.log(isMobile, 'isMobile')
     let wrapper = document.querySelector("#timeline-wrappper");
     let wrppperheight = wrapper.offsetHeight;
 
@@ -69,18 +83,18 @@ export default function OurMethods() {
         }
       })
 
-      t2.to('#title-wrapper',{
-        opacity:0,
-        duration:0.1,
-      },0)
+      t2.to('#title-wrapper', {
+        opacity: 0,
+        duration: 0.1,
+      }, 0)
 
-      t2.fromTo('#timeline-wrappper',{
-        opacity:0,
-        duration:0.2
-      },{
-        opacity:1,
-        duration:0.2
-      },0)
+      t2.fromTo('#timeline-wrappper', {
+        opacity: 0,
+        duration: 0.2
+      }, {
+        opacity: 1,
+        duration: 0.2
+      }, 0)
 
       t2.to(wrapper, {
         y: getScrollAmount,
@@ -116,78 +130,162 @@ export default function OurMethods() {
               id='fixed-img'
               className="absolute w-full h-screen object-cover -z-10 rounded-t-2xl border-red-300"
             />
-            <section className="py-20 h-screen" id='timeline-wrappper'>
-              {/* Extra timeline bar on top */}
-              <div
-                className="container h-56 w-3/4 mx-auto flex gap-10  justify-center"
-              >
-                <div className='overflow-hidden w-7/12 p-5'>
-                  <section
-                    className="rounded-lg text-black"
-                  >
-
-                  </section>
-                </div>
-                <div class="relative mx-4">
-                  <div class="w-1 h-full bg-blue-400"></div>
-                </div>
-
-                <div className='w-7/12 p-5 center' >
-                </div>
-              </div>
-              {/* Extra timeline bar on top */}
-
-              {methods.map(({ title, desc, img }, index) => (
+            {!isMobile && (
+              <section className="py-20 h-screen" id='timeline-wrappper'>
+                {/* Extra timeline bar on top */}
                 <div
-                  key={title}
-                  className={`container w-3/4 mx-auto flex gap-10  justify-center text-white ${ index%2==0 ? 'flex-row' : 'flex-row-reverse'}`}
+                  className="container h-56 w-3/4 mx-auto flex gap-10  justify-center"
                 >
-                  <div className='w-7/12 p-5 relative'>
-                    {/* <div className='absolute -right-14 bg-blue-400 h-1 w-12 top-52'></div> */}
+                  <div className='overflow-hidden w-7/12 p-5'>
                     <section
-                      className="rounded-lg text-black bg-white "
+                      className="rounded-lg text-black"
                     >
-                      <img
-                        src={img}
-                        alt={title}
-                        className=" object-cover rounded-lg rounded-b-none"
-                      />
 
-                      <p className="w-full pb-3 font-bold font-primary">{title}</p>
                     </section>
-
                   </div>
-                  <div class="relative mx-4">
-                    {/* <div class="w-px bg-white h-full"></div> */}
-                    <div class="w-1 h-full bg-blue-400"></div>
+                  <div className="relative mx-4">
+                    <div className="w-1 h-full bg-blue-400"></div>
                   </div>
 
-                  <div className='w-7/12 p-5 center relative' >
-                    <div className={`absolute  bg-blue-400 h-1 w-12 ${index%2==0 ? '-left-14' : '-right-14'}`}></div>
-                    <p className="text-justify font-article ">{desc}</p>
+                  <div className='w-7/12 p-5 center' >
                   </div>
                 </div>
-              ))}
-              {/* Extra timeline bar on bottom */}
-              <div
-                className="container h-56 w-3/4 mx-auto flex gap-10  justify-center"
-              >
-                <div className='overflow-hidden w-7/12 p-5'>
-                  <section
-                    className="rounded-lg text-black"
+                {/* Extra timeline bar on top */}
+
+                {methods.map(({ title, desc, img }, index) => (
+                  <div
+                    key={title}
+                    className={`container w-3/4 mx-auto flex gap-10  justify-center text-white ${index % 2 == 0 ? 'flex-row' : 'flex-row-reverse'}`}
+                  >
+                    <div className='w-7/12 p-5 relative'>
+                      {/* <div className='absolute -right-14 bg-blue-400 h-1 w-12 top-52'></div> */}
+                      <section
+                        className="rounded-lg text-black bg-white "
+                      >
+                        <img
+                          src={img}
+                          alt={title}
+                          className=" object-cover rounded-lg rounded-b-none"
+                        />
+
+                        <p className="w-full pb-3 font-bold font-primary">{title}</p>
+                      </section>
+
+                    </div>
+                    <div className="relative mx-4">
+                      {/* <div class="w-px bg-white h-full"></div> */}
+                      <div className="w-1 h-full bg-blue-400"></div>
+                    </div>
+
+                    <div className='w-7/12 p-5 center relative' >
+                      <div className={`absolute  bg-blue-400 h-1 w-12 ${index % 2 == 0 ? '-left-14' : '-right-14'}`}></div>
+                      <p className="text-justify font-article ">{desc}</p>
+                    </div>
+                  </div>
+                ))}
+                {/* Extra timeline bar on bottom */}
+                <div
+                  className="container h-56 w-3/4 mx-auto flex gap-10  justify-center"
+                >
+                  <div className='overflow-hidden w-7/12 p-5'>
+                    <section
+                      className="rounded-lg text-black"
+                    >
+
+                    </section>
+                  </div>
+                  <div className="relative mx-4">
+                    <div className="w-1 h-full bg-blue-400"></div>
+                  </div>
+
+                  <div className='w-7/12 p-5 center' >
+                  </div>
+                </div>
+                {/* Extra timeline bar on bottom */}
+              </section>
+            )}
+
+
+            {isMobile && (
+              <section className="py-20 h-screen" id='timeline-wrappper'>
+                {/* Extra timeline bar on top */}
+                {/* <div
+                  className="container h-56 w-3/4 mx-auto flex gap-10  justify-center"
+                >
+                  <div className='overflow-hidden w-7/12 p-5'>
+                    <section
+                      className="rounded-lg text-black"
+                    >
+
+                    </section>
+                  </div>
+                  <div className="relative mx-4">
+                    <div className="w-1 h-full bg-blue-400"></div>
+                  </div>
+
+                  <div className='w-7/12 p-5 center' >
+                  </div>
+                </div> */}
+                {/* Extra timeline bar on top */}
+
+                {methods.map(({ title, desc, img }, index) => (
+                  <div
+                    key={title}
+                    className={`container w-full mx-auto flex gap-2  justify-start text-white flex-row`}
                   >
 
-                  </section>
-                </div>
-                <div class="relative mx-4">
-                  <div class="w-1 h-full bg-blue-400"></div>
-                </div>
+                    <div className="relative mx-2">
+                      <div className="w-1 h-full bg-blue-400"></div>
+                    </div>
 
-                <div className='w-7/12 p-5 center' >
-                </div>
-              </div>
-              {/* Extra timeline bar on bottom */}
-            </section>
+
+                    <div className='w-full flex-grow p-2 relative'>
+
+                      <div className={`absolute  bg-blue-400 h-1 w-6 -left-4 top-32`}></div>
+                      {/* <div className='absolute -right-14 bg-blue-400 h-1 w-12 top-52'></div> */}
+                      <section
+                        className="rounded-lg text-black bg-white mb-5"
+                      >
+                        <img
+                          src={img}
+                          alt={title}
+                          className=" object-cover rounded-lg rounded-b-none"
+                        />
+
+                        <p className="w-full py-1 font-bold font-primary text-sm">{title}</p>
+                      </section>
+                      <div className='w-full center relative mb-10' >
+                        <p className="text-left">{desc}</p>
+                      </div>
+                    </div>
+
+
+
+                  </div>
+                ))}
+                {/* Extra timeline bar on bottom */}
+                {/* <div
+                  className="container h-56 w-3/4 mx-auto flex gap-10  justify-center"
+                >
+                  <div className='overflow-hidden w-7/12 p-5'>
+                    <section
+                      className="rounded-lg text-black"
+                    >
+
+                    </section>
+                  </div>
+                  <div className="relative mx-4">
+                    <div className="w-1 h-full bg-blue-400"></div>
+                  </div>
+
+                  <div className='w-7/12 p-5 center' >
+                  </div>
+                </div> */}
+                {/* Extra timeline bar on bottom */}
+              </section>
+            )}
+
+
           </div>
 
         </div>
