@@ -27,25 +27,6 @@ const whyChooseUs = [
     imgURL: P3,
   },
 ];
-const pricingCarts = [
-  {
-    title: 'Essential Plan',
-    desc: 'For startups in the pre-revenue stage, just starting out.',
-    montlyRate: '$39,600',
-    yearlyRate: '$499',
-  },
-  {
-    title: 'Premium Plan',
-    desc: 'For companies with refined needs, reflecting their high value.',
-    montlyRate: '$39,600',
-    yearlyRate: '$499',
-  },
-  {
-    title: 'Elite Plan',
-    desc: 'Craft a plan precisely suited to your business needs.',
-    customPricing: 'Custom Pricing',
-  },
-];
 
 const pricingTable = [
   { min: 0, max: 30000, standard: 395, plus: 449 },
@@ -54,6 +35,7 @@ const pricingTable = [
   { min: 100001, max: 150000, standard: 875, plus: 1150 },
   { min: 150001, max: 200000, standard: 1050, plus: 1325 },
 ];
+
 const price = (amt) => {
   return new Intl.NumberFormat('en-US', {
     style: 'currency',
@@ -61,6 +43,7 @@ const price = (amt) => {
     minimumFractionDigits: 0,
   }).format(amt);
 };
+
 const getBookkeepingCost = (monthlyExpenses, isBookkeepingPlus = false) => {
   const pricing = pricingTable.find(
     ({ min, max }) => monthlyExpenses >= min && monthlyExpenses <= max
