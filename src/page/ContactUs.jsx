@@ -38,11 +38,11 @@ export default function ContactUs() {
                         <div className="text-center space-y-2 flex flex-col justify-around items-center gap-2">
                             <p>Timing: Mon-Sun | 10:00 AM - 07:00 PM (IST)</p>
                             <p>
-                                Contact us on: <a href="tel:+919004585459">+91 9004585459</a>
+                                Contact us on: <a href="tel:+2834u10939">+91 2348929012</a>
                             </p>
-                            <p>or 073-146-20478</p>
+                            <p>or 23234-345235</p>
                             <p>
-                                Email: <a href="mailto:support@kingdomofwhite.com">support@kingdomofwhite.com</a>
+                                Email: <a href="mailto:support@testing.com">support@testing.com</a>
                             </p>
                         </div>
                     </div>
