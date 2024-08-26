@@ -297,7 +297,10 @@ const HomePage = () => {
                   className="w-full h-screen object-cover md:h-full"
                   src={ladyWithLaptop}
                 />
-                <div className="black-overlay" id="lady-laptop-overlay">
+                <div
+                  className="black-overlay overflow-hidden"
+                  id="lady-laptop-overlay"
+                >
                   <div className="p-5 md:p-10 w-full md:w-4/5 lg:w-3/5 mx-auto">
                     <div className="mx-auto text-white">
                       <div className="mt-16">
