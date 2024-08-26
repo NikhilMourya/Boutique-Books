@@ -136,9 +136,13 @@ export default function AboutPage() {
     <main className="md:pt-28 pt-20 bg-white">
       <section
         id="top-sec"
-        className="z-10 fixed lg:top-16 w-full my-5 container mx-auto flex flex-col-reverse lg:flex-row gap-y-10 md:gap-x-24 lg:px-16 items-center"
+        className="z-10 fixed lg:top-16 my-5 mx-auto flex flex-col-reverse lg:flex-row gap-y-10 md:gap-x-24 lg:px-16 items-center"
       >
-        <img src={AboutImg} className="h-40 md:h-52 lg:h-60 w-auto" alt="" />
+        <img
+          src={AboutImg}
+          className="sm:h-40 md:h-52 lg:h-60 w-9/12 mx-auto lg:w-auto"
+          alt=""
+        />
         <H1 className="font-primary lg:text-7xl flex lg:flex-col space-x-3 lg:-space-x-5 gap-y-5">
           <span className="font-primary">Origin</span>{' '}
           <span className="font-primary">Story</span>
