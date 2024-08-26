@@ -276,7 +276,7 @@ export default function PricingPage() {
       </section>
 
       <section
-        className="flex flex-col justify-center items-center relative md:min-h-[800px] mx-auto w-10/12"
+        className="flex flex-col justify-center items-center relative md:min-h-[800px] mx-auto w-10/12 overflow-hidden"
         id="lady-section"
       >
         <img
