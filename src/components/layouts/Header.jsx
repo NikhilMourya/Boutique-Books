@@ -142,7 +142,7 @@ export default function Header() {
 
           <ul
             className={`absolute top-0 pt-28 z-10 right-0 flex justify-start gap-y-8 transition-all ease-linear duration-200 w-full h-screen text-left bg-white flex-col gap-x-10 items-center list-none ${
-              isOpen ? 'translate-x-0' : 'translate-x-[1000vw]'
+              isOpen ? 'translate-x-0' : 'translate-x-[100vw]'
             }`}
           >
             {navItems.map((item, index) => (
