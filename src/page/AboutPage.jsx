@@ -136,7 +136,7 @@ export default function AboutPage() {
     <main className="md:pt-28 pt-20 bg-white">
       <section
         id="top-sec"
-        className="z-10 fixed lg:top-16 my-5 mx-auto flex flex-col-reverse lg:flex-row gap-y-10 md:gap-x-24 lg:px-16 items-center"
+        className="z-10 fixed lg:top-16 my-5 mx-auto flex flex-col-reverse lg:flex-row gap-y-10 md:gap-x-24 lg:px-40 items-center"
       >
         <img
           src={AboutImg}
