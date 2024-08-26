@@ -166,6 +166,10 @@
   transform: translateY(50%);
 }
 
+.price-range-tick._0 {
+  margin-left: 0;
+  left: 0;
+}
 .price-range-tick._1 {
   left: 18.5%;
 }

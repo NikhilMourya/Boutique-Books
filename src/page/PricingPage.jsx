@@ -203,6 +203,7 @@ export default function PricingPage() {
             />
             {/* Tick Marks */}
             <section className="absolute inset-0 flex justify-between px-1 pointer-events-none">
+              <div className="price-range-tick _0"></div>
               <div className="price-range-tick _1"></div>
               <div className="price-range-tick _2"></div>
               <div className="price-range-tick _3"></div>
@@ -239,6 +240,7 @@ export default function PricingPage() {
             />
             {/* Tick Marks */}
             <section className="absolute inset-0 flex justify-between px-1 pointer-events-none">
+              <div className="price-range-tick _0"></div>
               <div className="price-range-tick _1"></div>
               <div className="price-range-tick _2"></div>
               <div className="price-range-tick _3"></div>
