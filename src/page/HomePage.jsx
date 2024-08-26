@@ -284,7 +284,7 @@ const HomePage = () => {
             <div className="relative">
               <div className="h-72 w-72 homepage-circle"></div>
             </div>
-            <div className="relative">
+            <div className="hidden lg:block relative">
               <div className="mt-36 h-72 w-72 homepage-circle"></div>
             </div>
           </div>
