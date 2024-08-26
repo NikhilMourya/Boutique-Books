@@ -1,4 +1,7 @@
-import React, { useState } from 'react';
+import { useGSAP } from '@gsap/react';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import React, { useEffect, useState } from 'react';
 import AboutImg from '../assets/images/about/about.png';
 import CollaborationImg from '../assets/images/about/Collaboration.png';
 import InnovationImg from '../assets/images/about/Innovation.png';
@@ -11,13 +14,8 @@ import Team4 from '../assets/images/about/team-4.png';
 import TeamWorkImg from '../assets/images/about/Team-Work.png';
 import WomenEmpowermentImg from '../assets/images/about/Women-Empowerment.png';
 import H1 from '../components/H1';
-import gsap from 'gsap';
-import { useEffect, useRef } from 'react';
-import { useGSAP } from '@gsap/react';
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(useGSAP, ScrollTrigger);
-
 
 const paragraphs = [
   'Boutique Books was born from a passion for delivering unparalleled service and a deep-seated desire to revolutionize the bookkeeping industry.  With over 25 years of experience serving customers in the bookkeeping realm, I found myself at a crossroads.  The traditional hourly billing model was not only cumbersome and time-consuming but also counterproductive for both myself and my customers.',
@@ -89,7 +87,6 @@ export default function AboutPage() {
     }
 
     let ctx = gsap.context(() => {
-
       let t1 = gsap.timeline({
         scrollTrigger: {
           trigger: '.horizontal-para-wrapper',
@@ -97,16 +94,16 @@ export default function AboutPage() {
           start: 'top 60%',
           end: () => `+=${getScrollAmount() * -1}`,
           pin: true,
-          pinSpacing:true,
+          pinSpacing: true,
           scrub: 1,
           invalidateOnRefresh: true,
-        }
-      })
+        },
+      });
 
       t1.to(paras, {
         x: getScrollAmount,
-        ease: 'none'
-      })
+        ease: 'none',
+      });
 
       // t1.to('#top-sec', {
       //   position: 'relative',
@@ -118,38 +115,43 @@ export default function AboutPage() {
           start: 'top 30%',
           end: 'top 0%',
           scrub: 3,
-        }
-      })
+        },
+      });
 
       t2.from('.title-container', {
         opacity: 0,
-        translateY: '70%'
-      })
+        translateY: '70%',
+      });
       t2.from('.title-container1', {
-        translateY: "70%",
+        translateY: '70%',
         opacity: 0,
         delay: 2,
-      })
-
-
+      });
     });
 
     return () => ctx.revert(); // <- cleanup!
-
-  }, [])
+  }, []);
 
   return (
     <main className="md:pt-28 pt-20 bg-white">
-      <section id='top-sec' className="z-10 fixed lg:top-16 w-full my-5 container mx-auto flex flex-col-reverse lg:flex-row gap-y-10 md:gap-x-24 lg:px-16 items-center">
-        <img src={AboutImg} className='h-40 md:h-52 lg:h-60 w-auto' alt="" />
+      <section
+        id="top-sec"
+        className="z-10 fixed lg:top-16 my-5 mx-auto flex flex-col-reverse lg:flex-row gap-y-10 md:gap-x-24 lg:px-40 items-center"
+      >
+        <img
+          src={AboutImg}
+          className="sm:h-40 md:h-52 lg:h-60 w-9/12 mx-auto lg:w-auto"
+          alt=""
+        />
         <H1 className="font-primary lg:text-7xl flex lg:flex-col space-x-3 lg:-space-x-5 gap-y-5">
-          <span className='font-primary'>Origin</span> <span className='font-primary'>Story</span>
+          <span className="font-primary">Origin</span>{' '}
+          <span className="font-primary">Story</span>
         </H1>
       </section>
 
-      <div className='relative z-20' >
-        <div className='horizontal-para-wrapper bg-primary relative'>
-          <div className="lg:ml-20 lg:rounded-tl-[50px] bg-primary  flex gap-5 horizontal-para" >
+      <div className="relative z-20">
+        <div className="horizontal-para-wrapper bg-primary relative overflow-hidden">
+          <div className="lg:ml-20 lg:rounded-tl-[50px] bg-primary  flex gap-5 horizontal-para">
             {paras.map((para, index) => (
               <div className="flex-shrink-0 w-[50%] p-5" key={index}>
                 <p className="text-white text-left text-lg">{para}</p>
@@ -159,10 +161,10 @@ export default function AboutPage() {
         </div>
       </div>
 
-      <section className="z-20 relative bg-primary py-14 px-5 md:px-24 text-white about-value" >
-        <div >
-          <div className='title-container'>
-            <H1 className={'my-14 font-primary'} >Our Core Values</H1>
+      <section className="z-20 relative bg-primary py-14 px-5 md:px-24 text-white about-value">
+        <div>
+          <div className="title-container">
+            <H1 className={'my-14 font-primary'}>Our Core Values</H1>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
               {coreValues.slice(0, 3).map(({ title, imgUrl }) => (
                 <div
@@ -171,7 +173,9 @@ export default function AboutPage() {
                   style={{ boxShadow: '0px 3px 3px 0px rgba(0, 0, 0, 0.15)' }}
                 >
                   <img src={imgUrl} className="w-full rounded-lg" />
-                  <span className="text-black text-lg text-left mt-2">{title}</span>
+                  <span className="text-black text-lg text-left mt-2">
+                    {title}
+                  </span>
                 </div>
               ))}
             </div>
@@ -184,7 +188,9 @@ export default function AboutPage() {
                 style={{ boxShadow: '0px 3px 3px 0px rgba(0, 0, 0, 0.15)' }}
               >
                 <img src={imgUrl} className="w-full rounded-lg" />
-                <span className="text-black text-lg text-left mt-2">{title}</span>
+                <span className="text-black text-lg text-left mt-2">
+                  {title}
+                </span>
               </div>
             ))}
           </div>
@@ -196,17 +202,17 @@ export default function AboutPage() {
           <div className="w-full flex flex-col border-t border-b">
             {team.map(({ id, name, role, imgURL }) => (
               <div
-                className="grid grid-cols-[10%,55%,45%] lg:grid-cols-[15%,45%,40%] cursor-pointer group hover:bg-primary px-5 transition-all ease-linear duration-300 min-h-16 text-left items-center justify-between border-t border-b"
+                className="grid grid-cols-[8%,55%,37%] lg:grid-cols-[15%,45%,40%] cursor-pointer group hover:bg-primary px-5 transition-all ease-linear duration-300 min-h-16 text-left items-center justify-between border-t border-b"
                 key={id}
                 onMouseEnter={() => setTeamImg(imgURL)}
               >
-                <h4 className="text-lg lg:text-3xl group-hover:text-white text-[#8D8D8D]">
+                <h4 className="text-sm sm:text-lg lg:text-3xl group-hover:text-white text-[#8D8D8D]">
                   {id.toString().padStart(2, '0')}
                 </h4>
-                <h4 className="font-primary text-lg lg:text-2xl group-hover:text-white">
+                <h4 className="font-primary text-sm sm:text-lg lg:text-2xl group-hover:text-white">
                   {name}
                 </h4>
-                <h5 className="text-lg lg:text-xl group-hover:text-white text-[#8D8D8D]">
+                <h5 className="text-sm sm:text-lg lg:text-xl group-hover:text-white text-[#8D8D8D]">
                   {role}
                 </h5>
               </div>

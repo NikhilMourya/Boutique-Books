@@ -25,7 +25,7 @@ const navigation = [
   { text: 'Home', href: '/' },
   { text: 'About Us', href: '/about-us' },
   { text: 'Services', href: '/services' },
-  { text: 'Our Methods', href: '/methods' },
+  { text: 'Our Methods', href: '/our-methods' },
   { text: 'Pricing', href: '/pricing' },
   { text: 'Contact Us', href: '/contact' },
 ];

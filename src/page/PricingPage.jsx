@@ -187,9 +187,9 @@ export default function PricingPage() {
         </h1>
       </section>
 
-      <section class="px-5 md:px-16 sm:min-h-[400px] grid grid-cols-1 gap-y-16 gap-x-5 md:grid-cols-2 lg:grid-cols-3 justify-center">
-        <div class="card p-10 grid gap-y-5 items-center text-left md:gap-y-0 shadow-md border border-primary/40 shadow-primary rounded-3xl min-h-[400px]">
-          <h3 class="font-semibold text-2xl">Essential Plan</h3>
+      <section className="px-5 md:px-16 sm:min-h-[400px] grid grid-cols-1 gap-y-16 gap-x-5 md:grid-cols-2 lg:grid-cols-3 justify-center">
+        <div className="card p-10 grid gap-y-5 items-center text-left md:gap-y-0 shadow-md border border-primary/40 shadow-primary rounded-3xl min-h-[400px]">
+          <h3 className="font-semibold text-2xl">Essential Plan</h3>
           <p>For startups in the pre-revenue stage, just starting out.</p>
           <div className="relative flex items-center">
             <input
@@ -203,6 +203,7 @@ export default function PricingPage() {
             />
             {/* Tick Marks */}
             <section className="absolute inset-0 flex justify-between px-1 pointer-events-none">
+              <div className="price-range-tick _0"></div>
               <div className="price-range-tick _1"></div>
               <div className="price-range-tick _2"></div>
               <div className="price-range-tick _3"></div>
@@ -211,21 +212,21 @@ export default function PricingPage() {
             </section>
           </div>
           <p>
-            <span class="font-bold">{price(priceRange)}</span> in monthly
+            <span className="font-bold">{price(priceRange)}</span> in monthly
             expenses
           </p>
           <p>
-            <span class="text-4xl font-bold">
+            <span className="text-4xl font-bold">
               {price(getBookkeepingCost(priceRange))}
             </span>
             /mo billed annually
           </p>
-          <button class="bg-primary w-full self-end text-2xl py-2 rounded-lg">
+          <button className="bg-primary w-full self-end text-2xl py-2 rounded-lg">
             Contact Us
           </button>
         </div>
-        <div class="card p-10 grid gap-y-5 items-center text-left md:gap-y-0 shadow-md border border-primary/40 shadow-primary rounded-3xl min-h-[400px]">
-          <h3 class="font-semibold text-2xl">Premium Plan</h3>
+        <div className="card p-10 grid gap-y-5 items-center text-left md:gap-y-0 shadow-md border border-primary/40 shadow-primary rounded-3xl min-h-[400px]">
+          <h3 className="font-semibold text-2xl">Premium Plan</h3>
           <p>For companies with refined needs, reflecting their high value.</p>
           <div className="relative flex items-center">
             <input
@@ -239,6 +240,7 @@ export default function PricingPage() {
             />
             {/* Tick Marks */}
             <section className="absolute inset-0 flex justify-between px-1 pointer-events-none">
+              <div className="price-range-tick _0"></div>
               <div className="price-range-tick _1"></div>
               <div className="price-range-tick _2"></div>
               <div className="price-range-tick _3"></div>
@@ -247,34 +249,34 @@ export default function PricingPage() {
             </section>
           </div>
           <p>
-            <span class="font-bold">{price(priceRange)}</span> in monthly
+            <span className="font-bold">{price(priceRange)}</span> in monthly
             expenses
           </p>
           <p>
-            <span class="text-4xl font-bold">
+            <span className="text-4xl font-bold">
               {price(getBookkeepingCost(priceRange, true))}
             </span>
           </p>
-          <button class="bg-primary w-full self-end text-2xl py-2 rounded-lg">
+          <button className="bg-primary w-full self-end text-2xl py-2 rounded-lg">
             Contact Us
           </button>
         </div>
-        <div class="card p-10 grid gap-y-5 items-center text-left md:gap-y-0 shadow-md border border-primary/40 shadow-primary rounded-3xl min-h-[400px]">
-          <h3 class="font-semibold text-2xl">Elite Plan</h3>
-          <p class="self-start">
+        <div className="card p-10 grid gap-y-5 items-center text-left md:gap-y-0 shadow-md border border-primary/40 shadow-primary rounded-3xl min-h-[400px]">
+          <h3 className="font-semibold text-2xl">Elite Plan</h3>
+          <p className="self-start">
             Craft a plan precisely suited to your business needs.
           </p>
-          <p class="self-end">
-            <span class="text-2xl font-bold">Custom Pricing</span>
+          <p className="self-end">
+            <span className="text-2xl font-bold">Custom Pricing</span>
           </p>
-          <button class="bg-primary w-full self-end text-2xl py-2 rounded-lg">
+          <button className="bg-primary w-full self-end text-2xl py-2 rounded-lg">
             Contact Us
           </button>
         </div>
       </section>
 
       <section
-        class="flex flex-col justify-center items-center relative md:min-h-[800px] mx-auto w-10/12"
+        className="flex flex-col justify-center items-center relative md:min-h-[800px] mx-auto w-11/12 lg:w-10/12 overflow-hidden"
         id="lady-section"
       >
         <img
