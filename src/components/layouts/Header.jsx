@@ -122,25 +122,28 @@ export default function Header() {
                 key={index}
                 className="cursor-pointer hover:opacity-90 transition-all"
               >
-                <Link to={item.href} className='whitespace-nowrap font-article'>{item.text}</Link>
+                <Link to={item.href} className="whitespace-nowrap font-article">
+                  {item.text}
+                </Link>
               </li>
             ))}
             <li className="cursor-pointer whitespace-nowrap hover:bg-primary/90 transition-all bg-primary py-2 px-5 rounded-full">
-             <Link to={'/contact'} >Contact Us</Link> 
+              <Link to={'/contact'}>Contact Us</Link>
             </li>
           </ul>
         </nav>
 
         {/* Moblie nav */}
-        <nav className="lg:hidden" onClick={() => setIsOpen(!isOpen)}>
-          <span className="">
+        <nav className="block lg:hidden" onClick={() => setIsOpen(!isOpen)}>
+          <span className="relative z-20">
             {' '}
             {!isOpen ? loginSVG : logoutSVG}
           </span>
 
           <ul
-            className={`absolute top-0 pt-28 z-10 right-0 flex justify-start gap-y-8 transition-all ease-linear duration-200 w-full h-screen text-left bg-white flex-col gap-x-10 items-center list-none ${isOpen ? 'translate-x-0' : 'translate-x-[100vw]'
-              }`}
+            className={`absolute top-0 pt-28 z-10 right-0 flex justify-start gap-y-8 transition-all ease-linear duration-200 w-full h-screen text-left bg-white flex-col gap-x-10 items-center list-none ${
+              isOpen ? 'translate-x-0' : 'translate-x-[1000vw]'
+            }`}
           >
             {navItems.map((item, index) => (
               <li
@@ -155,7 +158,7 @@ export default function Header() {
               className="cursor-pointer w-[65%] text-center text-white hover:bg-primary/90 transition-all bg-primary py-2 px-5 rounded-full"
               onClick={closeNav}
             >
-              <Link to='/contact'>Contact Us</Link>
+              <Link to="/contact">Contact Us</Link>
             </li>
           </ul>
         </nav>
