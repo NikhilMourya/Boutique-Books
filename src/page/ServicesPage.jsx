@@ -130,10 +130,10 @@ const ServicesPage = () => {
     <>
       <section className="bg-white">
         <section className="relative mt-36">
-          <div className=" mx-auto w-full rounded-t-2xl">
-            <div className="mx-auto relative rounded-t-2xl">
+          <div className=" mx-auto w-full lg:rounded-t-2xl">
+            <div className="mx-auto relative lg:rounded-t-2xl">
               <div className="center relative z-0">
-                <div className="w-full h-[110vh] lg:h-full rounded-t-2xl">
+                <div className="w-full h-[110vh] max-sm:h-auto lg:h-full lg:rounded-t-2xl">
                   <Slider
                     {...SliderSettingsBg}
                     ref={(slider) => {
@@ -150,7 +150,7 @@ const ServicesPage = () => {
                     ))}
                   </Slider>
                 </div>
-                <div className="black-overlay rounded-t-2xl">
+                <div className="black-overlay lg:rounded-t-2xl">
                   <div className="p-5 md:p-20 pr-0 sm:h-screen w-full">
                     <div className="mx-auto text-white">
                       <h1 className="mb-10 text-2xl opacity-80 font-primary text-left">
@@ -165,7 +165,7 @@ const ServicesPage = () => {
                             {activeContent}
                           </p>
                         </div>
-                        <div className="w-52 md:w-72 lg:w-96">
+                        <div className="w-52 md:w-72 lg:w-96 ml-auto">
                           <div className="md:mt-20">
                             <div>
                               <Slider
