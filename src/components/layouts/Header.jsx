@@ -111,7 +111,7 @@ export default function Header() {
   return (
     <div className="fixed center top-0 z-50 w-full">
       <header className="relative bg-white w-10/12 flex items-center justify-between px-4 md:px-14 py-2 ">
-        <Link to={'/'}>
+        <Link to={'/'} onClick={closeNav}>
           <img src={MainLogo} className="h-16 relative z-20" />
         </Link>
         {/* Desktop nav */}
