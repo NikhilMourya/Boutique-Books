@@ -1,6 +1,7 @@
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useLayoutEffect, useRef, useState } from 'react';
+import { Link } from 'react-router-dom';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick-theme.css';
 import 'slick-carousel/slick/slick.css';
@@ -211,7 +212,9 @@ const ServicesPage = () => {
               <button className="lg:px-52 md:px-36 sm:px-24 px-4 py-3 button-primary-bg text-white rounded-full">
                 <div className="flex gap-3 flex-row">
                   <div className="inline-flex gap-3">
-                    <span className="text-md font-primary">Book a Call</span>
+                    <Link to={'/contact'} className="text-md font-primary">
+                      Book a Call
+                    </Link>
                     <span className="content-center">
                       <svg
                         width="20"
