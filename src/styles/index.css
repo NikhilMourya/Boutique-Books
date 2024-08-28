@@ -52,7 +52,7 @@
 
 /* Customize the container of the dots */
 .slick-dots {
-  bottom: 10px;
+  bottom: -20px;
   /* Position the dots */
 }
 
@@ -83,7 +83,9 @@
   background-color: #333;
   /* Active dot color */
 }
-
+.slick-dots li button:before {
+  visibility: hidden;
+}
 /* 
 ::-webkit-scrollbar {
    display: none;

@@ -365,6 +365,9 @@ const HomePage = () => {
           </div>
         </section>
         <section className="py-20 p-10 md:mx-28 md:my-32">
+          <h1 className="font-primary text-2xl sm:text-3xl lg:text-4xl mb-8">
+            Real Feedback from Real Clients
+          </h1>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
             <FeedbackCard />
             <FeedbackCard />
