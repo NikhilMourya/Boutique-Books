@@ -128,7 +128,7 @@ const ServicesPage = () => {
 
   return (
     <>
-      <section className="bg-white">
+      <section className="bg-white overflow-x-hidden">
         <section className="relative mt-20 md:mt-36">
           <div className=" mx-auto w-full lg:rounded-t-2xl">
             <div className="mx-auto relative lg:rounded-t-2xl">
@@ -194,12 +194,12 @@ const ServicesPage = () => {
             </div>
           </div>
         </section>
-        <section className="relative w-full h-[70vh] p-10 px-16 overflow-hidden">
+        <section className="relative w-full max-sm:py-20 md:h-[70vh] lg:p-10 lg:px-16 overflow-hidden">
           <div className="absolute top-0 flex justify-between w-full">
             <div className="relative ">
               <div className="h-72 w-72 homepage-circle"></div>
             </div>
-            <div className="relative">
+            <div className="max-sm:hidden relative">
               <div className="mt-36 h-72 w-72 homepage-circle"></div>
             </div>
           </div>
@@ -208,7 +208,7 @@ const ServicesPage = () => {
               <h1 className="text-4xl my-10 font-primary whitespace-nowrap">
                 Get Started Now!
               </h1>
-              <button className="lg:px-52 md:px-36 sm:px-24 px-14 p-2 button-primary-bg text-white rounded-full">
+              <button className="lg:px-52 md:px-36 sm:px-24 px-4 py-3 button-primary-bg text-white rounded-full">
                 <div className="flex gap-3 flex-row">
                   <div className="inline-flex gap-3">
                     <span className="text-md font-primary">Book a Call</span>
