@@ -129,7 +129,7 @@ const ServicesPage = () => {
   return (
     <>
       <section className="bg-white">
-        <section className="relative mt-36">
+        <section className="relative mt-20 md:mt-36">
           <div className=" mx-auto w-full lg:rounded-t-2xl">
             <div className="mx-auto relative lg:rounded-t-2xl">
               <div className="center relative z-0">
