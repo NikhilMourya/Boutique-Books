@@ -79,7 +79,6 @@ export default function AboutPage() {
 
   useEffect(() => {
     let paras = document.querySelector('.horizontal-para');
-    let parasWidth = paras.offsetWidth;
 
     function getScrollAmount() {
       let parasWidth = paras.scrollWidth + 100;
@@ -90,7 +89,6 @@ export default function AboutPage() {
       let t1 = gsap.timeline({
         scrollTrigger: {
           trigger: '.horizontal-para-wrapper',
-          // markers: true,
           start: 'top 60%',
           end: () => `+=${getScrollAmount() * -1}`,
           pin: true,
@@ -104,10 +102,6 @@ export default function AboutPage() {
         x: getScrollAmount,
         ease: 'none',
       });
-
-      // t1.to('#top-sec', {
-      //   position: 'relative',
-      // })
 
       let t2 = gsap.timeline({
         scrollTrigger: {
@@ -140,10 +134,10 @@ export default function AboutPage() {
       >
         <img
           src={AboutImg}
-          className="sm:h-40 md:h-52 lg:h-60 w-9/12 mx-auto lg:w-auto"
+          className="sm:h-40 md:h-52 lg:h-60 w-9/12 mx-auto "
           alt=""
         />
-        <H1 className="font-primary lg:text-7xl flex lg:flex-col space-x-3 lg:-space-x-5 gap-y-5">
+        <H1 className="font-primary lg:text-6xl flex lg:flex-col space-x-3 lg:-space-x-5 gap-y-5">
           <span className="font-primary">Origin</span>{' '}
           <span className="font-primary">Story</span>
         </H1>
@@ -151,7 +145,7 @@ export default function AboutPage() {
 
       <div className="relative z-20">
         <div className="horizontal-para-wrapper bg-primary relative overflow-hidden">
-          <div className="lg:ml-20 lg:rounded-tl-[50px] bg-primary  flex gap-5 horizontal-para">
+          <div className="lg:ml-20 lg:rounded-tl-[50px]  flex gap-5 horizontal-para">
             {paras.map((para, index) => (
               <div className="flex-shrink-0 w-[50%] p-5" key={index}>
                 <p className="text-white text-left text-lg">{para}</p>

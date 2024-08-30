@@ -94,7 +94,7 @@ const HomePage = () => {
       let keyboardTimline = gsap.timeline({
         scrollTrigger: {
           trigger: '.keyboard-container',
-          start: 'top -5%',
+          start: 'top 10%',
           end: 'top -20%',
           scrub: 4,
           // pin:true,
@@ -235,7 +235,7 @@ const HomePage = () => {
           </div>
         </div>
         <LadyScroll />
-        <div className="relative my-14 lg:mt-56 lg:pt-32 py-14 keyboard-container">
+        <div className="relative my-14 lg:mt-56 lg:pt-32 py-14 keyboard-container bg-light-section">
           <div className="relative z-10">
             <div className="relative">
               <h1 className="font-primary text-2xl sm:text-3xl lg:text-4xl">
@@ -289,7 +289,7 @@ const HomePage = () => {
             </div>
           </div>
         </div>
-        <section className="">
+        <section className="bg-dark-section">
           <div className=" mx-auto w-[80%]" id="lady-laptop">
             <div className="mx-auto">
               <div className="center relative">
@@ -364,7 +364,7 @@ const HomePage = () => {
             </div>
           </div>
         </section>
-        <section className="py-20 p-10 md:mx-28 md:my-32">
+        <section className="py-20 p-10 md:mx-28 md:my-32 bg-light-section">
           <h1 className="font-primary text-2xl sm:text-3xl lg:text-4xl mb-8">
             Real Feedback from Real Clients
           </h1>

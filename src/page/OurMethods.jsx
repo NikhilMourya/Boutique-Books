@@ -78,7 +78,7 @@ export default function OurMethods() {
           trigger: '#timeline-container',
           start: 'top 0%',
           end: () => `+=${getScrollAmount() * -0.3}`,
-          scrub: 1,
+          scrub: 2,
           pin: true,
         }
       })
@@ -90,13 +90,14 @@ export default function OurMethods() {
 
       t2.fromTo('#timeline-wrappper', {
         opacity: 0,
-        duration: 0.2
+        duration: 0.2,
       }, {
         opacity: 1,
         duration: 0.2
       }, 0)
 
       t2.to(wrapper, {
+        duration:3,
         y: getScrollAmount,
       })
     });

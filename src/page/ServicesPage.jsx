@@ -133,7 +133,7 @@ const ServicesPage = () => {
     <>
       <section className="bg-white overflow-x-hidden">
         <section className="relative mt-20 md:mt-36">
-          <div className=" mx-auto w-full lg:rounded-t-2xl">
+          <div className=" mx-auto w-full lg:rounded-t-2xl overflow-hidden">
             <div className="mx-auto relative lg:rounded-t-2xl">
               <div className="center relative z-0">
                 <div className="w-full h-[110vh] max-sm:h-auto lg:h-full lg:rounded-t-2xl">
@@ -147,7 +147,7 @@ const ServicesPage = () => {
                       <div key={index}>
                         <img
                           src={item.bgImage}
-                          className="object-cover w-full h-screen lg:h-auto"
+                          className="object-cover w-full h-screen lg:h-auto lg:rounded-t-2xl"
                         />
                       </div>
                     ))}

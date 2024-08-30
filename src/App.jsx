@@ -38,6 +38,19 @@ export default function App() {
     //   }
     // })
 
+    // gsap.to('header',{
+    //   backgroundColor:'white',
+    //   duration:1.5,
+    //   color:'black',
+    //   ease:'back.out',
+    //   scrollTrigger: {
+    //     trigger: ".bg-light-section",
+    //     start: 'top 20%',
+    //     scrub: 1,
+    //     end: 'top -50%',
+    //   }
+    // })
+
 
   }, [])
 
