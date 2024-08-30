@@ -76,12 +76,14 @@ const ServicesPage = () => {
   const handleAfterChange = (current) => {
     if (current === 2.5) current = 3;
     // setSlideIndex(current);
-    console.log('Current Slide:', current);
+    console.log('Current Slide:', current, data[current]);
     SetActiveContent(data[current].content);
     SetActiveHeading(data[current].heading);
     animate();
     // console.log()
-    sliderRefBG.slickGoTo(current);
+    if (sliderRefBG) {
+      sliderRefBG.slickGoTo(current);
+    }
   };
 
   var SliderSettings = {
@@ -176,10 +178,10 @@ const ServicesPage = () => {
                                 }}
                               >
                                 {data.map((item, index) => (
-                                  <div key={index} className="p-3">
+                                  <div key={index} className="p-3 lg:p-4">
                                     <img
                                       src={item.image}
-                                      className="object-cover w-full h-auto"
+                                      className="object-cover transition-all duration-500 ease-in-out w-full h-auto"
                                     />
                                   </div>
                                 ))}
