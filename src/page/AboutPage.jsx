@@ -98,6 +98,7 @@ export default function AboutPage() {
         },
       });
 
+
       t1.to(paras, {
         x: getScrollAmount,
         ease: 'none',
@@ -145,7 +146,7 @@ export default function AboutPage() {
 
       <div className="relative z-20">
         <div className="horizontal-para-wrapper bg-primary relative overflow-hidden">
-          <div className="lg:ml-20 lg:rounded-tl-[50px]  flex gap-5 horizontal-para">
+          <div className="lg:ml-20 lg:rounded-tl-[50px] bg-primary flex gap-5 horizontal-para">
             {paras.map((para, index) => (
               <div className="flex-shrink-0 w-[50%] p-5" key={index}>
                 <p className="text-white text-left text-lg">{para}</p>

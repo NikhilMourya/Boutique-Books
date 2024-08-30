@@ -46,8 +46,8 @@ div:focus {
 }
 
 .overlay::after {
-  transition: background ease-in 200ms;
-  transition: all ease-in 200ms;
+  transition: background ease-in 300ms;
+  transition: all ease-in 300ms;
 }
 
 .overlay::after {

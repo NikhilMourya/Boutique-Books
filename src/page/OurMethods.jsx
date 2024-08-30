@@ -93,12 +93,16 @@ export default function OurMethods() {
         duration: 0.2,
       }, {
         opacity: 1,
-        duration: 0.2
+        duration: 0.2,
+        onStart: () => document.querySelector('#timeline-container').classList.add("overlay"),
+
       }, 0)
 
       t2.to(wrapper, {
-        duration:3,
+        duration: 5,
         y: getScrollAmount,
+        onComplete: () => document.querySelector('#timeline-container').classList.remove("overlay"),
+        onReverseComplete: () => document.querySelector('#timeline-container').classList.remove("overlay"),
       })
     });
     return () => ctx.revert(); // <- cleanup!
