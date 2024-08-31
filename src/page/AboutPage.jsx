@@ -79,54 +79,59 @@ export default function AboutPage() {
 
   useEffect(() => {
     let paras = document.querySelector('.horizontal-para');
-    paras.style.paddingLeft='300px';
+
 
     function getScrollAmount() {
       let parasWidth = paras.scrollWidth + 100;
       return -(parasWidth - window.innerWidth);
     }
 
-    let ctx = gsap.context(() => {
-      // let t1 = gsap.timeline({
-      //   scrollTrigger: {
-      //     trigger: '.horizontal-para-wrapper',
-      //     start: 'top 60%',
-      //     end: () => `+=${getScrollAmount() * -1}`,
-      //     pin: true,
-      //     pinSpacing: true,
-      //     scrub: 1,
-      //     invalidateOnRefresh: true,
-      //   },
-      // });
+    if (window.innerWidth > 768) {
+      paras.style.paddingLeft = '300px';
+      let ctx = gsap.context(() => {
+        let t1 = gsap.timeline({
+          scrollTrigger: {
+            trigger: '.horizontal-para-wrapper',
+            start: 'top 60%',
+            end: () => `+=${getScrollAmount() * -1}`,
+            pin: true,
+            pinSpacing: true,
+            scrub: 1,
+            invalidateOnRefresh: true,
+          },
+        });
 
 
-      // t1.to(paras, {
-      //   x: getScrollAmount,
-      //   ease: 'none',
-      // });
+        t1.to(paras, {
+          x: getScrollAmount,
+          ease: 'none',
+        });
 
-      // let t2 = gsap.timeline({
-      //   scrollTrigger: {
-      //     trigger: '.about-value',
-      //     start: 'top 30%',
-      //     end: 'top 0%',
-      //     scrub: 3,
-      //   },
-      // });
+        let t2 = gsap.timeline({
+          scrollTrigger: {
+            trigger: '.about-value',
+            start: 'top 30%',
+            end: 'top 0%',
+            scrub: 3,
+          },
+        });
 
-      // t2.from('.title-container', {
-      //   opacity: 0,
-      //   translateY: '70%',
-      // });
-      // t2.from('.title-container1', {
-      //   translateY: '70%',
-      //   opacity: 0,
-      //   delay: 2,
-      // });
-    });
-    return () => ctx.revert(); 
+        t2.from('.title-container', {
+          opacity: 0,
+          translateY: '70%',
+        });
+        t2.from('.title-container1', {
+          translateY: '70%',
+          opacity: 0,
+          delay: 2,
+        });
+      });
+      return () => ctx.revert();
 
-    
+    }
+
+
+
   }, []);
 
   return (
@@ -148,10 +153,10 @@ export default function AboutPage() {
 
       <div className="relative z-20">
         <div className="horizontal-para-wrapper relative overflow-hidden">
-          <div className="lg:ml-20 lg:rounded-tl-[50px] flex  horizontal-para">
+          <div className="lg:ml-20 lg:rounded-tl-[50px] flex flex-col md:flex-row horizontal-para">
             {paras.map((para, index) => (
-              <div className={`flex-shrink-0 w-[50%] p-5 bg-primary ${index==0 ? 'rounded-tl-3xl' : index==paras.length ? 'pr-12' : ''}` } key={index}>
-                <p className="text-white text-left text-lg">{para}</p>
+              <div className={`flex-shrink-0 w-full md:w-[50%] p-5 bg-primary ${index == 0 ? 'md:rounded-tl-3xl' : index == paras.length ? 'pr-12' : ''}`} key={index}>
+                <p className="text-white text-left text-base md:text-lg">{para}</p>
               </div>
             ))}
           </div>
@@ -159,9 +164,9 @@ export default function AboutPage() {
       </div>
 
       <section className="z-20 relative bg-primary py-14 px-5 md:px-24 text-white about-value">
-        <div>
-          <div className="title-container">
-            <H1 className={'my-14 font-primary'}>Our Core Values</H1>
+        <div className=''>
+          <H1 className={'my-14 font-primary'}>Our Core Values</H1>
+          <div className="title-container hidden md:block">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
               {coreValues.slice(0, 3).map(({ title, imgUrl }) => (
                 <div
@@ -177,7 +182,7 @@ export default function AboutPage() {
               ))}
             </div>
           </div>
-          <div className="mt-5 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 title-container1">
+          <div className="mt-5 md:grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 title-container1 hidden ">
             {coreValues.slice(3, coreValues.length).map(({ title, imgUrl }) => (
               <div
                 key={imgUrl}
@@ -191,15 +196,29 @@ export default function AboutPage() {
               </div>
             ))}
           </div>
+          <div className="mt-5 grid grid-cols-2 gap-5 md:hidden">
+            {coreValues.map(({ title, imgUrl }) => (
+              <div
+                key={imgUrl}
+                className="flex w-full lg:w-full mx-auto flex-col space-y-2 p-2 rounded-2xl bg-white"
+                style={{ boxShadow: '0px 3px 3px 0px rgba(0, 0, 0, 0.15)' }}
+              >
+                <img src={imgUrl} className="w-full rounded-lg" />
+                <span className="text-black text-sm text-center mt-2">
+                  {title}
+                </span>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
-      <section className="z-20 relative md:container w-full md:mx-auto lg:px-16 py-16 bg-white">
-        <H1 className={'font-primary'}>Meet the team</H1>
-        <div className="flex flex-col-reverse lg:flex-row gap-x-20 gap-y-10 items-center justify-between pt-10">
+      <section className="z-20 relative md:container w-full md:mx-auto py-10 md:p-16 bg-white">
+        <H1 className={'font-primary text-2xl md:text-6xl'}>Meet the team</H1>
+        <div className="flex flex-col-reverse lg:flex-row gap-x-20 gap-y-5 md:gap-y-10 items-center justify-between pt-5 md:pt-10">
           <div className="w-full flex flex-col border-t border-b">
             {team.map(({ id, name, role, imgURL }) => (
               <div
-                className="grid grid-cols-[8%,55%,37%] lg:grid-cols-[15%,45%,40%] cursor-pointer group hover:bg-primary px-5 transition-all ease-linear duration-300 min-h-16 text-left items-center justify-between border-t border-b"
+                className="grid grid-cols-[5%,40%,50%] md:grid-cols-[8%,55%,37%] lg:grid-cols-[15%,45%,40%] cursor-pointer group hover:bg-primary px-5 transition-all ease-linear duration-300 min-h-16 text-left items-center justify-between border-t border-b"
                 key={id}
                 onMouseEnter={() => setTeamImg(imgURL)}
               >
@@ -215,8 +234,8 @@ export default function AboutPage() {
               </div>
             ))}
           </div>
-          <div className="flex place-items-center">
-            <img src={teamImg} />
+          <div className="flex justify-center place-items-center">
+            <img src={teamImg} className='aspect-video md:aspect-auto object-contain' />
           </div>
         </div>
       </section>

@@ -45,12 +45,12 @@ div:focus {
 
 }
 
-.overlay::after {
-  transition: background ease-in 300ms;
-  transition: all ease-in 300ms;
+.overlay {
+  transition: background ease-in 1s;
+  transition: all ease-in 1s;
 }
 
-.overlay::after {
+.overlay {
   content: "";
   position: absolute;
   top: 0;
@@ -58,6 +58,6 @@ div:focus {
   width: 100%;
   height: 100%;
   background: rgb(0, 0, 0);
-  z-index: -10;
-  opacity: 0.8;
+  /* z-index: -10; */
+  opacity: 0;
 }

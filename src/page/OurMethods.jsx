@@ -64,7 +64,6 @@ export default function OurMethods() {
 
 
   useLayoutEffect(() => {
-    console.log(isMobile, 'isMobile')
     let wrapper = document.querySelector("#timeline-wrappper");
     let wrppperheight = wrapper.offsetHeight;
 
@@ -73,6 +72,18 @@ export default function OurMethods() {
       return -(timelineHeight - window.innerHeight);
     }
     let ctx = gsap.context(() => {
+
+      // gsap.from('#timeline-wrapper', {
+      //   width: '80%',
+      //   transformOrigin: 'center center',
+      //   scrollTrigger: {
+      //     trigger: '#timeline-wrapper',
+      //     start: 'top 40%',
+      //     end: 'top 0%',
+      //     scrub: 2,
+      //   }
+      // })
+
       let t2 = gsap.timeline({
         scrollTrigger: {
           trigger: '#timeline-container',
@@ -83,26 +94,30 @@ export default function OurMethods() {
         }
       })
 
+
+
+
+      t2.to('.overlay', {
+        opacity: 0.7,
+        duration: 0.1,
+      })
+
       t2.to('#title-wrapper', {
         opacity: 0,
         duration: 0.1,
-      }, 0)
+      }, )
 
       t2.fromTo('#timeline-wrappper', {
         opacity: 0,
         duration: 0.2,
       }, {
         opacity: 1,
-        duration: 0.2,
-        onStart: () => document.querySelector('#timeline-container').classList.add("overlay"),
-
-      }, 0)
+        duration: 2,
+      }, )
 
       t2.to(wrapper, {
         duration: 5,
         y: getScrollAmount,
-        onComplete: () => document.querySelector('#timeline-container').classList.remove("overlay"),
-        onReverseComplete: () => document.querySelector('#timeline-container').classList.remove("overlay"),
       })
     });
     return () => ctx.revert(); // <- cleanup!
@@ -125,9 +140,10 @@ export default function OurMethods() {
         </div>
       </section>
 
-      <section className='relative mt-72'>
-        {/* <div className="relative overlay w-10/12 mx-auto h-screen"> */}
-        <div className="relative w-full mx-auto" id='timeline-container'>
+      <section className='relative mt-72 w-full' id='timeline-wrapper'>
+        {/* <div className="relative overlay  mx-auto h-screen"> */}
+        <div className="relative   " id='timeline-container'>
+          <div className='overlay'></div>
           <div className=''>
             <img
               src={MenWithLaptop}
