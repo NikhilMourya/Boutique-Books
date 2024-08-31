@@ -289,7 +289,7 @@ const HomePage = () => {
             </div>
           </div>
         </div>
-        <section className="bg-dark-section">
+        <section className="bg-dark-section relative z-20">
           <div className=" mx-auto w-[80%]" id="lady-laptop">
             <div className="mx-auto">
               <div className="center relative">

@@ -79,6 +79,7 @@ export default function AboutPage() {
 
   useEffect(() => {
     let paras = document.querySelector('.horizontal-para');
+    paras.style.paddingLeft='300px';
 
     function getScrollAmount() {
       let parasWidth = paras.scrollWidth + 100;
@@ -86,52 +87,53 @@ export default function AboutPage() {
     }
 
     let ctx = gsap.context(() => {
-      let t1 = gsap.timeline({
-        scrollTrigger: {
-          trigger: '.horizontal-para-wrapper',
-          start: 'top 60%',
-          end: () => `+=${getScrollAmount() * -1}`,
-          pin: true,
-          pinSpacing: true,
-          scrub: 1,
-          invalidateOnRefresh: true,
-        },
-      });
+      // let t1 = gsap.timeline({
+      //   scrollTrigger: {
+      //     trigger: '.horizontal-para-wrapper',
+      //     start: 'top 60%',
+      //     end: () => `+=${getScrollAmount() * -1}`,
+      //     pin: true,
+      //     pinSpacing: true,
+      //     scrub: 1,
+      //     invalidateOnRefresh: true,
+      //   },
+      // });
 
 
-      t1.to(paras, {
-        x: getScrollAmount,
-        ease: 'none',
-      });
+      // t1.to(paras, {
+      //   x: getScrollAmount,
+      //   ease: 'none',
+      // });
 
-      let t2 = gsap.timeline({
-        scrollTrigger: {
-          trigger: '.about-value',
-          start: 'top 30%',
-          end: 'top 0%',
-          scrub: 3,
-        },
-      });
+      // let t2 = gsap.timeline({
+      //   scrollTrigger: {
+      //     trigger: '.about-value',
+      //     start: 'top 30%',
+      //     end: 'top 0%',
+      //     scrub: 3,
+      //   },
+      // });
 
-      t2.from('.title-container', {
-        opacity: 0,
-        translateY: '70%',
-      });
-      t2.from('.title-container1', {
-        translateY: '70%',
-        opacity: 0,
-        delay: 2,
-      });
+      // t2.from('.title-container', {
+      //   opacity: 0,
+      //   translateY: '70%',
+      // });
+      // t2.from('.title-container1', {
+      //   translateY: '70%',
+      //   opacity: 0,
+      //   delay: 2,
+      // });
     });
+    return () => ctx.revert(); 
 
-    return () => ctx.revert(); // <- cleanup!
+    
   }, []);
 
   return (
     <main className="md:pt-28 pt-20 bg-white">
       <section
         id="top-sec"
-        className="z-10 fixed lg:top-16 my-5 mx-auto flex flex-col-reverse lg:flex-row gap-y-10 md:gap-x-24 lg:px-40 items-center"
+        className="z-10 md:fixed lg:top-16 my-5 mx-auto flex flex-col-reverse lg:flex-row gap-y-10 md:gap-x-24 lg:px-40 items-center"
       >
         <img
           src={AboutImg}
@@ -145,10 +147,10 @@ export default function AboutPage() {
       </section>
 
       <div className="relative z-20">
-        <div className="horizontal-para-wrapper bg-primary relative overflow-hidden">
-          <div className="lg:ml-20 lg:rounded-tl-[50px] bg-primary flex gap-5 horizontal-para">
+        <div className="horizontal-para-wrapper relative overflow-hidden">
+          <div className="lg:ml-20 lg:rounded-tl-[50px] flex  horizontal-para">
             {paras.map((para, index) => (
-              <div className="flex-shrink-0 w-[50%] p-5" key={index}>
+              <div className={`flex-shrink-0 w-[50%] p-5 bg-primary ${index==0 ? 'rounded-tl-3xl' : index==paras.length ? 'pr-12' : ''}` } key={index}>
                 <p className="text-white text-left text-lg">{para}</p>
               </div>
             ))}
