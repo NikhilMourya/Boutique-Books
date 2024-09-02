@@ -91,15 +91,29 @@ const HomePage = () => {
         1
       );
 
-      let keyboardTimline = gsap.timeline({
-        scrollTrigger: {
-          trigger: '.keyboard-container',
-          start: 'top 10%',
-          end: 'top -20%',
-          scrub: 4,
-          // pin:true,
-        },
-      });
+      let keyboardTimline;
+      if (window.innerWidth > 768) {
+        keyboardTimline = gsap.timeline({
+          scrollTrigger: {
+            trigger: '.keyboard-container',
+            start: 'top 10%',
+            end: 'top -20%',
+            scrub: 4,
+            // pin:true,
+          },
+        });
+      } else {
+        keyboardTimline = gsap.timeline({
+          scrollTrigger: {
+            trigger: '.keyboard-container',
+            start: 'top 50%',
+            end: 'top 30%',
+            scrub: 4,
+            // pin:true,
+          },
+        });
+      }
+
       keyboardTimline.fromTo(
         '#keyboard-img',
         { y: -60 },
@@ -113,23 +127,26 @@ const HomePage = () => {
         { display: 'none', opacity: 0 },
         { display: 'flex', opacity: 1 }
       );
-      keyboardTimline.fromTo(
-        '#keyboard-hand',
-        { y: 20, display: 'none' },
-        {
-          display: 'block',
-          y: -40,
-        }
-      );
-      keyboardTimline.to('#keyboard-hand', {
-        y: 200,
-        display: 'none',
-        opacity: 0,
-      });
 
-      keyboardTimline.to('#keyboard-img', {
-        width: '50%',
-      });
+      if (window.innerWidth > 768) {
+        keyboardTimline.fromTo(
+          '#keyboard-hand',
+          { y: 20, display: 'none' },
+          {
+            display: 'block',
+            y: -40,
+          }
+        );
+        keyboardTimline.to('#keyboard-hand', {
+          y: 200,
+          display: 'none',
+          opacity: 0,
+        });
+        keyboardTimline.to('#keyboard-img', {
+          width: '50%',
+        });
+      }
+
 
       let ladyLaptopTimline = gsap.timeline({
         scrollTrigger: {
@@ -273,7 +290,7 @@ const HomePage = () => {
               <img
                 id="keyboard-hand"
                 src={Finger}
-                className="absolute h-32 w-auto md:h-52 right-7 -bottom-28 lg:right-56 lg:-bottom-36"
+                className="hidden md:block absolute h-20 w-auto md:h-52 right-16 -bottom-1 lg:right-56 lg:-bottom-36"
               />
             </div>
           </div>

@@ -144,8 +144,8 @@ export default function PricingPage() {
       t1.from(
         '.feature-desc0',
         {
-          x: '-300px',
-          y: '-300px',
+          translateX: '-300px',
+          translateY: '-300px',
           opacity: 0,
           duration: 1,
         },
@@ -154,8 +154,8 @@ export default function PricingPage() {
       t1.from(
         '.feature-desc1',
         {
-          x: '300px',
-          y: '300px',
+          translateX: '300px',
+          translateY: '300px',
           opacity: 0,
           duration: 1,
         },
@@ -164,8 +164,8 @@ export default function PricingPage() {
       t1.from(
         '.feature-desc2',
         {
-          x: '-300px',
-          y: '-300px',
+          translateX: '-300px',
+          translateY: '-300px',
           opacity: 0,
           duration: 1,
         },
@@ -323,8 +323,8 @@ export default function PricingPage() {
         </div>
       </section>
 
-      <section className="container mx-auto md:px-20 flex flex-col gap-y-20">
-        <H1>As seen in</H1>
+      <section className="container mx-auto md:px-20 flex flex-col gap-y-20 ">
+        <H1 className={'font-primary font-semibold'} >As seen in</H1>
 
         <div className="flex flex-wrap justify-center gap-20">
           <img src={PlaceholderLogo} className="block mx-auto" />

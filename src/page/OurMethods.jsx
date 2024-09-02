@@ -71,56 +71,55 @@ export default function OurMethods() {
       let timelineHeight = wrapper.scrollHeight + 100;
       return -(timelineHeight - window.innerHeight);
     }
-    let ctx = gsap.context(() => {
 
-      // gsap.from('#timeline-wrapper', {
-      //   width: '80%',
-      //   transformOrigin: 'center center',
-      //   scrollTrigger: {
-      //     trigger: '#timeline-wrapper',
-      //     start: 'top 40%',
-      //     end: 'top 0%',
-      //     scrub: 2,
-      //   }
-      // })
+    // if (window.innerWidth > 768) {
+      let ctx = gsap.context(() => {
+        // gsap.from('#timeline-wrapper', {
+        //   width: '80%',
+        //   transformOrigin: 'center center',
+        //   scrollTrigger: {
+        //     trigger: '#timeline-wrapper',
+        //     start: 'top 40%',
+        //     end: 'top 0%',
+        //     scrub: 2,
+        //   }
+        // })
+        let t2 = gsap.timeline({
+          scrollTrigger: {
+            trigger: '#timeline-container',
+            start: 'top 0%',
+            end: () => `+=${getScrollAmount() * -0.7}`,
+            scrub: 1,
+            pin: true,
+          }
+        })
 
-      let t2 = gsap.timeline({
-        scrollTrigger: {
-          trigger: '#timeline-container',
-          start: 'top 0%',
-          end: () => `+=${getScrollAmount() * -0.3}`,
-          scrub: 4,
-          pin: true,
-        }
-      })
+        t2.to('.overlay', {
+          opacity: 0.7,
+          duration: 0.1,
+        }, 0)
 
+        t2.to('#title-wrapper', {
+          opacity: 0,
+          duration: 0.1,
+        }, 0)
 
+        t2.fromTo('#timeline-wrappper', {
+          opacity: 0,
+          duration: 0.2,
+        }, {
+          opacity: 1,
+          duration: 0.2,
+        }, 0)
 
+        t2.to(wrapper, {
+          duration: 5,
+          y: getScrollAmount,
+        })
+      });
+      return () => ctx.revert();
+    // }
 
-      t2.to('.overlay', {
-        opacity: 0.7,
-        duration: 0.1,
-      })
-
-      t2.to('#title-wrapper', {
-        opacity: 0,
-        duration: 0.1,
-      }, )
-
-      t2.fromTo('#timeline-wrappper', {
-        opacity: 0,
-        duration: 0.2,
-      }, {
-        opacity: 1,
-        duration: 0.2,
-      }, )
-
-      t2.to(wrapper, {
-        duration: 5,
-        y: getScrollAmount,
-      })
-    });
-    return () => ctx.revert(); // <- cleanup!
 
   }, [])
   return (

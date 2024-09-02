@@ -129,6 +129,23 @@ export default function AboutPage() {
       return () => ctx.revert();
 
     }
+    else {
+
+      let ctx = gsap.context(() => {
+        gsap.from('.title-container-sm',
+          {
+            opacity: 0,
+            translateY: '30%',
+            scrollTrigger: {
+              trigger: '.about-value',
+              start: 'top 40%',
+              end: 'top 20%',
+              scrub: 3,
+            },
+          });
+      })
+      return () => ctx.revert();
+    }
 
 
 
@@ -196,7 +213,7 @@ export default function AboutPage() {
               </div>
             ))}
           </div>
-          <div className="mt-5 grid grid-cols-2 gap-5 md:hidden">
+          <div className="mt-5 grid grid-cols-2 gap-5 md:hidden title-container-sm">
             {coreValues.map(({ title, imgUrl }) => (
               <div
                 key={imgUrl}

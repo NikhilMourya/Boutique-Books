@@ -69,14 +69,14 @@ const ServicesPage = () => {
   let sliderRefMain = useRef(null);
 
   const handleBeforeChange = (current, next) => {
-    console.log('Before Change - Current Slide:', current);
+    // console.log('Before Change - Current Slide:', current);
   };
 
   // Handler for after the slide changes
   const handleAfterChange = (current) => {
     if (current === 2.5) current = 3;
     // setSlideIndex(current);
-    console.log('Current Slide:', current, data[current]);
+    // console.log('Current Slide:', current, data[current]);
     SetActiveContent(data[current].content);
     SetActiveHeading(data[current].heading);
     animate();
@@ -160,7 +160,7 @@ const ServicesPage = () => {
                         Our Services
                       </h1>
                       <div className="flex flex-col md:flex-row gap-10">
-                        <div className="flex-grow">
+                        <div className="flex-grow h-80 md:h-auto">
                           <h1 className="mb-5 md:mb-10 md:text-4xl lg:text-5xl font-medium font-primary text-left service-heading">
                             {activeHeading}
                           </h1>
@@ -168,7 +168,7 @@ const ServicesPage = () => {
                             {activeContent}
                           </p>
                         </div>
-                        <div className="w-52 md:w-72 lg:w-96 ml-auto">
+                        <div className="w-64 md:w-72 lg:w-96 ml-auto">
                           <div className="md:mt-20">
                             <div>
                               <Slider
@@ -181,7 +181,7 @@ const ServicesPage = () => {
                                   <div key={index} className="p-3 lg:p-4">
                                     <img
                                       src={item.image}
-                                      className="object-cover transition-all duration-500 ease-in-out w-full h-auto"
+                                      className="object-cover transition-all duration-500 ease-in-out h-44 w-40 md:w-full md:h-auto rounded-md"
                                     />
                                   </div>
                                 ))}
