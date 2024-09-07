@@ -11,6 +11,8 @@ import Team1 from '../assets/images/about/team-1.png';
 import Team2 from '../assets/images/about/team-2.png';
 import Team3 from '../assets/images/about/team-3.png';
 import Team4 from '../assets/images/about/team-4.png';
+import MarcDiller from '../assets/images/about/Marc_Diller.png';
+// import Sharon from '../assets/images/about/Sharon.JPEG'
 import TeamWorkImg from '../assets/images/about/Team-Work.png';
 import WomenEmpowermentImg from '../assets/images/about/Women-Empowerment.png';
 import H1 from '../components/H1';
@@ -64,7 +66,7 @@ const team = [
     id: 5,
     name: 'Marc Diller',
     role: 'Tax Specialist',
-    imgURL: Team4,
+    imgURL: MarcDiller,
   },
   {
     id: 6,
@@ -252,7 +254,7 @@ export default function AboutPage() {
             ))}
           </div>
           <div className="flex justify-center place-items-center">
-            <img src={teamImg} className='aspect-video md:aspect-auto object-contain' />
+            <img src={teamImg} className='h-96 w-52 object-contain' />
           </div>
         </div>
       </section>

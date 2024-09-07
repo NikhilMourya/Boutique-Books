@@ -89,6 +89,10 @@ const ServicesPage = () => {
   var SliderSettings = {
     dots: true,
     // fade:true,
+    autoplay: true,
+    speed: 2000,
+    autoplaySpeed: 2000,
+    cssEase: "linear",
     infinite: false,
     speed: 500,
     slidesToShow: 1.5,

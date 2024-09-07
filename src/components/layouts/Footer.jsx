@@ -12,7 +12,7 @@ import BOUTIQUE6 from '../../assets/images/footer/BOUTIQUE-6.png';
 import BOUTIQUE7 from '../../assets/images/footer/BOUTIQUE-7.png';
 import BOUTIQUE8 from '../../assets/images/footer/BOUTIQUE-8.png';
 import BOUTIQUE9 from '../../assets/images/footer/BOUTIQUE-9.png';
-import Logo from '../../assets/images/layouts/logo.png';
+import Logo from '../../assets/Logos/logo-hd.png';
 
 import gsap from 'gsap';
 import { useLayoutEffect } from 'react';
@@ -31,7 +31,7 @@ const navigation = [
 ];
 const quickLinks = [
   { text: 'Privacy Policy', href: '/privacy-policy' },
-  { text: 'Terms of Service', href: '/terms-of-service' },
+  { text: 'Terms of Service', href: '/privacy-policy' },
 ];
 
 export default function Footer() {
@@ -59,7 +59,7 @@ export default function Footer() {
     <footer className="bg-primary grid gap-y-6 pb-8 relative z-10">
       <div className="grid grid-cols-1 justify-center sm:w-9/12 mx-auto sm:grid-cols-2 md:grid-col-3 lg:grid-cols-4 md:justify-evenly gap-y-6 py-16">
         <div className="flex md:-mt-5">
-          <img src={Logo} width={150} className="mx-auto" />
+          <img src={Logo} className="mx-auto w-9/12 object-contain" />
         </div>
         <section className="flex flex-col justify-start text-center md:text-left gap-y-2">
           <h2 className="text-lg font-bold">Navigation</h2>
@@ -168,7 +168,7 @@ export default function Footer() {
         {/* <img src={FooterLogo} className="block w-full" /> */}
       </div>
 
-      <h6>© {year} by Boutique Books LLC.</h6>
+      <h4>© {year} by Boutique Books LLC.</h4>
     </footer>
   );
 }

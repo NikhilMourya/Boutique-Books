@@ -88,8 +88,8 @@ export default function OurMethods() {
           scrollTrigger: {
             trigger: '#timeline-container',
             start: 'top 0%',
-            end: () => `+=${getScrollAmount() * -0.7}`,
-            scrub: 1,
+            end: () => `+=${getScrollAmount() * -1}`,
+            scrub: true,
             pin: true,
           }
         })
@@ -128,9 +128,9 @@ export default function OurMethods() {
 
       <section className="fixed z-20" id='title-wrapper'>
         <div className='w-9/12 mx-auto flex flex-col gap-y-10 md:gap-x-24 lg:px-16 items-center justify-center'>
-          <H1 className={'font-primary text-2xl'}>How We Make It Happen?</H1>
+          <H1 className={'font-primary text-2xl'}>How We Make It Happen</H1>
 
-          <p className='font-article text-sm md:text-lg'>
+          <p className='text-black text-sm md:text-lg font-semibold'>
             At Boutique Books, we blend the precision of AI with the expertise of
             real human accountants to deliver top-notch accounting services. Our
             proven methods ensure accuracy, efficiency, and a personalized touch,
@@ -164,7 +164,7 @@ export default function OurMethods() {
                     </section>
                   </div>
                   <div className="relative mx-4">
-                    <div className="w-1 h-full bg-blue-400"></div>
+                    <div className="w-1 h-full bg-white"></div>
                   </div>
 
                   <div className='w-7/12 p-5 center' >
@@ -194,11 +194,11 @@ export default function OurMethods() {
                     </div>
                     <div className="relative mx-4">
                       {/* <div class="w-px bg-white h-full"></div> */}
-                      <div className="w-1 h-full bg-blue-400"></div>
+                      <div className="w-1 h-full bg-white"></div>
                     </div>
 
                     <div className='w-7/12 p-5 center relative' >
-                      <div className={`absolute  bg-blue-400 h-1 w-12 ${index % 2 == 0 ? '-left-14' : '-right-14'}`}></div>
+                      <div className={`absolute  bg-white h-1 w-12 ${index % 2 == 0 ? '-left-14' : '-right-14'}`}></div>
                       <p className="text-justify font-article ">{desc}</p>
                     </div>
                   </div>
@@ -215,7 +215,7 @@ export default function OurMethods() {
                     </section>
                   </div>
                   <div className="relative mx-4">
-                    <div className="w-1 h-full bg-blue-400"></div>
+                    <div className="w-1 h-full bg-white"></div>
                   </div>
 
                   <div className='w-7/12 p-5 center' >

@@ -58,9 +58,7 @@ const FeedbackCard = ({ feedback, fbTitle, fbSubTitle }) => {
             </svg>
           </div>
           <p className="text-black my-5 text-xl">
-            "Boutique Books transformed our accounting. Their AI precision and
-            human expertise keep our books accurate and up-to-date. We've saved
-            so much time."
+            {feedback}
           </p>
 
           {/* <div>
@@ -69,7 +67,7 @@ const FeedbackCard = ({ feedback, fbTitle, fbSubTitle }) => {
                     </div> */}
 
           <div className="flex justify-start gap-5 my-10">
-            <div>
+            <div className="pt-1" >
               <svg
                 width="11"
                 height="11"
@@ -81,8 +79,8 @@ const FeedbackCard = ({ feedback, fbTitle, fbSubTitle }) => {
               </svg>
             </div>
             <h1 className=" text-left">
-              Jane Doe <br />
-              <span>CEO,Tech Innovations</span>
+              {fbTitle} <br />
+              <span>{fbSubTitle}</span>
             </h1>
           </div>
         </div>

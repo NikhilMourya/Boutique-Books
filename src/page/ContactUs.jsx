@@ -36,13 +36,15 @@ export default function ContactUs() {
                     <div className="w-full p-4">
                         <h2 className="text-2xl md:text-4xl font-medium mb-4 text-center ">Support</h2>
                         <div className="text-center space-y-2 flex flex-col justify-around items-center gap-2">
-                            <p>Timing: Mon-Sun | 10:00 AM - 07:00 PM (IST)</p>
+                            <p>Timing: Monday - Friday 9:00am - 4:30pm                            </p>
                             <p>
-                                Contact us on: <a href="tel:+2834u10939">+91 2348929012</a>
+                                Contact us on: <a href="tel:+2834u10939">1-408-214-1798</a>
                             </p>
-                            <p>or 23234-345235</p>
+                            <p>or 1-831-637-1155
+                            </p>
                             <p>
-                                Email: <a href="mailto:support@testing.com">support@testing.com</a>
+                                Email: <a href="mailto:hello@boutiquebooks.us">hello@boutiquebooks.us
+                                </a>
                             </p>
                         </div>
                     </div>

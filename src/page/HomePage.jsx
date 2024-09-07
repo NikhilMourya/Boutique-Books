@@ -256,7 +256,7 @@ const HomePage = () => {
           <div className="relative z-10">
             <div className="relative">
               <h1 className="font-primary text-2xl sm:text-3xl lg:text-4xl">
-                Streamlined Accounting
+                Streamlined Bookkeeping
               </h1>
               <h1 className="font-primary text-2xl sm:text-3xl lg:text-4xl mt-4">
                 with the Press of a Key.
@@ -267,8 +267,8 @@ const HomePage = () => {
                 id="keyboard-img"
               />
               <button className="mt-10 px-7 p-2 button-primary-bg text-white rounded-full">
-                <div className="flex gap-3 flex-row">
-                  <div className="inline-flex gap-3">
+                <div className="flex gap-3 flex-row text-2xl px-5 py-3">
+                  <div className="inline-flex gap-6">
                     <span className="text-md">Book a Call</span>
                     <span className="content-center">
                       <svg
@@ -387,9 +387,12 @@ const HomePage = () => {
           </h1>
           <div className=' overflow-x-scroll px-5' >
             <div className="min-w-[60rem] flex flex-row  md:grid py-5 md:grid-cols-2 lg:grid-cols-3 gap-5">
-              <FeedbackCard />
-              <FeedbackCard />
-              <FeedbackCard />
+              <FeedbackCard fbSubTitle={"CEO,Tech Innovations"} fbTitle={ "Jane Doe,"} feedback={"Boutique Books transformed our accounting. Their AI precision and human expertise keep our books accurate and up-to-date. We've saved so much time." } />
+              <FeedbackCard fbSubTitle={ "Founder, Creative Solutions"} fbTitle={ "John Smith,"} feedback={ "The peace of mind from Boutique Books is priceless. Their professional and efficient team, combined with AI-driven insights, has given us new financial clarity."} />
+              <FeedbackCard fbSubTitle={"CFO, Global Enterprises" } fbTitle={ "Emily Brown,"} feedback={"Switching to Boutique Books was our best decision. Their seamless integration and expert support make accounting effortless. Highly recommend them!" } />
+              <FeedbackCard fbSubTitle={''} fbTitle={'Shellye Archambeau'} feedback={'The Team is Great to work with!'} />
+              <FeedbackCard fbTitle={'Sujeet Vasudevan'} feedback={'Tajni and teamhave done an excellent job with tax filing requirements for us.'} />
+              {/* <FeedbackCard fbSubTitle={ } fbTitle={ } feedback={ } /> */}
             </div>
           </div>
 

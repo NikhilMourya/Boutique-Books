@@ -176,7 +176,7 @@ export default function PricingPage() {
     return () => ctx.revert(); // <- cleanup!
   }, []);
   return (
-    <main className="flex flex-col gap-y-16 md:gap-y-24 py-16 md:py-24 bg-white">
+    <main className="flex flex-col justify-between gap-24 pt-16 bg-white">
       <section className="container my-10 mx-auto px-5 flex flex-col items-center">
         <h1
           className="font-primary text-3xl md:text-4xl text-center"
@@ -323,7 +323,7 @@ export default function PricingPage() {
         </div>
       </section>
 
-      <section className="container mx-auto md:px-20 flex flex-col gap-y-20 ">
+      {/* <section className="container mx-auto md:px-20 flex flex-col gap-y-20 ">
         <H1 className={'font-primary font-semibold'} >As seen in</H1>
 
         <div className="flex flex-wrap justify-center gap-20">
@@ -335,7 +335,7 @@ export default function PricingPage() {
           <img src={PlaceholderLogo} className="block mx-auto" />
           <img src={PlaceholderLogo} className="block mx-auto" />
         </div>
-      </section>
+      </section> */}
     </main>
   );
 }
