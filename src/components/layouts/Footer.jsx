@@ -106,7 +106,7 @@ export default function Footer() {
           </div>
         </section>
       </div>
-      <div
+      {/* <div
         id="footer-img-container"
         className="hidden px-10 lg:flex justify-center w-full"
       >
@@ -165,8 +165,7 @@ export default function Footer() {
             className="block w-auto h-24 boutique-img-logo -rotate-12 opacity-0"
           />
         </div>
-        {/* <img src={FooterLogo} className="block w-full" /> */}
-      </div>
+      </div> */}
 
       <h4>© {year} by Boutique Books LLC.</h4>
     </footer>

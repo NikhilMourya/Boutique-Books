@@ -95,7 +95,7 @@ export default function AboutPage() {
           scrollTrigger: {
             trigger: '.horizontal-para-wrapper',
             start: 'top 60%',
-            end: () => `+=${getScrollAmount() * -1}`,
+            end: () => `+=${getScrollAmount() * -0.8}`,
             pin: true,
             pinSpacing: true,
             scrub: 1,
@@ -105,7 +105,8 @@ export default function AboutPage() {
 
 
         t1.to(paras, {
-          x: getScrollAmount,
+          // x: getScrollAmount,
+          x: () => getScrollAmount() * 1,
           ease: 'none',
         });
 

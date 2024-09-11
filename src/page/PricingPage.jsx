@@ -59,6 +59,39 @@ const getBookkeepingCost = (monthlyExpenses, isBookkeepingPlus = false) => {
 
 export default function PricingPage() {
   const [priceRange, setPriceRange] = useState(0);
+  const [expanded, setExpanded] = useState(false);
+  const visibleItemsCount = 3; // Number of items to show before "View More"
+
+  const toggleExpanded = () => {
+    setExpanded(!expanded);
+  };
+  const bookkeepingServices = [
+    "Comprehensive Bookkeeping",
+    "Monthly Financial Review",
+    "Cash Flow Forecasting",
+    "Unlimited Phone & Email support",
+    "Dedicated Account Manager",
+    "Real time record-keeping of all financial accounts",
+    "Monthly reconciliations of all accounts",
+    "Dedicated Bookkeeper",
+    "Unlimited email support",
+    "Secure online portal storage",
+    "Secure financial login and password maintenance",
+    "One monthly phone call to tidy up expense and income tracking",
+    "Quarterly financial reports"
+  ];
+
+  const bookkeepingServices2 = [
+    "Accounts Payable",
+    "Accounts Receivable - Invoicing",
+    "Collection Calls - follow up on 30 day late pays",
+    "Monthly Financial Review",
+    "Officer Reasonable Comp Reports (S-Corp)",
+    "Entity Compliance",
+    "Capital Calls & Bank Management"
+  ];
+
+
   useLayoutEffect(() => {
     let ctx = gsap.context(() => {
       let t1 = gsap.timeline({
@@ -191,7 +224,25 @@ export default function PricingPage() {
         <div className="card p-10 grid gap-y-5 items-center text-left md:gap-y-0 shadow-md border border-primary/40 shadow-primary rounded-3xl min-h-[400px]">
           <h3 className="font-semibold text-2xl">Essential Plan</h3>
           <p>For startups in the pre-revenue stage, just starting out.</p>
-          <div className="relative flex items-center">
+          <div className="w-full max-w-md mx-auto mb-5">
+            <ul
+              className={`overflow-hidden list-disc pl-6 transition-[max-height] duration-500 ease-in-out ${expanded ? "max-h-screen" : `max-h-[3rem]`
+                }`}
+            >
+              {bookkeepingServices.map((item, index) => (
+                <li key={index} className="p-1 border-gray-200 text-xs">
+                  {item}
+                </li>
+              ))}
+            </ul>
+            <button
+              onClick={toggleExpanded}
+              className="mt-4 text-blue-500 hover:text-blue-700 focus:outline-none"
+            >
+              {expanded ? "View Less" : "View More"}
+            </button>
+          </div>
+          <div className="relative flex items-center my-4">
             <input
               value={priceRange}
               min={MIN}
@@ -228,7 +279,26 @@ export default function PricingPage() {
         <div className="card p-10 grid gap-y-5 items-center text-left md:gap-y-0 shadow-md border border-primary/40 shadow-primary rounded-3xl min-h-[400px]">
           <h3 className="font-semibold text-2xl">Premium Plan</h3>
           <p>For companies with refined needs, reflecting their high value.</p>
-          <div className="relative flex items-center">
+          <div className="w-full max-w-md mx-auto mb-5">
+            <h3 className='mt-2 font-medium text-lg'>Essential Plan + </h3>
+            <ul
+              className={`overflow-hidden list-disc pl-6 transition-[max-height] duration-500 ease-in-out ${expanded ? "max-h-screen" : `max-h-[3rem]`
+                }`}
+            >
+              {bookkeepingServices2.map((item, index) => (
+                <li key={index} className="p-1 border-gray-200 text-xs">
+                  {item}
+                </li>
+              ))}
+            </ul>
+            <button
+              onClick={toggleExpanded}
+              className="mt-4 text-blue-500 hover:text-blue-700 focus:outline-none"
+            >
+              {expanded ? "View Less" : "View More"}
+            </button>
+          </div>
+          <div className="relative flex items-center my-4">
             <input
               value={priceRange}
               min={MIN}
@@ -311,9 +381,8 @@ export default function PricingPage() {
                   {title}
                 </h3>
                 <p
-                  className={`leading-tight text-base ${
-                    'feature-desc' + index
-                  }`}
+                  className={`leading-tight text-base ${'feature-desc' + index
+                    }`}
                 >
                   {desc}
                 </p>

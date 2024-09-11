@@ -90,8 +90,8 @@ const ServicesPage = () => {
     dots: true,
     // fade:true,
     autoplay: true,
-    speed: 2000,
-    autoplaySpeed: 2000,
+    speed: 1500,
+    autoplaySpeed: 1500,
     cssEase: "linear",
     infinite: false,
     speed: 500,
@@ -111,6 +111,20 @@ const ServicesPage = () => {
     slidesToScroll: 1,
     afterChange: () => setUpdateCount(updateCount + 1),
     beforeChange: (current, next) => setSlideIndex(next),
+  };
+
+  // Pause the slider on hover
+  const handleMouseEnter = () => {
+    if (sliderRefMain.current) {
+      sliderRefMain.current.slickPause();
+    }
+  };
+
+  // Resume the slider on hover out
+  const handleMouseLeave = () => {
+    if (sliderRefMain.current) {
+      sliderRefMain.current.slickPlay();
+    }
   };
 
   const animate = () => {
@@ -140,7 +154,9 @@ const ServicesPage = () => {
           <div className=" mx-auto w-full lg:rounded-t-2xl overflow-hidden">
             <div className="mx-auto relative lg:rounded-t-2xl">
               <div className="center relative z-0">
-                <div className="w-full h-[110vh] max-sm:h-auto lg:h-full lg:rounded-t-2xl">
+                <div className="w-full h-[110vh] max-sm:h-auto lg:h-full lg:rounded-t-2xl"
+                  onMouseEnter={handleMouseEnter} // Pause autoplay on hover
+                  onMouseLeave={handleMouseLeave}>
                   <Slider
                     {...SliderSettingsBg}
                     ref={(slider) => {
@@ -210,7 +226,7 @@ const ServicesPage = () => {
               <div className="mt-36 h-72 w-72 homepage-circle"></div>
             </div>
           </div>
-          <div className="relative">
+          <div className="relative center">
             <div className="lg:mt-10 lg:px-32 px-12 mx-auto">
               <h1 className="text-4xl my-10 font-primary whitespace-nowrap">
                 Get Started Now!
@@ -218,9 +234,9 @@ const ServicesPage = () => {
               <button className="lg:px-52 md:px-36 sm:px-24 px-4 py-3 button-primary-bg text-white rounded-full">
                 <div className="flex gap-3 flex-row">
                   <div className="inline-flex gap-3">
-                    <Link to={'/contact'} className="text-md font-primary">
-                      Book a Call
-                    </Link>
+                    <Link to="https://www.calendly.com/boutiquebooks" target='_blank' className=''>
+                      Book a Call</Link>
+
                     <span className="content-center">
                       <svg
                         width="20"
