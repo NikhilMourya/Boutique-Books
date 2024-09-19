@@ -20,21 +20,20 @@ import H1 from '../components/H1';
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 
 const paragraphs = [
-  'Boutique Books was born from a passion for delivering unparalleled service and a deep-seated desire to revolutionize the bookkeeping industry.  With over 25 years of experience serving customers in the bookkeeping realm, I found myself at a crossroads.  The traditional hourly billing model was not only cumbersome and time-consuming but also counterproductive for both myself and my customers.',
-  'The incessant tracking of hours and tedious billing processes detracted from the quality of service I aimed to provide. It hindered my ability to fully engage with customers and offer the comprehensive support they truly needed.  It became abundantly clear that a paradigm shift was necessary—a shift towards a model that prioritized efficiency, value, and client satisfaction above all else.',
-  "The concept of a subscription-based business model presented itself as the solution I had been searching for. It offered the opportunity to break free from the shackles of hourly billing and instead provide clients with a seamless, all-inclusive bookkeeping experience.  I immediately recognized the immense value this model could bring to both my customers and my team. It wasn't just about abandoning outdated practices; it was about embracing a new approach—one that would empower us to deliver a higher level of service and cater to our customers' needs in a more holistic manner.",
-  "And so, Boutique Books was born.  Armed with a vision to transform the bookkeeping landscape, I set out to implement this innovative model.  By offering full-service bookkeeping on a subscription basis, we eliminated the hassle of hourly billing and ushered in a new era of efficiency and simplicity.   But we didn't stop there.",
-  'Recognizing the symbiotic relationship between bookkeeping and tax compliance, we seamlessly integrated tax services into our offering.  With our meticulous bookkeeping ensuring accuracy and reliability, completing annual tax returns for our clients became a natural extension of our services.  We also took it a step further by assisting clients with their tax payments throughout the year, ensuring compliance and peace of mind every step of the way.',
-  'Today, Boutique Books stands as a testament to innovation, dedication, and a commitment to excellence.  Our journey is fueled by a relentless pursuit of providing unparalleled support to our clients and empowering them to thrive in an ever-evolving business landscape.  As we continue to evolve and grow, our mission remains unchanged—to redefine bookkeeping and tax services, one subscription at a time.',
+  "Boutique Books was born from a passion for delivering exceptional service and a desire to revolutionize the bookkeeping industry. After over 25 years in the field, I found myself frustrated with the traditional hourly billing model. It often left clients hesitant to seek the services they truly needed—either because they didn't fully understand the value or simply couldn't afford extra hours. I knew this approach wasn't allowing me to offer the full support my clients required, especially when issues like compliance arose.",
+  "I realized it was time for a change—one that prioritized client satisfaction and removed the barriers to providing comprehensive service. The solution came in the form of a subscription-based model, which allowed us to deliver all-inclusive bookkeeping without worrying about hourly rates or unexpected fees. This change immediately resonated with clients, as it gave them a predictable monthly cost they could budget for, while allowing us to focus on their long-term success.",
+  "For example, one client had fallen behind on state corporate compliance for three years. Under the hourly model, they had been unwilling to pay for the extra time needed to address it. But with our subscription service, we handled the entire process without any additional fees, getting them reinstated with the state. This model has empowered us to focus on what's best for our clients, without being restricted by cost concerns.",
+  "By integrating tax services, we ensure that our clients' books are always in order, allowing us to help them make proactive financial decisions throughout the year. Without proper bookkeeping in place, tax season is simply a reporting of past activity—there's no way to make changes that could benefit the client at that point. Now, we can offer ongoing guidance to help optimize their finances, rather than simply reporting on what has already occurred.",
+  "Today, Boutique Books continues to grow, fueled by a commitment to innovation and excellence. We are excited to expand our reach, helping more small business owners achieve their dreams through reliable, value-driven bookkeeping and tax services. Our mission is simple: to deliver bookkeeping and tax solutions that pay for themselves through the value we provide."
 ];
 
 const coreValues = [
-  { title: 'Collaboration', imgUrl: CollaborationImg },
-  { title: 'Innovation', imgUrl: InnovationImg },
-  { title: 'Personal Developement', imgUrl: PersomalDevelopementImg },
-  { title: 'Women Empowerment', imgUrl: WomenEmpowermentImg },
-  { title: 'Team Work', imgUrl: TeamWorkImg },
-  { title: 'Relationships', imgUrl: RelationshipsImg },
+  { title: 'Collaboration', imgUrl: CollaborationImg,desc:"At Boutique Books, collaboration is key to delivering the highest level of service. Both my team and I work closely with our clients to create a well-rounded experience, drawing on the diverse expertise of each professional on the team. This collaborative approach ensures that we can tailor our services to meet the unique needs of each business, resulting in more effective and personalized bookkeeping solutions. By combining our collective knowledge, we can offer more strategic, comprehensive support." },
+  { title: 'Innovation', imgUrl: InnovationImg,desc:"We believe that innovation is essential to staying ahead in the rapidly evolving world of bookkeeping and tax services. Beyond our subscription model, we are incorporating AI technology to handle routine tasks, freeing up our team to focus on what matters most—our clients’ financial strategies and ensuring their compliance needs are fully met. While AI supports efficiency, we remain committed to the human touch that provides value through personalized, thoughtful service." },
+  { title: 'Personal Developement', imgUrl: PersomalDevelopementImg,desc:"Personal growth is central to our success at Boutique Books, both for myself and my team. We ensure ongoing professional development by adhering to annual continuing education requirements, which keep us at the top of our field in bookkeeping and tax compliance. Beyond technical training, we encourage skill-building that helps us better serve our clients, empowering us to stay sharp, adapt to changes, and continuously elevate the quality of service we provide." },
+  { title: 'Women Empowerment', imgUrl: WomenEmpowermentImg,desc:"As a woman in business, I understand the challenges that can arise when navigating entrepreneurship, especially in rural or solo-practitioner environments. At Boutique Books, we are committed to empowering women in business, providing the resources, support, and services they need to succeed. Whether through education, networking, or sharing insights in our blog, we aim to uplift women as they grow their businesses, offering a strong foundation to support their journey." },
+  { title: 'Team Work', imgUrl: TeamWorkImg,desc:"Teamwork is the backbone of how we operate at Boutique Books. Each client works with a dedicated team member who gets to know their business inside and out, but the entire team is familiar with all client accounts. This ensures that if one person is unavailable, another can step in seamlessly. Strong teamwork enhances both the quality of service and the client experience, fostering trust and consistency in every interaction." },
+  { title: 'Relationships', imgUrl: RelationshipsImg,desc:"At the heart of Boutique Books are the relationships we build with our clients. A successful relationship is one where clients feel comfortable reaching out to us—not just when there’s a problem, but to share their wins and successes. We value the referrals we receive, as they are a testament to the trust our clients place in us. When our clients speak highly of us without being asked, it reflects our commitment to building strong, lasting relationships based on trust and integrity." },
 ];
 
 const team = [
@@ -176,7 +175,7 @@ export default function AboutPage() {
           <div className="lg:ml-20 lg:rounded-tl-[50px] flex flex-col md:flex-row horizontal-para">
             {paras.map((para, index) => (
               <div className={`flex-shrink-0 w-full md:w-[50%] p-5 bg-primary ${index == 0 ? 'md:rounded-tl-3xl' : index == paras.length ? 'pr-12' : ''}`} key={index}>
-                <p className="text-white text-left text-base md:text-lg">{para}</p>
+                <p className="text-white text-left text-base md:text-base">{para}</p>
               </div>
             ))}
           </div>
@@ -188,7 +187,7 @@ export default function AboutPage() {
           <H1 className={'my-14 font-primary'}>Our Core Values</H1>
           <div className="title-container hidden md:block">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-              {coreValues.slice(0, 3).map(({ title, imgUrl }) => (
+              {coreValues.slice(0, 3).map(({ title, imgUrl,desc }) => (
                 <div
                   key={imgUrl}
                   className="flex w-11/12 lg:w-full mx-auto flex-col space-y-2 p-5 rounded-2xl bg-white"
@@ -198,12 +197,13 @@ export default function AboutPage() {
                   <span className="text-black text-lg text-left mt-2">
                     {title}
                   </span>
+                  <p className="text-black text-left text-sm">{desc}</p>
                 </div>
               ))}
             </div>
           </div>
           <div className="mt-5 md:grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 title-container1 hidden ">
-            {coreValues.slice(3, coreValues.length).map(({ title, imgUrl }) => (
+            {coreValues.slice(3, coreValues.length).map(({ title, imgUrl,desc }) => (
               <div
                 key={imgUrl}
                 className="flex w-11/12 lg:w-full mx-auto flex-col space-y-2 p-5 rounded-2xl bg-white"
@@ -213,6 +213,7 @@ export default function AboutPage() {
                 <span className="text-black text-lg text-left mt-2">
                   {title}
                 </span>
+                <p className="text-black text-left text-sm">{desc}</p>
               </div>
             ))}
           </div>

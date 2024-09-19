@@ -132,7 +132,7 @@ export default function OurMethods() {
 
           <p className='text-black text-sm md:text-lg font-semibold'>
             At Boutique Books, we blend the precision of AI with the expertise of
-            real human accountants to deliver top-notch accounting services. Our
+            real human accountants to deliver top-notch bookkeeping services. Our
             proven methods ensure accuracy, efficiency, and a personalized touch,
             making your financial management effortless and reliable.
           </p>

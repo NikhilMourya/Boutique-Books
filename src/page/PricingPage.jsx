@@ -18,7 +18,7 @@ const whyChooseUs = [
   },
   {
     title: 'AI-Enhanced Accuracy',
-    desc: 'Our cutting-edge AI technology delivers unparalleled precision in your accounting processes. By minimizing errors and automating routine tasks, we save you valuable time and significantly reduce the stress associated with financial management.',
+    desc: 'Our cutting-edge AI technology delivers unparalleled precision in your bookkeeping processes. By minimizing errors and automating routine tasks, we save you valuable time and significantly reduce the stress associated with financial management.',
     imgURL: P2,
   },
   {
@@ -216,7 +216,7 @@ export default function PricingPage() {
           style={{ lineHeight: 1.5 }}
         >
           Transparent Pricing for <br className="hidden md:block" /> Hassle-Free
-          Accounting Solutions
+          Bookkeeping Solutions
         </h1>
       </section>
 

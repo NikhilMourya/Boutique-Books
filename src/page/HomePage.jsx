@@ -40,6 +40,49 @@ const data = [
   },
 ];
 
+const testimonials = [{
+  title: 'Shellye Archambeau',
+  subTitle: '',
+  feedback: 'The Team is Great to work with!'
+},
+{
+  title: 'San Benito Bene',
+  subTitle: '',
+  feedback: 'Highly Recommend! Tajni and her team are trustworthy and reliable. When I started my small business, it was daunting having to comply with so many regulations. Tajni provided me with professional guidance and set me up with a clear financial structure.'
+},
+{
+  title: 'Sujeet Vasudevan',
+  subTitle: '',
+  feedback: 'Tajni and team have done an excellent job with tax filing requirements for us.'
+},
+{
+  title: 'Charisse Tyson',
+  subTitle: '',
+  feedback: "I've been working with Tajni for over 15 years. She and her team are excellent. We all dread tax season to a certain extent, but it's less painfull when you are working with a quality company."
+},
+{
+  title: '',
+  subTitle: '',
+  feedback: ''
+},
+{
+  title: '',
+  subTitle: '',
+  feedback: ''
+},
+{
+  title: '',
+  subTitle: '',
+  feedback: ''
+},
+{
+  title: '',
+  subTitle: '',
+  feedback: ''
+},
+
+]
+
 const profiles = data.map((item, index) => (
   <ProfileCard key={index} img={item.img} title={item.title} />
 ));
@@ -197,7 +240,7 @@ const HomePage = () => {
         <main className="py-32 my-20">
           <div>
             <h1 className="font-primary lg:text-4xl md:text-3xl">
-              Seamless Accounting with <br />
+              Seamless Bookkeeping with <br />
               AI-Enhanced Human Expertise
             </h1>
             <p className="pt-2">
@@ -332,7 +375,7 @@ const HomePage = () => {
                           className="my-3 md:my-7 text-lg opacity-0"
                           id="lady-laptop-subtitle"
                         >
-                          We offer comprehensive AI-driven accounting services
+                          We offer comprehensive AI-driven bookkeeping services
                           for effortless financial management.
                         </p>
                       </div>
@@ -391,13 +434,13 @@ const HomePage = () => {
           </h1>
           <div className=' overflow-x-scroll px-5' >
             <div className="min-w-[60rem] flex flex-row  md:grid py-5 md:grid-cols-2 lg:grid-cols-3 gap-5">
-              {/* <FeedbackCard fbSubTitle={"CEO,Tech Innovations"} fbTitle={"Jane Doe,"} feedback={"Boutique Books transformed our accounting. Their AI precision and human expertise keep our books accurate and up-to-date. We've saved so much time."} />
-              <FeedbackCard fbSubTitle={"Founder, Creative Solutions"} fbTitle={"John Smith,"} feedback={"The peace of mind from Boutique Books is priceless. Their professional and efficient team, combined with AI-driven insights, has given us new financial clarity."} />
-              <FeedbackCard fbSubTitle={"CFO, Global Enterprises"} fbTitle={"Emily Brown,"} feedback={"Switching to Boutique Books was our best decision. Their seamless integration and expert support make accounting effortless. Highly recommend them!"} /> */}
-              <FeedbackCard fbSubTitle={''} fbTitle={'Shellye Archambeau'} feedback={'The Team is Great to work with!'} />
-              <FeedbackCard fbSubTitle={''} fbTitle={'San Benito Bene'} feedback={"Highly Recommend! Tajni and her team are trustworthy and reliable. When I started my small business, it was daunting having to comply with so many regulations. Tajni provided me with professional guidance and set me up with a clear financial structure."} />
-              <FeedbackCard fbTitle={'Sujeet Vasudevan'} feedback={'Tajni and teamhave done an excellent job with tax filing requirements for us.'} />
-              {/* <FeedbackCard fbSubTitle={ } fbTitle={ } feedback={ } /> */}
+              {
+                testimonials.map((review) => {
+                  return (
+                    <FeedbackCard fbSubTitle={review.subTitle} fbTitle={review.title} feedback={review.feedback} />
+                  )
+                })
+              }
             </div>
           </div>
 
