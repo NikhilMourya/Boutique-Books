@@ -60,26 +60,26 @@ const testimonials = [{
   subTitle: '',
   feedback: "I've been working with Tajni for over 15 years. She and her team are excellent. We all dread tax season to a certain extent, but it's less painfull when you are working with a quality company."
 },
-{
-  title: '',
-  subTitle: '',
-  feedback: ''
-},
-{
-  title: '',
-  subTitle: '',
-  feedback: ''
-},
-{
-  title: '',
-  subTitle: '',
-  feedback: ''
-},
-{
-  title: '',
-  subTitle: '',
-  feedback: ''
-},
+// {
+//   title: '',
+//   subTitle: '',
+//   feedback: ''
+// },
+// {
+//   title: '',
+//   subTitle: '',
+//   feedback: ''
+// },
+// {
+//   title: '',
+//   subTitle: '',
+//   feedback: ''
+// },
+// {
+//   title: '',
+//   subTitle: '',
+//   feedback: ''
+// },
 
 ]
 

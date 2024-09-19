@@ -57,7 +57,7 @@ const FeedbackCard = ({ feedback, fbTitle, fbSubTitle }) => {
               </defs>
             </svg>
           </div>
-          <p className="text-black my-5 text-xl">
+          <p className="text-black my-5 lg:text-base">
             {feedback}
           </p>
 
@@ -66,7 +66,7 @@ const FeedbackCard = ({ feedback, fbTitle, fbSubTitle }) => {
                             <span>CEO,Tech Innovations</span></h1>
                     </div> */}
 
-          <div className="flex justify-start gap-5 my-10">
+          <div className="flex justify-start items-center gap-5 my-10">
             <div className="pt-1" >
               <svg
                 width="11"

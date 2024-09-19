@@ -9,9 +9,7 @@ const PrivacyPolicy = () => {
       <section className="mb-6">
         <h2 className="text-xl font-semibold mb-2">1. Introduction</h2>
         <p className="text-gray-800">
-          Boutique Books, LLC ("we," "us," or "our") operates the website www.boutiquebooks.us. We are committed to protecting your
-          privacy and ensuring that your personal information is handled in a safe and responsible manner. This Privacy Policy explains
-          how we collect, use, share, and protect your personal information.
+        Boutique Books, LLC ("we," "us," or "our") operates the website www.boutiquebooks.us. We are committed to protecting your privacy and ensuring that your personal information is handled in a safe and responsible manner. This Privacy Policy explains how we collect, use, share, and protect your personal information.
         </p>
       </section>
 
@@ -26,8 +24,7 @@ const PrivacyPolicy = () => {
           and Calendly appointments.
         </p>
         <p className="text-gray-800">
-          <strong>Cookies and Tracking Technologies:</strong> We use Google Analytics to collect information about your browsing behavior
-          on our website. You can control or disable cookies via your browser settings.
+          <strong>Cookies and Tracking Technologies:</strong> We use Google Analytics to collect information about your browsing behavior on our website. You can control or disable cookies via your browser settings.
         </p>
       </section>
 
@@ -81,7 +78,7 @@ const PrivacyPolicy = () => {
       </section>
 
       <section className="mb-6">
-        <h2 className="text-xl font-semibold mb-2">7. Children’s Privacy</h2>
+        <h2 className="text-xl font-semibold mb-2">7. Children's Privacy</h2>
         <p className="text-gray-800">
           Our website is not intended for children under 13, and we do not knowingly collect personal information from children under 13.
         </p>

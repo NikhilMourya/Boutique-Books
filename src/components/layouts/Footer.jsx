@@ -31,7 +31,7 @@ const navigation = [
 ];
 const quickLinks = [
   { text: 'Privacy Policy', href: '/privacy-policy' },
-  { text: 'Terms of Service', href: '/privacy-policy' },
+  { text: 'Terms of Service', href: '/term-of-service' },
 ];
 
 export default function Footer() {

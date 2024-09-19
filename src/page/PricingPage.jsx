@@ -13,7 +13,7 @@ gsap.registerPlugin(ScrollTrigger);
 const whyChooseUs = [
   {
     title: 'Expert Human Support',
-    desc: 'Our team of seasoned accountants provides you with personalized support, ensuring that your unique financial needs are met. By combining the best of human expertise with the efficiency of AI, we offer a comprehensive and responsive service tailored to your business.',
+    desc: 'Our team of seasoned finance professionals provides you with personalized support, ensuring that your unique financial needs are met. By combining the best of human expertise with the efficiency of AI, we offer a comprehensive and responsive service tailored to your business.',
     imgURL: P1,
   },
   {

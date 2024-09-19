@@ -18,6 +18,7 @@ import BlogPage from './page/BlogPage';
 import NotFoundPage from './page/NotFoundPage';
 import ContactUs from './page/ContactUs'
 import PrivacyPolicy from './page/PrivacyPolicy';
+import TermsOfService from './page/TermsOfService';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -79,6 +80,7 @@ export default function App() {
         <Route path="/services" element={<ServicesPage />} />
         <Route path="/our-methods" element={<OurMethods />} />
         <Route path='/privacy-policy' element={<PrivacyPolicy />} />
+        <Route path='/term-of-service' element={<TermsOfService />} />
         <Route path="/blogs" element={<BlogPage />} />
         <Route path="/blogs/:blogSlug" element={<BlogDetailsPage />} />
         <Route path="/404" element={<NotFoundPage />} />

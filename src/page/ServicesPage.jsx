@@ -90,11 +90,10 @@ const ServicesPage = () => {
     dots: true,
     // fade:true,
     autoplay: true,
-    speed: 1500,
-    autoplaySpeed: 1500,
+    speed: 1000,
+    autoplaySpeed: 3000,
     cssEase: "linear",
-    infinite: false,
-    speed: 500,
+    infinite: true,
     slidesToShow: 1.5,
     slidesToScroll: 1,
     arrows: false,
@@ -106,7 +105,7 @@ const ServicesPage = () => {
     dots: false,
     fade: true,
     infinite: true,
-    speed: 500,
+    speed: 1000,
     slidesToShow: 1,
     slidesToScroll: 1,
     afterChange: () => setUpdateCount(updateCount + 1),
@@ -187,7 +186,7 @@ const ServicesPage = () => {
                           <p className="text-left md:text-lg lg:text-xl">
                             {activeContent}
                           </p>
-                        </div>
+                      </div>
                         <div className="w-64 md:w-72 lg:w-96 ml-auto">
                           <div className="md:mt-20">
                             <div>
