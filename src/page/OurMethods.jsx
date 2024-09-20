@@ -89,7 +89,7 @@ export default function OurMethods() {
             trigger: '#timeline-container',
             start: 'top 0%',
             end: () => `+=${getScrollAmount() * -1}`,
-            scrub: true,
+            scrub: 2,
             pin: true,
           }
         })

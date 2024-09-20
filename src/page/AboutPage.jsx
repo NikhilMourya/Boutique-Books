@@ -12,6 +12,7 @@ import Team2 from '../assets/images/about/team-2.png';
 import Team3 from '../assets/images/about/team-3.png';
 import Team4 from '../assets/images/about/team-4.png';
 import MarcDiller from '../assets/images/about/Marc_Diller.png';
+import Breana from '../assets/images/about/Breana.jpg'
 // import Sharon from '../assets/images/about/Sharon.JPEG'
 import TeamWorkImg from '../assets/images/about/Team-Work.png';
 import WomenEmpowermentImg from '../assets/images/about/Women-Empowerment.png';
@@ -29,11 +30,11 @@ const paragraphs = [
 
 const coreValues = [
   { title: 'Collaboration', imgUrl: CollaborationImg, desc: "At Boutique Books, collaboration is key to delivering the highest level of service. Both my team and I work closely with our clients to create a well-rounded experience, drawing on the diverse expertise of each professional on the team. This collaborative approach ensures that we can tailor our services to meet the unique needs of each business, resulting in more effective and personalized bookkeeping solutions. By combining our collective knowledge, we can offer more strategic, comprehensive support." },
-  { title: 'Innovation', imgUrl: InnovationImg, desc: "We believe that innovation is essential to staying ahead in the rapidly evolving world of bookkeeping and tax services. Beyond our subscription model, we are incorporating AI technology to handle routine tasks, freeing up our team to focus on what matters most—our clients’ financial strategies and ensuring their compliance needs are fully met. While AI supports efficiency, we remain committed to the human touch that provides value through personalized, thoughtful service." },
+  { title: 'Innovation', imgUrl: InnovationImg, desc: "We believe that innovation is essential to staying ahead in the rapidly evolving world of bookkeeping and tax services. Beyond our subscription model, we are incorporating AI technology to handle routine tasks, freeing up our team to focus on what matters most—our clients' financial strategies and ensuring their compliance needs are fully met. While AI supports efficiency, we remain committed to the human touch that provides value through personalized, thoughtful service." },
   { title: 'Personal Developement', imgUrl: PersomalDevelopementImg, desc: "Personal growth is central to our success at Boutique Books, both for myself and my team. We ensure ongoing professional development by adhering to annual continuing education requirements, which keep us at the top of our field in bookkeeping and tax compliance. Beyond technical training, we encourage skill-building that helps us better serve our clients, empowering us to stay sharp, adapt to changes, and continuously elevate the quality of service we provide." },
   { title: 'Women Empowerment', imgUrl: WomenEmpowermentImg, desc: "As a woman in business, I understand the challenges that can arise when navigating entrepreneurship, especially in rural or solo-practitioner environments. At Boutique Books, we are committed to empowering women in business, providing the resources, support, and services they need to succeed. Whether through education, networking, or sharing insights in our blog, we aim to uplift women as they grow their businesses, offering a strong foundation to support their journey." },
   { title: 'Team Work', imgUrl: TeamWorkImg, desc: "Teamwork is the backbone of how we operate at Boutique Books. Each client works with a dedicated team member who gets to know their business inside and out, but the entire team is familiar with all client accounts. This ensures that if one person is unavailable, another can step in seamlessly. Strong teamwork enhances both the quality of service and the client experience, fostering trust and consistency in every interaction." },
-  { title: 'Relationships', imgUrl: RelationshipsImg, desc: "At the heart of Boutique Books are the relationships we build with our clients. A successful relationship is one where clients feel comfortable reaching out to us—not just when there’s a problem, but to share their wins and successes. We value the referrals we receive, as they are a testament to the trust our clients place in us. When our clients speak highly of us without being asked, it reflects our commitment to building strong, lasting relationships based on trust and integrity." },
+  { title: 'Relationships', imgUrl: RelationshipsImg, desc: "At the heart of Boutique Books are the relationships we build with our clients. A successful relationship is one where clients feel comfortable reaching out to us—not just when there's a problem, but to share their wins and successes. We value the referrals we receive, as they are a testament to the trust our clients place in us. When our clients speak highly of us without being asked, it reflects our commitment to building strong, lasting relationships based on trust and integrity." },
 ];
 
 const team = [
@@ -65,7 +66,7 @@ const team = [
     id: 5,
     name: 'Marc Diller',
     role: 'Tax Specialist',
-    desc: "",
+    desc: "At Boutique Books, I don't just crunch numbers — I work with you to make managing your finances easier and more rewarding. With years of experience in tax and bookkeeping, I've helped individuals and businesses streamline their financial processes while saving money along the way. I take pride in bringing a down-to-earth, approachable style to everything I do. I know taxes and bookkeeping can seem complicated, but my goal is to make it feel simple and stress-free for you. I love getting to know each client's unique needs and offering practical solutions that actually make a difference. When we work together, you can expect a hands-on, personalized approach tailored to your specific situation. I'm here to keep your finances organized and make sure more of your hard-earned money stays where it belongs—in your pocket. Let's connect and take the hassle out of your financial journey today!",
     imgURL: MarcDiller,
   },
   {
@@ -73,7 +74,7 @@ const team = [
     name: 'Breana Gonzalez',
     role: 'Customer Success Coordinator',
     desc: "Meet Breana, our dedicated Customer Success Coordinator here at Boutique Books! With over 10 years of customer service experience, Breana is passionate about keeping our office running smoothly and ensuring you're connected with the best bookkeepers and tax preparers. She's your go-to for all things client communication and loves making sure your needs are met with care and expertise. When she's not assisting clients, Breana is deeply involved with her local church, where she's been a part of the community for 27 years. Fun fact: it's where she met her husband! They've been happily married for two years and recently welcomed an adorable cat into their family. In her free time, Breana enjoys drawing, traveling with her husband, and finding new ways to give back.",
-    imgURL: Team4,
+    imgURL: Breana,
   },
 ];
 export default function AboutPage() {
@@ -257,14 +258,14 @@ export default function AboutPage() {
                 </h5>
                 {
                   activeIndex == index && (<div className='col-span-3 p-3' >
-                    <p className='text-white text-base' >{desc}</p>
+                    <p className='hover:text-white text-gray-600 text-base' >{desc}</p>
                   </div>)
                 }
               </div>
             ))}
           </div>
           <div className="flex justify-center place-items-center">
-            <img src={teamImg} className='h-96 w-52 object-contain' />
+            <img src={teamImg} className='h-96 w-52 object-contain rounded-md' />
           </div>
         </div>
       </section>

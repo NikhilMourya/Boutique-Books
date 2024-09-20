@@ -10,32 +10,38 @@ import Keyboard from '../assets/images/home/keyboard.png';
 import LadyScroll from '../components/Homepage/LadyScroll';
 import ProfileCard from '../components/Homepage/ProfileCard';
 import FeedbackCard from '../components/shared/FeedbackCard';
+import business_process from '../assets/Icons/business_process.png';
+import assessment from '../assets/Icons/assessment.png'
+import procedures from '../assets/Icons/procedures.png';
+import project_management from '../assets/Icons/project_management.png';
+import quality from '../assets/Icons/quality.png';
+import success from '../assets/Icons/success.png'
 
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 
 const data = [
   {
-    img: 'https://img.freepik.com/free-vector/purple-man-with-blue-hair_24877-82003.jpg',
+    img: quality,
     title: 'Effortless',
   },
   {
-    img: 'https://img.freepik.com/free-vector/purple-man-with-blue-hair_24877-82003.jpg',
+    img: success,
     title: 'Reassuring',
   },
   {
-    img: 'https://img.freepik.com/free-vector/purple-man-with-blue-hair_24877-82003.jpg',
+    img: project_management,
     title: 'Empowering',
   },
   {
-    img: 'https://img.freepik.com/free-vector/purple-man-with-blue-hair_24877-82003.jpg',
+    img: assessment,
     title: 'Insightful',
   },
   {
-    img: 'https://img.freepik.com/free-vector/purple-man-with-blue-hair_24877-82003.jpg',
+    img: business_process,
     title: 'Efficient',
   },
   {
-    img: 'https://img.freepik.com/free-vector/purple-man-with-blue-hair_24877-82003.jpg',
+    img: procedures,
     title: 'Simplify',
   },
 ];
