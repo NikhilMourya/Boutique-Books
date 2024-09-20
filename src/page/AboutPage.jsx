@@ -3,16 +3,16 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import React, { useEffect, useState } from 'react';
 import AboutImg from '../assets/images/about/about.png';
+import Breana from '../assets/images/about/Breana.jpg';
 import CollaborationImg from '../assets/images/about/Collaboration.png';
 import InnovationImg from '../assets/images/about/Innovation.png';
+import MarcDiller from '../assets/images/about/Marc_Diller.png';
 import PersomalDevelopementImg from '../assets/images/about/Persomal-Developement.png';
 import RelationshipsImg from '../assets/images/about/Relationships.png';
 import Team1 from '../assets/images/about/team-1.png';
 import Team2 from '../assets/images/about/team-2.png';
 import Team3 from '../assets/images/about/team-3.png';
 import Team4 from '../assets/images/about/team-4.png';
-import MarcDiller from '../assets/images/about/Marc_Diller.png';
-import Breana from '../assets/images/about/Breana.jpg'
 // import Sharon from '../assets/images/about/Sharon.JPEG'
 import TeamWorkImg from '../assets/images/about/Team-Work.png';
 import WomenEmpowermentImg from '../assets/images/about/Women-Empowerment.png';
@@ -258,7 +258,7 @@ export default function AboutPage() {
                 </h5>
                 {
                   activeIndex == index && (<div className='col-span-3 p-3' >
-                    <p className='hover:text-white text-gray-600 text-base' >{desc}</p>
+                    <p className='group-hover:text-white text-gray-600 text-base' >{desc}</p>
                   </div>)
                 }
               </div>
