@@ -165,7 +165,7 @@ export default function AboutPage() {
       >
         <img
           src={AboutImg}
-          className="sm:h-40 md:h-52 lg:h-60 w-1/3"
+          className="sm:h-40 md:h-52 lg:h-60 w-9/12 max-sm:mx-auto md:w-1/3"
           alt=""
         />
         <H1 className="font-primary lg:text-6xl flex lg:flex-col space-x-3 lg:-space-x-5 gap-y-5">
@@ -258,7 +258,7 @@ export default function AboutPage() {
                 </h5>
                 {
                   activeIndex == index && (<div className='col-span-3 p-3' >
-                    <p className='group-hover:text-white text-gray-600 text-base' >{desc}</p>
+                    <p className='group-hover:text-white text-gray-600 text-sm md:text-base' >{desc}</p>
                   </div>)
                 }
               </div>
