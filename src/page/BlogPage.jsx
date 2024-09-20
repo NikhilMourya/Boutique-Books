@@ -12,7 +12,9 @@ export default function BlogPage() {
         {blogs.map((blog) => {
           return (
             <Link
-              to={`/blogs/${blog.title}`}
+              // to={`/blogs/${blog.title}`}
+              to='https://blog.boutiquebooks.us/'
+              target='_blank'
               className="flex flex-col text-left mb-16 rounded-md overflow-hidden shadow-md border border-primary/40 shadow-primary md:min-h-[560px]"
             >
               <img

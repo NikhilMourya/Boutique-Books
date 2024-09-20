@@ -3,19 +3,18 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useLayoutEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
+import assessment from '../assets/Icons/assessment.png';
+import business_process from '../assets/Icons/business_process.png';
+import procedures from '../assets/Icons/procedures.png';
+import project_management from '../assets/Icons/project_management.png';
+import quality from '../assets/Icons/quality.png';
+import success from '../assets/Icons/success.png';
 import ladyWithLaptop from '../assets/images/home/female-with-laptop.png';
-import Finger from '../assets/images/home/finger.png';
 import Graph from '../assets/images/home/Graph.png';
 import Keyboard from '../assets/images/home/keyboard.png';
 import LadyScroll from '../components/Homepage/LadyScroll';
 import ProfileCard from '../components/Homepage/ProfileCard';
 import FeedbackCard from '../components/shared/FeedbackCard';
-import business_process from '../assets/Icons/business_process.png';
-import assessment from '../assets/Icons/assessment.png'
-import procedures from '../assets/Icons/procedures.png';
-import project_management from '../assets/Icons/project_management.png';
-import quality from '../assets/Icons/quality.png';
-import success from '../assets/Icons/success.png'
 
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 
@@ -434,12 +433,12 @@ const HomePage = () => {
             </div>
           </div>
         </section>
-        <section className="py-20 p-10 md:mx-28 md:my-32 bg-light-section">
+        <section className="py-20 p-10 px-0 md:mx-28 md:my-32 bg-light-section">
           <h1 className="font-primary text-2xl sm:text-3xl lg:text-4xl mb-8">
             Real Feedback from Real Clients
           </h1>
           <div className=' overflow-x-scroll px-5' >
-            <div className="min-w-[60rem] flex flex-row  md:grid py-5 md:grid-cols-2 lg:grid-cols-3 gap-5">
+            <div className="min-w-[60rem] flex flex-row  md:grid py-5 md:grid-cols-2 lg:grid-cols-4 gap-5">
               {
                 testimonials.map((review) => {
                   return (

@@ -3,16 +3,16 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import React, { useEffect, useState } from 'react';
 import AboutImg from '../assets/images/about/about.png';
+import Breana from '../assets/images/about/Breana.jpg';
 import CollaborationImg from '../assets/images/about/Collaboration.png';
 import InnovationImg from '../assets/images/about/Innovation.png';
+import MarcDiller from '../assets/images/about/Marc_Diller.png';
 import PersomalDevelopementImg from '../assets/images/about/Persomal-Developement.png';
 import RelationshipsImg from '../assets/images/about/Relationships.png';
 import Team1 from '../assets/images/about/team-1.png';
 import Team2 from '../assets/images/about/team-2.png';
 import Team3 from '../assets/images/about/team-3.png';
 import Team4 from '../assets/images/about/team-4.png';
-import MarcDiller from '../assets/images/about/Marc_Diller.png';
-import Breana from '../assets/images/about/Breana.jpg'
 // import Sharon from '../assets/images/about/Sharon.JPEG'
 import TeamWorkImg from '../assets/images/about/Team-Work.png';
 import WomenEmpowermentImg from '../assets/images/about/Women-Empowerment.png';
@@ -92,26 +92,26 @@ export default function AboutPage() {
     }
 
     if (window.innerWidth > 768) {
-      paras.style.paddingLeft = '300px';
+      // paras.style.paddingLeft = '300px';
       let ctx = gsap.context(() => {
-        let t1 = gsap.timeline({
-          scrollTrigger: {
-            trigger: '.horizontal-para-wrapper',
-            start: 'top 60%',
-            end: () => `+=${getScrollAmount() * -0.8}`,
-            pin: true,
-            pinSpacing: true,
-            scrub: 1,
-            invalidateOnRefresh: true,
-          },
-        });
+        // let t1 = gsap.timeline({
+        //   scrollTrigger: {
+        //     trigger: '.horizontal-para-wrapper',
+        //     start: 'top 60%',
+        //     end: () => `+=${getScrollAmount() * -0.8}`,
+        //     pin: true,
+        //     pinSpacing: true,
+        //     scrub: 1,
+        //     invalidateOnRefresh: true,
+        //   },
+        // });
 
 
-        t1.to(paras, {
-          // x: getScrollAmount,
-          x: () => getScrollAmount() * 1,
-          ease: 'none',
-        });
+        // t1.to(paras, {
+        //   // x: getScrollAmount,
+        //   x: () => getScrollAmount() * 1,
+        //   ease: 'none',
+        // });
 
         let t2 = gsap.timeline({
           scrollTrigger: {
@@ -161,11 +161,11 @@ export default function AboutPage() {
     <main className="md:pt-28 pt-20 bg-white">
       <section
         id="top-sec"
-        className="z-10 md:fixed lg:top-16 my-5 mx-auto flex flex-col-reverse lg:flex-row gap-y-10 md:gap-x-24 lg:px-40 items-center"
+        className="z-10 !static md:fixed lg:top-16 my-5 mx-auto flex flex-col-reverse lg:flex-row gap-y-10 md:gap-x-24 lg:px-40 items-center"
       >
         <img
           src={AboutImg}
-          className="sm:h-40 md:h-52 lg:h-60 w-9/12 mx-auto "
+          className="sm:h-40 md:h-52 lg:h-60 w-9/12 max-sm:mx-auto md:w-1/3"
           alt=""
         />
         <H1 className="font-primary lg:text-6xl flex lg:flex-col space-x-3 lg:-space-x-5 gap-y-5">
@@ -174,11 +174,11 @@ export default function AboutPage() {
         </H1>
       </section>
 
-      <div className="relative z-20">
+      <div className="relative z-20 mt-10">
         <div className="horizontal-para-wrapper relative overflow-hidden">
-          <div className="lg:ml-20 lg:rounded-tl-[50px] flex flex-col md:flex-row horizontal-para">
+          <div className="lg:rounded-tl-[50px] flex flex-col horizontal-para !pl-0">
             {paras.map((para, index) => (
-              <div className={`flex-shrink-0 w-full md:w-[50%] p-5 bg-primary ${index == 0 ? 'md:rounded-tl-3xl' : index == paras.length ? 'pr-12' : ''}`} key={index}>
+              <div className={`flex-shrink-0 w-full p-5 pt-10 bg-primary ${index == 0 ? 'md:rounded-tl-3xl' : index == paras.length ? 'pr-12' : ''}`} key={index}>
                 <p className="text-white text-left text-base md:text-base">{para}</p>
               </div>
             ))}
@@ -258,7 +258,7 @@ export default function AboutPage() {
                 </h5>
                 {
                   activeIndex == index && (<div className='col-span-3 p-3' >
-                    <p className='hover:text-white text-gray-600 text-base' >{desc}</p>
+                    <p className='group-hover:text-white text-gray-600 text-sm md:text-base' >{desc}</p>
                   </div>)
                 }
               </div>
