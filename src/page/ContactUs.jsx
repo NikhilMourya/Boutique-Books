@@ -3,13 +3,19 @@ import React from 'react';
 export default function ContactUs() {
     return (
         <main className="pt-36">
-            <div className="min-h-screen">
-                <h1 className="text-2xl md:text-4xl font-semibold mb-3 md:mb-5 text-center">Customer Services</h1>
-                <div className="flex justify-center md:flex-row flex-col gap-10  md:gap-20 w-full max-w-4xl mx-auto">
+            <div className="">
+                <h1 className="text-2xl md:text-4xl font-semibold mb-3 text-center">Customer Services</h1>
+                <div className="grid grid-cols-2 gap-5  md:gap-20 w-full max-w-6xl mx-auto">
 
-                    <div className="w-full p-4">
-                        <h2 className="text-2xl md:text-4xl font-medium mb-4 text-center">Contact us</h2>
-                        <form className="space-y-4">
+                    <div className="col-span-2 w-full p-4 flex-grow h-screen py-10">
+                        <iframe
+                            title="Mailchimp Contact Form"
+                            src="https://us17.list-manage.com/contact-form?u=fada68f8697eace3c42993d0d&form_id=13cc1c9dea2f419c09dc60db25311019"
+                            width="100%"
+                            height="100%"
+                            allowFullScreen
+                        />
+                        {/* <form className="space-y-4">
                             <input
                                 type="text"
                                 placeholder="Full Name"
@@ -31,9 +37,9 @@ export default function ContactUs() {
                             >
                                 Send
                             </button>
-                        </form>
+                        </form> */}
                     </div>
-                    <div className="w-full p-4">
+                    <div className=" p-4 w-3/5 mx-auto col-span-2">
                         <h2 className="text-2xl md:text-4xl font-medium mb-4 text-center ">Support</h2>
                         <div className="text-center space-y-2 flex flex-col justify-around items-center gap-2">
                             <p>Timing: Monday - Friday 9:00am - 4:30pm                            </p>

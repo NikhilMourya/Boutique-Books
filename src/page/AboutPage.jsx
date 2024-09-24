@@ -54,6 +54,7 @@ const team = [
     id: 3,
     name: 'Savannah Clarke',
     role: 'Tax & Bookkeeping Specialist',
+    desc:"Meet Savannah, one of our skilled tax preparation and bookkeeping experts at Boutique CFO Advisory. Born and raised in New Jersey, Savannah earned her associate degree in business administration and a certificate in computerized accounting back in 2013. After graduation, she and her husband embarked on a cross-country adventure, living in Alaska, Texas, Georgia, New York, and now calling North Carolina home. Along the way, they've built a wonderful family with two energetic boys and a loyal pup. In 2022, Savannah completed her bachelor's in accounting and finance, graduating magna cum laude and joining the prestigious Sigma Beta Delta honor society. She's now pursuing enrollment to practice before the IRS, adding even more value to the clients she helps at Boutique CFO.Since joining the team in 2021, Savannah has enjoyed supporting a wide range of clients with their tax prep and bookkeeping needs. Outside of work, she's a busy mom chasing after her boys, exploring new places, and cheering on her beloved Philadelphia Eagles and Phillies.",
     imgURL: Team3,
   },
   {
@@ -176,9 +177,9 @@ export default function AboutPage() {
 
       <div className="relative z-20 mt-10">
         <div className="horizontal-para-wrapper relative overflow-hidden">
-          <div className="lg:rounded-tl-[50px] flex flex-col horizontal-para !pl-0">
+          <div className="lg:rounded-tl-[50px] flex flex-col horizontal-para">
             {paras.map((para, index) => (
-              <div className={`flex-shrink-0 w-full p-5 pt-10 bg-primary ${index == 0 ? 'md:rounded-tl-3xl' : index == paras.length ? 'pr-12' : ''}`} key={index}>
+              <div className={`flex-shrink-0 w-full px-20 md:px-32 lg:px-44 pt-10 bg-primary ${index == 0 ? 'md:rounded-t-3xl ' : index == paras.length ? 'pr-12' : ''}`} key={index}>
                 <p className="text-white text-left text-base md:text-base">{para}</p>
               </div>
             ))}

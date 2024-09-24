@@ -107,9 +107,9 @@ const HomePage = () => {
       let t1 = gsap.timeline({
         scrollTrigger: {
           trigger: scrollContainer,
-          scrub: 1,
+          scrub: 2.5,
           start: 'top 70%',
-          end: 'top 20%',
+          end: 'top -10%',
         },
       });
 
@@ -122,7 +122,7 @@ const HomePage = () => {
       t1.to(
         horizontalElementLeft,
         {
-          transform: 'translateX(-40%)',
+          transform: 'translateX(-50%)',
           ease: 'none',
           duration: 3,
         },
@@ -132,7 +132,7 @@ const HomePage = () => {
       t1.to(
         horizontalElementRight,
         {
-          transform: 'translateX(40%)',
+          transform: 'translateX(50%)',
           ease: 'none',
           duration: 3,
         },

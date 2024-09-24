@@ -51,7 +51,7 @@ const TermsOfService = () => {
 
         <section className="mb-8">
           <h2 className="text-xl font-semibold mb-2">7. User Conduct</h2>
-          <p className="text-justify">
+          <div className="text-justify">
             You agree to use our website in a manner consistent with applicable laws and these Terms of Service. Prohibited activities include, but are not limited to:
             <ul className="list-disc ml-6">
               <li>Spam: Sending unsolicited commercial communications through our website.</li>
@@ -59,7 +59,7 @@ const TermsOfService = () => {
               <li>Security Breaches: Attempting to bypass or breach the security measures of our website, accessing accounts not owned by you, or interfering with the proper functioning of the website.</li>
             </ul>
             Violation of these terms may result in the termination of your access to the website and our services without notice.
-          </p>
+          </div>
         </section>
 
         <section className="mb-8">

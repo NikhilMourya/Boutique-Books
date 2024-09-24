@@ -93,7 +93,7 @@ const ServicesPage = () => {
     speed: 1000,
     autoplaySpeed: 3000,
     cssEase: "linear",
-    infinite: true,
+    infinite: false,
     slidesToShow: 1.5,
     slidesToScroll: 1,
     arrows: false,
