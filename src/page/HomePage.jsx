@@ -495,6 +495,7 @@ const HomePage = () => {
             </div>
           </div> */}
 
+          {/* New Slider Testimonials */}
           <div className='px-5'>
             <Slider {...settings}>
               {testimonials.map((review, index) => (
@@ -504,6 +505,7 @@ const HomePage = () => {
               ))}
             </Slider>
           </div>
+          
         </section>
       </section>
     </>
