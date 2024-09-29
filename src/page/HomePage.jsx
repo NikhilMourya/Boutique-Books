@@ -121,7 +121,7 @@ const HomePage = () => {
       {
         breakpoint: 1024,
         settings: {
-          slidesToShow: 3,
+          slidesToShow: 2,
         }
       },
       {
@@ -496,7 +496,7 @@ const HomePage = () => {
           </div> */}
 
           {/* New Slider Testimonials */}
-          <div className='px-5'>
+          <div className=''>
             <Slider {...settings}>
               {testimonials.map((review, index) => (
                 <div key={index} className='px-5'>
@@ -505,7 +505,7 @@ const HomePage = () => {
               ))}
             </Slider>
           </div>
-          
+
         </section>
       </section>
     </>
