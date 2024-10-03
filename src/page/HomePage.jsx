@@ -47,46 +47,27 @@ const data = [
 ];
 
 const testimonials = [
-// {
-//   title: 'Shellye Archambeau',
-//   subTitle: '',
-//   feedback: 'The Team is Great to work with!'
-// },
-// {
-//   title: 'San Benito Bene',
-//   subTitle: '',
-//   feedback: 'Highly Recommend! Tajni and her team are trustworthy and reliable. When I started my small business, it was daunting having to comply with so many regulations. Tajni provided me with professional guidance and set me up with a clear financial structure.'
-// },
-// {
-//   title: 'Sujeet Vasudevan',
-//   subTitle: '',
-//   feedback: 'Tajni and team have done an excellent job with tax filing requirements for us.'
-// },
-// {
-//   title: 'Charisse Tyson',
-//   subTitle: '',
-//   feedback: "I've been working with Tajni for over 15 years. She and her team are excellent. We all dread tax season to a certain extent, but it's less painfull when you are working with a quality company."
-// },
-// {
-//   title: '',
-//   subTitle: '',
-//   feedback: ''
-// },
-// {
-//   title: '',
-//   subTitle: '',
-//   feedback: ''
-// },
-// {
-//   title: '',
-//   subTitle: '',
-//   feedback: ''
-// },
-// {
-//   title: '',
-//   subTitle: '',
-//   feedback: ''
-// },
+  {
+    title: 'Shellye Archambeau',
+    subTitle: '',
+    feedback: 'The Team is Great to work with!'
+  },
+  {
+    title: 'San Benito Bene',
+    subTitle: '',
+    feedback: 'Highly Recommend! Tajni and her team are trustworthy and reliable. When I started my small business, it was daunting having to comply with so many regulations. Tajni provided me with professional guidance and set me up with a clear financial structure.'
+  },
+  {
+    title: 'Sujeet Vasudevan',
+    subTitle: '',
+    feedback: 'Tajni and team have done an excellent job with tax filing requirements for us.'
+  },
+  {
+    title: 'Charisse Tyson',
+    subTitle: '',
+    feedback: "I've been working with Tajni for over 15 years. She and her team are excellent. We all dread tax season to a certain extent, but it's less painfull when you are working with a quality company."
+  },
+
   {
     title: 'Kim J',
     subTitle: '',
@@ -95,14 +76,23 @@ const testimonials = [
   {
     title: 'Mishkat A',
     subTitle: '',
-    feedback: '"I have been using their services since 2016 and I couldn’t be happier. Tajni and her staff are honest and hardworking people who strive to help you file your taxes. I recently worked with Sharon who is highly experienced and easy to talk to. Sharon is also very responsive. I highly recommend them."'
+    feedback: "I have been using their services since 2016 and I couldn't be happier. Tajni and her staff are honest and hardworking people who strive to help you file your taxes. I recently worked with Sharon who is highly experienced and easy to talk to. Sharon is also very responsive. I highly recommend them."
   },
   {
     title: 'Reno R',
     subTitle: '',
     feedback: '"If you are looking for a great quality tax person, look no further. If you\'re looking for someone who is honest and will treat you like you are her only client, she is the gal for you. I have known Tajni and her family and they are all wonderful people. Tajni takes pride in her business and will always bend over backwards to help you with your tax needs. Give her a try, you will not be disappointed."'
+  },
+  {
+    title:"Alisse Winn",
+    subTitle:"",
+    feedback:"Needed major help with huge accounting book issues. TD came in and worked miracles.  I am so blessed to have her work with me on this project.  She didn't get overwhelmed. And was able to get everything fixed and up and running.  USE TD TAX for anything!!! You won't be disappointed"
+  },
+  {
+    title:"Alexis R",
+    subsTitle:"",
+    feedback:"Tajni & her team (especially Raquel) are amazing. I used to HATE having to deal with my company's books & payroll. It is so hard to find someone reliable who knows their stuff inside and out. Tajni knows her stuff! She has a way of making you feel so reassured & confident that everything is being tracked correctly. Raquel has payroll done so quickly it amazes me! If you never want to stress over your books or payroll, leave it to these girls! They're worth it."
   }
-
 ]
 
 const profiles = data.map((item, index) => (
@@ -116,6 +106,7 @@ const HomePage = () => {
     slidesToShow: 3,
     slidesToScroll: 1,
     autoplay: true,
+    arrow:true,
     autoplaySpeed: 3000,
     responsive: [
       {
@@ -299,7 +290,7 @@ const HomePage = () => {
             </p>
           </div>
           <div className="my-4 p-3 flex gap-5 justify-center items-center">
-            <Link to="/conatct-us">
+            <Link to="/contact">
               <button className="px-7 p-2 border-black border text-black rounded-full text-md">
                 Learn More
               </button></Link>
@@ -447,7 +438,7 @@ const HomePage = () => {
                                 Expenses <span>$95,200</span>
                               </h3>
                             </div>
-                            <Link to="/contact-us">
+                            <Link to="/contact">
                               <button className="md:px-7 p-2 bg-gray-700 text-white rounded-full">
                                 <div className="flex gap-3 flex-row ">
 

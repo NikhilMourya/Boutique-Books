@@ -7,6 +7,7 @@ import P2 from '../assets/images/pricing/P2-Icon.png';
 import P3 from '../assets/images/pricing/P3-Icon.png';
 import PlaceholderLogo from '../assets/images/pricing/placeholderLogo.png';
 import H1 from '../components/H1';
+import { Link } from 'react-router-dom';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -272,9 +273,12 @@ export default function PricingPage() {
             </span>
             /mo billed annually
           </p>
-          <button className="bg-primary w-full self-end text-2xl py-2 rounded-lg">
-            Contact Us
-          </button>
+          <Link to="/contact" >
+            <button className="bg-primary w-full self-end text-2xl py-2 rounded-lg">
+              Contact Us
+            </button>
+          </Link>
+
         </div>
         <div className="card p-10 grid gap-y-5 items-center text-left md:gap-y-0 shadow-md border border-primary/40 shadow-primary rounded-3xl min-h-[400px]">
           <h3 className="font-semibold text-2xl">Premium Plan</h3>
@@ -327,9 +331,11 @@ export default function PricingPage() {
               {price(getBookkeepingCost(priceRange, true))}
             </span>
           </p>
-          <button className="bg-primary w-full self-end text-2xl py-2 rounded-lg">
-            Contact Us
-          </button>
+          <Link to="/contact" >
+            <button className="bg-primary w-full self-end text-2xl py-2 rounded-lg">
+              Contact Us
+            </button>
+          </Link>
         </div>
         <div className="card p-10 grid gap-y-5 items-center text-left md:gap-y-0 shadow-md border border-primary/40 shadow-primary rounded-3xl min-h-[400px]">
           <h3 className="font-semibold text-2xl">Elite Plan</h3>
@@ -339,9 +345,11 @@ export default function PricingPage() {
           <p className="self-end">
             <span className="text-2xl font-bold">Custom Pricing</span>
           </p>
-          <button className="bg-primary w-full self-end text-2xl py-2 rounded-lg">
-            Contact Us
-          </button>
+          <Link to="/contact" >
+            <button className="bg-primary w-full self-end text-2xl py-2 rounded-lg">
+              Contact Us
+            </button></Link>
+
         </div>
       </section>
 

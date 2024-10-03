@@ -13,7 +13,7 @@ const navItems = [
   { text: 'About Us', href: '/about-us' },
   { text: 'Services', href: '/services' },
   { text: 'Our Methods', href: '/our-methods' },
-  { text: 'Blogs', href: 'https://blog.boutiquebooks.us/' },
+  { text: 'Blogs', href: 'https://substack.com/@boutiquebooks' },
   { text: 'Pricing', href: '/pricing' },
 ];
 
