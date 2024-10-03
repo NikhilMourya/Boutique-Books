@@ -3,6 +3,7 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useLayoutEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
+import Slider from 'react-slick';
 import assessment from '../assets/Icons/assessment.png';
 import business_process from '../assets/Icons/business_process.png';
 import procedures from '../assets/Icons/procedures.png';
@@ -45,46 +46,62 @@ const data = [
   },
 ];
 
-const testimonials = [{
-  title: 'Shellye Archambeau',
-  subTitle: '',
-  feedback: 'The Team is Great to work with!'
-},
-{
-  title: 'San Benito Bene',
-  subTitle: '',
-  feedback: 'Highly Recommend! Tajni and her team are trustworthy and reliable. When I started my small business, it was daunting having to comply with so many regulations. Tajni provided me with professional guidance and set me up with a clear financial structure.'
-},
-{
-  title: 'Sujeet Vasudevan',
-  subTitle: '',
-  feedback: 'Tajni and team have done an excellent job with tax filing requirements for us.'
-},
-{
-  title: 'Charisse Tyson',
-  subTitle: '',
-  feedback: "I've been working with Tajni for over 15 years. She and her team are excellent. We all dread tax season to a certain extent, but it's less painfull when you are working with a quality company."
-},
-  // {
-  //   title: '',
-  //   subTitle: '',
-  //   feedback: ''
-  // },
-  // {
-  //   title: '',
-  //   subTitle: '',
-  //   feedback: ''
-  // },
-  // {
-  //   title: '',
-  //   subTitle: '',
-  //   feedback: ''
-  // },
-  // {
-  //   title: '',
-  //   subTitle: '',
-  //   feedback: ''
-  // },
+const testimonials = [
+// {
+//   title: 'Shellye Archambeau',
+//   subTitle: '',
+//   feedback: 'The Team is Great to work with!'
+// },
+// {
+//   title: 'San Benito Bene',
+//   subTitle: '',
+//   feedback: 'Highly Recommend! Tajni and her team are trustworthy and reliable. When I started my small business, it was daunting having to comply with so many regulations. Tajni provided me with professional guidance and set me up with a clear financial structure.'
+// },
+// {
+//   title: 'Sujeet Vasudevan',
+//   subTitle: '',
+//   feedback: 'Tajni and team have done an excellent job with tax filing requirements for us.'
+// },
+// {
+//   title: 'Charisse Tyson',
+//   subTitle: '',
+//   feedback: "I've been working with Tajni for over 15 years. She and her team are excellent. We all dread tax season to a certain extent, but it's less painfull when you are working with a quality company."
+// },
+// {
+//   title: '',
+//   subTitle: '',
+//   feedback: ''
+// },
+// {
+//   title: '',
+//   subTitle: '',
+//   feedback: ''
+// },
+// {
+//   title: '',
+//   subTitle: '',
+//   feedback: ''
+// },
+// {
+//   title: '',
+//   subTitle: '',
+//   feedback: ''
+// },
+  {
+    title: 'Kim J',
+    subTitle: '',
+    feedback: '"TD tax is great! They are quick to answer my questions and staff is always available and get back to me within 24 hours. I have been using them for a few years and I am very happy with them. It\'s so easy to upload your documents and communicate back and forth online. Highly recommended."'
+  },
+  {
+    title: 'Mishkat A',
+    subTitle: '',
+    feedback: '"I have been using their services since 2016 and I couldn’t be happier. Tajni and her staff are honest and hardworking people who strive to help you file your taxes. I recently worked with Sharon who is highly experienced and easy to talk to. Sharon is also very responsive. I highly recommend them."'
+  },
+  {
+    title: 'Reno R',
+    subTitle: '',
+    feedback: '"If you are looking for a great quality tax person, look no further. If you\'re looking for someone who is honest and will treat you like you are her only client, she is the gal for you. I have known Tajni and her family and they are all wonderful people. Tajni takes pride in her business and will always bend over backwards to help you with your tax needs. Give her a try, you will not be disappointed."'
+  }
 
 ]
 
@@ -92,6 +109,35 @@ const profiles = data.map((item, index) => (
   <ProfileCard key={index} img={item.img} title={item.title} />
 ));
 const HomePage = () => {
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 3000,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 2,
+        }
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 2,
+        }
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+        }
+      }
+    ]
+  };
   // const container = useRef(null);
   const scrollContainerRef = useRef(null);
   const horizontalRefLeft = useRef(null);
@@ -442,16 +488,27 @@ const HomePage = () => {
           <h1 className="font-primary text-2xl sm:text-3xl lg:text-4xl mb-8">
             Real Feedback from Real Clients
           </h1>
-          <div className=' overflow-x-scroll px-5' >
+          {/* <div className=' overflow-x-scroll px-5' >
             <div className="min-w-[60rem] flex flex-row  md:grid py-5 md:grid-cols-2 lg:grid-cols-4 gap-5">
               {
-                testimonials.map((review) => {
+                testimonials.map((review, index) => {
                   return (
-                    <FeedbackCard fbSubTitle={review.subTitle} fbTitle={review.title} feedback={review.feedback} />
+                    <FeedbackCard key={index} fbSubTitle={review.subTitle} fbTitle={review.title} feedback={review.feedback} />
                   )
                 })
               }
             </div>
+          </div> */}
+
+          {/* New Slider Testimonials */}
+          <div className=''>
+            <Slider {...settings}>
+              {testimonials.map((review, index) => (
+                <div key={index} className='px-5'>
+                  <FeedbackCard fbSubTitle={review.subTitle} fbTitle={review.title} feedback={review.feedback} />
+                </div>
+              ))}
+            </Slider>
           </div>
 
         </section>

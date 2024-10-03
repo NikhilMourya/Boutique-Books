@@ -1,7 +1,7 @@
 const FeedbackCard = ({ feedback, fbTitle, fbSubTitle }) => {
   return (
     <>
-      <div className="w-full feedback-card-shadow rounded-lg p-6 py-10 bg-white  text-left">
+      <div className="w-full md:min-h-[500px] my-5 feedback-card-shadow rounded-lg p-6 py-10 bg-white  text-left">
         <div>
           <div className="flex justify-start my-2">
             <svg
@@ -57,7 +57,7 @@ const FeedbackCard = ({ feedback, fbTitle, fbSubTitle }) => {
               </defs>
             </svg>
           </div>
-          <p className="text-black my-5 lg:text-base">
+          <p className="text-black my-5 lg:text-base text-justify">
             {feedback}
           </p>
 
