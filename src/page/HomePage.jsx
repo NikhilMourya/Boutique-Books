@@ -65,26 +65,26 @@ const testimonials = [{
   subTitle: '',
   feedback: "I've been working with Tajni for over 15 years. She and her team are excellent. We all dread tax season to a certain extent, but it's less painfull when you are working with a quality company."
 },
-// {
-//   title: '',
-//   subTitle: '',
-//   feedback: ''
-// },
-// {
-//   title: '',
-//   subTitle: '',
-//   feedback: ''
-// },
-// {
-//   title: '',
-//   subTitle: '',
-//   feedback: ''
-// },
-// {
-//   title: '',
-//   subTitle: '',
-//   feedback: ''
-// },
+  // {
+  //   title: '',
+  //   subTitle: '',
+  //   feedback: ''
+  // },
+  // {
+  //   title: '',
+  //   subTitle: '',
+  //   feedback: ''
+  // },
+  // {
+  //   title: '',
+  //   subTitle: '',
+  //   feedback: ''
+  // },
+  // {
+  //   title: '',
+  //   subTitle: '',
+  //   feedback: ''
+  // },
 
 ]
 
@@ -253,19 +253,20 @@ const HomePage = () => {
             </p>
           </div>
           <div className="my-4 p-3 flex gap-5 justify-center items-center">
-            <button className="px-7 p-2 border-black border text-black rounded-full text-md">
-              Learn More
-            </button>
+            <Link to="/conatct-us">
+              <button className="px-7 p-2 border-black border text-black rounded-full text-md">
+                Learn More
+              </button></Link>
 
             <Link to="https://www.calendly.com/boutiquebooks" target='_blank'>
               <button className="px-7 p-2 button-primary-bg text-white rounded-full">
-                <div className="flex gap-3 flex-row">
-                  <div className="inline-flex gap-3">
+                <div className="flex gap-3 flex-row justify-center">
+                  <div className="inline-flex gap-2 justify-center">
                     <span className="text-md">Book a Call</span>
                     <span className="content-center">
                       <svg
-                        width="20"
-                        height="16"
+                        width="18"
+                        height="14"
                         viewBox="0 0 24 20"
                         fill="none"
                         xmlns="http://www.w3.org/2000/svg"
@@ -282,7 +283,7 @@ const HomePage = () => {
             </Link>
           </div>
         </main>
-        <div
+        {/* <div
           className="-translate-y-28 opacity-0 scale-125 overflow-hidden"
           ref={scrollContainerRef}
         >
@@ -298,7 +299,7 @@ const HomePage = () => {
           >
             {profiles}
           </div>
-        </div>
+        </div> */}
         <LadyScroll />
         <div className="relative my-14 lg:mt-56 lg:pt-32 py-14 keyboard-container bg-light-section">
           <div className="relative z-10">
@@ -315,8 +316,8 @@ const HomePage = () => {
                 id="keyboard-img"
               />
               <Link to="https://www.calendly.com/boutiquebooks" target='_blank'>
-                <button className="mt-10 px-7 p-2 button-primary-bg text-white rounded-full">
-                  <div className="flex gap-3 flex-row text-2xl px-5 py-3">
+                <button className="mt-10 px-5 p-2 button-primary-bg text-white rounded-full">
+                  <div className="flex gap-3 flex-row text-xl px-2 py-2">
                     <div className="inline-flex gap-6">
                       <span className="text-md">Book a Call</span>
                       <span className="content-center">
@@ -400,29 +401,33 @@ const HomePage = () => {
                                 Expenses <span>$95,200</span>
                               </h3>
                             </div>
-                            <button className="md:px-7 p-2 bg-gray-700 text-white rounded-full">
-                              <div className="flex gap-3 flex-row ">
-                                <div className="inline-flex gap-3">
-                                  <span className="text-md end">
-                                    Learn More
-                                  </span>
-                                  <span className="content-center">
-                                    <svg
-                                      width="20"
-                                      height="16"
-                                      viewBox="0 0 24 20"
-                                      fill="none"
-                                      xmlns="http://www.w3.org/2000/svg"
-                                    >
-                                      <path
-                                        d="M14.3659 19.7046L24 10.0493L14.3659 0.393967C14.2789 0.280049 14.1684 0.186099 14.0418 0.118479C13.9152 0.0508581 13.7755 0.0111451 13.6322 0.00202784C13.4888 -0.00708939 13.3452 0.0146026 13.211 0.0656346C13.0769 0.116667 12.9552 0.195847 12.8544 0.297817C12.7536 0.399786 12.6759 0.522163 12.6267 0.656664C12.5774 0.791164 12.5577 0.934646 12.5689 1.0774C12.5801 1.22015 12.6219 1.35884 12.6915 1.48407C12.7611 1.60931 12.8569 1.71817 12.9724 1.80328L20.1805 9.04976L1.00251 9.04976C0.736625 9.04976 0.481634 9.15506 0.293628 9.34251C0.105621 9.52995 -4.2768e-07 9.78419 -4.39268e-07 10.0493C-4.50855e-07 10.3144 0.105621 10.5686 0.293628 10.756C0.481634 10.9435 0.736625 11.0488 1.00251 11.0488L20.1805 11.0488L12.9724 18.2953C12.785 18.4835 12.6802 18.7382 12.6811 19.0035C12.6821 19.2687 12.7887 19.5227 12.9774 19.7096C13.1662 19.8965 13.4217 20.0009 13.6878 20C13.9538 19.9991 14.2085 19.8928 14.396 19.7046L14.3659 19.7046Z"
-                                        fill="#87CEEB"
-                                      />
-                                    </svg>
-                                  </span>
+                            <Link to="/contact-us">
+                              <button className="md:px-7 p-2 bg-gray-700 text-white rounded-full">
+                                <div className="flex gap-3 flex-row ">
+
+                                  <div className="inline-flex gap-3">
+                                    <span className="text-md end">
+                                      Learn More
+                                    </span>
+                                    <span className="content-center">
+                                      <svg
+                                        width="20"
+                                        height="16"
+                                        viewBox="0 0 24 20"
+                                        fill="none"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                      >
+                                        <path
+                                          d="M14.3659 19.7046L24 10.0493L14.3659 0.393967C14.2789 0.280049 14.1684 0.186099 14.0418 0.118479C13.9152 0.0508581 13.7755 0.0111451 13.6322 0.00202784C13.4888 -0.00708939 13.3452 0.0146026 13.211 0.0656346C13.0769 0.116667 12.9552 0.195847 12.8544 0.297817C12.7536 0.399786 12.6759 0.522163 12.6267 0.656664C12.5774 0.791164 12.5577 0.934646 12.5689 1.0774C12.5801 1.22015 12.6219 1.35884 12.6915 1.48407C12.7611 1.60931 12.8569 1.71817 12.9724 1.80328L20.1805 9.04976L1.00251 9.04976C0.736625 9.04976 0.481634 9.15506 0.293628 9.34251C0.105621 9.52995 -4.2768e-07 9.78419 -4.39268e-07 10.0493C-4.50855e-07 10.3144 0.105621 10.5686 0.293628 10.756C0.481634 10.9435 0.736625 11.0488 1.00251 11.0488L20.1805 11.0488L12.9724 18.2953C12.785 18.4835 12.6802 18.7382 12.6811 19.0035C12.6821 19.2687 12.7887 19.5227 12.9774 19.7096C13.1662 19.8965 13.4217 20.0009 13.6878 20C13.9538 19.9991 14.2085 19.8928 14.396 19.7046L14.3659 19.7046Z"
+                                          fill="#87CEEB"
+                                        />
+                                      </svg>
+                                    </span>
+                                  </div>
                                 </div>
-                              </div>
-                            </button>
+                              </button>
+                            </Link>
+
                           </div>
                         </div>
                       </div>

@@ -42,39 +42,44 @@ const team = [
     id: 1,
     name: 'Tajni Diller',
     role: 'Founder and Senior Business Advisor',
+    desc: ["Meet Tajni, the founder of Boutique Books, who has been in the bookkeeping and tax industry since the early 1990s. What started as a side hustle while raising her kids has turned into a passion for helping small business owners and sole practitioners thrive. After working in a large CPA firm, Tajni quickly realized that the rigid structure wasn't for her. She discovered her love for tax work and recognized the critical role bookkeeping plays in effective tax planning.",
+      "As an Enrolled Agent, licensed by the IRS, Tajni works closely with clients to reduce tax liabilities, increase cash flow, and boost profitability. Her approach is centered on listening to her clients and supporting them in reaching their own version of success.",
+      "Anchored in Christ, Tajni is a credentialed pastor, and her faith is central to both her personal and professional life. She serves as a worship pastor at her church, where she leads through music, playing guitar and piano. Outside of work, Tajni cherishes time with her husband, children, grandchildren, and their dog. A true entrepreneur at heart, Tajni believes that everyone should have at least one side hustle (if not more!) and is passionate about helping others achieve their entrepreneurial goals."],
     imgURL: Team1,
   },
   {
     id: 2,
     name: 'Raquel Pryor',
     role: 'Tax & Bookkeeping Specialist ',
+    desc: ["Meet Raquel, our Certified Public Bookkeeper and a key part of our team since 2015! With a decade of experience in the tax industry, Raquel is dedicated to helping small businesses grow and thrive. She believes that collaboration is the key to success and loves partnering with business owners to keep their finances on track.", "Outside of work, Raquel is a devoted wife and mother, and when she's not balancing the books, she's behind the lens of her photography business, capturing life's special moments. And if she could escape to Disneyland twice a year, she'd be living her best life!"],
     imgURL: Team2,
   },
   {
     id: 3,
     name: 'Savannah Clarke',
     role: 'Tax & Bookkeeping Specialist',
-    desc:"Meet Savannah, one of our skilled tax preparation and bookkeeping experts at Boutique CFO Advisory. Born and raised in New Jersey, Savannah earned her associate degree in business administration and a certificate in computerized accounting back in 2013. After graduation, she and her husband embarked on a cross-country adventure, living in Alaska, Texas, Georgia, New York, and now calling North Carolina home. Along the way, they've built a wonderful family with two energetic boys and a loyal pup. In 2022, Savannah completed her bachelor's in accounting and finance, graduating magna cum laude and joining the prestigious Sigma Beta Delta honor society. She's now pursuing enrollment to practice before the IRS, adding even more value to the clients she helps at Boutique CFO.Since joining the team in 2021, Savannah has enjoyed supporting a wide range of clients with their tax prep and bookkeeping needs. Outside of work, she's a busy mom chasing after her boys, exploring new places, and cheering on her beloved Philadelphia Eagles and Phillies.",
+    desc: ["Meet Savannah, one of our skilled tax preparation and bookkeeping experts at Boutique CFO Advisory. Born and raised in New Jersey, Savannah earned her associate degree in business administration and a certificate in computerized accounting back in 2013. After graduation, she and her husband embarked on a cross-country adventure, living in Alaska, Texas, Georgia, New York, and now calling North Carolina home. Along the way, they've built a wonderful family with two energetic boys and a loyal pup. In 2022, Savannah completed her bachelor's in accounting and finance, graduating magna cum laude and joining the prestigious Sigma Beta Delta honor society. She's now pursuing enrollment to practice before the IRS, adding even more value to the clients she helps at Boutique CFO.Since joining the team in 2021, Savannah has enjoyed supporting a wide range of clients with their tax prep and bookkeeping needs. Outside of work, she's a busy mom chasing after her boys, exploring new places, and cheering on her beloved Philadelphia Eagles and Phillies."],
     imgURL: Team3,
   },
   {
     id: 4,
     name: 'Sharon Teraji',
     role: 'Tax & Bookkeeping Specialist',
+    desc: [],
     imgURL: Team4,
   },
   {
     id: 5,
     name: 'Marc Diller',
     role: 'Tax Specialist',
-    desc: "At Boutique Books, I don't just crunch numbers — I work with you to make managing your finances easier and more rewarding. With years of experience in tax and bookkeeping, I've helped individuals and businesses streamline their financial processes while saving money along the way. I take pride in bringing a down-to-earth, approachable style to everything I do. I know taxes and bookkeeping can seem complicated, but my goal is to make it feel simple and stress-free for you. I love getting to know each client's unique needs and offering practical solutions that actually make a difference. When we work together, you can expect a hands-on, personalized approach tailored to your specific situation. I'm here to keep your finances organized and make sure more of your hard-earned money stays where it belongs—in your pocket. Let's connect and take the hassle out of your financial journey today!",
+    desc: ["At Boutique Books, I don't just crunch numbers — I work with you to make managing your finances easier and more rewarding. With years of experience in tax and bookkeeping, I've helped individuals and businesses streamline their financial processes while saving money along the way. I take pride in bringing a down-to-earth, approachable style to everything I do. I know taxes and bookkeeping can seem complicated, but my goal is to make it feel simple and stress-free for you. I love getting to know each client's unique needs and offering practical solutions that actually make a difference. When we work together, you can expect a hands-on, personalized approach tailored to your specific situation. I'm here to keep your finances organized and make sure more of your hard-earned money stays where it belongs—in your pocket. Let's connect and take the hassle out of your financial journey today!"],
     imgURL: MarcDiller,
   },
   {
     id: 6,
     name: 'Breana Gonzalez',
     role: 'Customer Success Coordinator',
-    desc: "Meet Breana, our dedicated Customer Success Coordinator here at Boutique Books! With over 10 years of customer service experience, Breana is passionate about keeping our office running smoothly and ensuring you're connected with the best bookkeepers and tax preparers. She's your go-to for all things client communication and loves making sure your needs are met with care and expertise. When she's not assisting clients, Breana is deeply involved with her local church, where she's been a part of the community for 27 years. Fun fact: it's where she met her husband! They've been happily married for two years and recently welcomed an adorable cat into their family. In her free time, Breana enjoys drawing, traveling with her husband, and finding new ways to give back.",
+    desc: ["Meet Breana, our dedicated Customer Success Coordinator here at Boutique Books! With over 10 years of customer service experience, Breana is passionate about keeping our office running smoothly and ensuring you're connected with the best bookkeepers and tax preparers. She's your go-to for all things client communication and loves making sure your needs are met with care and expertise. When she's not assisting clients, Breana is deeply involved with her local church, where she's been a part of the community for 27 years. Fun fact: it's where she met her husband! They've been happily married for two years and recently welcomed an adorable cat into their family. In her free time, Breana enjoys drawing, traveling with her husband, and finding new ways to give back."],
     imgURL: Breana,
   },
 ];
@@ -258,9 +263,19 @@ export default function AboutPage() {
                   {role}
                 </h5>
                 {
-                  activeIndex == index && (<div className='col-span-3 p-3' >
-                    <p className='group-hover:text-white text-gray-600 text-sm md:text-base' >{desc}</p>
-                  </div>)
+                  activeIndex == index && (
+                    <div className='col-span-3 p-3' >
+                      {
+                        desc.map((p, i) => {
+                          return (
+                            <p key={i} className='group-hover:text-white text-gray-600 text-sm md:text-base py-2' >{p}</p>
+                          )
+                        }
+                        )
+                      }
+
+                    </div>
+                  )
                 }
               </div>
             ))}

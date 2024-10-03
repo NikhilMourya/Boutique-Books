@@ -73,51 +73,51 @@ export default function OurMethods() {
     }
 
     // if (window.innerWidth > 768) {
-      let ctx = gsap.context(() => {
-        // gsap.from('#timeline-wrapper', {
-        //   width: '80%',
-        //   transformOrigin: 'center center',
-        //   scrollTrigger: {
-        //     trigger: '#timeline-wrapper',
-        //     start: 'top 40%',
-        //     end: 'top 0%',
-        //     scrub: 2,
-        //   }
-        // })
-        let t2 = gsap.timeline({
-          scrollTrigger: {
-            trigger: '#timeline-container',
-            start: 'top 0%',
-            end: () => `+=${getScrollAmount() * -1}`,
-            scrub: 2,
-            pin: true,
-          }
-        })
+    let ctx = gsap.context(() => {
+      // gsap.from('#timeline-wrapper', {
+      //   width: '80%',
+      //   transformOrigin: 'center center',
+      //   scrollTrigger: {
+      //     trigger: '#timeline-wrapper',
+      //     start: 'top 40%',
+      //     end: 'top 0%',
+      //     scrub: 2,
+      //   }
+      // })
+      let t2 = gsap.timeline({
+        scrollTrigger: {
+          trigger: '#timeline-container',
+          start: 'top 0%',
+          end: () => `+=${getScrollAmount() * -1}`,
+          scrub: 2,
+          pin: true,
+        }
+      })
 
-        t2.to('.overlay', {
-          opacity: 0.7,
-          duration: 0.1,
-        }, 0)
+      t2.to('.overlay', {
+        opacity: 0.7,
+        duration: 0.1,
+      }, 0)
 
-        t2.to('#title-wrapper', {
-          opacity: 0,
-          duration: 0.1,
-        }, 0)
+      t2.to('#title-wrapper', {
+        opacity: 0,
+        duration: 0.1,
+      }, 0)
 
-        t2.fromTo('#timeline-wrappper', {
-          opacity: 0,
-          duration: 0.2,
-        }, {
-          opacity: 1,
-          duration: 0.2,
-        }, 0)
+      t2.fromTo('#timeline-wrappper', {
+        opacity: 0,
+        duration: 0.2,
+      }, {
+        opacity: 1,
+        duration: 0.2,
+      }, 0)
 
-        t2.to(wrapper, {
-          duration: 5,
-          y: getScrollAmount,
-        })
-      });
-      return () => ctx.revert();
+      t2.to(wrapper, {
+        duration: 5,
+        y: getScrollAmount,
+      })
+    });
+    return () => ctx.revert();
     // }
 
 
@@ -131,10 +131,8 @@ export default function OurMethods() {
           <H1 className={'font-primary text-2xl'}>How We Make It Happen</H1>
 
           <p className='text-black text-sm md:text-lg font-semibold'>
-            At Boutique Books, we blend the precision of AI with the expertise of
-            real human accountants to deliver top-notch bookkeeping services. Our
-            proven methods ensure accuracy, efficiency, and a personalized touch,
-            making your financial management effortless and reliable.
+            At Boutique Books, we blend AI-driven accuracy with personalized support from our expert team. Our streamlined approach ensures your books are always precise, compliant, and tailored to your business, making financial management effortless and worry-free.
+
           </p>
         </div>
       </section>
