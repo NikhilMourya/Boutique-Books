@@ -89,9 +89,9 @@ const ServicesPage = () => {
   var SliderSettings = {
     dots: true,
     // fade:true,
-    autoplay: true,
-    speed: 1000,
-    autoplaySpeed: 3000,
+    autoplay: false,
+    speed: 500,
+    autoplaySpeed: 2000,
     cssEase: "linear",
     infinite: false,
     slidesToShow: 1.5,
@@ -125,6 +125,15 @@ const ServicesPage = () => {
       sliderRefMain.current.slickPlay();
     }
   };
+
+  const handleSelectService = (index) => {
+    console.log('handleservice change clicked', index);
+    SetActiveHeading(data[index].heading);
+    SetActiveContent(data[index].content);
+    window.scrollTo({ top: 0 })
+    // setUpdateCount(index);
+    // setSlideIndex(index)
+  }
 
   const animate = () => {
     gsap.from('.service-heading', {
@@ -186,7 +195,7 @@ const ServicesPage = () => {
                           <p className="text-left md:text-lg lg:text-xl">
                             {activeContent}
                           </p>
-                      </div>
+                        </div>
                         <div className="w-64 md:w-72 lg:w-96 ml-auto">
                           <div className="md:mt-20">
                             <div>
@@ -210,6 +219,20 @@ const ServicesPage = () => {
                         </div>
                       </div>
                     </div>
+                  </div>
+                  <div className='hidden lg:flex  h-72 w-full bg-transparent justify-center items-center gap-5'>
+                    {data.map((item, index) => (
+                      <div key={index} onClick={() => handleSelectService(index)} className='bg-white rounded-xl w-52 h-44 cursor-pointer'>
+                        <img
+                          src={item.bgImage}
+                          className="object-cover w-52 h-32 lg:rounded-t-2xl"
+                        />
+                        <div className='flex items-center justify-center '>
+                          <p className='whitespace-pre-line my-auto' >{item.heading}</p>
+
+                        </div>
+                      </div>
+                    ))}
                   </div>
                 </div>
               </div>

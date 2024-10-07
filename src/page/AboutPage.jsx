@@ -12,7 +12,7 @@ import RelationshipsImg from '../assets/images/about/Relationships.png';
 import Team1 from '../assets/images/about/team-1.png';
 import Team2 from '../assets/images/about/team-2.png';
 import Team3 from '../assets/images/about/team-3.png';
-import Team4 from '../assets/images/about/team-4.png';
+import Sharon from '../assets/images/about/sharon.jpg';
 // import Sharon from '../assets/images/about/Sharon.JPEG'
 import TeamWorkImg from '../assets/images/about/Team-Work.png';
 import WomenEmpowermentImg from '../assets/images/about/Women-Empowerment.png';
@@ -30,7 +30,7 @@ const paragraphs = [
 const coreValues = [
   { title: 'Collaboration', imgUrl: CollaborationImg, desc: "At Boutique Books, collaboration is key to delivering the highest level of service. Both my team and I work closely with our clients to create a well-rounded experience, drawing on the diverse expertise of each professional on the team. This collaborative approach ensures that we can tailor our services to meet the unique needs of each business, resulting in more effective and personalized bookkeeping solutions. By combining our collective knowledge, we can offer more strategic, comprehensive support." },
   { title: 'Innovation', imgUrl: InnovationImg, desc: "We believe that innovation is essential to staying ahead in the rapidly evolving world of bookkeeping and tax services. Beyond our subscription model, we are incorporating AI technology to handle routine tasks, freeing up our team to focus on what matters most—our clients' financial strategies and ensuring their compliance needs are fully met. While AI supports efficiency, we remain committed to the human touch that provides value through personalized, thoughtful service." },
-  { title: 'Personal Developement', imgUrl: PersomalDevelopementImg, desc: "Personal growth is central to our success at Boutique Books, both for myself and my team. We ensure ongoing professional development by adhering to annual continuing education requirements, which keep us at the top of our field in bookkeeping and tax compliance. Beyond technical training, we encourage skill-building that helps us better serve our clients, empowering us to stay sharp, adapt to changes, and continuously elevate the quality of service we provide." },
+  { title: 'Personal Development', imgUrl: PersomalDevelopementImg, desc: "Personal growth is central to our success at Boutique Books, both for myself and my team. We ensure ongoing professional development by adhering to annual continuing education requirements, which keep us at the top of our field in bookkeeping and tax compliance. Beyond technical training, we encourage skill-building that helps us better serve our clients, empowering us to stay sharp, adapt to changes, and continuously elevate the quality of service we provide." },
   { title: 'Women Empowerment', imgUrl: WomenEmpowermentImg, desc: "As a woman in business, I understand the challenges that can arise when navigating entrepreneurship, especially in rural or solo-practitioner environments. At Boutique Books, we are committed to empowering women in business, providing the resources, support, and services they need to succeed. Whether through education, networking, or sharing insights in our blog, we aim to uplift women as they grow their businesses, offering a strong foundation to support their journey." },
   { title: 'Team Work', imgUrl: TeamWorkImg, desc: "Teamwork is the backbone of how we operate at Boutique Books. Each client works with a dedicated team member who gets to know their business inside and out, but the entire team is familiar with all client accounts. This ensures that if one person is unavailable, another can step in seamlessly. Strong teamwork enhances both the quality of service and the client experience, fostering trust and consistency in every interaction." },
   { title: 'Relationships', imgUrl: RelationshipsImg, desc: "At the heart of Boutique Books are the relationships we build with our clients. A successful relationship is one where clients feel comfortable reaching out to us—not just when there's a problem, but to share their wins and successes. We value the referrals we receive, as they are a testament to the trust our clients place in us. When our clients speak highly of us without being asked, it reflects our commitment to building strong, lasting relationships based on trust and integrity." },
@@ -64,8 +64,8 @@ const team = [
     id: 4,
     name: 'Sharon Teraji',
     role: 'Tax & Bookkeeping Specialist',
-    desc: [],
-    imgURL: Team4,
+    desc: ["Meet Sharon, our dedicated Tax and Bookkeeping Specialist at Boutique Books. Sharon graduated with honors from the University of Phoenix in 2013 with a Bachelor of Science in Accounting. With years of experience and continuing professional education, she brings a wealth of knowledge to her clients. Her commitment to accuracy and compliance ensures clients are always well-prepared for tax season and beyond.","Outside of work, Sharon is an active member of her community. She serves on the board of her local Parent-Teacher Organization and volunteers with her daughter’s Girl Scout troop. When she’s not working or volunteering, Sharon loves spending time with her husband and two children, always finding balance between her professional and personal life with passion and dedication."],
+    imgURL: Sharon,
   },
   {
     id: 5,
@@ -182,7 +182,7 @@ export default function AboutPage() {
               <span className="font-primary">Origin</span>
               <span className="font-primary">Story</span>
             </H1>
-            <p className="text-white text-left text-base md:text-base">
+            <p className="text-black bg-white text-left text-base md:text-base p-3 rounded-md">
               Boutique Books was born from a passion for delivering exceptional service and a desire to revolutionize the bookkeeping industry. After over 25 years in the field, I found myself frustrated with the traditional hourly billing model. It often left clients hesitant to seek the services they truly needed—either because they didn't fully understand the value or simply couldn't afford extra hours. I knew this approach wasn't allowing me to offer the full support my clients required, especially when issues like compliance arose.
             </p>
           </div>

@@ -4,7 +4,7 @@ export default function ContactUs() {
     return (
         <main className="pt-36">
             <div className="">
-                <h1 className="text-2xl md:text-4xl font-semibold mb-3 text-center">Customer Services</h1>
+                <h1 className="text-2xl md:text-4xl font-semibold mb-3 text-center">Customer Service</h1>
                 <div className="grid grid-cols-2 gap-5  md:gap-20 w-full max-w-6xl mx-auto">
 
                     <div className="col-span-2 w-full p-4 flex-grow h-screen py-10">

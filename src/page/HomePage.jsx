@@ -421,7 +421,7 @@ const HomePage = () => {
             </div>
           </section>
         </section>
-        <div className="relative my-14 lg:mt-20 lg:pt-32 py-14 keyboard-container bg-light-section">
+        {/* <div className="relative my-14 lg:mt-20 lg:pt-32 py-14 keyboard-container bg-light-section">
           <div className="relative z-10">
             <div className="relative">
               <h1 className="font-primary text-2xl sm:text-3xl lg:text-4xl">
@@ -459,12 +459,12 @@ const HomePage = () => {
                 </button>
               </Link>
 
-              {/* keyboard animation removed by client */}
-              {/* <img
+              keyboard animation removed by client
+               <img
                 id="keyboard-hand"
                 src={Finger}
                 className="hidden md:block absolute h-20 w-auto md:h-52 right-16 -bottom-1 lg:right-56 lg:-bottom-36"
-              /> */}
+              /> 
             </div>
           </div>
           <div
@@ -478,7 +478,7 @@ const HomePage = () => {
               <div className="mt-36 h-72 w-72 homepage-circle"></div>
             </div>
           </div>
-        </div>
+        </div> */}
         <section className="bg-dark-section relative z-20">
           <div className=" mx-auto w-[80%]" id="lady-laptop">
             <div className="mx-auto">
