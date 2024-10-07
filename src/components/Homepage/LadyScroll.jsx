@@ -54,14 +54,18 @@ const LadyScroll = () => {
                             <div className="black-overlay" ref={ladyRefOverlay}>
                                 <div className="lg:px-48 md:px-36 lg:p-32 md:p-28 h-screen w-full flex items-center" ref={ladyRefOverlayContent}>
                                     <div className="mx-auto text-white">
-                                        <h1 className="my-10 lg:text-5xl md:text-4xl sm:text-3xl 2xl font-primary">Effortless Bookkeeping <br />
-                                            with Human and AI Precision</h1>
+                                        <h1 className="my-10 lg:text-5xl md:text-4xl sm:text-3xl 2xl font-primary">Effortless Financial Management Services</h1>
                                         <div className="center mx-auto">
                                             <div id='underline-divider' className="w-1/5 h-1 rounded-full bg-white"></div>
                                         </div>
-                                        <p className="my-10 md:text-xl">Welcome to Boutique Books! We offer AI-driven services that simplify bookkeeping and provide real-time insights. Enjoy effortless compliance and peace of mind with our expert solutions.</p>
-                                        <p className="my-10 md:text-xl">where AI precision meets expert care. Simplifying bookkeeping with real-time insights and dedicated support, giving you peace of mind and effortless compliance.
+                                        <p className="my-10 md:text-xl">For solo practitioners, startups, and professional service businesses. With a blend of AI precision and dedicated support from our expert team, we deliver a high-touch, personalized experience so you can stay focused on growing your business.
+                                            <br />
+                                            <strong>And if we can put this below the line you already have</strong>
                                         </p>
+                                        <p className="my-10 md:text-xl"><strong>Welcome to Boutique Books - </strong> where AI precision meets expert care. Simplifying bookkeeping with real-time insights and dedicated support, giving you peace of mind and effortless compliance.
+                                        </p>
+                                        
+
                                         <Link to="/about-us">
                                             <button className="px-7 p-2 bg-white text-black rounded-full">
                                                 <div className="flex gap-3 flex-row ">

@@ -21,7 +21,6 @@ import H1 from '../components/H1';
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 
 const paragraphs = [
-  "Boutique Books was born from a passion for delivering exceptional service and a desire to revolutionize the bookkeeping industry. After over 25 years in the field, I found myself frustrated with the traditional hourly billing model. It often left clients hesitant to seek the services they truly needed—either because they didn't fully understand the value or simply couldn't afford extra hours. I knew this approach wasn't allowing me to offer the full support my clients required, especially when issues like compliance arose.",
   "I realized it was time for a change—one that prioritized client satisfaction and removed the barriers to providing comprehensive service. The solution came in the form of a subscription-based model, which allowed us to deliver all-inclusive bookkeeping without worrying about hourly rates or unexpected fees. This change immediately resonated with clients, as it gave them a predictable monthly cost they could budget for, while allowing us to focus on their long-term success.",
   "For example, one client had fallen behind on state corporate compliance for three years. Under the hourly model, they had been unwilling to pay for the extra time needed to address it. But with our subscription service, we handled the entire process without any additional fees, getting them reinstated with the state. This model has empowered us to focus on what's best for our clients, without being restricted by cost concerns.",
   "By integrating tax services, we ensure that our clients' books are always in order, allowing us to help them make proactive financial decisions throughout the year. Without proper bookkeeping in place, tax season is simply a reporting of past activity—there's no way to make changes that could benefit the client at that point. Now, we can offer ongoing guidance to help optimize their finances, rather than simply reporting on what has already occurred.",
@@ -167,25 +166,36 @@ export default function AboutPage() {
     <main className="md:pt-28 pt-20 bg-white">
       <section
         id="top-sec"
-        className="z-10 !static md:fixed lg:top-16 my-5 mx-auto flex flex-col-reverse lg:flex-row gap-y-10 md:gap-x-24 lg:px-40 items-center"
+        className="z-10 !static md:fixed lg:top-16 mx-auto flex flex-row"
       >
-        <img
-          src={AboutImg}
-          className="sm:h-40 md:h-52 lg:h-60 w-9/12 max-sm:mx-auto md:w-1/3"
-          alt=""
-        />
-        <H1 className="font-primary lg:text-6xl flex lg:flex-col space-x-3 lg:-space-x-5 gap-y-5">
-          <span className="font-primary">Origin</span>{' '}
-          <span className="font-primary">Story</span>
-        </H1>
+        <div className='w-1/2 flex flex-col-reverse lg:flex-row gap-y-10 md:gap-x-24 lg:px-40 items-center' >
+          <img
+            src={AboutImg}
+            className="sm:h-40 md:h-52 lg:h-60 w-full  md:w-full object-contain"
+            alt=""
+          />
+
+        </div>
+        <div className='w-1/2 bg-primary rounded-t-3xl relative' >
+          <div className=' p-10  md:rounded-t-3xl'>
+            <H1 className="font-primary lg:text-3xl flex lg:flex-row text-white underline mb-5">
+              <span className="font-primary">Origin</span>
+              <span className="font-primary">Story</span>
+            </H1>
+            <p className="text-white text-left text-base md:text-base">
+              Boutique Books was born from a passion for delivering exceptional service and a desire to revolutionize the bookkeeping industry. After over 25 years in the field, I found myself frustrated with the traditional hourly billing model. It often left clients hesitant to seek the services they truly needed—either because they didn't fully understand the value or simply couldn't afford extra hours. I knew this approach wasn't allowing me to offer the full support my clients required, especially when issues like compliance arose.
+            </p>
+          </div>
+          {/* <div className='absolute bottom-0 h-10 w-10 border -left-10' ></div> */}
+        </div>
       </section>
 
-      <div className="relative z-20 mt-10">
+      <div className="relative z-20">
         <div className="horizontal-para-wrapper relative overflow-hidden">
-          <div className="lg:rounded-tl-[50px] flex flex-col horizontal-para">
+          <div className="lg:rounded-tl-[50px] flex flex-wrap justify-center horizontal-para bg-primary gap-2 px-32 pt-10">
             {paras.map((para, index) => (
-              <div className={`flex-shrink-0 w-full px-20 md:px-32 lg:px-44 pt-10 bg-primary ${index == 0 ? 'md:rounded-t-3xl ' : index == paras.length ? 'pr-12' : ''}`} key={index}>
-                <p className="text-white text-left text-base md:text-base">{para}</p>
+              <div className={`w-[49%] p-5  bg-white rounded-lg ${index == 0 ? '' : ''}`} key={index}>
+                <p className="text-black text-left text-base md:text-base">{para}</p>
               </div>
             ))}
           </div>
