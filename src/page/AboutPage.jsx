@@ -166,23 +166,22 @@ export default function AboutPage() {
     <main className="md:pt-28 pt-20 bg-white">
       <section
         id="top-sec"
-        className="z-10 !static md:fixed lg:top-16 mx-auto flex flex-row"
+        className="z-10 !static md:fixed lg:top-16 mx-auto flex flex-col md:flex-row gap-y-10 md:gap-y-0"
       >
-        <div className='w-1/2 flex flex-col-reverse lg:flex-row gap-y-10 md:gap-x-24 lg:px-40 items-center' >
+        <div className='w-full md:w-1/2 flex flex-col-reverse lg:flex-row gap-y-10 md:gap-x-24 lg:px-28 items-center justify-center' >
           <img
             src={AboutImg}
-            className="sm:h-40 md:h-52 lg:h-60 w-full  md:w-full object-contain"
+            className="sm:h-40 md:h-52 lg:h-60 w-4/6  md:w-full object-contain"
             alt=""
           />
-
         </div>
-        <div className='w-1/2 bg-[#3d638a]  relative' >
-          <div className=' p-10 '>
-            <H1 className="font-primary lg:text-3xl flex lg:flex-row text-white underline mb-5">
+        <div className='w-full md:w-1/2 bg-[#3d638a]  relative' >
+          <div className='p-5 md:p-10 md:pr-24'>
+            <H1 className="font-primary text-xl lg:text-3xl flex lg:flex-row text-white underline mb-5">
               <span className="font-primary">Origin</span>
               <span className="font-primary">Story</span>
             </H1>
-            <p className="text-black bg-white text-left text-base md:text-base p-3">
+            <p className="text-black bg-white text-left text-sm md:text-base p-1 md:p-3">
               Boutique Books was born from a passion for delivering exceptional service and a desire to revolutionize the bookkeeping industry. After over 25 years in the field, I found myself frustrated with the traditional hourly billing model. It often left clients hesitant to seek the services they truly needed—either because they didn't fully understand the value or simply couldn't afford extra hours. I knew this approach wasn't allowing me to offer the full support my clients required, especially when issues like compliance arose.
             </p>
           </div>
@@ -192,10 +191,10 @@ export default function AboutPage() {
 
       <div className="relative z-20">
         <div className="horizontal-para-wrapper relative overflow-hidden">
-          <div className=" flex flex-wrap justify-center horizontal-para bg-[#3d638a] gap-2 px-32 pt-10">
+          <div className=" flex flex-wrap justify-center horizontal-para bg-[#3d638a] gap-2 p-5 md:px-24 md:pt-10">
             {paras.map((para, index) => (
-              <div className={`w-[49%] p-5  bg-white ${index == 0 ? '' : ''}`} key={index}>
-                <p className="text-black text-left text-base md:text-base">{para}</p>
+              <div className={`w-full md:w-[49%] p-2 md:p-5  bg-white ${index == 0 ? '' : ''}`} key={index}>
+                <p className="text-black text-left text-sm md:text-base">{para}</p>
               </div>
             ))}
           </div>
@@ -259,7 +258,7 @@ export default function AboutPage() {
           <div className="w-full flex flex-col border-t border-b">
             {team.map(({ id, name, role, imgURL, desc }, index) => (
               <div
-                className="grid grid-cols-[5%,40%,50%] md:grid-cols-[8%,55%,37%] lg:grid-cols-[15%,45%,40%] cursor-pointer group hover:bg-primary px-5 transition-all ease-linear duration-300 min-h-16 text-left items-center justify-between border-t border-b"
+                className="grid grid-cols-[5%,40%,50%] md:grid-cols-[8%,55%,37%] lg:grid-cols-[15%,45%,40%] cursor-pointer group hover:bg-[#3d638a] px-5 transition-all ease-linear duration-300 min-h-16 text-left items-center justify-between border-t border-b"
                 key={id}
                 onMouseEnter={() => { setTeamImg(imgURL); SetActiveIndex(index) }}
               >

@@ -274,7 +274,7 @@ export default function PricingPage() {
             /mo billed annually
           </p>
           <Link to="/contact" >
-            <button className="bg-primary w-full self-end text-2xl py-2 rounded-lg">
+            <button className="bg-[#3d638a] w-full self-end text-2xl py-2 rounded-lg text-white">
               Contact Us
             </button>
           </Link>
@@ -332,12 +332,12 @@ export default function PricingPage() {
             </span>
           </p>
           <Link to="/contact" >
-            <button className="bg-primary w-full self-end text-2xl py-2 rounded-lg">
+            <button className="bg-[#3d638a] text-white w-full self-end text-2xl py-2 rounded-lg">
               Contact Us
             </button>
           </Link>
         </div>
-        <div className="card p-10 grid gap-y-5 items-center text-left md:gap-y-0 shadow-md border border-primary/40 shadow-primary rounded-3xl min-h-[400px]">
+        <div className="relative card p-10 grid gap-y-5 items-center text-left md:gap-y-0 shadow-md border border-primary/40 shadow-primary rounded-3xl min-h-[400px]">
           <h3 className="font-semibold text-2xl">Elite Plan</h3>
           <p className="self-start">
             Craft a plan precisely suited to your business needs.
@@ -346,7 +346,7 @@ export default function PricingPage() {
             <span className="text-2xl font-bold">Custom Pricing</span>
           </p>
           <Link to="/contact" >
-            <button className="bg-primary w-full self-end text-2xl py-2 rounded-lg">
+            <button className="bg-[#3d638a] text-white w-full self-end text-2xl py-2 rounded-lg">
               Contact Us
             </button></Link>
 

@@ -56,7 +56,7 @@ export default function Footer() {
   });
 
   return (
-    <footer className="bg-primary grid gap-y-6 pb-8 relative z-10">
+    <footer className="bg-[#d1ddd1] grid gap-y-6 pb-8 relative z-10">
       <div className="grid grid-cols-1 justify-center sm:w-9/12 mx-auto sm:grid-cols-2 md:grid-col-3 lg:grid-cols-4 md:justify-evenly gap-y-6 py-16">
         <div className="flex md:-mt-5">
           <img src={Logo} className="mx-auto w-9/12 object-contain" />
