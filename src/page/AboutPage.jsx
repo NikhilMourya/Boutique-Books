@@ -181,7 +181,7 @@ export default function AboutPage() {
               <span className="font-primary">Origin</span>
               <span className="font-primary">Story</span>
             </H1>
-            <p className="text-black bg-white text-left text-sm md:text-base p-1 md:p-3">
+            <p className="text-black bg-white text-left text-sm md:text-base p-1 md:p-3 max-md:p-2">
               Boutique Books was born from a passion for delivering exceptional service and a desire to revolutionize the bookkeeping industry. After over 25 years in the field, I found myself frustrated with the traditional hourly billing model. It often left clients hesitant to seek the services they truly needed—either because they didn't fully understand the value or simply couldn't afford extra hours. I knew this approach wasn't allowing me to offer the full support my clients required, especially when issues like compliance arose.
             </p>
           </div>
@@ -204,7 +204,7 @@ export default function AboutPage() {
       <section className="z-20 relative bg-[#3d638a] py-14 px-5 md:px-24 text-white about-value">
         <div className=''>
           <H1 className={'my-14 font-primary'}>Our Core Values</H1>
-          <div className="title-container hidden md:block">
+          <div className="title-container hidden lg:block">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
               {coreValues.slice(0, 3).map(({ title, imgUrl, desc }) => (
                 <div
@@ -221,8 +221,24 @@ export default function AboutPage() {
               ))}
             </div>
           </div>
-          <div className="mt-5 md:grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 title-container1 hidden ">
+          <div className="mt-5 lg:grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 title-container1 hidden ">
             {coreValues.slice(3, coreValues.length).map(({ title, imgUrl, desc }) => (
+              <div
+                key={imgUrl}
+                className="flex w-11/12 lg:w-full mx-auto flex-col space-y-2 p-5 rounded-2xl bg-white"
+                style={{ boxShadow: '0px 3px 3px 0px rgba(0, 0, 0, 0.15)' }}
+              >
+                <img src={imgUrl} className="w-full rounded-lg" />
+                <span className="text-black text-lg text-left mt-2">
+                  {title}
+                </span>
+                <p className="text-black text-left text-sm">{desc}</p>
+              </div>
+            ))}
+          </div>
+          {/* For Tab View */}
+          <div className="mt-5 hidden md:grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 title-container1 lg:hidden ">
+            {coreValues.map(({ title, imgUrl, desc }) => (
               <div
                 key={imgUrl}
                 className="flex w-11/12 lg:w-full mx-auto flex-col space-y-2 p-5 rounded-2xl bg-white"
