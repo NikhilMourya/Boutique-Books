@@ -298,18 +298,21 @@ const HomePage = () => {
         {
           opacity: 1,
           duration: 1,
+          ease:'power1.inOut'
         }
       );
 
       ladyLaptopTimline.to('#lady-laptop-subtitle', {
         opacity: 1,
         duration: 1,
+        ease:'power1.inOut'
       });
 
       ladyLaptopTimline.to('#ladyLaptopGraph', {
         scale: 1,
         opacity: 1,
         duration: 1.2,
+        ease:'power1.inOut'
       });
     });
 
