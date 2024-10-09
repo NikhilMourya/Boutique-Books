@@ -162,7 +162,7 @@ const ServicesPage = () => {
           <div className=" mx-auto w-full lg:rounded-t-2xl overflow-hidden">
             <div className="mx-auto relative lg:rounded-t-2xl">
               <div className="center relative z-0">
-                <div className="w-full h-[140vh] sm:h-[110vh] lg:h-full lg:rounded-t-2xl"
+                <div className="w-full h-screen md:h-[145vh] sm:h-[110vh] lg:h-full lg:rounded-t-2xl"
                   onMouseEnter={handleMouseEnter} // Pause autoplay on hover
                   onMouseLeave={handleMouseLeave}>
                   <Slider
@@ -250,7 +250,7 @@ const ServicesPage = () => {
           </div>
           <div className="relative center">
             <div className="lg:mt-10 lg:px-32 px-12 mx-auto">
-              <h1 className="text-4xl my-10 font-primary whitespace-nowrap">
+              <h1 className="text-2xl sm:text-3xl lg:text-4xl my-10 font-primary whitespace-nowrap">
                 Get Started Now!
               </h1>
               <button className="lg:px-52 md:px-36 sm:px-24 px-4 py-3 button-primary-bg text-white rounded-full">
