@@ -10,17 +10,15 @@ import procedures from '../assets/Icons/procedures.png';
 import project_management from '../assets/Icons/project_management.png';
 import quality from '../assets/Icons/quality.png';
 import success from '../assets/Icons/success.png';
+import Effortless from '../assets/images/home/effortless.jpg';
 import ladyWithLaptop from '../assets/images/home/female-with-laptop.png';
-import Graph from '../assets/images/home/Graph.png';
-import Keyboard from '../assets/images/home/keyboard.png';
+import Peace from '../assets/images/home/peace.jpg';
+import Realtime from '../assets/images/home/realtime.jpg';
+import Solution from '../assets/images/home/solution.jpg';
+import Support from '../assets/images/home/support.jpg';
 import LadyScroll from '../components/Homepage/LadyScroll';
 import ProfileCard from '../components/Homepage/ProfileCard';
 import FeedbackCard from '../components/shared/FeedbackCard';
-import Support from '../assets/images/home/support.jpg'
-import Solution from '../assets/images/home/solution.jpg'
-import Peace from '../assets/images/home/peace.jpg'
-import Realtime from '../assets/images/home/realtime.jpg'
-import Effortless from '../assets/images/home/effortless.jpg'
 
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 
@@ -579,7 +577,7 @@ const HomePage = () => {
           </div>
         </section>
         <section className="py-20 p-10 px-0 md:mx-28 md:my-32 bg-light-section">
-          <h1 className="font-primary text-2xl sm:text-3xl lg:text-4xl mb-8">
+          <h1 className="max-md:px-10 font-primary text-2xl sm:text-3xl lg:text-4xl mb-8">
             Real Feedback from Real Clients
           </h1>
           {/* <div className=' overflow-x-scroll px-5' >
@@ -596,9 +594,9 @@ const HomePage = () => {
 
           {/* New Slider Testimonials */}
           <div className=''>
-            <Slider {...settings}>
+            <Slider {...settings} >
               {testimonials.map((review, index) => (
-                <div key={index} className='px-5'>
+                <div key={index} className='max-md:px-10 px-5'>
                   <FeedbackCard fbSubTitle={review.subTitle} fbTitle={review.title} feedback={review.feedback} />
                 </div>
               ))}

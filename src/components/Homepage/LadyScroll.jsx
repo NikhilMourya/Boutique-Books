@@ -1,9 +1,9 @@
 import gsap from 'gsap';
 // import { useGSAP } from '@gsap/react';
-import { useLayoutEffect, useRef } from 'react';
-import ladyWithLaptop from "../../assets/images/home/female-with-laptop.png"
-import { Link } from "react-router-dom"
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useLayoutEffect, useRef } from 'react';
+import { Link } from "react-router-dom";
+import ladyWithLaptop from "../../assets/images/home/female-with-laptop.png";
 
 
 gsap.registerPlugin(ScrollTrigger);
@@ -53,7 +53,7 @@ const LadyScroll = () => {
                             <img className="w-full md:h-full h-screen object-cover" src={ladyWithLaptop} />
                             <div className="black-overlay" ref={ladyRefOverlay}>
                                 <div className="lg:px-48 md:px-36 lg:p-32 md:p-28 h-screen w-full flex items-center" ref={ladyRefOverlayContent}>
-                                    <div className="mx-auto text-white">
+                                    <div className="mx-auto text-white max-md:p-10">
                                         <h1 className="mt-10 mb-1 md:text-4xl  sm:text-3xl 2xl font-primary">Effortless Financial Management Services</h1>
                                         <div className="center mx-auto mb-3">
                                             <div id='underline-divider' className="w-1/5 h-1 rounded-full bg-white"></div>
