@@ -237,3 +237,15 @@ h5 {
   border-radius: 21px;
   border: 8px solid #ffffff;
 }
+
+.slick-prev:before {
+  /* content: "<"; */
+  color: gray;
+  font-size: 40px;
+}
+
+.slick-next:before {
+  /* content: ">"; */
+  color: gray;
+  font-size: 40px;
+}

@@ -39,7 +39,7 @@ export default function ContactUs() {
                             </button>
                         </form> */}
                     </div>
-                    <div className=" p-4 w-3/5 mx-auto col-span-2">
+                    {/* <div className=" p-4 w-3/5 mx-auto col-span-2">
                         <h2 className="text-2xl md:text-4xl font-medium mb-4 text-center ">Support</h2>
                         <div className="text-center space-y-2 flex flex-col justify-around items-center gap-2">
                             <p>Timing: Monday - Friday 9:00am - 4:30pm                            </p>
@@ -53,7 +53,7 @@ export default function ContactUs() {
                                 </a>
                             </p>
                         </div>
-                    </div>
+                    </div> */}
                 </div>
             </div>
         </main>

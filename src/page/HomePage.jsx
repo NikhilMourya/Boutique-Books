@@ -515,7 +515,7 @@ const HomePage = () => {
                                 </div>
 
                                 <div className="flex flex-col justify-between p-4 leading-normal">
-                                  <p className={` mb-3 text-sm font-normal text-left text-gray-700 dark:text-gray-400`}>{offer.desc}</p>
+                                  <p className={` mb-3 text-sm font-normal text-left text-black dark:text-gray-400`}>{offer.desc}</p>
                                 </div>
                               </div>
                             )

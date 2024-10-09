@@ -162,7 +162,7 @@ const ServicesPage = () => {
           <div className=" mx-auto w-full lg:rounded-t-2xl overflow-hidden">
             <div className="mx-auto relative lg:rounded-t-2xl">
               <div className="center relative z-0">
-                <div className="w-full h-[110vh] max-sm:h-auto lg:h-full lg:rounded-t-2xl"
+                <div className="w-full h-[140vh] sm:h-[110vh] lg:h-full lg:rounded-t-2xl"
                   onMouseEnter={handleMouseEnter} // Pause autoplay on hover
                   onMouseLeave={handleMouseLeave}>
                   <Slider
@@ -182,13 +182,13 @@ const ServicesPage = () => {
                   </Slider>
                 </div>
                 <div className="black-overlay lg:rounded-t-2xl">
-                  <div className="p-5 md:p-20 pr-0 sm:h-screen w-full">
+                  <div className="p-5 md:py-20 md:px-5 lg:px-10 pr-0 md:h-[120vh] lg:h-[90vh] w-full">
                     <div className="mx-auto text-white">
                       <h1 className="mb-10 text-2xl opacity-80 font-primary text-left">
                         Our Services
                       </h1>
                       <div className="flex flex-col md:flex-row gap-10">
-                        <div className="flex-grow h-80 md:h-auto">
+                        <div className="flex-grow sm:h-70 md:h-auto">
                           <h1 className="mb-5 md:mb-10 md:text-4xl lg:text-5xl font-medium font-primary text-left service-heading">
                             {activeHeading}
                           </h1>
@@ -196,7 +196,7 @@ const ServicesPage = () => {
                             {activeContent}
                           </p>
                         </div>
-                        <div className="w-64 md:w-72 lg:w-96 ml-auto">
+                        <div className="w-64 md:w-72 lg:w-80 ml-auto">
                           <div className="md:mt-20">
                             <div>
                               <Slider
@@ -239,7 +239,7 @@ const ServicesPage = () => {
             </div>
           </div>
         </section>
-        <section className="relative w-full max-sm:py-20 md:h-[70vh] lg:p-10 lg:px-16 overflow-hidden">
+        <section className="relative w-full py-16 sm:py-20 md:h-[70vh] lg:p-10 lg:px-16 overflow-hidden">
           <div className="absolute top-0 flex justify-between w-full">
             <div className="relative ">
               <div className="h-72 w-72 homepage-circle"></div>

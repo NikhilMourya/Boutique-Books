@@ -176,13 +176,13 @@ export default function AboutPage() {
           />
 
         </div>
-        <div className='w-1/2 bg-primary rounded-t-3xl relative' >
-          <div className=' p-10  md:rounded-t-3xl'>
+        <div className='w-1/2 bg-[#3d638a]  relative' >
+          <div className=' p-10 '>
             <H1 className="font-primary lg:text-3xl flex lg:flex-row text-white underline mb-5">
               <span className="font-primary">Origin</span>
               <span className="font-primary">Story</span>
             </H1>
-            <p className="text-black bg-white text-left text-base md:text-base p-3 rounded-md">
+            <p className="text-black bg-white text-left text-base md:text-base p-3">
               Boutique Books was born from a passion for delivering exceptional service and a desire to revolutionize the bookkeeping industry. After over 25 years in the field, I found myself frustrated with the traditional hourly billing model. It often left clients hesitant to seek the services they truly needed—either because they didn't fully understand the value or simply couldn't afford extra hours. I knew this approach wasn't allowing me to offer the full support my clients required, especially when issues like compliance arose.
             </p>
           </div>
@@ -192,9 +192,9 @@ export default function AboutPage() {
 
       <div className="relative z-20">
         <div className="horizontal-para-wrapper relative overflow-hidden">
-          <div className="lg:rounded-tl-[50px] flex flex-wrap justify-center horizontal-para bg-primary gap-2 px-32 pt-10">
+          <div className=" flex flex-wrap justify-center horizontal-para bg-[#3d638a] gap-2 px-32 pt-10">
             {paras.map((para, index) => (
-              <div className={`w-[49%] p-5  bg-white rounded-lg ${index == 0 ? '' : ''}`} key={index}>
+              <div className={`w-[49%] p-5  bg-white ${index == 0 ? '' : ''}`} key={index}>
                 <p className="text-black text-left text-base md:text-base">{para}</p>
               </div>
             ))}
@@ -202,7 +202,7 @@ export default function AboutPage() {
         </div>
       </div>
 
-      <section className="z-20 relative bg-primary py-14 px-5 md:px-24 text-white about-value">
+      <section className="z-20 relative bg-[#3d638a] py-14 px-5 md:px-24 text-white about-value">
         <div className=''>
           <H1 className={'my-14 font-primary'}>Our Core Values</H1>
           <div className="title-container hidden md:block">
