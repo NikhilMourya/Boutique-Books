@@ -210,10 +210,10 @@ export default function PricingPage() {
     return () => ctx.revert(); // <- cleanup!
   }, []);
   return (
-    <main className="flex flex-col justify-between gap-24 pt-16 bg-white">
+    <main className="flex flex-col justify-between gap-12 lg:gap-24 pt-16 bg-white">
       <section className="container my-10 mx-auto px-5 flex flex-col items-center">
         <h1
-          className="font-primary text-3xl md:text-4xl text-center"
+          className="font-primary text-balance text-[1.4rem] sm:text-2xl md:text-4xl text-center"
           style={{ lineHeight: 1.5 }}
         >
           Transparent Pricing for <br className="hidden md:block" /> Hassle-Free
@@ -221,8 +221,8 @@ export default function PricingPage() {
         </h1>
       </section>
 
-      <section className="px-5 md:px-16 sm:min-h-[400px] grid grid-cols-1 gap-y-16 gap-x-5 md:grid-cols-2 lg:grid-cols-3 justify-center">
-        <div className="card p-10 grid gap-y-5 items-center text-left md:gap-y-0 shadow-md border border-primary/40 shadow-primary rounded-3xl min-h-[400px]">
+      <section className="max-md:px-10 px-5 md:px-16 sm:min-h-[400px] grid grid-cols-1 gap-y-16 gap-x-5 md:grid-cols-2 lg:grid-cols-3 justify-center">
+        <div className="card p-10 grid gap-y-5 items-center text-left md:gap-y-2 shadow-md border border-primary/40 shadow-primary rounded-3xl min-h-[400px]">
           <h3 className="font-semibold text-2xl">Essential Plan</h3>
           <p>For startups in the pre-revenue stage, just starting out.</p>
           <div className="w-full max-w-md mx-auto mb-5">
@@ -280,7 +280,7 @@ export default function PricingPage() {
           </Link>
 
         </div>
-        <div className="card p-10 grid gap-y-5 items-center text-left md:gap-y-0 shadow-md border border-primary/40 shadow-primary rounded-3xl min-h-[400px]">
+        <div className="card p-10 grid gap-y-5 items-center text-left md:gap-y-2 shadow-md border border-primary/40 shadow-primary rounded-3xl min-h-[400px]">
           <h3 className="font-semibold text-2xl">Premium Plan</h3>
           <p>For companies with refined needs, reflecting their high value.</p>
           <div className="w-full max-w-md mx-auto mb-5">
@@ -337,7 +337,7 @@ export default function PricingPage() {
             </button>
           </Link>
         </div>
-        <div className="relative card p-10 grid gap-y-5 items-center text-left md:gap-y-0 shadow-md border border-primary/40 shadow-primary rounded-3xl min-h-[400px]">
+        <div className="relative card p-10 grid gap-y-5 items-center text-left md:gap-y-2 shadow-md border border-primary/40 shadow-primary rounded-3xl min-h-[400px]">
           <h3 className="font-semibold text-2xl">Elite Plan</h3>
           <p className="self-start">
             Craft a plan precisely suited to your business needs.

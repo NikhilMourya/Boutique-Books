@@ -324,7 +324,7 @@ const HomePage = () => {
     <>
       <section className="w-full relative bg-white">
         <main className="py-32 my-20">
-          <div>
+          <div className='max-md:px-10'>
             <h1 className="font-primary lg:text-4xl md:text-3xl">
               Seamless Bookkeeping with <br />
               AI-Enhanced Human Expertise
@@ -333,7 +333,7 @@ const HomePage = () => {
               Effortless and Accurate Bookkeeping for Your Business
             </p>
           </div>
-          <div className="my-4 p-3 flex gap-5 justify-center items-center">
+          <div className="my-4 max-md:px-10 p-3 flex flex-col sm:flex-row gap-5 justify-center items-center">
             <Link to="/contact">
               <button className="px-7 p-2 border-black border text-black rounded-full text-md">
                 Learn More
@@ -576,7 +576,7 @@ const HomePage = () => {
             </div>
           </div>
         </section>
-        <section className="py-20 p-10 px-0 md:mx-28 md:my-32 bg-light-section">
+        <section className="py-20 p-10 px-0 sm:mx-20 md:mx-28 md:my-32 bg-light-section">
           <h1 className="max-md:px-10 font-primary text-2xl sm:text-3xl lg:text-4xl mb-8">
             Real Feedback from Real Clients
           </h1>
