@@ -1,7 +1,7 @@
 const FeedbackCard = ({ feedback, fbTitle, fbSubTitle }) => {
   return (
     <>
-      <div className="w-full max-md:grid max-md:items-center max-md:min-h-[450px] md:min-h-[500px] my-5 feedback-card-shadow rounded-lg p-6 py-10 bg-white  text-left">
+      <div className="w-full max-md:grid max-md:items-start max-md:min-h-[450px] md:min-h-[395px] my-5 feedback-card-shadow rounded-lg p-6 py-10 bg-white  text-left">
         <div>
           <div className="flex justify-start my-2">
             <svg
@@ -57,7 +57,7 @@ const FeedbackCard = ({ feedback, fbTitle, fbSubTitle }) => {
               </defs>
             </svg>
           </div>
-          <p className="text-black my-5 lg:text-base text-justify">
+          <p className="text-black my-5 text-sm text-justify">
             {feedback}
           </p>
 
@@ -66,7 +66,7 @@ const FeedbackCard = ({ feedback, fbTitle, fbSubTitle }) => {
                             <span>CEO,Tech Innovations</span></h1>
                     </div> */}
 
-          <div className="flex justify-start items-center gap-5 my-10">
+          <div className="flex justify-start items-center gap-5 my-5">
             <div className="pt-1" >
               <svg
                 width="11"

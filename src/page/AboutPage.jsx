@@ -176,7 +176,7 @@ export default function AboutPage() {
           />
         </div>
         <div className='w-full md:w-1/2 bg-[#3d638a]  relative' >
-          <div className='p-5 md:p-10 md:pr-24'>
+          <div className='p-5 md:p-10 md:pr-24 !pb-0'>
             <H1 className="font-primary text-xl lg:text-3xl flex lg:flex-row text-white underline mb-5">
               <span className="font-primary">Origin</span>
               <span className="font-primary">Story</span>
