@@ -136,7 +136,7 @@ const HomePage = () => {
     speed: 500,
     slidesToShow: 3,
     slidesToScroll: 1,
-    autoplay: true,
+    autoplay: false,
     arrow: true,
     autoplaySpeed: 3000,
     responsive: [
@@ -579,7 +579,7 @@ const HomePage = () => {
             </div>
           </div>
         </section>
-        <section className="py-20 p-10 px-0 sm:mx-20 md:mx-28 md:my-32 bg-light-section">
+        <section className="lg:py-20 p-10 px-0 sm:mx-10 md:mx-28 md:my-32 bg-light-section">
           <h1 className="max-md:px-10 font-primary text-2xl sm:text-3xl lg:text-4xl mb-8">
             Real Feedback from Real Clients
           </h1>
@@ -599,7 +599,7 @@ const HomePage = () => {
           <div className=''>
             <Slider {...settings} >
               {testimonials.map((review, index) => (
-                <div key={index} className='max-md:px-10 px-5'>
+                <div key={index} className='px-5'>
                   <FeedbackCard fbSubTitle={review.subTitle} fbTitle={review.title} feedback={review.feedback} />
                 </div>
               ))}
