@@ -64,7 +64,7 @@ const team = [
     id: 4,
     name: 'Sharon Teraji',
     role: 'Tax & Bookkeeping Specialist',
-    desc: ["Meet Sharon, our dedicated Tax and Bookkeeping Specialist at Boutique Books. Sharon graduated with honors from the University of Phoenix in 2013 with a Bachelor of Science in Accounting. With years of experience and continuing professional education, she brings a wealth of knowledge to her clients. Her commitment to accuracy and compliance ensures clients are always well-prepared for tax season and beyond.","Outside of work, Sharon is an active member of her community. She serves on the board of her local Parent-Teacher Organization and volunteers with her daughter’s Girl Scout troop. When she’s not working or volunteering, Sharon loves spending time with her husband and two children, always finding balance between her professional and personal life with passion and dedication."],
+    desc: ["Meet Sharon, our dedicated Tax and Bookkeeping Specialist at Boutique Books. Sharon graduated with honors from the University of Phoenix in 2013 with a Bachelor of Science in Accounting. With years of experience and continuing professional education, she brings a wealth of knowledge to her clients. Her commitment to accuracy and compliance ensures clients are always well-prepared for tax season and beyond.", "Outside of work, Sharon is an active member of her community. She serves on the board of her local Parent-Teacher Organization and volunteers with her daughter’s Girl Scout troop. When she’s not working or volunteering, Sharon loves spending time with her husband and two children, always finding balance between her professional and personal life with passion and dedication."],
     imgURL: Sharon,
   },
   {
@@ -163,41 +163,44 @@ export default function AboutPage() {
   }, []);
 
   return (
-    <main className="md:pt-28 pt-20 bg-white">
+    <main className="md:pt-28 pt-20 ">
       <section
         id="top-sec"
-        className="z-10 !static md:fixed lg:top-16 mx-auto flex flex-col md:flex-row gap-y-10 md:gap-y-0"
+        className="z-10 bg-[rgb(61,99,138)] !static md:fixed lg:top-16 mx-auto grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-10"
       >
-        <div className='w-full md:w-1/2 flex flex-col-reverse lg:flex-row gap-y-10 md:gap-x-24 lg:px-28 items-center justify-center' >
+        <div className='w-full bg-white flex flex-col-reverse py-10 md:py-5 lg:flex-row lg:px-28 items-center justify-center' >
           <img
             src={AboutImg}
             className="sm:h-40 md:h-52 lg:h-60 w-4/6  md:w-full object-contain"
             alt=""
           />
         </div>
-        <div className='w-full md:w-1/2 bg-[#3d638a]  relative' >
-          <div className='p-5 md:p-10 md:pr-24 !pb-0'>
-            <H1 className="font-primary text-xl lg:text-3xl flex lg:flex-row text-white underline mb-5">
+        <div className='w-full relative' >
+          <div className='pt-4 px-5 md:px-0 lg:pt-10 w-full md:pr-10'>
+            <H1 className="font-primary text-xl md:text-3xl flex lg:flex-row text-white">
               <span className="font-primary">Origin</span>
               <span className="font-primary">Story</span>
             </H1>
-            <p className="text-black bg-white text-left text-sm md:text-base p-1 md:p-3 max-md:p-2">
+            <p className="text-black bg-white text-left text-sm md:text-base p-2 md:p-5 xl:pb-10">
               Boutique Books was born from a passion for delivering exceptional service and a desire to revolutionize the bookkeeping industry. After over 25 years in the field, I found myself frustrated with the traditional hourly billing model. It often left clients hesitant to seek the services they truly needed—either because they didn't fully understand the value or simply couldn't afford extra hours. I knew this approach wasn't allowing me to offer the full support my clients required, especially when issues like compliance arose.
             </p>
           </div>
-          {/* <div className='absolute bottom-0 h-10 w-10 border -left-10' ></div> */}
         </div>
-      </section>
-
-      <div className="relative z-20">
-        <div className="horizontal-para-wrapper relative overflow-hidden">
-          <div className=" flex flex-wrap justify-center horizontal-para bg-[#3d638a] gap-2 p-5 md:px-24 md:pt-10">
-            {paras.map((para, index) => (
-              <div className={`w-full md:w-[49%] p-2 md:p-5  bg-white ${index == 0 ? '' : ''}`} key={index}>
+        {paras.map((para, index) => (
+          <div className={`${index % 2 === 0 ? "md:pl-10" : "md:pr-10"} px-5 md:px-0`}>
+            <div className='bg-white h-full' >
+              <div className={`w-full p-2 md:p-5 ${index == 0 ? '' : ''}`} key={index}>
                 <p className="text-black text-left text-sm md:text-base">{para}</p>
               </div>
-            ))}
+            </div>
           </div>
+
+        ))}
+      </section>
+
+      <div className="relative">
+        <div className="horizontal-para-wrapper relative overflow-hidden">
+
         </div>
       </div>
 

@@ -127,7 +127,7 @@ export default function Header() {
                 </Link>
               </li>
             ))}
-            <li className="cursor-pointer whitespace-nowrap hover:bg-primary/90 transition-all bg-primary py-2 px-5 rounded-full">
+            <li className="cursor-pointer whitespace-nowrap hover:bg-[#d1ddd1]/90 transition-all bg-[#d1ddd1] py-2 px-5 rounded-full">
               <Link to={'/contact'}>Contact Us</Link>
             </li>
           </ul>

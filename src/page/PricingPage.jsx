@@ -238,7 +238,7 @@ export default function PricingPage() {
             </ul>
             <button
               onClick={toggleExpanded}
-              className="mt-4 text-blue-500 hover:text-blue-700 focus:outline-none"
+              className="mt-4 text-[#3d638a] focus:outline-none"
             >
               {expanded ? "View Less" : "View More"}
             </button>
@@ -297,7 +297,7 @@ export default function PricingPage() {
             </ul>
             <button
               onClick={toggleExpanded}
-              className="mt-4 text-blue-500 hover:text-blue-700 focus:outline-none"
+              className="mt-4 text-[#3d638a] focus:outline-none"
             >
               {expanded ? "View Less" : "View More"}
             </button>
@@ -329,7 +329,9 @@ export default function PricingPage() {
           <p>
             <span className="text-4xl font-bold">
               {price(getBookkeepingCost(priceRange, true))}
+              
             </span>
+            /mo billed annually
           </p>
           <Link to="/contact" >
             <button className="bg-[#3d638a] text-white w-full self-end text-2xl py-2 rounded-lg">

@@ -345,8 +345,8 @@ const HomePage = () => {
             <Link to="https://www.calendly.com/boutiquebooks" target='_blank'>
               <button className="px-7 p-2 button-primary-bg text-white rounded-full">
                 <div className="flex gap-3 flex-row justify-center">
-                  <div className="inline-flex gap-2 justify-center">
-                    <span className="text-md">Book a Call</span>
+                  <div className="flex gap-2 justify-center items-center">
+                    <span className="text-sm p-1 font-normal">Book a Call</span>
                     <span className="content-center">
                       <svg
                         width="18"
@@ -357,7 +357,7 @@ const HomePage = () => {
                       >
                         <path
                           d="M14.3659 19.7046L24 10.0493L14.3659 0.393967C14.2789 0.280049 14.1684 0.186099 14.0418 0.118479C13.9152 0.0508581 13.7755 0.0111451 13.6322 0.00202784C13.4888 -0.00708939 13.3452 0.0146026 13.211 0.0656346C13.0769 0.116667 12.9552 0.195847 12.8544 0.297817C12.7536 0.399786 12.6759 0.522163 12.6267 0.656664C12.5774 0.791164 12.5577 0.934646 12.5689 1.0774C12.5801 1.22015 12.6219 1.35884 12.6915 1.48407C12.7611 1.60931 12.8569 1.71817 12.9724 1.80328L20.1805 9.04976L1.00251 9.04976C0.736625 9.04976 0.481634 9.15506 0.293628 9.34251C0.105621 9.52995 -4.2768e-07 9.78419 -4.39268e-07 10.0493C-4.50855e-07 10.3144 0.105621 10.5686 0.293628 10.756C0.481634 10.9435 0.736625 11.0488 1.00251 11.0488L20.1805 11.0488L12.9724 18.2953C12.785 18.4835 12.6802 18.7382 12.6811 19.0035C12.6821 19.2687 12.7887 19.5227 12.9774 19.7096C13.1662 19.8965 13.4217 20.0009 13.6878 20C13.9538 19.9991 14.2085 19.8928 14.396 19.7046L14.3659 19.7046Z"
-                          fill="#87CEEB"
+                          fill="#d1ddd1"
                         />
                       </svg>
                     </span>
@@ -395,7 +395,7 @@ const HomePage = () => {
             </div>
           </div>
           <section class="mx-auto p-8 text-white rounded-lg">
-            <h1 class="text-3xl font-bold text-blue-600 mb-6">Is financial chaos holding your business back?</h1>
+            <h1 class="text-3xl font-bold text-[#3d638a] mb-6">Is financial chaos holding your business back?</h1>
             <p class="mb-6 text-gray-600">Running a business should be rewarding, but instead, you're stuck:</p>
             <ul class="list-disc list-inside space-y-4 mb-8 lg:mx-40 sm:mx-20">
               <li class="text-gray-700 text-left">
@@ -415,7 +415,7 @@ const HomePage = () => {
               </li>
             </ul>
             <div class="bg-blue-50 p-6 rounded-lg shadow-inner lg:mx-40 sm:mx-20">
-              <p class="text-lg font-semibold text-blue-600 mb-4">But now you've found us.</p>
+              <p class="text-lg font-semibold text-[#3d638a] mb-4">But now you've found us.</p>
               <p class="text-gray-700">
                 At <strong>Boutique Books</strong>, we turn that financial chaos into clarity. With our expert team and AI-driven precision, you'll experience effortless bookkeeping, real-time insights, and the dedicated support you deserve—so you can get back to running and growing your business with confidence.
               </p>
@@ -544,7 +544,7 @@ const HomePage = () => {
                                 <button className="md:px-7 p-2 bg-gray-700 text-white rounded-full">
                                   <div className="flex gap-3 flex-row ">
 
-                                    <div className="inline-flex gap-3">
+                                    <div className="inline-flex items-center gap-3">
                                       <span className="text-md end">
                                         Learn More
                                       </span>
