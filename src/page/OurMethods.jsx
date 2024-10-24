@@ -176,7 +176,7 @@ export default function OurMethods() {
                     className={`container w-3/4 mx-auto flex gap-10  justify-center text-white ${index % 2 == 0 ? 'flex-row' : 'flex-row-reverse'}`}
                   >
                     <div className='w-7/12 p-5 relative'>
-                      {/* <div className='absolute -right-14 bg-blue-400 h-1 w-12 top-52'></div> */}
+                      {/* <div className='absolute -right-14 bg-[#3d638a] h-1 w-12 top-52'></div> */}
                       <section
                         className="rounded-lg text-black bg-white "
                       >
@@ -238,7 +238,7 @@ export default function OurMethods() {
                     </section>
                   </div>
                   <div className="relative mx-4">
-                    <div className="w-1 h-full bg-blue-400"></div>
+                    <div className="w-1 h-full bg-[#3d638a]"></div>
                   </div>
 
                   <div className='w-7/12 p-5 center' >
@@ -253,14 +253,14 @@ export default function OurMethods() {
                   >
 
                     <div className="relative mx-2">
-                      <div className="w-1 h-full bg-blue-400"></div>
+                      <div className="w-1 h-full bg-[#3d638a]"></div>
                     </div>
 
 
                     <div className='w-full flex-grow p-2 relative'>
 
-                      <div className={`absolute  bg-blue-400 h-1 w-6 -left-4 top-32`}></div>
-                      {/* <div className='absolute -right-14 bg-blue-400 h-1 w-12 top-52'></div> */}
+                      <div className={`absolute  bg-[#3d638a] h-1 w-6 -left-4 top-32`}></div>
+                      {/* <div className='absolute -right-14 bg-[#3d638a] h-1 w-12 top-52'></div> */}
                       <section
                         className="rounded-lg text-black bg-white mb-5"
                       >
@@ -293,7 +293,7 @@ export default function OurMethods() {
                     </section>
                   </div>
                   <div className="relative mx-4">
-                    <div className="w-1 h-full bg-blue-400"></div>
+                    <div className="w-1 h-full bg-[#3d638a]"></div>
                   </div>
 
                   <div className='w-7/12 p-5 center' >

@@ -50,15 +50,15 @@ const LadyScroll = () => {
                 <div className=" mx-auto my-10 w-[80%]" ref={ladyRef}>
                     <div className="mx-auto relative" >
                         <div className="center relative z-0">
-                            <img className="w-full md:h-full h-screen object-cover" src={ladyWithLaptop} />
-                            <div className="black-overlay" ref={ladyRefOverlay}>
+                            <img className="w-full h-screen object-cover" src={ladyWithLaptop} />
+                            <div className="black-overlay flex justify-center items-center " ref={ladyRefOverlay}>
                                 <div className="lg:px-48 md:px-36 lg:p-32 md:p-28 h-screen w-full flex items-center" ref={ladyRefOverlayContent}>
                                     <div className="mx-auto text-white max-md:p-10">
                                         <h1 className="mt-10 mb-1 md:text-4xl  sm:text-3xl 2xl font-primary">Effortless Financial Management Services</h1>
-                                        <div className="center mx-auto mb-3">
+                                        <div className="center mx-auto mb-10">
                                             <div id='underline-divider' className="w-1/5 h-1 rounded-full bg-white"></div>
                                         </div>
-                                        <p className="md:text-2xl font-medium">For solo practitioners, startups, and professional service businesses.</p>
+                                        <p className="md:text-xl"><strong>For solo practitioners, startups, and professional service businesses.</strong></p>
                                         <p className=" md:text-xl"> With a blend of AI precision and dedicated support from our expert team, we deliver a high-touch, personalized experience so you can stay focused on growing your business.
                                         </p>
 

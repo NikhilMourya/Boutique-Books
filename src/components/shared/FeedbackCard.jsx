@@ -25,8 +25,8 @@ const FeedbackCard = ({ feedback, fbTitle, fbSubTitle }) => {
                   y2="24"
                   gradientUnits="userSpaceOnUse"
                 >
-                  <stop stopColor="#87CEEB" />
-                  <stop offset="1" stopColor="#CAF0FF" />
+                  <stop stopColor="#3d638a" />
+                  <stop offset="1" stopColor="#3d638a" />
                 </linearGradient>
               </defs>
             </svg>
@@ -51,8 +51,8 @@ const FeedbackCard = ({ feedback, fbTitle, fbSubTitle }) => {
                   y2="24"
                   gradientUnits="userSpaceOnUse"
                 >
-                  <stop stopColor="#87CEEB" />
-                  <stop offset="1" stopColor="#CAF0FF" />
+                  <stop stopColor="#3d638a" />
+                  <stop offset="1" stopColor="#3d638a" />
                 </linearGradient>
               </defs>
             </svg>
@@ -75,7 +75,7 @@ const FeedbackCard = ({ feedback, fbTitle, fbSubTitle }) => {
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
               >
-                <circle cx="5.5" cy="5.5" r="5.5" fill="#87CEEB" />
+                <circle cx="5.5" cy="5.5" r="5.5" fill="#3d638a" />
               </svg>
             </div>
             <h1 className=" text-left">

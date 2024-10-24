@@ -385,7 +385,7 @@ const HomePage = () => {
           </div>
         </div> */}
         <LadyScroll />
-        <section className="relative w-full lg:mt-80 my-20">
+        <section className="relative w-full my-20">
           <div className="absolute top-0 flex justify-between w-full">
             <div className="relative ">
               <div className="h-72 w-72 homepage-circle"></div>
