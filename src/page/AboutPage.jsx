@@ -177,7 +177,7 @@ export default function AboutPage() {
         </div>
         <div className='w-full relative' >
           <div className='pt-4 px-5 md:px-0 lg:pt-10 w-full md:pr-10'>
-            <H1 className="font-primary text-xl md:text-3xl flex lg:flex-row text-white">
+            <H1 className="font-primary text-xl md:text-3xl flex lg:flex-row justify-center pb-2 text-white">
               <span className="font-primary">Origin</span>
               <span className="font-primary">Story</span>
             </H1>

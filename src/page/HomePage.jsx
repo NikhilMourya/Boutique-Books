@@ -298,21 +298,21 @@ const HomePage = () => {
         {
           opacity: 1,
           duration: 1,
-          ease:'power1.inOut'
+          ease: 'power1.inOut'
         }
       );
 
       ladyLaptopTimline.to('#lady-laptop-subtitle', {
         opacity: 1,
         duration: 1,
-        ease:'power1.inOut'
+        ease: 'power1.inOut'
       });
 
       ladyLaptopTimline.to('#ladyLaptopGraph', {
         scale: 1,
         opacity: 1,
         duration: 1.2,
-        ease:'power1.inOut'
+        ease: 'power1.inOut'
       });
     });
 
@@ -505,23 +505,46 @@ const HomePage = () => {
                           At Boutique Books, we do more than just bookkeeping - we provide a complete financial management solution tailored specifically for solo practitioners, startups, and professional service businesses.
                         </p>
                       </div>
-                      <section className='grid md:grid-cols-3 gap-5 justify-center items-center'>
-                        {
-                          firmOffers.map((offer, index) => {
-                            return (
-                              <div key={index} onClick={() => activePara(index)} className="flex flex-col items-center py-2 cursor-pointer bg-white border border-gray-200 rounded-lg shadow md:flex-col md:max-w-xl md:min-h-52 h-[100%]">
-                                <div className='flex flex-row items-center justify-start gap-2 w-full px-5' >
-                                  <img className="object-cover max-w-28 rounded-t-lg h-24 md:rounded-none md:rounded-s-lg" src={offer.img} alt="" />
-                                  <h5 className="mb-2 text-center text-xl font-bold tracking-tight text-gray-900 dark:text-white">{offer.title}</h5>
-                                </div>
+                      <section className='grid grid-cols-1 md:grid-cols-3 gap-5 justify-center items-center'>
+                        <div className='block md:hidden' >
+                          <Slider {...settings} >
+                            {
+                              firmOffers.map((offer, index) => {
+                                return (
+                                  <div key={index} onClick={() => activePara(index)} className="min-h-72 flex flex-col items-center py-2 cursor-pointer bg-white border border-gray-200 rounded-lg shadow md:flex-col md:max-w-xl md:min-h-52 h-[100%]">
+                                    <div className='flex flex-row items-center justify-start gap-2 w-full px-5' >
+                                      <img className="object-cover max-w-28 rounded-t-lg h-24 md:rounded-none md:rounded-s-lg" src={offer.img} alt="" />
+                                      <h5 className="mb-2 text-center text-xl font-bold tracking-tight text-gray-900 dark:text-white">{offer.title}</h5>
+                                    </div>
 
-                                <div className="flex flex-col justify-between p-4 leading-normal">
-                                  <p className={` mb-3 text-sm font-normal text-left text-black dark:text-gray-400`}>{offer.desc}</p>
+                                    <div className="flex flex-col justify-between p-4 leading-normal">
+                                      <p className={` mb-3 text-sm font-normal text-left text-black dark:text-gray-400`}>{offer.desc}</p>
+                                    </div>
+                                  </div>
+                                )
+                              })
+                            }
+                          </Slider>
+                        </div>
+                        <div className='hidden md:block' >
+                          {
+                            firmOffers.map((offer, index) => {
+                              return (
+                                <div key={index} onClick={() => activePara(index)} className="flex flex-col items-center py-2 cursor-pointer bg-white border border-gray-200 rounded-lg shadow md:flex-col md:max-w-xl md:min-h-52 h-[100%]">
+                                  <div className='flex flex-row items-center justify-start gap-2 w-full px-5' >
+                                    <img className="object-cover max-w-28 rounded-t-lg h-24 md:rounded-none md:rounded-s-lg" src={offer.img} alt="" />
+                                    <h5 className="mb-2 text-center text-xl font-bold tracking-tight text-gray-900 dark:text-white">{offer.title}</h5>
+                                  </div>
+
+                                  <div className="flex flex-col justify-between p-4 leading-normal">
+                                    <p className={` mb-3 text-sm font-normal text-left text-black dark:text-gray-400`}>{offer.desc}</p>
+                                  </div>
                                 </div>
-                              </div>
-                            )
-                          })
-                        }
+                              )
+                            })
+                          }
+                        </div>
+
 
 
                         {/* <div
@@ -613,15 +636,3 @@ const HomePage = () => {
 };
 
 export default HomePage;
-
-/* Rectangle 3 */
-
-// position: absolute;
-// width: 1224px;
-// height: 648px;
-// left: 0px;
-// top: 0px;
-
-// background: rgba(0, 0, 0, 0.6);
-// filter: blur(5px);
-// border-radius: 20px;

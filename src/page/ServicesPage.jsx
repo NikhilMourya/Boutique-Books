@@ -162,7 +162,7 @@ const ServicesPage = () => {
           <div className=" mx-auto w-full lg:rounded-t-2xl overflow-hidden">
             <div className="mx-auto relative lg:rounded-t-2xl">
               <div className="center relative z-0">
-                <div className="w-full h-screen md:h-[145vh] sm:h-[110vh] lg:h-full lg:rounded-t-2xl"
+                <div className="w-full h-auto md:h-[145vh] sm:h-[110vh] lg:h-full lg:rounded-t-2xl"
                   onMouseEnter={handleMouseEnter} // Pause autoplay on hover
                   onMouseLeave={handleMouseLeave}>
                   <Slider
@@ -187,7 +187,7 @@ const ServicesPage = () => {
                       <h1 className="mb-10 text-2xl opacity-80 font-primary text-left">
                         Our Services
                       </h1>
-                      <div className="flex flex-col md:flex-row gap-10">
+                      <div className="flex flex-col md:flex-row gap-4 md:gap-10">
                         <div className="flex-grow sm:h-70 md:h-auto">
                           <h1 className="mb-5 md:mb-10 md:text-4xl lg:text-5xl font-medium font-primary text-left service-heading">
                             {activeHeading}
@@ -209,7 +209,7 @@ const ServicesPage = () => {
                                   <div key={index} className="p-3 lg:p-4">
                                     <img
                                       src={item.image}
-                                      className="object-cover transition-all duration-500 ease-in-out h-44 w-40 md:w-full md:h-auto rounded-md"
+                                      className="object-cover transition-all duration-500 ease-in-out h-34 w-30 md:w-full md:h-auto rounded-md"
                                     />
                                   </div>
                                 ))}

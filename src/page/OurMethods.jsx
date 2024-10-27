@@ -127,7 +127,7 @@ export default function OurMethods() {
 
 
       <section className="fixed z-20" id='title-wrapper'>
-        <div className='w-9/12 mx-auto flex flex-col gap-y-10 md:gap-x-24 lg:px-16 items-center justify-center'>
+        <div className='w-9/12 bg-white rounded-2xl py-4 mx-auto flex flex-col gap-y-10 md:gap-x-24 lg:px-16 items-center justify-center'>
           <H1 className={'font-primary text-2xl'}>How We Make It Happen</H1>
 
           <p className='text-black text-sm md:text-lg font-semibold'>

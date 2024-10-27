@@ -243,7 +243,7 @@ export default function PricingPage() {
               {expanded ? "View Less" : "View More"}
             </button>
           </div>
-          <div className="relative flex items-center my-4">
+          <div className="relative flex items-center my-4 mt-12">
             <input
               value={priceRange}
               min={MIN}
@@ -361,12 +361,12 @@ export default function PricingPage() {
       >
         <img
           src={ModelImg}
-          className="w-full h-full object-cover absolute brightness-50"
+          className="w-full h-full bg-cover md:bg-cover bg-center object-cover bg-no-repeat absolute brightness-50"
         />
 
         <div
           id="bg-overlay"
-          className="w-[80%] grid rounded-2xl gap-y-5 p-14 md:p-20 my-10  text-white mx-auto md:h-[648px] bg-black/60 drop-shadow-sm"
+          className="w-[80%] grid rounded-2xl gap-y-5 p-8 sm:p-14 md:p-20 my-10  text-white mx-auto md:h-[648px] bg-black/60 drop-shadow-sm"
           style={{
             boxShadow: '0px 0px 11px 5px #060606cf',
           }}
@@ -378,20 +378,20 @@ export default function PricingPage() {
             {whyChooseUs.map(({ title, desc, imgURL }, index) => (
               <div
                 key={imgURL}
-                className="text-left flex flex-col gap-y-5 justify-center"
+                className="text-left flex flex-col gap-y-5 justify-center items-center"
               >
                 <img
                   src={imgURL}
-                  className={`w-[50px] block mx-auto ${'feature-icon' + index}`}
+                  className={`w-[50px] h-[50px] object-contain block mx-auto ${'feature-icon' + index}`}
                   alt={title}
                 />
                 <h3
-                  className={`texl-xl md:text-2xl ${'feature-title' + index}`}
+                  className={`texl-xl text-center md:text-2xl ${'feature-title' + index}`}
                 >
                   {title}
                 </h3>
                 <p
-                  className={`leading-tight text-base ${'feature-desc' + index
+                  className={`leading-tight min-h-64 text-center whitespace-pre-line text-base ${'feature-desc' + index
                     }`}
                 >
                   {desc}

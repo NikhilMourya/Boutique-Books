@@ -4,10 +4,10 @@ export default function ContactUs() {
     return (
         <main className="pt-36">
             <div className="">
-                <h1 className="text-2xl md:text-4xl font-semibold mb-3 text-center">Customer Service</h1>
+                {/* <h1 className="text-2xl md:text-4xl font-semibold mb-3 text-center">Customer Service</h1> */}
                 <div className="grid grid-cols-2 gap-5  md:gap-20 w-full max-w-6xl mx-auto">
 
-                    <div className="col-span-2 w-full p-4 flex-grow h-screen py-10">
+                    <div className="col-span-2 w-full p-4 flex-grow h-screen pb-10">
                         <iframe
                             title="Mailchimp Contact Form"
                             src="https://us17.list-manage.com/contact-form?u=fada68f8697eace3c42993d0d&form_id=13cc1c9dea2f419c09dc60db25311019"
