@@ -4,6 +4,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useLayoutEffect, useRef } from 'react';
 import { Link } from "react-router-dom";
 import ladyWithLaptop from "../../assets/images/home/female-with-laptop.png";
+import ladyWithLaptopMobile from "../../assets/images/lady_laptop_mobile.jpg";
 
 
 gsap.registerPlugin(ScrollTrigger);
@@ -50,7 +51,8 @@ const LadyScroll = () => {
                 <div className=" mx-auto my-10 w-[80%]" ref={ladyRef}>
                     <div className="mx-auto relative" >
                         <div className="center relative z-0">
-                            <img className="w-full h-screen object-cover" src={ladyWithLaptop} />
+                            <img className="hidden sm:block w-full h-screen object-cover" src={ladyWithLaptop} />
+                            <img className="block sm:hidden w-full h-screen object-cover " src={ladyWithLaptopMobile} />
                             <div className="black-overlay flex justify-center items-center " ref={ladyRefOverlay}>
                                 <div className="lg:px-48 md:px-36 lg:p-32 md:p-28 h-screen w-full flex items-center" ref={ladyRefOverlayContent}>
                                     <div className="mx-auto text-white max-md:p-10">

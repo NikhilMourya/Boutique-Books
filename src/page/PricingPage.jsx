@@ -2,6 +2,7 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useLayoutEffect, useState } from 'react';
 import ModelImg from '../assets/images/home/female-with-laptop.png';
+import ladyWithLaptopMobile from "../assets/images/lady_laptop_mobile.jpg";
 import P1 from '../assets/images/pricing/P1-Icon.png';
 import P2 from '../assets/images/pricing/P2-Icon.png';
 import P3 from '../assets/images/pricing/P3-Icon.png';
@@ -243,48 +244,49 @@ export default function PricingPage() {
               {expanded ? "View Less" : "View More"}
             </button>
           </div>
-          <div className="relative flex items-center my-4 mt-12">
-            <input
-              value={priceRange}
-              min={MIN}
-              max={MAX}
-              type="range"
-              step={STEP}
-              className="tw-range"
-              onChange={(e) => setPriceRange(e.target.value)}
-            />
-            {/* Tick Marks */}
-            <section className="absolute inset-0 flex justify-between px-1 pointer-events-none">
-              <div className="price-range-tick _0"></div>
-              <div className="price-range-tick _1"></div>
-              <div className="price-range-tick _2"></div>
-              <div className="price-range-tick _3"></div>
-              <div className="price-range-tick _4"></div>
-              <div className="price-range-tick _5"></div>
-            </section>
+          <div className='min-h-44 flex flex-col gap-3 pt-2' >
+            <div className="relative flex items-center my-4">
+              <input
+                value={priceRange}
+                min={MIN}
+                max={MAX}
+                type="range"
+                step={STEP}
+                className="tw-range"
+                onChange={(e) => setPriceRange(e.target.value)}
+              />
+              {/* Tick Marks */}
+              <section className="absolute inset-0 flex justify-between px-1 pointer-events-none">
+                <div className="price-range-tick _0"></div>
+                <div className="price-range-tick _1"></div>
+                <div className="price-range-tick _2"></div>
+                <div className="price-range-tick _3"></div>
+                <div className="price-range-tick _4"></div>
+                <div className="price-range-tick _5"></div>
+              </section>
+            </div>
+            <p>
+              <span className="font-bold">{price(priceRange)}</span> in monthly
+              expenses
+            </p>
+            <p>
+              <span className="text-4xl font-bold">
+                {price(getBookkeepingCost(priceRange))}
+              </span>
+              /mo billed annually
+            </p>
+            <Link to="/contact" >
+              <button className="bg-[#3d638a] w-full self-end text-2xl py-2 rounded-lg text-white">
+                Contact Us
+              </button>
+            </Link>
           </div>
-          <p>
-            <span className="font-bold">{price(priceRange)}</span> in monthly
-            expenses
-          </p>
-          <p>
-            <span className="text-4xl font-bold">
-              {price(getBookkeepingCost(priceRange))}
-            </span>
-            /mo billed annually
-          </p>
-          <Link to="/contact" >
-            <button className="bg-[#3d638a] w-full self-end text-2xl py-2 rounded-lg text-white">
-              Contact Us
-            </button>
-          </Link>
-
         </div>
         <div className="card p-10 grid gap-y-5 items-center text-left md:gap-y-2 shadow-md border border-primary/40 shadow-primary rounded-3xl min-h-[400px]">
           <h3 className="font-semibold text-2xl">Premium Plan</h3>
           <p>For companies with refined needs, reflecting their high value.</p>
           <div className="w-full max-w-md mx-auto mb-5">
-            <h3 className='mt-2 font-medium text-lg'>Essential Plan + </h3>
+            <h3 className=' font-medium text-lg'>Essential Plan + </h3>
             <ul
               className={`overflow-hidden list-disc pl-6 transition-[max-height] duration-500 ease-in-out ${expanded ? "max-h-screen" : `max-h-[3rem]`
                 }`}
@@ -302,42 +304,44 @@ export default function PricingPage() {
               {expanded ? "View Less" : "View More"}
             </button>
           </div>
-          <div className="relative flex items-center my-4">
-            <input
-              value={priceRange}
-              min={MIN}
-              max={MAX}
-              type="range"
-              step={STEP}
-              className="tw-range"
-              onChange={(e) => setPriceRange(e.target.value)}
-            />
-            {/* Tick Marks */}
-            <section className="absolute inset-0 flex justify-between px-1 pointer-events-none">
-              <div className="price-range-tick _0"></div>
-              <div className="price-range-tick _1"></div>
-              <div className="price-range-tick _2"></div>
-              <div className="price-range-tick _3"></div>
-              <div className="price-range-tick _4"></div>
-              <div className="price-range-tick _5"></div>
-            </section>
+          <div className='min-h-44 flex flex-col gap-3' >
+            <div className="relative flex items-center my-4">
+              <input
+                value={priceRange}
+                min={MIN}
+                max={MAX}
+                type="range"
+                step={STEP}
+                className="tw-range"
+                onChange={(e) => setPriceRange(e.target.value)}
+              />
+              {/* Tick Marks */}
+              <section className="absolute inset-0 flex justify-between px-1 pointer-events-none">
+                <div className="price-range-tick _0"></div>
+                <div className="price-range-tick _1"></div>
+                <div className="price-range-tick _2"></div>
+                <div className="price-range-tick _3"></div>
+                <div className="price-range-tick _4"></div>
+                <div className="price-range-tick _5"></div>
+              </section>
+            </div>
+            <p>
+              <span className="font-bold">{price(priceRange)}</span> in monthly
+              expenses
+            </p>
+            <p>
+              <span className="text-4xl font-bold">
+                {price(getBookkeepingCost(priceRange, true))}
+
+              </span>
+              /mo billed annually
+            </p>
+            <Link to="/contact" >
+              <button className="bg-[#3d638a] text-white w-full self-end text-2xl py-2 rounded-lg">
+                Contact Us
+              </button>
+            </Link>
           </div>
-          <p>
-            <span className="font-bold">{price(priceRange)}</span> in monthly
-            expenses
-          </p>
-          <p>
-            <span className="text-4xl font-bold">
-              {price(getBookkeepingCost(priceRange, true))}
-              
-            </span>
-            /mo billed annually
-          </p>
-          <Link to="/contact" >
-            <button className="bg-[#3d638a] text-white w-full self-end text-2xl py-2 rounded-lg">
-              Contact Us
-            </button>
-          </Link>
         </div>
         <div className="relative card p-10 grid gap-y-5 items-start text-left md:gap-y-2 shadow-md border border-primary/40 shadow-primary rounded-3xl min-h-[400px]">
           <h3 className="font-semibold text-2xl">Elite Plan</h3>
@@ -361,12 +365,17 @@ export default function PricingPage() {
       >
         <img
           src={ModelImg}
-          className="w-full h-full bg-cover md:bg-cover bg-center object-cover bg-no-repeat absolute brightness-50"
+          className="sm:block hidden w-full h-full bg-cover md:bg-cover bg-center object-cover bg-no-repeat absolute brightness-50"
         />
+        <img
+          src={ladyWithLaptopMobile}
+          className="block sm:hidden w-full h-full bg-cover md:bg-cover bg-center object-cover bg-no-repeat absolute brightness-50"
+        />
+
 
         <div
           id="bg-overlay"
-          className="w-[80%] grid rounded-2xl gap-y-5 p-8 sm:p-14 md:p-20 my-10  text-white mx-auto md:h-[648px] bg-black/60 drop-shadow-sm"
+          className="w-[80%] grid rounded-2xl gap-y-5 p-4 sm:p-14 md:p-20 my-10  text-white mx-auto md:h-[648px] bg-black/60 drop-shadow-sm"
           style={{
             boxShadow: '0px 0px 11px 5px #060606cf',
           }}

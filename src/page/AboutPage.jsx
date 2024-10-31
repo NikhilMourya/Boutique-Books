@@ -176,12 +176,12 @@ export default function AboutPage() {
           />
         </div>
         <div className='w-full relative' >
-          <div className='pt-4 px-5 md:px-0 lg:pt-10 w-full md:pr-10'>
+          <div className='h-full pt-4 px-5 md:px-0 lg:pt-10 w-full md:pr-10'>
             <H1 className="font-primary text-xl md:text-3xl flex lg:flex-row justify-center pb-2 text-white">
               <span className="font-primary">Origin</span>
               <span className="font-primary">Story</span>
             </H1>
-            <p className="text-black bg-white text-left text-sm md:text-base p-2 md:p-5 xl:pb-10">
+            <p className="text-black bg-white text-left text-sm md:text-base p-2 md:p-5 xl:pb-10 2xl:pb-14">
               Boutique Books was born from a passion for delivering exceptional service and a desire to revolutionize the bookkeeping industry. After over 25 years in the field, I found myself frustrated with the traditional hourly billing model. It often left clients hesitant to seek the services they truly needed—either because they didn't fully understand the value or simply couldn't afford extra hours. I knew this approach wasn't allowing me to offer the full support my clients required, especially when issues like compliance arose.
             </p>
           </div>
