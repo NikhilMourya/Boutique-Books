@@ -80,48 +80,48 @@ const firmOffers = [
 
 const testimonials = [
   {
-    title: 'Shellye',
+    title: 'Shellye A',
     subTitle: '',
     feedback: 'The Team is Great to work with!'
   },
   {
-    title: 'San Benito',
+    title: 'San Benito Bene',
     subTitle: '',
     feedback: 'Highly Recommend! Tajni and her team are trustworthy and reliable. When I started my small business, it was daunting having to comply with so many regulations. Tajni provided me with professional guidance and set me up with a clear financial structure.'
   },
   {
-    title: 'Sujeet',
+    title: 'Sujeet V',
     subTitle: '',
     feedback: 'Tajni and team have done an excellent job with tax filing requirements for us.'
   },
   {
-    title: 'Charisse',
+    title: 'Charisse T',
     subTitle: '',
     feedback: "I've been working with Tajni for over 15 years. She and her team are excellent. We all dread tax season to a certain extent, but it's less painfull when you are working with a quality company."
   },
 
   {
-    title: 'Kim',
+    title: 'Kim J',
     subTitle: '',
     feedback: '"TD tax is great! They are quick to answer my questions and staff is always available and get back to me within 24 hours. I have been using them for a few years and I am very happy with them. It\'s so easy to upload your documents and communicate back and forth online. Highly recommended."'
   },
   {
-    title: 'Mishkat',
+    title: 'Mishkat A',
     subTitle: '',
     feedback: "I have been using their services since 2016 and I couldn't be happier. Tajni and her staff are honest and hardworking people who strive to help you file your taxes. I recently worked with Sharon who is highly experienced and easy to talk to. Sharon is also very responsive. I highly recommend them."
   },
   {
-    title: 'Reno',
+    title: 'Reno R',
     subTitle: '',
     feedback: '"If you are looking for a great quality tax person, look no further. If you\'re looking for someone who is honest and will treat you like you are her only client, she is the gal for you. I have known Tajni and her family and they are all wonderful people. Tajni takes pride in her business and will always bend over backwards to help you with your tax needs. Give her a try, you will not be disappointed."'
   },
   {
-    title: "Alisse",
+    title: "Alisse W",
     subTitle: "",
     feedback: "Needed major help with huge accounting book issues. TD came in and worked miracles.  I am so blessed to have her work with me on this project.  She didn't get overwhelmed. And was able to get everything fixed and up and running.  USE TD TAX for anything!!! You won't be disappointed"
   },
   {
-    title: "Alexis",
+    title: "Alexis R",
     subsTitle: "",
     feedback: "Tajni & her team (especially Raquel) are amazing. I used to HATE having to deal with my company's books & payroll. It is so hard to find someone reliable who knows their stuff inside and out. Tajni knows her stuff! She has a way of making you feel so reassured & confident that everything is being tracked correctly. Raquel has payroll done so quickly it amazes me! If you never want to stress over your books or payroll, leave it to these girls! They're worth it."
   }

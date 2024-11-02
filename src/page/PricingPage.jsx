@@ -283,8 +283,10 @@ export default function PricingPage() {
           </div>
         </div>
         <div className="card p-10 grid gap-y-5 items-center text-left md:gap-y-2 shadow-md border border-primary/40 shadow-primary rounded-3xl min-h-[400px]">
-          <h3 className="font-semibold text-2xl">Premium Plan</h3>
-          <p>For companies with refined needs, reflecting their high value.</p>
+          <div className='h-full flex flex-col justify-start gap-3' >
+            <h3 className="font-semibold text-2xl">Premium Plan</h3>
+            <p>For companies with refined needs, reflecting their high value.</p>
+          </div>
           <div className="w-full max-w-md mx-auto mb-5">
             <h3 className=' font-medium text-lg'>Essential Plan + </h3>
             <ul
@@ -304,7 +306,7 @@ export default function PricingPage() {
               {expanded ? "View Less" : "View More"}
             </button>
           </div>
-          <div className='min-h-44 flex flex-col gap-3' >
+          <div className='h-full justify-end flex flex-col gap-3' >
             <div className="relative flex items-center my-4">
               <input
                 value={priceRange}

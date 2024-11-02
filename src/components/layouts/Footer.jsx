@@ -92,10 +92,10 @@ export default function Footer() {
           <div className="flex flex-col justify-start gap-y-2">
             <p>
               <a
-                href="mailto:hello@boutiquebooks.com"
+                href="mailto:hello@boutiquebooks.us"
                 className="hover:underline"
               >
-                hello@boutiquebooks.com
+                hello@boutiquebooks.us
               </a>
             </p>
             <p>
