@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import MainLogo from './../../assets/images/layouts/main-logo.png';
-
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useLayoutEffect } from 'react';
@@ -68,6 +67,11 @@ const logoutSVG = (
 );
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
+  const [isDropdownVisible, setDropdownVisible] = useState(false);
+
+  const showDropdown = () => setDropdownVisible(true);
+  const hideDropdown = () => setDropdownVisible(false);
+
 
   const closeNav = () => setIsOpen(false);
   useLayoutEffect(() => {
@@ -108,6 +112,9 @@ export default function Header() {
     };
   }, [isOpen]);
 
+
+
+
   return (
     <div className="fixed center top-0 z-50 w-full">
       <header className="relative bg-white w-10/12 flex items-center justify-between px-4 md:px-14 py-2 ">
@@ -117,7 +124,8 @@ export default function Header() {
         {/* Desktop nav */}
         <nav className="hidden lg:block">
           <ul className="flex gap-x-7 items-center list-none">
-            {navItems.map((item, index) => (
+
+            {navItems.slice(0, 2).map((item, index) => (
               <li
                 key={index}
                 className="cursor-pointer hover:opacity-90 transition-all"
@@ -127,6 +135,47 @@ export default function Header() {
                 </Link>
               </li>
             ))}
+
+            <li
+              className="cursor-pointer hover:opacity-90 transition-all relative" onMouseEnter={showDropdown}
+              onMouseLeave={hideDropdown}
+            >
+              <button onClick={() => setDropdownVisible(!isDropdownVisible)} id="dropdownHoverButton" data-dropdown-toggle="dropdownHover" data-dropdown-trigger="hover" class="text-sm text-center ">
+                Tax & Services
+              </button>
+
+              {
+                isDropdownVisible && (
+                  <div id="dropdownHover" class="z-10 absolute left-0 bg-[#d1ddd1] rounded-b-lg w-full">
+                    <ul class="text-sm text-black flex flex-col" aria-labelledby="dropdownHoverButton">
+                      <li className='py-1 hover:bg-[#d5e9d5]'>
+                        <Link to="/services" target="_self" className="px-4 py-2 whitespace-nowrap font-article">
+                          Services
+                        </Link>
+                      </li>
+                      <li className='py-1 hover:bg-[#d5e9d5] rounded-b-lg'>
+                        <Link to="https://www.boutiquebooks-tax.us/ " target="_blank" className="px-4 py-2 whitespace-nowrap font-article">
+                          Tax
+                        </Link>
+                      </li>
+                    </ul>
+                  </div>
+                )
+              }
+            </li>
+
+            {navItems.slice(3).map((item, index) => (
+              <li
+                key={index}
+                className="cursor-pointer hover:opacity-90 transition-all"
+              >
+                <Link to={item.href} target={item.text == "Blogs" ? "_blank" : "_self"} className="whitespace-nowrap font-article">
+                  {item.text}
+                </Link>
+              </li>
+            ))}
+
+
             <li className="cursor-pointer whitespace-nowrap hover:bg-[#d1ddd1]/90 transition-all bg-[#d1ddd1] py-2 px-5 rounded-full">
               <Link to={'/contact'}>Contact Us</Link>
             </li>
@@ -162,6 +211,6 @@ export default function Header() {
           </ul>
         </nav>
       </header>
-    </div>
+    </div >
   );
 }
